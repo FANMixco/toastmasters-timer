@@ -418,8 +418,18 @@ dialogCustomTimes.querySelector('.close').addEventListener('click', function () 
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-	document.getElementById('cmbSpeechType').onchange = changeEventHandler;
+	cmbSpeechType.onchange = changeEventHandler;
 }, false);
+
+cmbSpeechType.addEventListener('click', function () {
+    if (document.body.clientHeight < 650){
+        setTimeout(function() {
+            let container = document.getElementsByClassName('mdl-menu__container')[0];
+            container.style.height = `${document.body.clientHeight * 0.84}px`;
+            container.style.overflowY = "auto";
+        }, 50);
+    }
+});
 
 maximum = 0;
 wholeTime = 0;
