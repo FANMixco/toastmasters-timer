@@ -16,7 +16,8 @@ const displayOutput = document.querySelector('.display-remain-time'),
       remainTime = document.getElementById('remainTime'),
       titleMeeting = document.getElementById('titleMeeting'),
       divSpeaker = document.getElementById('divSpeaker'),
-      btnDelete = document.getElementById('btnDelete');
+      btnDelete = document.getElementById('btnDelete'),
+      btnInvert = document.getElementById('btnInvert');
 
 let wholeTime = 30,
 	selected = -1,
@@ -41,7 +42,8 @@ let dateFormat = "DD/MM/YYYY",
     currentDB = "1.0",
     lastColor = "white";
 
-let countries = ["US", "FM", "MH", "PH"];
+let countries = ["US", "FM", "MH", "PH"],
+    bgColors = ["white", "black"];
 
 let times = [
 	//QA (30s)
@@ -160,12 +162,14 @@ function resetState() {
 	displayTimeLeft(wholeTime);
 	wholeTime = 0;
 	displayTimeLeft(wholeTime);
-    lastColor = "white";
+    lastColor = bgColors[selectedColor];
 	document.body.style.background = lastColor;
     clappingStarted = false;
 	setInitialValues();
     txtSpeaker.value = "";
     divSpeaker.className = 'mdl-textfield mdl-js-textfield';
+    btnInvert.disabled = false;
+    btnRestart.disabled = false;
 }
 
 function timer(seconds) { //counts time, takes seconds
@@ -195,7 +199,6 @@ function timer(seconds) { //counts time, takes seconds
             lastColor = "red";
 		}
         if (counter >= maximum + 30) {
-            lastColor = "black";
             if (!clappingStarted)
                 startClapping();
             clappingStarted = true;
@@ -207,6 +210,9 @@ function timer(seconds) { //counts time, takes seconds
 function pauseTimer(event) {
     if (minimum === 0 && maximum === 0 && average === 0) return;
 
+    btnInvert.disabled = true;
+    btnRestart.disabled = true;
+    
 	if (isStarted === false) {
 		timer(wholeTime);
 		isStarted = true;
@@ -247,7 +253,8 @@ function changeEventHandler(event) {
         update(wholeTime, wholeTime); //refreshes progress bar
         displayTimeLeft(wholeTime);        
     }
-    //else
+    else
+        console.log('custom');
     //    dialogCustomTimes.showModal()
 }
 
@@ -275,28 +282,35 @@ function getVibrate() {
     if (getLocalStorageValue("isVibrateEnabled") !== null)
         isVibrateEnabled = (getLocalStorageValue("isVibrateEnabled") === 'true');
     else
-        setVibrate(isVibrateEnabled);
+        setVibrate();
 }
 
 function getClapping() {
     if (getLocalStorageValue("isClappingEnabled") !== null)
         isClappingEnabled = (getLocalStorageValue("isClappingEnabled") === 'true');
     else
-        setClapping(isClappingEnabled);
+        setClapping();
 }
 
 function getBeep() {
     if (getLocalStorageValue("isBeepEnabled") !== null)
         isBeepEnabled = (getLocalStorageValue("isBeepEnabled") === 'true');
     else
-        setBeep(isBeepEnabled);
+        setBeep();
 }
 
 function getContestMode() {
     if (getLocalStorageValue("isContestMode") !== null)
         isContestMode = (getLocalStorageValue("isContestMode") === 'true');
     else
-        setBeep(isContestMode);
+        setContestMode();
+}
+
+function getSelectedColor() {
+    if (getLocalStorageValue("selectedColor") !== null)
+        selectedColor = parseInt(getLocalStorageValue("selectedColor"));
+    else
+        setSelectedColor();
 }
 
 function setBeep() {
@@ -313,6 +327,10 @@ function setClapping() {
 
 function setContestMode() {
     setLocalStorage("isContestMode", isContestMode);
+}
+
+function setSelectedColor() {
+    setLocalStorage("selectedColor", selectedColor);
 }
 
 function setContestImg() {
@@ -341,6 +359,15 @@ function setClappingImg() {
         imgClap.src = "img/clapping-off.svg";
     else
         imgClap.src = "img/clapping-hands.svg";
+}
+
+function invertColors() {
+    console.log('invertColors');
+    if (selectedColor === 1)
+        $('body').css('filter', 'invert(100%)');        
+    else
+        $('body').css('filter', 'invert(0%)');        
+	document.body.style.background = lastColor;
 }
 
 btnPause.addEventListener('click', pauseTimer);
@@ -406,12 +433,18 @@ if (!dialogCustomTimes.showModal) {
 	dialogPolyfill.registerDialog(dialogCustomTimes);
 }
 
-btnTimeTable.addEventListener('click', function () {
-    countTimetable();
-});
+btnTimeTable.addEventListener('click', countTimetable);
 
-btnDelete.addEventListener('click', function () {
-    deleteTimetable();
+btnDelete.addEventListener('click', deleteTimetable);
+
+btnInvert.addEventListener('click', function () {
+    if (selectedColor === 0)
+        selectedColor = 1;
+    else
+        selectedColor = 0;
+    lastColor = bgColors[selectedColor];
+    setSelectedColor();
+    invertColors();
 });
 
 dialogTimeTable.querySelector('.close').addEventListener('click', function () {
@@ -443,13 +476,18 @@ getBeep();
 getVibrate();
 getClapping();
 getContestMode();
+getSelectedColor();
 
 setContestImg();
 setVibrateImg();
 setBeepImg();
 setClappingImg();
+setSelectedColor();
 
 setDateFormat();
 initializeDB(currentDB, latestDB);
+
+lastColor = bgColors[selectedColor];
+invertColors();
 
 titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format("YYYY/MM/DD")}`;
