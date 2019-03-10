@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Circular Countdown Timer Demo</title>
+      <link rel="stylesheet" href="css/materialdesignicons.min.css" />
+      <link rel="stylesheet" href="css/timer.css" />
+      <link rel="stylesheet" href="css/material.indigo-pink.min.css" />
+      <link rel="stylesheet" href="css/getmdl-select.min.css" />
+      <script defer src="js/material.min.js"></script>
+      <script src="js/getmdl-select.min.js"></script>
+   </head>
+   <body>
+          <div class="mdl-textfield mdl-js-textfield getmdl-select">
+             <input type="text" value="" class="mdl-textfield__input" id="cmbSpeechType" readonly>
+             <input type="hidden" value="" name="hiddenSpeechType" id="hiddenSpeechType">
+             <label for="cmbSpeechType" class="mdl-textfield__label">Speech type</label>
+             <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                <li class="mdl-menu__item" data-val="0">Question of the Day (30s)</li>
+                <li class="mdl-menu__item" data-val="1">4 to 5 min (Ice-breaker)</li>
+                <li class="mdl-menu__item" data-val="2">5 to 7 min (Project 2-9)</li>
+             </ul>
+          </div>
+          <div id="options">
+             <button id="btnChampion" class="btnAction"><span class="mdi mdi-trophy"></span></button>
+             <button id="btnTimetable" class="btnAction"><span class="mdi mdi-timetable"></span></button>
+             <!--<button id="btnInvert" class="btnAction"><span class="mdi mdi-invert-colors"></span></button>-->
+             <button id="btnBeep" class="btnAction"><span class="mdi mdi-volume-high"></span></button>
+             <button id="btnVibrate" class="btnAction"><span class="mdi mdi-vibrate"></span></button>
+             <button id="btnClap" class="btnAction"><img id="imgClap" src="img/clapping-hands.svg"></button>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+             <input class="mdl-textfield__input" type="text" id="txtSpeaker">
+             <label class="mdl-textfield__label" for="txtSpeaker">Speaker</label>
+          </div>
+          <div class="container">
+             <div class="circle">
+                <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                   <g transform="translate(110,110)">
+                      <circle r="100" class="e-c-base"/>
+                      <g transform="rotate(-90)">
+                         <circle r="100" class="e-c-progress"/>
+                         <g id="e-pointer">
+                            <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+                         </g>
+                      </g>
+                   </g>
+                </svg>
+             </div>
+             <div id="controls">
+                <div id="remainTime" class="display-remain-time">00:30</div>
+                <div class="row">
+                   <div class="column">
+                      <button class="btnAction" id="btnRestart"><span class="mdi mdi-restart"></span></button>
+                   </div>
+                   <div class="column">
+                      <button class="play" id="pause"></button>
+                   </div>
+                   <div class="column">
+                      <button class="btnAction" id="btnStop"><span class="mdi mdi-stop"></span></button>
+                   </div>
+                </div>
+             </div>
+          </div>
+      <dialog class="mdl-dialog" id="timeTable">
+         <h4 class="mdl-dialog__title" id="titleMeeting"></h4>
+         <div class="mdl-dialog__content">
+            <div>
+                <button type="button" class="btnPopUp"><span class="mdi mdi-check-box-outline"></span></button>
+                <button type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
+                <button type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
+                <button type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
+                <button type="button" class="btnPopUp"><span class="mdi mdi-trash-can"></span></button>
+            </div>
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Speaker</th>
+                        <th class="mdl-data-table__cell--non-numeric">Speech type</th>
+                        <th class="mdl-data-table__cell--non-numeric">Time</th>
+                    </tr>
+                </thead>
+                <tbody id="speakers">
+<!--                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Edgar</td>
+                        <td class="mdl-data-table__cell--non-numeric">4-6 min (Ice-breaker)</td>
+                        <td class="mdl-data-table__cell--non-numeric">00:05:15</td>
+                    </tr>-->
+                </tbody>
+            </table>
+         </div>
+         <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close">Close</button>
+         </div>
+      </dialog>
+      <script src="js/jquery-3.3.1.slim.min.js"></script>
+      <script src="js/db/dbHandler.js"></script>
+      <script src="js/db/customDBActions.js"></script>
+      <script src="js/genericActions.js"></script>
+      <script src="js/timer.js"></script>
+   </body>
+</html>
