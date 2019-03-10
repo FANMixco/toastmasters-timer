@@ -247,8 +247,8 @@ function changeEventHandler(event) {
         update(wholeTime, wholeTime); //refreshes progress bar
         displayTimeLeft(wholeTime);        
     }
-    else
-        dialogCustomTimes.showModal()
+    //else
+    //    dialogCustomTimes.showModal()
 }
 
 function startBeep() {
