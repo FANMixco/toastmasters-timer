@@ -8,6 +8,8 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnBeep = document.getElementById('btnBeep'),
       btnVibrate = document.getElementById('btnVibrate'),
       btnClap = document.getElementById('btnClap'),
+      btnDelete = document.getElementById('btnDelete'),
+      btnInvert = document.getElementById('btnInvert'),
       imgClap = document.getElementById('imgClap'),
       dialogTimeTable = document.getElementById('timeTable'),
       dialogCustomTimes = document.getElementById('customTimes'),
@@ -15,9 +17,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
       cmbSpeechType = document.getElementById('cmbSpeechType'),
       remainTime = document.getElementById('remainTime'),
       titleMeeting = document.getElementById('titleMeeting'),
-      divSpeaker = document.getElementById('divSpeaker'),
-      btnDelete = document.getElementById('btnDelete'),
-      btnInvert = document.getElementById('btnInvert');
+      divSpeaker = document.getElementById('divSpeaker');
 
 let wholeTime = 30,
 	selected = -1,
@@ -211,7 +211,6 @@ function pauseTimer(event) {
     if (minimum === 0 && maximum === 0 && average === 0) return;
 
     btnInvert.disabled = true;
-    btnRestart.disabled = true;
     
 	if (isStarted === false) {
 		timer(wholeTime);
@@ -229,6 +228,8 @@ function pauseTimer(event) {
 		clearInterval(intervalTimer);
 		isPaused = isPaused ? false : true;
 	}
+    
+    btnRestart.disabled = !isPaused;
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
@@ -362,7 +363,6 @@ function setClappingImg() {
 }
 
 function invertColors() {
-    console.log('invertColors');
     if (selectedColor === 1)
         $('body').css('filter', 'invert(100%)');        
     else
@@ -370,34 +370,28 @@ function invertColors() {
 	document.body.style.background = lastColor;
 }
 
-btnPause.addEventListener('click', pauseTimer);
-
-btnRestart.addEventListener('click', event => {
-    if (minimum === 0 && maximum === 0 && average === 0){
-        return;
-        resetState();
-    }
-    stopClapping();
-    
-	maximum = 30;
-	basicReset();
-
-	wholeTime = 0; // manage this to set the whole time
-	maximum = 0;
-	minimum = 0;
-	average = 0;
-});
-
-btnStop.addEventListener('click', event => {
+function storeTime(isTimeStored){
     if (minimum === 0 && maximum === 0 && average === 0) return;
     stopClapping();
     
-    let counter = maximum - timeLeft;    
-    addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + 30)) || (counter < (minimum - 30))));
+    if (isTimeStored) {
+        let counter = maximum - timeLeft;
+        addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + 30)) || (counter < (minimum - 30))));
+    }
         
-    maximum = times[selected][2]
+    maximum = times[selected][2];
 	basicReset();
 	wholeTime = maximum;
+}
+
+btnPause.addEventListener('click', pauseTimer);
+
+btnRestart.addEventListener('click', event => {
+    storeTime(false);
+});
+
+btnStop.addEventListener('click', event => {
+    storeTime(true);
 });
 
 btnChampion.addEventListener('click', event => {
