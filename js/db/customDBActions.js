@@ -21,6 +21,7 @@ function countTimetable() {
     let transaction = db.transaction(["timeTable"], "readonly").objectStore("timeTable").count();
     transaction.onsuccess = function () {
         if (transaction.result > 0) {
+            printTable();
             dialogTimeTable.showModal();
         }
         else {
@@ -30,7 +31,7 @@ function countTimetable() {
 }
 
 function printTable() {
-    $("#tBodyResults").empty();
+    $("#speakers").empty();
     results = [];
 
     let transaction = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").openCursor();
@@ -38,13 +39,27 @@ function printTable() {
     transaction.onsuccess = function (evt) {
         let cursor = evt.target.result;
         if (cursor) {
+            //console.log(cursor.value.time);
             let defaultColor = "white";
-            if (cursor.value.lastColor === "yellow" || cursor.value.lastColor === "black" || cursor.value.lastColor === "white")
+            if (cursor.value.lastColor === "yellow" || cursor.value.lastColor === "black" || cursor.value.lastColor === "white" || cursor.value.lastColor === "red" || cursor.value.lastColor === "green")
                 defaultColor = "black";
 
             let tempColor = cursor.value.lastColor;
             if (tempColor === "black")
                 tempColor = "white";
+            
+            switch (tempColor)
+            {
+                case "green":
+                    tempColor = "#60ad5e";
+                    break;
+                case "yellow":
+                    tempColor = "#ffeb3b";
+                    break;
+                case "red":
+                    tempColor = "#e53935";
+                    break;
+            }
 
             let fT = getSeconds(cursor.value.time);
             let mT = getSeconds(cursor.value.min);
@@ -61,14 +76,14 @@ function printTable() {
 
             results.push({ member: cursor.value.member, role: cursor.value.role, min: cursor.value.min, opt: cursor.value.opt, max: cursor.value.max, time: cursor.value.time, lastColor: cursor.value.lastColor, disqualified: cursor.value.disqualified });
 
-            $("#tBodyResults").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel" style="display:none"><input id="chk${cursor.value.id}" class="chkDel" type="checkbox" /></td><td>${cursor.value.member}</td><td>${cursor.value.role}</td><td style="text-align:center">${cursor.value.time}</td></tr>`);
+            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric" style="display:none"><input id="chk${cursor.value.id}" class="chkDel mdl-data-table__cell--non-numeric" type="checkbox" /></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
             cursor.continue();
-        } else {
+        } /*else {
             $("#divResults").modal().on('shown.bs.modal', function (w) {
                 resizeModal();
                 w.stopPropagation();
             });
-        }
+        }*/
     };
 }
 

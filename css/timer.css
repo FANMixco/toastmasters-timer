@@ -198,13 +198,24 @@ body {
     font-size: 3em;
 }
 
-.mdl-dialog{
+#timeTable {
     width: 95%!important;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #imgClap{
     margin-top: -8px;
     width: 36px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 /*

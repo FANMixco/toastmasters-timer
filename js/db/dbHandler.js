@@ -52,7 +52,7 @@ function clearTimetable() {
 
 //This function is for verifying if it's the current meeting or a new one
 function isNewMeeting() {
-    let currentDate = (new Date).toString("yyyy/MM/dd");
+    let currentDate = moment((new Date())).format("YYYY/MM/DD");
     if (getLocalStorageValue("meetingDate") === null) {
         setLocalStorage("meetingDate", currentDate);
         return true;
@@ -73,8 +73,8 @@ function addNewTime(member, role, min, opt, max, time, lastColor, disqualified) 
 }
 
 function restoreData() {
-    if ((new Date).toString("yyyy/MM/dd") === getLocalStorageValue("backUpDate")) {
-        $.each(JSON.parse("[" + getLocalStorageValue("backUpTT") + "]"), function (i, item) {
+    if (moment((new Date())).format("YYYY/MM/DD") === getLocalStorageValue("backUpDate")) {
+        $.each(JSON.parse(`[${getLocalStorageValue("backUpTT")}]`), function (i, item) {
             addNewTime(item.member, item.role, item.min, item.opt, item.max, item.time, item.lastColor, item.disqualified);
         });
     }
@@ -90,7 +90,7 @@ function saveData() {
             data.push(JSON.stringify(cursor.value));
             cursor.continue();
         } else {
-            setLocalStorage("backUpDate", (new Date).toString("yyyy/MM/dd"));
+            setLocalStorage("backUpDate", moment((new Date())).format("YYYY/MM/DD"));
             setLocalStorage("backUpTT", data);
         }
     };

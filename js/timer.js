@@ -3,13 +3,19 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnPause = document.getElementById('pause'),
       btnRestart = document.getElementById('btnRestart'),
       btnStop = document.getElementById('btnStop'),
-      btnTimeTable = document.querySelector('#btnTimetable'),
-      btnChampion = document.querySelector('#btnChampion'),
-      btnBeep = document.querySelector('#btnBeep'),
-      btnVibrate = document.querySelector('#btnVibrate'),
-      btnClap = document.querySelector('#btnClap'),
-      imgClap = document.querySelector('#imgClap'),
-      dialogTimeTable = document.getElementById('timeTable');
+      btnTimeTable = document.getElementById('btnTimetable'),
+      btnChampion = document.getElementById('btnChampion'),
+      btnBeep = document.getElementById('btnBeep'),
+      btnVibrate = document.getElementById('btnVibrate'),
+      btnClap = document.getElementById('btnClap'),
+      imgClap = document.getElementById('imgClap'),
+      dialogTimeTable = document.getElementById('timeTable'),
+      dialogCustomTimes = document.getElementById('customTimes'),
+      txtSpeaker = document.getElementById('txtSpeaker'),
+      cmbSpeechType = document.getElementById('cmbSpeechType'),
+      remainTime = document.getElementById('remainTime'),
+      titleMeeting = document.getElementById('titleMeeting'),
+      divSpeaker = document.getElementById('divSpeaker');
 
 let wholeTime = 30,
 	selected = -1,
@@ -28,6 +34,13 @@ let isPaused = false,
     isClappingEnabled = false,
     isContestMode = false,
     clappingStarted = false;
+
+let dateFormat = "DD/MM/YYYY",
+    latestDB = "1.0",
+    currentDB = "1.0",
+    lastColor = "white";
+
+let countries = ["US", "FM", "MH", "PH"];
 
 let times = [
 	//QA (30s)
@@ -63,6 +76,8 @@ let progressBar = document.querySelector('.e-c-progress'),
 let intervalTimer;
 let timeLeft;
 
+var results = [];
+
 progressBar.style.strokeDasharray = length;
 
 function update(value, timePercent) {
@@ -77,6 +92,19 @@ update(wholeTime, wholeTime); //refreshes progress bar
 displayTimeLeft(wholeTime);
 
 checkMode();
+
+function setDateFormat() {
+    if (countries.includes(navigator.language.split('-')[1]))
+        dateFormat = "MM/DD/YYYY";
+}
+
+function getTimeStamp(seconds) {
+    return moment.utc(seconds*1000).format('HH:mm:ss');
+}
+
+function getTime() {
+    return remainTime.innerHTML;
+}
 
 function checkMode() {
 	if (isContestMode) {
@@ -131,9 +159,12 @@ function resetState() {
 	displayTimeLeft(wholeTime);
 	wholeTime = 0;
 	displayTimeLeft(wholeTime);
-	document.body.style.background = "white";
+    lastColor = "white";
+	document.body.style.background = lastColor;
     clappingStarted = false;
 	setInitialValues();
+    txtSpeaker.value = "";
+    divSpeaker.className = 'mdl-textfield mdl-js-textfield';
 }
 
 function timer(seconds) { //counts time, takes seconds
@@ -148,18 +179,22 @@ function timer(seconds) { //counts time, takes seconds
 			document.body.style.background = "#60ad5e";
             startBeep();
             startVibrate();
+            lastColor = "green";
 		} else if (counter >= average && counter < maximum) {
             yellow++;
 			document.body.style.background = "#ffeb3b";
             startBeep();
             startVibrate();
+            lastColor = "yellow";
 		} else if (counter >= maximum) {
             red++;
 			document.body.style.background = "#e53935";
             startBeep();
             startVibrate();
+            lastColor = "red";
 		}
         if (counter >= maximum + 30) {
+            lastColor = "black";
             if (!clappingStarted)
                 startClapping();
             clappingStarted = true;
@@ -201,14 +236,18 @@ function displayTimeLeft(timeLeft) { //displays time on the input
 
 function changeEventHandler(event) {
 	selected = hiddenSpeechType.value;
+    
+    if (selected != 11){
+        minimum = times[selected][0];
+        average = times[selected][1];
+        maximum = times[selected][2];
 
-	minimum = times[selected][0];
-	average = times[selected][1];
-	maximum = times[selected][2];
-
-	wholeTime = maximum;
-	update(wholeTime, wholeTime); //refreshes progress bar
-	displayTimeLeft(wholeTime);
+        wholeTime = maximum;
+        update(wholeTime, wholeTime); //refreshes progress bar
+        displayTimeLeft(wholeTime);        
+    }
+    else
+        dialogCustomTimes.showModal()
 }
 
 function startBeep() {
@@ -275,30 +314,6 @@ function setContestMode() {
     setLocalStorage("isContestMode", isContestMode);
 }
 
-btnPause.addEventListener('click', pauseTimer);
-
-btnRestart.addEventListener('click', event => {
-    if (minimum === 0 && maximum === 0 && average === 0) return;
-    stopClapping();
-    
-	maximum = 30;
-	basicReset();
-
-	wholeTime = 0; // manage this to set the whole time
-	maximum = 0;
-	minimum = 0;
-	average = 0;
-});
-
-btnStop.addEventListener('click', event => {
-    if (minimum === 0 && maximum === 0 && average === 0) return;
-    stopClapping();
-        
-    maximum = times[selected][2]
-	basicReset();
-	wholeTime = maximum;
-});
-
 function setContestImg() {
     if (!isContestMode)
         btnChampion.innerHTML = "<span class='mdi mdi-trophy-broken'></span>";
@@ -326,6 +341,36 @@ function setClappingImg() {
     else
         imgClap.src = "img/clapping-hands.svg";
 }
+
+btnPause.addEventListener('click', pauseTimer);
+
+btnRestart.addEventListener('click', event => {
+    if (minimum === 0 && maximum === 0 && average === 0){
+        return;
+        resetState();
+    }
+    stopClapping();
+    
+	maximum = 30;
+	basicReset();
+
+	wholeTime = 0; // manage this to set the whole time
+	maximum = 0;
+	minimum = 0;
+	average = 0;
+});
+
+btnStop.addEventListener('click', event => {
+    if (minimum === 0 && maximum === 0 && average === 0) return;
+    stopClapping();
+    
+    let counter = maximum - timeLeft;    
+    addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + 30)) || (counter < (minimum - 30))));
+        
+    maximum = times[selected][2]
+	basicReset();
+	wholeTime = maximum;
+});
 
 btnChampion.addEventListener('click', event => {
     isContestMode = !isContestMode;
@@ -356,12 +401,20 @@ if (!dialogTimeTable.showModal) {
 	dialogPolyfill.registerDialog(dialogTimeTable);
 }
 
+if (!dialogCustomTimes.showModal) {
+	dialogPolyfill.registerDialog(dialogCustomTimes);
+}
+
 btnTimeTable.addEventListener('click', function () {
     countTimetable();
 });
 
 dialogTimeTable.querySelector('.close').addEventListener('click', function () {
 	dialogTimeTable.close();
+});
+
+dialogCustomTimes.querySelector('.close').addEventListener('click', function () {
+	dialogCustomTimes.close();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -380,3 +433,8 @@ setContestImg();
 setVibrateImg();
 setBeepImg();
 setClappingImg();
+
+setDateFormat();
+initializeDB(currentDB, latestDB);
+
+titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format("YYYY/MM/DD")}`;
