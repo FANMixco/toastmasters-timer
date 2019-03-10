@@ -192,6 +192,8 @@
     
 body {
     text-align: center;
+    overflow-y: hidden; // hide vertical
+    overflow-x: hidden; // hide horizontal
 }
 
 #options button{
@@ -210,12 +212,8 @@ body {
     width: 36px;
 }
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+#divSpeakers{
+    overflow-y: auto; // hide vertical    
 }
 
 /*

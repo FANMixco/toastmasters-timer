@@ -15,7 +15,8 @@ const displayOutput = document.querySelector('.display-remain-time'),
       cmbSpeechType = document.getElementById('cmbSpeechType'),
       remainTime = document.getElementById('remainTime'),
       titleMeeting = document.getElementById('titleMeeting'),
-      divSpeaker = document.getElementById('divSpeaker');
+      divSpeaker = document.getElementById('divSpeaker'),
+      btnDelete = document.getElementById('btnDelete');
 
 let wholeTime = 30,
 	selected = -1,
@@ -407,6 +408,10 @@ if (!dialogCustomTimes.showModal) {
 
 btnTimeTable.addEventListener('click', function () {
     countTimetable();
+});
+
+btnDelete.addEventListener('click', function () {
+    deleteTimetable();
 });
 
 dialogTimeTable.querySelector('.close').addEventListener('click', function () {

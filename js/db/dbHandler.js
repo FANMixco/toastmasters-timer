@@ -66,10 +66,12 @@ function isNewMeeting() {
 }
 
 function addNewTime(member, role, min, opt, max, time, lastColor, disqualified) {
-	let objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").add({ member: member, role: role, min: min, opt: opt, max: max, time: time, lastColor: lastColor, disqualified: disqualified });
-	objectStoreRequest.onsuccess = function(event) {
-		saveData();
-	};
+    if (time !== 'Invalid date') {
+        let objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").add({ member: member, role: role, min: min, opt: opt, max: max, time: time, lastColor: lastColor, disqualified: disqualified });
+        objectStoreRequest.onsuccess = function(event) {
+            saveData();
+        };
+    }
 }
 
 function restoreData() {

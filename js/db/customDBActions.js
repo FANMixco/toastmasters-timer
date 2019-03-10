@@ -78,13 +78,18 @@ function printTable() {
 
             $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric" style="display:none"><input id="chk${cursor.value.id}" class="chkDel mdl-data-table__cell--non-numeric" type="checkbox" /></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
             cursor.continue();
-        } /*else {
-            $("#divResults").modal().on('shown.bs.modal', function (w) {
-                resizeModal();
-                w.stopPropagation();
-            });
-        }*/
+        } else
+            if ($('#timeTable').height() >= document.body.clientHeight * 0.9)
+                document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     };
+}
+
+function deleteTimetable() {
+    var objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").clear();
+	objectStoreRequest.onsuccess = function(event) {
+		saveData();
+        dialogTimeTable.close();
+	};
 }
 
 function deleteByIDs(ids) {

@@ -85,18 +85,20 @@
                 <button type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
                 <button type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
                 <button type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
-                <button type="button" class="btnPopUp"><span class="mdi mdi-trash-can"></span></button>
+                <button id="btnDelete" type="button" class="btnPopUp"><span class="mdi mdi-trash-can"></span></button>
             </div>
-            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                <thead>
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Speaker</th>
-                        <th class="mdl-data-table__cell--non-numeric">Speech type</th>
-                        <th class="mdl-data-table__cell--non-numeric">Time</th>
-                    </tr>
-                </thead>
-                <tbody id="speakers"></tbody>
-            </table>
+             <div id="divSpeakers">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">Speaker</th>
+                            <th class="mdl-data-table__cell--non-numeric">Speech type</th>
+                            <th class="mdl-data-table__cell--non-numeric">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="speakers"></tbody>
+                </table>
+             </div>
          </div>
          <div class="mdl-dialog__actions">
             <button type="button" class="mdl-button close">Close</button>
