@@ -76,7 +76,7 @@ function printTable() {
 
             results.push({ member: cursor.value.member, role: cursor.value.role, min: cursor.value.min, opt: cursor.value.opt, max: cursor.value.max, time: cursor.value.time, lastColor: cursor.value.lastColor, disqualified: cursor.value.disqualified });
 
-            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input"></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
+            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
             cursor.continue();
         } else {
             componentHandler.upgradeAllRegistered();
@@ -87,19 +87,29 @@ function printTable() {
 }
 
 function deleteTimetable() {
-    var objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").clear();
+	deleteByIDs();
+    /*var objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").clear();
 	objectStoreRequest.onsuccess = function(event) {
 		saveData();
         dialogTimeTable.close();
-	};
+	};*/
 }
 
-function deleteByIDs(ids) {
+function deleteByIDs() {
+	let ids = getSelectedIDs();
     let transaction = db.transaction(["timeTable"], "readwrite");
     for (i = 0; i < ids.length; i++) {
-        transaction.objectStore("timeTable").delete(ids[i]);
-        $(`#tr${ids[i]}`).hide();
+		let tmpObjectStoreRequest = transaction.objectStore("timeTable").delete(ids[i]);
+		tmpObjectStoreRequest.onsuccess = function(event) {
+			$(`#tr${ids[i]}`).hide();
+		};
     }
-    saveData();
-    return transaction.objectStore("timeTable").count();
+    let objectStoreRequest = transaction.objectStore("timeTable").count();
+	objectStoreRequest.onsuccess = function(event) {
+		saveData();
+		if (transaction.result === 0) {
+            console.log('No data');		
+			dialogTimeTable.close();
+		}
+	};	
 }
