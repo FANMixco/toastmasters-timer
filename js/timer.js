@@ -12,11 +12,23 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnInvert = document.getElementById('btnInvert'),
       btnMultiple = document.getElementById('btnMultiple'),
       btnYesChallenge = document.getElementById('btnYesChallenge'),
+      btnYesConfirm = document.getElementById('btnYesConfirm'),
+      btnSave = document.getElementById('btnSave'),
       imgClap = document.getElementById('imgClap'),
       dialogTimeTable = document.getElementById('timeTable'),
       dialogWelcome = document.getElementById('welcomeDialog'),
+      dialogConfirm = document.getElementById('confirmDialog'),
       dialogCustomTimes = document.getElementById('customTimes'),
       txtSpeaker = document.getElementById('txtSpeaker'),
+      minH = document.getElementById('minH'),
+      minM = document.getElementById('minM'),
+      minS = document.getElementById('minS'),
+      avgH = document.getElementById('avgH'),
+      avgM = document.getElementById('avgM'),
+      avgS = document.getElementById('avgS'),
+      maxH = document.getElementById('maxH'),
+      maxM = document.getElementById('maxM'),
+      maxS = document.getElementById('maxS'),
       cmbSpeechType = document.getElementById('cmbSpeechType'),
       remainTime = document.getElementById('remainTime'),
       titleMeeting = document.getElementById('titleMeeting'),
@@ -38,7 +50,8 @@ let isPaused = false,
     isBeepEnabled = false,
     isVibrateEnabled = false,
     isClappingEnabled = false,
-    isContestMode = false
+    isContestMode = false,
+    isCustom = true,
     isFirstRun = true,
     clappingStarted = false,
     multipleEnabled = false;
@@ -266,9 +279,12 @@ function changeEventHandler(event) {
         update(wholeTime, wholeTime); //refreshes progress bar
         displayTimeLeft(wholeTime);        
     }
-    else
-        showSnackbar('Under construction');
-    //    dialogCustomTimes.showModal()
+    else{
+        //$("#divMinH,#divMinM,#divMinS").addClass("mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height");
+        componentHandler.upgradeAllRegistered();
+        //showSnackbar('Under construction');
+        dialogCustomTimes.showModal();
+    }
 }
 
 function startBeep() {
@@ -401,10 +417,50 @@ function storeTime(isTimeStored){
         let counter = maximum - timeLeft;
         addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + 30)) || (counter < (minimum - 30))));
     }
-        
-    maximum = times[selected][2];
+     
+    if (!isCustom)
+        maximum = times[selected][2];
+    else
+        maximum = getMaxCustom();
+    
 	basicReset();
 	wholeTime = maximum;
+}
+
+function getMinCustom() {
+    let intMinH = 0,
+        intMinM = 0,
+        intMinS = 0;
+    
+    if (minH.value) intMinH = parseInt(minH.value);
+    if (minM.value) intMinM = parseInt(minM.value);
+    if (minS.value) intMinS = parseInt(minS.value);
+    
+    return intMinH * 3600 + intMinM * 60 + intMinS;
+}
+
+function getAvgCustom() {
+    let intAvgH = 0,
+        intAvgM = 0,
+        intAvgS = 0;
+    
+    if (avgH.value) intAvgH = parseInt(avgH.value);
+    if (avgM.value) intAvgM = parseInt(avgM.value);
+    if (avgS.value) intAvgS = parseInt(avgS.value);
+    
+    return intAvgH * 3600 + intAvgM * 60 + intAvgS;
+}
+
+function getMaxCustom() {
+    let intMaxH = 0,
+        intMaxM = 0,
+        intMaxS = 0;
+    
+    if (maxH.value) intMaxH = parseInt(maxH.value);
+    if (maxM.value) intMaxM = parseInt(maxM.value);
+    if (maxS.value) intMaxS = parseInt(maxS.value);
+    
+    return intMaxH * 3600 + intMaxM * 60 + intMaxS;
 }
 
 btnPause.addEventListener('click', pauseTimer);
@@ -442,6 +498,27 @@ btnClap.addEventListener('click', event => {
     setClapping();
 });
 
+btnSave.addEventListener('click', event => {
+    let minTime = getMinCustom(),
+        avgTime = getAvgCustom(),
+        maxTime = getMaxCustom();
+    
+    if (minTime >= avgTime)        
+        showSnackbar('Minimum time cannot be greater than or equal to optimal time.');
+    else if (minTime >= maxTime)
+        showSnackbar('Minimum time cannot be greater than or equal to maximum time.');
+    else if (avgTime >= maxTime)
+        showSnackbar('Optimal time cannot be greater than or equal to maximum time.');
+    else {
+        isCustom = true;
+        minimum = minTime;
+        average = avgTime;
+        maximum = maxTime;
+        wholeTime = maximum;
+	    dialogCustomTimes.close();
+    }
+});
+
 if (!dialogTimeTable.showModal) {
 	dialogPolyfill.registerDialog(dialogTimeTable);
 }
@@ -452,6 +529,11 @@ if (!dialogCustomTimes.showModal) {
 
 if (!dialogWelcome.showModal) {
 	dialogPolyfill.registerDialog(dialogWelcome);
+}
+
+
+if (!dialogConfirm.showModal) {
+	dialogPolyfill.registerDialog(dialogConfirm);
 }
 
 btnTimeTable.addEventListener('click', countTimetable);
@@ -467,6 +549,8 @@ btnYesChallenge.addEventListener('click', function () {
     isFirstRun = false;
     setFirstRun();
 });
+
+btnYesConfirm.addEventListener('click', deleteByIDs);
 
 btnInvert.addEventListener('click', function () {
     if (selectedColor === 0)
@@ -499,6 +583,10 @@ dialogTimeTable.querySelector('.close').addEventListener('click', function () {
 
 dialogCustomTimes.querySelector('.close').addEventListener('click', function () {
 	dialogCustomTimes.close();
+});
+
+dialogConfirm.querySelector('.close').addEventListener('click', function () {
+	dialogConfirm.close();
 });
 
 dialogWelcome.querySelector('.close').addEventListener('click', function () {

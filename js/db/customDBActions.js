@@ -86,7 +86,7 @@ function printTable() {
 }
 
 function deleteTimetable() {
-	deleteByIDs();
+    dialogConfirm.showModal();
 }
 
 function deleteByIDs() {
@@ -104,4 +104,5 @@ function deleteByIDs() {
         }
 		saveData();
 	};	
+	dialogConfirm.close();
 }

@@ -149,6 +149,13 @@
   clear: both;
 }
 
+/* Clear floats after the columns */
+.rowFull:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .contestMode {
 	transform: scale(2);
     transform-origin: 25% 25% 0px;
@@ -190,6 +197,11 @@
     margin: auto;
 }
 
+.rowFull {
+    padding-left: 5px;
+    margin: auto;
+}
+
 .hiddenObject {
     display: none;
 }
@@ -200,6 +212,11 @@
 
 .chkOpt{
     padding-left: 0px!important;
+}
+
+.hCustom {
+    margin: 24px 0 5px;
+    padding-top: 5px;
 }
 
 body {
@@ -226,6 +243,33 @@ body {
 
 #divSpeakers{
     overflow-y: auto;
+}
+
+#fakeTxt {
+    width: 0px;
+    height: 0px;
+    outline: none;
+    border: transparent;
+}
+
+#fakeTxt:focus {
+    outline: none; 
+}
+
+#fakeContainer {
+    position: absolute;
+}
+
+#customMin {
+    background: #60ad5e;
+}
+
+#customAvg {
+    background: #ffeb3b;
+}
+
+#customMax {
+    background: #e53935;
 }
 
 /*
