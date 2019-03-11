@@ -7,7 +7,7 @@ function dbConn() {
     request.onerror = function (evt) {
         console.log("Database error code: " + evt.target.errorCode);
     };
-    request.onsuccess = function (evt) {
+    request.onsuccess = function () {
         db = request.result;
         //Clear all data from the previous meeting
         if (isNewMeeting())
@@ -45,7 +45,7 @@ function initializeDB(currentVersion, latestVersion) {
 
 function clearTimetable() {
     var objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").clear();
-	objectStoreRequest.onsuccess = function(event) {
+	objectStoreRequest.onsuccess = function() {
 		saveData();
 	};
 }

@@ -24,9 +24,8 @@ function countTimetable() {
             printTable();
             dialogTimeTable.showModal();
         }
-        else {
-            console.log('No data');
-        }
+        else
+            showSnackbar('No speakers to display');
     };
 }
 
@@ -88,28 +87,21 @@ function printTable() {
 
 function deleteTimetable() {
 	deleteByIDs();
-    /*var objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").clear();
-	objectStoreRequest.onsuccess = function(event) {
-		saveData();
-        dialogTimeTable.close();
-	};*/
 }
 
 function deleteByIDs() {
 	let ids = getSelectedIDs();
     let transaction = db.transaction(["timeTable"], "readwrite");
     for (i = 0; i < ids.length; i++) {
-		let tmpObjectStoreRequest = transaction.objectStore("timeTable").delete(ids[i]);
-		tmpObjectStoreRequest.onsuccess = function(event) {
-			$(`#tr${ids[i]}`).hide();
-		};
+		transaction.objectStore("timeTable").delete(ids[i]);
+		$(`#tr${ids[i]}`).hide();
     }
     let objectStoreRequest = transaction.objectStore("timeTable").count();
-	objectStoreRequest.onsuccess = function(event) {
+	objectStoreRequest.onsuccess = function() {
+		if (objectStoreRequest.result === 0) {
+            showSnackbar('No speakers to display');
+            dialogTimeTable.close();
+        }
 		saveData();
-		if (transaction.result === 0) {
-            console.log('No data');		
-			dialogTimeTable.close();
-		}
 	};	
 }

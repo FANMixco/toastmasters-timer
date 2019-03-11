@@ -110,6 +110,17 @@
          </div>
       </dialog>
        
+      <dialog class="mdl-dialog" id="welcomeDialog">
+         <h4 class="mdl-dialog__title">Welcome!</h4>
+         <div class="mdl-dialog__content">
+            <p>Your journey to be the next <strong>Champion 🏆</strong> has started and this timer can help you while hiding the time, you can always turn it on/off, but remember during the finals, there are no extra hints!<br /><h5><strong>Are you ready for the challenge?</strong></h5></p>
+         </div>
+         <div class="mdl-dialog__actions">
+            <button id="btnYesChallenge" type="button" class="mdl-button">Yes</button>
+            <button type="button" class="mdl-button close">No</button>
+         </div>
+      </dialog>
+
       <dialog class="mdl-dialog" id="customTimes">
          <div class="mdl-dialog__content">
             <div id="customMin">
@@ -126,6 +137,11 @@
             <button type="button" class="mdl-button close">Close</button>
          </div>
       </dialog>
+
+      <div id="snackbarMsg" class="mdl-js-snackbar mdl-snackbar">
+         <div class="mdl-snackbar__text"></div>
+         <button class="mdl-snackbar__action" type="button"></button>
+       </div>
       <script src="js/jquery-3.3.1.slim.min.js"></script>
       <script src="js/moment.min.js"></script>
       <script src="js/db/dbHandler.js"></script>

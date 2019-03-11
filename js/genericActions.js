@@ -18,3 +18,11 @@ function getSeconds(hms) {
     // minutes are worth 60 seconds. Hours are worth 60 minutes.
     return (+a[0]) * 3600 + (+a[1]) * 60 + (+a[2]);
 }
+
+function showSnackbar(msg) {
+    var data = {
+        message: msg,
+        timeout: 1500
+    };
+    snackbarMsg.MaterialSnackbar.showSnackbar(data);
+}

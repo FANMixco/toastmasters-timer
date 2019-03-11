@@ -11,14 +11,17 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnDelete = document.getElementById('btnDelete'),
       btnInvert = document.getElementById('btnInvert'),
       btnMultiple = document.getElementById('btnMultiple'),
+      btnYesChallenge = document.getElementById('btnYesChallenge'),
       imgClap = document.getElementById('imgClap'),
       dialogTimeTable = document.getElementById('timeTable'),
+      dialogWelcome = document.getElementById('welcomeDialog'),
       dialogCustomTimes = document.getElementById('customTimes'),
       txtSpeaker = document.getElementById('txtSpeaker'),
       cmbSpeechType = document.getElementById('cmbSpeechType'),
       remainTime = document.getElementById('remainTime'),
       titleMeeting = document.getElementById('titleMeeting'),
-      divSpeaker = document.getElementById('divSpeaker');
+      divSpeaker = document.getElementById('divSpeaker'),
+      snackbarMsg = document.getElementById('snackbarMsg');
 
 let wholeTime = 30,
 	selected = -1,
@@ -35,7 +38,8 @@ let isPaused = false,
     isBeepEnabled = false,
     isVibrateEnabled = false,
     isClappingEnabled = false,
-    isContestMode = false,
+    isContestMode = false
+    isFirstRun = true,
     clappingStarted = false,
     multipleEnabled = false;
 
@@ -263,27 +267,27 @@ function changeEventHandler(event) {
         displayTimeLeft(wholeTime);        
     }
     else
-        console.log('custom');
+        showSnackbar('Under construction');
     //    dialogCustomTimes.showModal()
 }
 
 function startBeep() {
-    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1)) console.log('beep');
+    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar('Under construction');
         //CSharp.Beep();
 }
 
 function startVibrate() {
-    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1)) console.log('vibrate');
+    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar('Under construction');
         //CSharp.Vibrate();
 }
 
 function startClapping() {
-    if (isClappingEnabled) console.log('clap');
+    if (isClappingEnabled) showSnackbar('Under construction');
         //CSharp.StartClapping();
 }
 
 function stopClapping() {
-    console.log('stop clapping');
+    showSnackbar('Under construction');
     //CSharp.StopClapping();
 }
 
@@ -315,6 +319,13 @@ function getContestMode() {
         setContestMode();
 }
 
+function getFirstRun() {
+    if (getLocalStorageValue("isFirstRun") !== null)
+        isFirstRun = (getLocalStorageValue("isFirstRun") === 'true');
+    else
+        setFirstRun();
+}
+
 function getSelectedColor() {
     if (getLocalStorageValue("selectedColor") !== null)
         selectedColor = parseInt(getLocalStorageValue("selectedColor"));
@@ -340,6 +351,10 @@ function setContestMode() {
 
 function setSelectedColor() {
     setLocalStorage("selectedColor", selectedColor);
+}
+
+function setFirstRun() {
+    setLocalStorage("isFirstRun", isFirstRun);
 }
 
 function setContestImg() {
@@ -435,9 +450,23 @@ if (!dialogCustomTimes.showModal) {
 	dialogPolyfill.registerDialog(dialogCustomTimes);
 }
 
+if (!dialogWelcome.showModal) {
+	dialogPolyfill.registerDialog(dialogWelcome);
+}
+
 btnTimeTable.addEventListener('click', countTimetable);
 
 btnDelete.addEventListener('click', deleteTimetable);
+
+btnYesChallenge.addEventListener('click', function () {
+    isContestMode = true;
+    setContestImg();
+    checkMode();
+    setContestMode();
+    dialogWelcome.close();
+    isFirstRun = false;
+    setFirstRun();
+});
 
 btnInvert.addEventListener('click', function () {
     if (selectedColor === 0)
@@ -472,6 +501,13 @@ dialogCustomTimes.querySelector('.close').addEventListener('click', function () 
 	dialogCustomTimes.close();
 });
 
+dialogWelcome.querySelector('.close').addEventListener('click', function () {
+    dialogWelcome.close();
+    isFirstRun = false;
+    setFirstRun();
+    showSnackbar('Remember there are no extra hints during the contests.');
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 	cmbSpeechType.onchange = changeEventHandler;
 }, false);
@@ -494,6 +530,7 @@ getVibrate();
 getClapping();
 getContestMode();
 getSelectedColor();
+getFirstRun();
 
 setContestImg();
 setVibrateImg();
@@ -508,6 +545,12 @@ lastColor = bgColors[selectedColor];
 invertColors();
 
 titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format(dateFormat)}`;
+
+if (isFirstRun) {
+    dialogWelcome.showModal();
+}
+
+checkMode();
 
 $(function(){
     $("#chkAll").change(function () {
