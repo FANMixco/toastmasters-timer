@@ -13,12 +13,14 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnMultiple = document.getElementById('btnMultiple'),
       btnYesChallenge = document.getElementById('btnYesChallenge'),
       btnYesConfirm = document.getElementById('btnYesConfirm'),
+      btnYesChanges = document.getElementById('btnYesChanges'),
       btnSave = document.getElementById('btnSave'),
       imgClap = document.getElementById('imgClap'),
       dialogTimeTable = document.getElementById('timeTable'),
       dialogWelcome = document.getElementById('welcomeDialog'),
       dialogConfirm = document.getElementById('confirmDialog'),
       dialogCustomTimes = document.getElementById('customTimes'),
+      dialogChanges = document.getElementById('changesDialog'),
       txtSpeaker = document.getElementById('txtSpeaker'),
       minH = document.getElementById('minH'),
       minM = document.getElementById('minM'),
@@ -462,6 +464,27 @@ function getMaxCustom() {
     return intMaxH * 3600 + intMaxM * 60 + intMaxS;
 }
 
+function saveChanges() {
+    let minTime = getMinCustom(),
+        avgTime = getAvgCustom(),
+        maxTime = getMaxCustom();
+    
+    if (minTime >= avgTime)        
+        showSnackbar('Minimum time cannot be greater than or equal to optimal time.');
+    else if (minTime >= maxTime)
+        showSnackbar('Minimum time cannot be greater than or equal to maximum time.');
+    else if (avgTime >= maxTime)
+        showSnackbar('Optimal time cannot be greater than or equal to maximum time.');
+    else {
+        isCustom = true;
+        minimum = minTime;
+        average = avgTime;
+        maximum = maxTime;
+        wholeTime = maximum;
+	    dialogCustomTimes.close();
+    }
+}
+
 btnPause.addEventListener('click', pauseTimer);
 
 btnRestart.addEventListener('click', event => {
@@ -498,28 +521,15 @@ btnClap.addEventListener('click', event => {
 });
 
 btnSave.addEventListener('click', event => {
-    let minTime = getMinCustom(),
-        avgTime = getAvgCustom(),
-        maxTime = getMaxCustom();
-    
-    if (minTime >= avgTime)        
-        showSnackbar('Minimum time cannot be greater than or equal to optimal time.');
-    else if (minTime >= maxTime)
-        showSnackbar('Minimum time cannot be greater than or equal to maximum time.');
-    else if (avgTime >= maxTime)
-        showSnackbar('Optimal time cannot be greater than or equal to maximum time.');
-    else {
-        isCustom = true;
-        minimum = minTime;
-        average = avgTime;
-        maximum = maxTime;
-        wholeTime = maximum;
-	    dialogCustomTimes.close();
-    }
+    saveChanges();
 });
 
 if (!dialogTimeTable.showModal) {
 	dialogPolyfill.registerDialog(dialogTimeTable);
+}
+
+if (!dialogChanges.showModal) {
+	dialogPolyfill.registerDialog(dialogChanges);
 }
 
 if (!dialogCustomTimes.showModal) {
@@ -561,6 +571,11 @@ btnInvert.addEventListener('click', function () {
     invertColors();
 });
 
+btnYesChanges.addEventListener('click', function () {
+    saveChanges();
+    dialogChanges.close();
+});
+
 btnMultiple.addEventListener('click', function () {
 	$(".mdl-js-checkbox").each(function () {
 		this.MaterialCheckbox.check();
@@ -581,11 +596,19 @@ dialogTimeTable.querySelector('.close').addEventListener('click', function () {
 });
 
 dialogCustomTimes.querySelector('.close').addEventListener('click', function () {
-	dialogCustomTimes.close();
+    if (getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0)
+        dialogChanges.showModal();
+    else
+        dialogCustomTimes.close();
 });
 
 dialogConfirm.querySelector('.close').addEventListener('click', function () {
 	dialogConfirm.close();
+});
+
+dialogChanges.querySelector('.close').addEventListener('click', function () {
+    dialogChanges.close();
+    dialogCustomTimes.close();
 });
 
 dialogWelcome.querySelector('.close').addEventListener('click', function () {
