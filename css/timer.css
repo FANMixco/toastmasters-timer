@@ -272,7 +272,23 @@ body {
     background: #e53935;
 }
 
+
 /*
+
+@media (min-height: 1200px) {
+	body {
+		transform: scale(2.25);
+        transform-origin: 50% 0% 0px;
+	}
+}
+
+@media (max-height: 1199px){
+	body {
+		background: red;
+		transform: scale(1.75);
+        transform-origin: 50% 0% 0px;
+	}
+}
 
 @media (min-height: 1200px){
 	body {

@@ -228,7 +228,10 @@ function timer(seconds) { //counts time, takes seconds
 }
 
 function pauseTimer(event) {
-    if (minimum === 0 && maximum === 0 && average === 0) return;
+    if (minimum === 0 && maximum === 0 && average === 0) {
+        showSnackbar('Please choose a time');
+        return;
+    }
 
     btnInvert.disabled = true;
     
@@ -279,12 +282,8 @@ function changeEventHandler(event) {
         update(wholeTime, wholeTime); //refreshes progress bar
         displayTimeLeft(wholeTime);        
     }
-    else{
-        //$("#divMinH,#divMinM,#divMinS").addClass("mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height");
-        componentHandler.upgradeAllRegistered();
-        //showSnackbar('Under construction');
+    else
         dialogCustomTimes.showModal();
-    }
 }
 
 function startBeep() {
