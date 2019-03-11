@@ -172,6 +172,7 @@ function resetState() {
     divSpeaker.className = 'mdl-textfield mdl-js-textfield';
     btnInvert.disabled = false;
     btnRestart.disabled = false;
+	btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
 }
 
 function timer(seconds) { //counts time, takes seconds
@@ -232,6 +233,11 @@ function pauseTimer(event) {
 	}
     
     btnRestart.disabled = !isPaused;
+	
+	if (btnRestart.disabled)
+		btnRestart.innerHTML = "<span class='mdi mdi-restart-off'></span>";
+	else
+		btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
@@ -447,9 +453,12 @@ btnMultiple.addEventListener('click', function () {
 	$(".mdl-js-checkbox").each(function () {
 		this.MaterialCheckbox.check();
 	});
-    if (!multipleEnabled)
+    if (!multipleEnabled) {
+		btnMultiple.innerHTML = "<span class='mdi mdi-checkbox-blank-outline'></span>";
         $(".tdDel,#thDel").show();
+	}
     else {
+		btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
         $(".tdDel,#thDel").hide();
     }
     multipleEnabled = !multipleEnabled;
