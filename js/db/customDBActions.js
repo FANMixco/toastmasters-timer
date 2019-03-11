@@ -10,9 +10,9 @@ function setDbConf() {
 
 function getSelectedIDs() {
 	let ids = [];
-	$("input.chkDel[type=checkbox]").each(function () {
-		if (this.checked)
-			ids.push(parseInt($(this).attr("id").replace("chk", "")));
+	$(".chkChoose").each(function () {
+		if ($(this).is('.is-checked'))
+			ids.push(parseInt($(this).find('input').attr("id").replace("chk", "")));
 	});
 	return ids;
 }
@@ -41,7 +41,7 @@ function printTable() {
         if (cursor) {
             //console.log(cursor.value.time);
             let defaultColor = "white";
-            if (cursor.value.lastColor === "yellow" || cursor.value.lastColor === "black" || cursor.value.lastColor === "white" || cursor.value.lastColor === "red" || cursor.value.lastColor === "green")
+            if (cursor.value.lastColor === "yellow" || cursor.value.lastColor === "black" || cursor.value.lastColor === "white")
                 defaultColor = "black";
 
             let tempColor = cursor.value.lastColor;
@@ -76,11 +76,13 @@ function printTable() {
 
             results.push({ member: cursor.value.member, role: cursor.value.role, min: cursor.value.min, opt: cursor.value.opt, max: cursor.value.max, time: cursor.value.time, lastColor: cursor.value.lastColor, disqualified: cursor.value.disqualified });
 
-            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric" style="display:none"><input id="chk${cursor.value.id}" class="chkDel mdl-data-table__cell--non-numeric" type="checkbox" /></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
+            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input"></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
             cursor.continue();
-        } else
+        } else {
+            componentHandler.upgradeAllRegistered();
             if ($('#timeTable').height() >= document.body.clientHeight * 0.9)
                 document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+        }
     };
 }
 

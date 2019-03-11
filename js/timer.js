@@ -35,7 +35,8 @@ let isPaused = false,
     isVibrateEnabled = false,
     isClappingEnabled = false,
     isContestMode = false,
-    clappingStarted = false;
+    clappingStarted = false,
+    multipleEnabled = false;
 
 let dateFormat = "DD/MM/YYYY",
     latestDB = "1.0",
@@ -485,3 +486,27 @@ lastColor = bgColors[selectedColor];
 invertColors();
 
 titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format("YYYY/MM/DD")}`;
+
+$(function(){
+    $("#chkAll").change(function () {
+        $(".mdl-js-checkbox").each(function () {
+            if ($("#lblAll").is('.is-checked'))
+                this.MaterialCheckbox.check();
+            else
+                this.MaterialCheckbox.uncheck();
+        });
+    });
+    
+    $("#btnMultiple").click(function () {
+        if (!multipleEnabled) {
+            $("#btnDelete").hide();
+            $(".tdDel,#thDel").show();
+        }
+        else {
+            $("#btnDelete").show();
+            $(".tdDel,#thDel").hide();
+            $('input:checkbox').prop("checked", false);
+        }
+        multipleEnabled = !multipleEnabled;
+    });
+});

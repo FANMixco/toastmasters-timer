@@ -81,7 +81,7 @@
          <h4 class="mdl-dialog__title" id="titleMeeting"></h4>
          <div class="mdl-dialog__content">
             <div>
-                <button type="button" class="btnPopUp"><span class="mdi mdi-check-box-outline"></span></button>
+                <button id="btnMultiple" type="button" class="btnPopUp"><span class="mdi mdi-check-box-outline"></span></button>
                 <button type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
                 <button type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
                 <button type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
@@ -91,6 +91,11 @@
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                     <thead>
                         <tr>
+                            <th id="thDel" class="mdl-data-table__cell--non-numeric hiddenObject minSizeCol">
+                                <label id="lblAll" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect chkOpt" for="chkAll">
+                                    <input type="checkbox" id="chkAll" class="mdl-checkbox__input">
+                                </label>
+                            </th>
                             <th class="mdl-data-table__cell--non-numeric">Speaker</th>
                             <th class="mdl-data-table__cell--non-numeric">Speech type</th>
                             <th class="mdl-data-table__cell--non-numeric">Time</th>
