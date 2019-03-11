@@ -499,13 +499,14 @@ $(function(){
     
     $("#btnMultiple").click(function () {
         if (!multipleEnabled) {
-            $("#btnDelete").hide();
             $(".tdDel,#thDel").show();
         }
         else {
-            $("#btnDelete").show();
             $(".tdDel,#thDel").hide();
-            $('input:checkbox').prop("checked", false);
+            
+            $(".mdl-js-checkbox").each(function () {
+                this.MaterialCheckbox.uncheck();
+            });
         }
         multipleEnabled = !multipleEnabled;
     });
