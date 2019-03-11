@@ -10,6 +10,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnClap = document.getElementById('btnClap'),
       btnDelete = document.getElementById('btnDelete'),
       btnInvert = document.getElementById('btnInvert'),
+      btnMultiple = document.getElementById('btnMultiple'),
       imgClap = document.getElementById('imgClap'),
       dialogTimeTable = document.getElementById('timeTable'),
       dialogCustomTimes = document.getElementById('customTimes'),
@@ -442,6 +443,19 @@ btnInvert.addEventListener('click', function () {
     invertColors();
 });
 
+btnMultiple.addEventListener('click', function () {
+    if (!multipleEnabled)
+        $(".tdDel,#thDel").show();
+    else {
+        $(".tdDel,#thDel").hide();
+
+        $(".mdl-js-checkbox").each(function () {
+            this.MaterialCheckbox.uncheck();
+        });
+    }
+    multipleEnabled = !multipleEnabled;
+});
+
 dialogTimeTable.querySelector('.close').addEventListener('click', function () {
 	dialogTimeTable.close();
 });
@@ -485,7 +499,7 @@ initializeDB(currentDB, latestDB);
 lastColor = bgColors[selectedColor];
 invertColors();
 
-titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format("YYYY/MM/DD")}`;
+titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format(dateFormat)}`;
 
 $(function(){
     $("#chkAll").change(function () {
@@ -495,19 +509,5 @@ $(function(){
             else
                 this.MaterialCheckbox.uncheck();
         });
-    });
-    
-    $("#btnMultiple").click(function () {
-        if (!multipleEnabled) {
-            $(".tdDel,#thDel").show();
-        }
-        else {
-            $(".tdDel,#thDel").hide();
-            
-            $(".mdl-js-checkbox").each(function () {
-                this.MaterialCheckbox.uncheck();
-            });
-        }
-        multipleEnabled = !multipleEnabled;
     });
 });
