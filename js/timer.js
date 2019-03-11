@@ -444,14 +444,13 @@ btnInvert.addEventListener('click', function () {
 });
 
 btnMultiple.addEventListener('click', function () {
+	$(".mdl-js-checkbox").each(function () {
+		this.MaterialCheckbox.check();
+	});
     if (!multipleEnabled)
         $(".tdDel,#thDel").show();
     else {
         $(".tdDel,#thDel").hide();
-
-        $(".mdl-js-checkbox").each(function () {
-            this.MaterialCheckbox.uncheck();
-        });
     }
     multipleEnabled = !multipleEnabled;
 });
