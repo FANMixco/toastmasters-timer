@@ -639,6 +639,7 @@ cmbSpeechType.addEventListener('click', function () {
             let container = document.getElementsByClassName('mdl-menu__container')[0];
             container.style.height = `${document.body.clientHeight * 0.84}px`;
             container.style.overflowY = "auto";
+            container.style.overflowX = "hidden";
         }, 50);
     }
 });
