@@ -4,7 +4,7 @@ http://theleadership.pl
 
 Feel free to use it it anywhere at anytime.
 
-https://fanmixco.github.io/toastmasters-timer
+https://fanmixco.github.io/toastmasters-timer-material-design
 
 ![toastmasters](http://dominicanewsonline.com/news/wp-content/uploads/2014/10/ToastmastersLogoColor-300x262.jpg)
 
