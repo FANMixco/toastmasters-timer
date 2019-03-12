@@ -18,62 +18,64 @@
       <script src="js/getmdl-select.min.js"></script>
    </head>
    <body>
-      <div class="mdl-textfield mdl-js-textfield getmdl-select">
-         <input type="text" value="" class="mdl-textfield__input" id="cmbSpeechType" readonly>
-         <input type="hidden" value="" name="hiddenSpeechType" id="hiddenSpeechType">
-         <label for="cmbSpeechType" class="mdl-textfield__label" data-tag="chooseSpeech"></label>
-         <ul for="cmbSpeechType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-            <li class="mdl-menu__item" data-val="0" data-tag="opt1"></li>
-            <li class="mdl-menu__item" data-val="1" data-tag="opt2"></li>
-            <li class="mdl-menu__item" data-val="2" data-tag="opt3"></li>
-            <li class="mdl-menu__item" data-val="3" data-tag="opt4"></li>
-            <li class="mdl-menu__item" data-val="4" data-tag="opt5"></li>
-            <li class="mdl-menu__item" data-val="5" data-tag="opt6"></li>
-            <li class="mdl-menu__item" data-val="6" data-tag="opt7"></li>
-            <li class="mdl-menu__item" data-val="7" data-tag="opt8"></li>
-            <li class="mdl-menu__item" data-val="8" data-tag="opt9"></li>
-            <li class="mdl-menu__item" data-val="9" data-tag="opt10"></li>
-            <li class="mdl-menu__item" data-val="10" data-tag="opt11"></li>
-            <li class="mdl-menu__item" data-val="11" data-tag="opt12"></li>
-         </ul>
-      </div>
-      <div id="options">
-         <button id="btnChampion" class="btnAction"><span class="mdi mdi-trophy"></span></button>
-         <button id="btnTimetable" class="btnAction"><span class="mdi mdi-timetable"></span></button>
-         <button id="btnInvert" class="btnAction"><span class="mdi mdi-yin-yang"></span></button>
-         <button id="btnBeep" class="btnAction"><span class="mdi mdi-volume-high"></span></button>
-         <button id="btnVibrate" class="btnAction"><span class="mdi mdi-vibrate"></span></button>
-         <button id="btnClap" class="btnAction"><img id="imgClap" src="img/clapping-hands.svg"></button>
-      </div>
-      <div id="divSpeaker" class="mdl-textfield mdl-js-textfield">
-         <input class="mdl-textfield__input" type="text" id="txtSpeaker">
-         <label class="mdl-textfield__label" for="txtSpeaker" data-tag="pMember"></label>
-      </div>
-      <div class="container">
-         <div class="circle">
-            <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-               <g transform="translate(110,110)">
-                  <circle r="100" class="e-c-base"/>
-                  <g transform="rotate(-90)">
-                     <circle r="100" class="e-c-progress"/>
-                     <g id="e-pointer">
-                        <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+      <div id="superContainer">
+         <div class="mdl-textfield mdl-js-textfield getmdl-select">
+            <input type="text" value="" class="mdl-textfield__input" id="cmbSpeechType" readonly>
+            <input type="hidden" value="" name="hiddenSpeechType" id="hiddenSpeechType">
+            <label for="cmbSpeechType" class="mdl-textfield__label" data-tag="chooseSpeech"></label>
+            <ul for="cmbSpeechType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+               <li class="mdl-menu__item" data-val="0" data-tag="opt1"></li>
+               <li class="mdl-menu__item" data-val="1" data-tag="opt2"></li>
+               <li class="mdl-menu__item" data-val="2" data-tag="opt3"></li>
+               <li class="mdl-menu__item" data-val="3" data-tag="opt4"></li>
+               <li class="mdl-menu__item" data-val="4" data-tag="opt5"></li>
+               <li class="mdl-menu__item" data-val="5" data-tag="opt6"></li>
+               <li class="mdl-menu__item" data-val="6" data-tag="opt7"></li>
+               <li class="mdl-menu__item" data-val="7" data-tag="opt8"></li>
+               <li class="mdl-menu__item" data-val="8" data-tag="opt9"></li>
+               <li class="mdl-menu__item" data-val="9" data-tag="opt10"></li>
+               <li class="mdl-menu__item" data-val="10" data-tag="opt11"></li>
+               <li class="mdl-menu__item" data-val="11" data-tag="opt12"></li>
+            </ul>
+         </div>
+         <div id="options">
+            <button id="btnChampion" class="btnAction"><span class="mdi mdi-trophy"></span></button>
+            <button id="btnTimetable" class="btnAction"><span class="mdi mdi-timetable"></span></button>
+            <button id="btnInvert" class="btnAction"><span class="mdi mdi-yin-yang"></span></button>
+            <button id="btnBeep" class="btnAction"><span class="mdi mdi-volume-high"></span></button>
+            <button id="btnVibrate" class="btnAction"><span class="mdi mdi-vibrate"></span></button>
+            <button id="btnClap" class="btnAction"><img id="imgClap" src="img/clapping-hands.svg"></button>
+         </div>
+         <div id="divSpeaker" class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="txtSpeaker">
+            <label class="mdl-textfield__label" for="txtSpeaker" data-tag="pMember"></label>
+         </div>
+         <div class="container">
+            <div class="circle">
+               <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                  <g transform="translate(110,110)">
+                     <circle r="100" class="e-c-base"/>
+                     <g transform="rotate(-90)">
+                        <circle r="100" class="e-c-progress"/>
+                        <g id="e-pointer">
+                           <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+                        </g>
                      </g>
                   </g>
-               </g>
-            </svg>
-         </div>
-         <div id="controls">
-            <div id="remainTime" class="display-remain-time">00:30</div>
-            <div class="row">
-               <div class="column">
-                  <button class="btnAction" id="btnRestart"><span class="mdi mdi-restart"></span></button>
-               </div>
-               <div class="column">
-                  <button class="play" id="pause"></button>
-               </div>
-               <div class="column">
-                  <button class="btnAction" id="btnStop"><span class="mdi mdi-stop"></span></button>
+               </svg>
+            </div>
+            <div id="controls">
+               <div id="remainTime" class="display-remain-time">00:30</div>
+               <div class="row">
+                  <div class="column">
+                     <button class="btnAction" id="btnRestart"><span class="mdi mdi-restart"></span></button>
+                  </div>
+                  <div class="column">
+                     <button class="play" id="pause"></button>
+                  </div>
+                  <div class="column">
+                     <button class="btnAction" id="btnStop"><span class="mdi mdi-stop"></span></button>
+                  </div>
                </div>
             </div>
          </div>

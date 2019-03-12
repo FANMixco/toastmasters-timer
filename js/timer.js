@@ -234,10 +234,8 @@ window.onresize = function(event) {
 };
 
 function resizeScreen(){
-    let newZoom = window.innerHeight / 600;
-    console.log(newZoom);
-    $('body').css("transform", `scale(${newZoom})`);
-    $('body').css("transform-origin", "50% 0% 0px");
+    $('#superContainer').css("transform", `scale(${window.innerHeight / 600})`);
+    $('#superContainer').css("transform-origin", "50% 0% 0px");
 }
 
 function pauseTimer(event) {
