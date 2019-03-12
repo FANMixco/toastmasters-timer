@@ -632,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	cmbSpeechType.onchange = changeEventHandler;
 }, false);
 
-cmbSpeechType.addEventListener('click', function () {
+/*cmbSpeechType.addEventListener('click', function () {
     if (document.body.clientHeight < 650){
         setTimeout(function() {
             let container = document.getElementsByClassName('mdl-menu__container')[0];
@@ -641,7 +641,7 @@ cmbSpeechType.addEventListener('click', function () {
             container.style.overflowX = "hidden";
         }, 50);
     }
-});
+});*/
 
 maximum = 0;
 wholeTime = 0;
