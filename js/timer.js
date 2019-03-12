@@ -229,9 +229,16 @@ function timer(seconds) { //counts time, takes seconds
 	}, 1000);
 }
 
+window.onresize = function(event) {
+    let newZoom = window.innerHeight / 600;
+    console.log(newZoom);
+    $('body').css("transform", `scale(${newZoom})`);
+    $('body').css("transform-origin", "50% 0% 0px");
+};
+
 function pauseTimer(event) {
     if (minimum === 0 && maximum === 0 && average === 0) {
-        showSnackbar('Please choose a time');
+        showSnackbar(lngObject.chooseTime);
         return;
     }
 
@@ -289,22 +296,22 @@ function changeEventHandler(event) {
 }
 
 function startBeep() {
-    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar('Under construction');
+    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar(lngObject.underConstruction);
         //CSharp.Beep();
 }
 
 function startVibrate() {
-    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar('Under construction');
+    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar(lngObject.underConstruction);
         //CSharp.Vibrate();
 }
 
 function startClapping() {
-    if (isClappingEnabled) showSnackbar('Under construction');
+    if (isClappingEnabled) showSnackbar(lngObject.underConstruction);
         //CSharp.StartClapping();
 }
 
 function stopClapping() {
-    showSnackbar('Under construction');
+    showSnackbar(lngObject.underConstruction);
     //CSharp.StopClapping();
 }
 
@@ -470,11 +477,11 @@ function saveChanges() {
         maxTime = getMaxCustom();
     
     if (minTime >= avgTime)        
-        showSnackbar('Minimum time cannot be greater than or equal to optimal time.');
+        showSnackbar(lngObject.errorMin);
     else if (minTime >= maxTime)
-        showSnackbar('Minimum time cannot be greater than or equal to maximum time.');
+        showSnackbar(lngObject.errorHalf);
     else if (avgTime >= maxTime)
-        showSnackbar('Optimal time cannot be greater than or equal to maximum time.');
+        showSnackbar(lngObject.errorMax);
     else {
         isCustom = true;
         minimum = minTime;
@@ -615,7 +622,7 @@ dialogWelcome.querySelector('.close').addEventListener('click', function () {
     dialogWelcome.close();
     isFirstRun = false;
     setFirstRun();
-    showSnackbar('Remember there are no extra hints during the contests.');
+    showSnackbar(lngObject.noHints);
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -654,7 +661,9 @@ initializeDB(currentDB, latestDB);
 lastColor = bgColors[selectedColor];
 invertColors();
 
-titleMeeting.innerHTML = `Meeting at ${moment((new Date())).format(dateFormat)}`;
+setTimeout(function () {
+    titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment((new Date())).format(dateFormat)}`;
+}, 100);
 
 if (isFirstRun) {
     dialogWelcome.showModal();

@@ -219,6 +219,12 @@
     padding-top: 5px;
 }
 
+.centeredDialog {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 body {
     text-align: center;
     overflow-y: hidden;
@@ -231,9 +237,6 @@ body {
 
 #timeTable {
     width: 95%!important;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 #imgClap{

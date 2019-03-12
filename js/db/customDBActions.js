@@ -25,7 +25,7 @@ function countTimetable() {
             dialogTimeTable.showModal();
         }
         else
-            showSnackbar('No speakers to display');
+            showSnackbar(lngObject.noSpeakers);
     };
 }
 
@@ -99,7 +99,7 @@ function deleteByIDs() {
     let objectStoreRequest = transaction.objectStore("timeTable").count();
 	objectStoreRequest.onsuccess = function() {
 		if (objectStoreRequest.result === 0) {
-            showSnackbar('No speakers to display');
+            showSnackbar(lngObject.noSpeakers);
             dialogTimeTable.close();
         }
 		saveData();
