@@ -21,6 +21,7 @@ function countTimetable() {
     let transaction = db.transaction(["timeTable"], "readonly").objectStore("timeTable").count();
     transaction.onsuccess = function () {
         if (transaction.result > 0) {
+            $(".tdDel,#thDel").hide();
             printTable();
             dialogTimeTable.showModal();
         }

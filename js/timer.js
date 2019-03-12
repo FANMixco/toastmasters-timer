@@ -235,8 +235,10 @@ window.onresize = function(event) {
 
 function resizeScreen(){
     $('#superContainer').css("height", `${window.innerHeight}px`);
-    $('#superContainer').css("transform", `scale(${window.innerHeight / 600})`);
     $('#superContainer').css("transform-origin", "50% 0% 0px");
+    $('#superContainer').css("transform", `scale(${window.innerHeight / 600})`);
+    
+    
 }
 
 function pauseTimer(event) {
@@ -632,16 +634,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	cmbSpeechType.onchange = changeEventHandler;
 }, false);
 
-/*cmbSpeechType.addEventListener('click', function () {
-    if (document.body.clientHeight < 650){
+cmbSpeechType.addEventListener('click', function () {
         setTimeout(function() {
-            let container = document.getElementsByClassName('mdl-menu__container')[0];
-            container.style.height = `${document.body.clientHeight * 0.84}px`;
-            container.style.overflowY = "auto";
-            container.style.overflowX = "hidden";
+            $($(".mdl-menu__outline")[0]).width(300)
+            $($(".mdl-menu__container")[0]).width(300)
+            $($(".mdl-menu__outline")[0]).height(310)
+            $($(".mdl-menu__container")[0]).height(310)
         }, 50);
-    }
-});*/
+});
 
 maximum = 0;
 wholeTime = 0;
