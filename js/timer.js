@@ -234,6 +234,7 @@ window.onresize = function(event) {
 };
 
 function resizeScreen(){
+    $('#superContainer').css("height", `${window.innerHeight}px`);
     $('#superContainer').css("transform", `scale(${window.innerHeight / 600})`);
     $('#superContainer').css("transform-origin", "50% 0% 0px");
 }
