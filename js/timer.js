@@ -230,11 +230,15 @@ function timer(seconds) { //counts time, takes seconds
 }
 
 window.onresize = function(event) {
+    resizeScreen();
+};
+
+function resizeScreen(){
     let newZoom = window.innerHeight / 600;
     console.log(newZoom);
     $('body').css("transform", `scale(${newZoom})`);
     $('body').css("transform-origin", "50% 0% 0px");
-};
+}
 
 function pauseTimer(event) {
     if (minimum === 0 && maximum === 0 && average === 0) {
@@ -681,3 +685,5 @@ $(function(){
         });
     });
 });
+
+resizeScreen();
