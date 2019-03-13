@@ -646,6 +646,11 @@ cmbSpeechType.addEventListener('click', function () {
         $($(".mdl-menu__container")[0]).width(300);
         $($(".mdl-menu__outline")[0]).height(310);
         $($(".mdl-menu__container")[0]).height(310);
+        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
+        res[1] = res[1].replace("px", "");
+        res[2] = res[2].replace("px", "");
+        if (parseFloat(res[1]) < 300 || parseFloat(res[2]) < 300)
+            $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
     }, 50);
 });
 

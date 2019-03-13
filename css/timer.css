@@ -89,7 +89,7 @@ footer {
   border-bottom: none;
 }
 
-/*background-color: #E8E8E8; border: 50%; */
+/*background-color: #E8E8E8; border-radius: 50%; */
 
 .pause:hover { opacity: 0.8; }
 
