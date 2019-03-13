@@ -97,6 +97,8 @@ footer {
 
 .btnAction:hover { opacity: 0.8; }
 
+.btnPopUp:hover { opacity: 0.8; }
+
 .e-c-base {
   fill: none;
   stroke: #B6B6B6;
