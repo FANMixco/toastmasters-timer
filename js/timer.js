@@ -18,12 +18,14 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnYesConfirm = document.getElementById('btnYesConfirm'),
       btnYesChanges = document.getElementById('btnYesChanges'),
       btnSave = document.getElementById('btnSave'),
+      btnAbout = document.getElementById('btnAbout'),
       imgClap = document.getElementById('imgClap'),
       dialogTimeTable = document.getElementById('timeTable'),
       dialogWelcome = document.getElementById('welcomeDialog'),
       dialogConfirm = document.getElementById('confirmDialog'),
       dialogCustomTimes = document.getElementById('customTimes'),
       dialogChanges = document.getElementById('changesDialog'),
+      dialogAbout = document.getElementById('aboutDialog'),
       txtSpeaker = document.getElementById('txtSpeaker'),
       minH = document.getElementById('minH'),
       minM = document.getElementById('minM'),
@@ -563,6 +565,10 @@ if (!dialogChanges.showModal) {
 	dialogPolyfill.registerDialog(dialogChanges);
 }
 
+if (!dialogAbout.showModal) {
+	dialogPolyfill.registerDialog(dialogAbout);
+}
+
 if (!dialogCustomTimes.showModal) {
 	dialogPolyfill.registerDialog(dialogCustomTimes);
 }
@@ -611,6 +617,8 @@ btnShare.addEventListener('click', function () {});
 
 btnEmail.addEventListener('click', function () {});
 
+btnAbout.addEventListener('click', function () { dialogAbout.showModal(); });
+
 btnDownload.addEventListener('click', browserExport);
 
 btnMultiple.addEventListener('click', function () {
@@ -641,6 +649,10 @@ dialogCustomTimes.querySelector('.close').addEventListener('click', function () 
 
 dialogConfirm.querySelector('.close').addEventListener('click', function () {
 	dialogConfirm.close();
+});
+
+dialogAbout.querySelector('.close').addEventListener('click', function () {
+	dialogAbout.close();
 });
 
 dialogChanges.querySelector('.close').addEventListener('click', function () {

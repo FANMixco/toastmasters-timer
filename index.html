@@ -45,6 +45,7 @@
             <button id="btnBeep" class="btnAction"><span class="mdi mdi-volume-high"></span></button>
             <button id="btnVibrate" class="btnAction"><span class="mdi mdi-vibrate"></span></button>
             <button id="btnClap" class="btnAction"><img id="imgClap" src="img/clapping-hands.svg"></button>
+            <button id="btnAbout" class="btnAction"><span class="mdi mdi-information-variant"></span></button>
          </div>
          <div id="divSpeaker" class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="txtSpeaker">
@@ -132,7 +133,23 @@
             <button type="button" class="mdl-button close" data-tag="cancel"></button>
          </div>
       </dialog>
-      <dialog class="mdl-dialog" id="changesDialog">
+      <dialog class="mdl-dialog" id="aboutDialog">
+         <h4 class="mdl-dialog__title" data-tag="about"></h4>
+         <div class="mdl-dialog__content">
+            <p data-tag="about1"></p>
+            <p><img src="img/favicon.png" style="width: 64px"></p>
+            <p data-tag="about2"></p>
+            <p>Federico Navarrete <a href="mailto:fanmixco@gmail.com?Subject=TMTimer%20PWA" target="_top">fanmixco@gmail.com</a></p>
+            <p data-tag="about3"></p>
+            <p><a href="https://www.supernovaic.tk" target="_blank">www.supernovaic.tk</a></p>
+            <p><img src="img/supernova.png" style="width: 96px"></p>
+            <p data-tag="about4"></p>
+         </div>
+         <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-tag="close"></button>
+         </div>
+      </dialog>
+       <dialog class="mdl-dialog" id="changesDialog">
          <h4 class="mdl-dialog__title" data-tag="changesTitle"></h4>
          <div class="mdl-dialog__content">
             <p data-tag="changesBody"></p>
