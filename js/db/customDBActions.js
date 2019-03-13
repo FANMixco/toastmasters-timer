@@ -21,6 +21,7 @@ function countTimetable() {
     let transaction = db.transaction(["timeTable"], "readonly").objectStore("timeTable").count();
     transaction.onsuccess = function () {
         if (transaction.result > 0) {
+            btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
             $(".tdDel,#thDel").hide();
             printTable();
             dialogTimeTable.showModal();

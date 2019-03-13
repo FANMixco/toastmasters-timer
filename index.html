@@ -85,13 +85,13 @@
          <div class="mdl-dialog__content">
             <div>
                <button id="btnMultiple" type="button" class="btnPopUp"><span class="mdi mdi-check-box-outline"></span></button>
-               <button type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
-               <button type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
-               <button type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
+               <button id="btnEmail" type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
+               <button id="btnShare" type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
+               <button id="btnDownload" type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
                <button id="btnDelete" type="button" class="btnPopUp"><span class="mdi mdi-trash-can"></span></button>
             </div>
             <div id="divSpeakers">
-               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+               <table id="tblResults" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                   <thead>
                      <tr>
                         <th id="thDel" class="mdl-data-table__cell--non-numeric hiddenObject minSizeCol">
@@ -688,6 +688,12 @@
       <footer>
          <span data-tag="copyright1"></span><a class="externalLinks" href="http://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a class="externalLinks" href="http://theleadership.pl">The Leader Ship Toastmasters</a><span data-tag="copyright3"></span><span>.</span>
       </footer>
+
+      <!--Browser ONLY actions-->
+      <script src="browserSpecific/js/jspdf.min.js"></script>
+      <script src="browserSpecific/js/getOS.min.js"></script>
+      <script src="browserSpecific/js/actions.js"></script>
+
       <script src="js/jquery-3.3.1.slim.min.js"></script>
       <script src="js/moment.min.js"></script>
       <script src="js/db/dbHandler.js"></script>

@@ -21,7 +21,7 @@
   "errorMax": "Optimal time cannot be greater than or equal to maximum time.",
   "errorMin": "Minimum time cannot be greater than or equal to optimal time.",
   "info": "About us",
-  "lblExportMsg": "Exporting Agenda to Excel",
+  "lblExportMsg": "Exporting the agenda",
   "meetingAt": "Meeting at",
   "noHints": "Remember there are no extra hints during the contests.",
   "noSpeakers": "No speakers to display",

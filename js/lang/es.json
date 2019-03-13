@@ -25,7 +25,7 @@
   "errorMin": "El tiempo mínimo no puede ser mayor o igual al óptimo.",
   "export": "Exportar",
   "info": "Acerca de",
-  "lblExportMsg": "Exportando la agenda a Excel",
+  "lblExportMsg": "Exportando la agenda",
   "meetingAt": "Fecha de la reunión:",
   "multiple": "Elegir",
   "noResults": "No hay resultados a mostrar",

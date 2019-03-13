@@ -11,6 +11,9 @@ const displayOutput = document.querySelector('.display-remain-time'),
       btnDelete = document.getElementById('btnDelete'),
       btnInvert = document.getElementById('btnInvert'),
       btnMultiple = document.getElementById('btnMultiple'),
+      btnEmail = document.getElementById('btnEmail'),
+      btnShare = document.getElementById('btnShare'),
+      btnDownload = document.getElementById('btnDownload'),
       btnYesChallenge = document.getElementById('btnYesChallenge'),
       btnYesConfirm = document.getElementById('btnYesConfirm'),
       btnYesChanges = document.getElementById('btnYesChanges'),
@@ -309,22 +312,25 @@ function changeEventHandler(event) {
 }
 
 function startBeep() {
-    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar(lngObject.underConstruction);
+    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1))
+        browserStartBeep();
         //CSharp.Beep();
 }
 
 function startVibrate() {
-    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1)) showSnackbar(lngObject.underConstruction);
+    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1))
+        browserStartVibrate();
         //CSharp.Vibrate();
 }
 
 function startClapping() {
-    if (isClappingEnabled) showSnackbar(lngObject.underConstruction);
+    if (isClappingEnabled)
+        browserStartClapping();
         //CSharp.StartClapping();
 }
 
 function stopClapping() {
-    showSnackbar(lngObject.underConstruction);
+    browserStopClapping();
     //CSharp.StopClapping();
 }
 
@@ -596,6 +602,12 @@ btnYesChanges.addEventListener('click', function () {
     dialogChanges.close();
 });
 
+btnShare.addEventListener('click', function () {});
+
+btnEmail.addEventListener('click', function () {});
+
+btnDownload.addEventListener('click', browserExport);
+
 btnMultiple.addEventListener('click', function () {
 	$(".mdl-js-checkbox").each(function () {
 		this.MaterialCheckbox.check();
@@ -696,6 +708,19 @@ $(function(){
                 this.MaterialCheckbox.uncheck();
         });
     });
+
+    $("#txtMember").on('keyup', function(e) {
+        if (e.keyCode === 13)
+            $(this).hideKeyboard();
+    });
 });
 
 resizeScreen();
+
+$.fn.hideKeyboard = function () {
+    var inputs = this.filter("input").attr("readonly", "readonly"); // Force keyboard to hide on input field.
+    setTimeout(function () {
+        inputs.blur().removeAttr("readonly");  //actually close the keyboard and remove attributes
+    }, 100);
+    return this;
+};
