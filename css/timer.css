@@ -1,5 +1,19 @@
 @import url('../css/roboto.font.css');
 
+body, #superContainer {
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
 .container {
   position: relative;
   top: 30px;
@@ -75,33 +89,13 @@
   border-bottom: none;
 }
 
+/*background-color: #E8E8E8; border: 50%; */
 
-.play-white::before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 22px solid black;
-}
+.pause:hover { opacity: 0.8; }
 
-.pause-white::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 12px;
-  width: 15px;
-  height: 30px;
-  background-color: transparent;
-  border-radius: 1px;
-  border: 5px solid black;
-  border-top: none;
-  border-bottom: none;
-}
+.play:hover { opacity: 0.8; }
 
-#pause:hover { opacity: 0.8; }
+.btnAction:hover { opacity: 0.8; }
 
 .e-c-base {
   fill: none;
@@ -142,14 +136,12 @@
   width: 33.33%;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Clear floats after the columns */
 .rowFull:after {
   content: "";
   display: table;
@@ -225,12 +217,6 @@
     transform: translateY(-50%);
 }
 
-body, #superContainer {
-    text-align: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
 #options button{
     font-size: 3em;
 }
@@ -274,142 +260,3 @@ body, #superContainer {
 #customMax {
     background: #e53935;
 }
-
-
-/*
-
-@media (min-height: 1200px) {
-	body {
-		transform: scale(2.25);
-        transform-origin: 50% 0% 0px;
-	}
-}
-
-@media (max-height: 1199px){
-	body {
-		background: red;
-		transform: scale(1.75);
-        transform-origin: 50% 0% 0px;
-	}
-}
-
-@media (min-height: 1200px){
-	body {
-		transform: scale(2.25);
-        transform-origin: 50% 0% 0px;
-	}
-}
-
-@media (max-height: 1199px){
-	body {
-		background: red;
-		transform: scale(1.75);
-        transform-origin: 50% 0% 0px;
-	}
-}
-
-@media (max-height: 812px){
-	body {
-		background: green;
-		transform: scale(0.8);
-        transform-origin: 25% 0% 0px;
-	}
-}
-
-@media (min-height: 1025px){
-	body {
-		background: orange;
-		transform: scale(2.75);
-        transform-origin: 50% 0% 0px;
-	}
-}
-
-@media (max-height: 1024px){
-	body {
-		background: red;
-		transform: scale(1.75);
-        transform-origin: 50% 0% 0px;
-	}
-}
-
-@media (max-height: 700px){
-	body {
-		background: pink;
-		transform: scale(1.25);
-	}
-}
-@media (max-height: 500px) {
-	body {
-		background: blue;
-		transform: scale(1.0);
-	}
-}
-
-@media (max-height: 300px) {
-	body {
-		background: gray;
-		transform: scale(0.75);
-	}
-}
-
-@media (max-height: 275px) {
-	body {
-		background: pink;
-		transform: scale(0.5);
-	}
-}
-
-
-/*@media (min-width: 901px){
-	body {
-		background: orange;
-	}
-	.container {
-		transform: scale(2.5);
-	}
-}
-@media (max-width: 900px){
-	body {
-		background: green;
-	}
-	.container {
-		transform: scale(2.0);
-	}
-}
-@media (max-width: 700px){
-	body {
-		background: red;
-	}
-	.container {
-		transform: scale(1.5);
-	}
-}
-@media (max-width: 500px) {
-	body {
-		background: blue;
-	}
-	.container {
-		transform: scale(1.0);
-	}
-}
-
-@media (max-height: 300px) {
-	body {
-		background: gray;
-	}
-	.container {
-		transform: scale(0.75);
-	}
-}
-
-@media (max-height: 275px) {
-	body {
-		background: pink;
-	}
-	.container {
-		transform: scale(0.5);
-	}
-}
-
-transform: scale(0.75);width: 145%;transform-origin: -12% 0% 0px;
-*/
