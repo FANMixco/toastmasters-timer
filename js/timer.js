@@ -450,6 +450,9 @@ function storeTime(isTimeStored){
     else
         maximum = getMaxCustom();
     
+    green = 0;
+    yellow = 0;
+    red = 0;
 	basicReset();
 	wholeTime = maximum;
 }
