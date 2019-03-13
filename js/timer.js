@@ -241,8 +241,10 @@ function resizeScreen(){
     $('#superContainer').css("height", `${window.innerHeight}px`);
     $('#superContainer').css("transform-origin", "50% 0% 0px");
     
-    let scaleVal = window.innerHeight / 600;
-    $('#superContainer').css("transform", `scale(${scaleVal}`);
+    setTimeout(function() {
+		let scaleVal = window.innerHeight / 600;
+		$('#superContainer').css("transform", `scale(${scaleVal}`);
+    }, 100);
     
     setTimeout(function() {
         if ($(".mdl-textfield__input")[0].getBoundingClientRect().width > $('body').outerWidth()){
