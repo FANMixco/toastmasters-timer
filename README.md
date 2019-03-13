@@ -42,6 +42,28 @@ All speeches are recorded for sharing it with your members or guests.
 
 Also, the project is open-source and can be implemented, modified or improved freely without any constrain. Feel free to hack it and share new your ideas about it.
 
+**Previews of the App:**
+
+![timer](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/5d6e7c77339261.5c88895592471.png)
+
+![timer1](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/15b05877339261.5c880adaa24f0.png)
+
+![timer2](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/0a4dfc77339261.5c880adaa28d9.png)
+
+![timer3](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/a1e1f177339261.5c880adaa2e4e.png)
+
+![timer5](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/34f42277339261.5c880adaa1a4e.png)
+
+![timer7](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/0c9c5577339261.5c880adaa3404.png)
+
+![timer6](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/ca69f077339261.5c880adaa210c.png)
+
+![timer8](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/f30a4277339261.5c880adaa3863.png)
+
+![timer9](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/5ed85177339261.5c8889559207d.png)
+
+![timer10](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/d6e44777339261.5c880adaa1602.png)
+
 Furthermore, you can download the compiled versions in the official stores:
 
 **Android:**
