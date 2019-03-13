@@ -225,7 +225,7 @@
     transform: translateY(-50%);
 }
 
-body {
+body, #superContainer {
     text-align: center;
     overflow-y: hidden;
     overflow-x: hidden;
