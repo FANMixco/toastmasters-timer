@@ -191,6 +191,7 @@ function resetState() {
     divSpeaker.className = 'mdl-textfield mdl-js-textfield';
     btnInvert.disabled = false;
     btnRestart.disabled = false;
+    cmbSpeechType.disabled = false;
 	btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
 }
 
@@ -254,6 +255,7 @@ function pauseTimer(event) {
     }
 
     btnInvert.disabled = true;
+    cmbSpeechType.disabled = true;
     
 	if (isStarted === false) {
 		timer(wholeTime);
