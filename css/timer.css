@@ -227,10 +227,6 @@ footer {
     width: 95%!important;
 }
 
-#aboutDialog {
-    width: 30%!important;
-}
-
 #imgClap{
     margin-top: -8px;
     width: 36px;
@@ -265,4 +261,15 @@ footer {
 
 #customMax {
     background: #e53935;
+}
+
+#bodyAbout {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+@media screen and (min-width: 700px) {
+	#aboutDialog {
+	    width: 30%!important;
+	}
 }
