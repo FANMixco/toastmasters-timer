@@ -302,7 +302,7 @@ function displayTimeLeft(timeLeft) { //displays time on the input
 function changeEventHandler(event) {
 	selected = hiddenSpeechType.value;
     
-    if (selected != 11){
+    if (parseInt(selected) != 11){
         minimum = times[selected][0];
         average = times[selected][1];
         maximum = times[selected][2];
