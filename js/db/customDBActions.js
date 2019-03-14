@@ -83,6 +83,8 @@ function printTable() {
             componentHandler.upgradeAllRegistered();
             if ($('#timeTable').height() >= document.body.clientHeight * 0.9)
                 document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+            else
+                document.getElementById('divSpeakers').style.height = 'auto';
         }
     };
 }
