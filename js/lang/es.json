@@ -40,7 +40,6 @@
   "pMember": "Orador",
   "recorded": "Tiempo almacenado",
   "resetWarning": "¿Seguro que quieres reiniciar?",
-  "role": "Rol",
   "save": "Guardar",
   "stickMsg": "Tú viaje para convertirte en el próximo <strong>Campeón 🏆</strong> ha comenzado y este crónometro puede ayudarte mientras oculta el tiempo, siempre puedes encenderlo o apagarlo, pero recuerda durante la final no hay signos extras.<br /><h5><strong>¿Estás listo para el desafío?</strong></h5>",
   "stickMsgTitle": "¡Bienvenido!",
@@ -48,5 +47,6 @@
   "timeHalfway": "Óptimo",
   "timeMaximum": "Máximo",
   "timeMinimum": "Mínimo",
-  "title": "Toastmasters Cronómetro"
+  "title": "Toastmasters Cronómetro",
+  "underConstruction": "En construcción"
 }
