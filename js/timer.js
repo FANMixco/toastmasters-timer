@@ -58,7 +58,7 @@ let isPaused = false,
     isVibrateEnabled = false,
     isClappingEnabled = false,
     isContestMode = false,
-    isCustom = true,
+    isCustom = false,
     isFirstRun = true,
     clappingStarted = false,
     multipleEnabled = false;
@@ -257,8 +257,11 @@ function resizeScreen(){
 
 function pauseTimer(event) {
     if (minimum === 0 && maximum === 0 && average === 0) {
-        showSnackbar(lngObject.chooseTime);
-        return;
+        if (isCustom)
+	        showSnackbar(lngObject.notSaved);
+        else
+	        showSnackbar(lngObject.chooseTime);        
+	return;
     }
 
     btnInvert.disabled = true;
@@ -311,8 +314,10 @@ function changeEventHandler(event) {
         update(wholeTime, wholeTime); //refreshes progress bar
         displayTimeLeft(wholeTime);        
     }
-    else
+    else {
+        isCustom = true;
         dialogCustomTimes.showModal();
+    }
 }
 
 function startBeep() {
@@ -509,7 +514,6 @@ function saveChanges() {
     else if (avgTime >= maxTime)
         showSnackbar(lngObject.errorMax);
     else {
-        isCustom = true;
         minimum = minTime;
         average = avgTime;
         maximum = maxTime;
