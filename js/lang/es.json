@@ -23,7 +23,7 @@
   "lblExportMsg": "Exportando la agenda",
   "meetingAt": "Fecha de la reunión:",
   "noHints": "Recuerda que no hay pistas extra durante los concursos.",
-  "notSaved": "Por favor verifique sus horarios personalizados porque no los guardó",
+  "notSaved": "Por favor verifique sus horarios personalizados porque no los guardó",
   "noSpeakers": "No hay discursos para mostrar",
   "opt1": "Pregunta del Día (30s)",
   "opt10": "13 a 15 min",
@@ -48,5 +48,5 @@
   "timeHalfway": "Óptimo",
   "timeMaximum": "Máximo",
   "timeMinimum": "Mínimo",
-  "title": "Toastmasters Cronómetro",
+  "title": "Toastmasters Cronómetro"
 }
