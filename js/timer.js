@@ -253,6 +253,15 @@ function resizeScreen(){
             $('#superContainer').css("transform", `scale(${scaleVal - (scaleVal - $(".mdl-textfield__input")[0].getBoundingClientRect().width / $('body').outerWidth())}`);
         }
     }, 100);
+
+    if (window.innerHeight < 514 && window.innerWidth > window.innerHeight) {
+        setTimeout(function() {
+			let innerScale = 1 - scaleVal;
+			$('#superContainer').width($("body").width() + $("body").width() * 1.5 * innerScale);
+			$('#superContainer').height($("body").height() + $("body").height() * 1.5 * innerScale);
+			$('#superContainer').css("transform-origin", "0% 0% 0px");
+        }, 100);
+    }
 }
 
 function pauseTimer(event) {
