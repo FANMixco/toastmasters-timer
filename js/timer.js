@@ -295,10 +295,14 @@ function pauseTimer(event) {
     
     btnRestart.disabled = !isPaused;
 	
-	if (btnRestart.disabled)
+	if (btnRestart.disabled) {
 		btnRestart.innerHTML = "<span class='mdi mdi-restart-off'></span>";
-	else
+        $('footer,#divSpeechType,#options,#divSpeaker').fadeTo( "fast", '0.1' );
+    }
+	else {
 		btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
+        $('footer,#divSpeechType,#options,#divSpeaker').fadeTo( "fast", '1' );
+    }
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
