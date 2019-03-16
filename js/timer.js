@@ -477,6 +477,7 @@ function storeTime(isTimeStored){
     red = 0;
 	basicReset();
 	wholeTime = maximum;
+    $('footer,#divSpeechType,#options,#divSpeaker').fadeTo( "fast", '1' );
 }
 
 function getMinCustom() {
