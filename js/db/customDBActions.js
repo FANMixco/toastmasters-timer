@@ -85,6 +85,10 @@ function printTable() {
                 document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
             else
                 document.getElementById('divSpeakers').style.height = 'auto';
+            
+            $("[id^=chk]").not("#chkAll").change(function () {
+                document.querySelector('.mdl-js-checkbox').MaterialCheckbox.uncheck();
+            });
         }
     };
 }

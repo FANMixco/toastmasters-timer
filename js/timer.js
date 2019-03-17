@@ -736,11 +736,11 @@ checkMode();
 
 $(function(){
     $("#chkAll").change(function () {
-        $(".mdl-js-checkbox").each(function () {
+        $(".mdl-js-checkbox").not("#lblAll").each(function () {
             if ($("#lblAll").is('.is-checked'))
-                this.MaterialCheckbox.check();
-            else
                 this.MaterialCheckbox.uncheck();
+            else
+                this.MaterialCheckbox.check();
         });
     });
 
