@@ -1,5 +1,10 @@
 @import url('../css/roboto.font.css');
 
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 body, #superContainer {
     text-align: center;
     overflow-y: hidden;
