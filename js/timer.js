@@ -466,17 +466,19 @@ function storeTime(isTimeStored){
         let counter = maximum - timeLeft;
         addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + 30)) || (counter < (minimum - 30))));
     }
-     
-    if (!isCustom)
-        maximum = times[selected][2];
-    else
-        maximum = getMaxCustom();
-    
+    	
+	//Perform the reset before selecting the maximum
     green = 0;
     yellow = 0;
     red = 0;
 	basicReset();
-	wholeTime = maximum;
+	
+	if (!isCustom)
+        maximum = times[selected][2];	
+    else
+        maximum = getMaxCustom();
+       
+	wholeTime = maximum;	
     $('footer,#divSpeechType,#options,#divSpeaker').fadeTo( "fast", '1' );
 }
 
