@@ -85,12 +85,15 @@ function printTable() {
                 document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
             else
                 document.getElementById('divSpeakers').style.height = 'auto';
-            
-            $("[id^=chk]").not("#chkAll").change(function () {
-                document.querySelector('.mdl-js-checkbox').MaterialCheckbox.uncheck();
-            });
+            addCheckTaps();
         }
     };
+}
+
+function addCheckTaps() {            
+    $("[id^=chk]").not("#chkAll").change(function () {
+        document.querySelector('.mdl-js-checkbox').MaterialCheckbox.uncheck();
+    });
 }
 
 function deleteTimetable() {
@@ -109,7 +112,8 @@ function deleteByIDs() {
 		if (objectStoreRequest.result === 0) {
             showSnackbar(lngObject.noSpeakers);
             dialogTimeTable.close();
-        }
+        } else
+            addCheckTaps();
 		saveData();
 	};	
 	dialogConfirm.close();
