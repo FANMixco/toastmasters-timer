@@ -92,7 +92,7 @@ function printTable() {
 
 function addCheckTaps() {            
     $("[id^=chk]").not("#chkAll").change(function () {
-        document.querySelector('.mdl-js-checkbox').MaterialCheckbox.uncheck();
+        document.getElementById('lblAll').MaterialCheckbox.uncheck();
     });
 }
 
