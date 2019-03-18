@@ -77,22 +77,18 @@ function printTable() {
 
             results.push({ member: cursor.value.member, role: cursor.value.role, min: cursor.value.min, opt: cursor.value.opt, max: cursor.value.max, time: cursor.value.time, lastColor: cursor.value.lastColor, disqualified: cursor.value.disqualified });
 
-            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
+            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked="checked" /></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
             cursor.continue();
         } else {
             componentHandler.upgradeAllRegistered();
-            if ($('#timeTable').height() >= document.body.clientHeight * 0.9)
-                document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-            else
-                document.getElementById('divSpeakers').style.height = 'auto';
             addCheckTaps();
         }
     };
 }
 
 function addCheckTaps() {            
-    $("[id^=chk]").not("#chkAll").change(function () {
-        document.getElementById('lblAll').MaterialCheckbox.uncheck();
+    $("[id^=chk]").change(function () {
+        document.getElementById('lblTickAll').MaterialCheckbox.uncheck();
     });
 }
 

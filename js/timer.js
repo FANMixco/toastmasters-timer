@@ -643,7 +643,10 @@ btnDownload.addEventListener('click', browserExport);
 
 btnMultiple.addEventListener('click', function () {
 	$(".mdl-js-checkbox").each(function () {
-		this.MaterialCheckbox.check();
+        let _this = this;
+        setTimeout(function () {
+            _this.MaterialCheckbox.check();
+        }, 10);
 	});
     if (!multipleEnabled) {
 		btnMultiple.innerHTML = "<span class='mdi mdi-checkbox-blank-outline'></span>";
@@ -737,12 +740,14 @@ if (isFirstRun) {
 checkMode();
 
 $(function(){
-    $("#chkAll").change(function () {
-        $(".mdl-js-checkbox").not("#lblAll").each(function () {
-            if ($("#lblAll").is('.is-checked'))
-                this.MaterialCheckbox.uncheck();
-            else
-                this.MaterialCheckbox.check();
+    $("#tickAll").change(function () {
+        $(".mdl-js-checkbox").not("#lblTickAll").each(function () {
+            setTimeout(function () {
+                if ($("#lblTickAll").is('.is-checked'))
+                    this.MaterialCheckbox.uncheck();
+                else
+                    this.MaterialCheckbox.check();
+            }, 10);
         });
     });
 
@@ -750,14 +755,12 @@ $(function(){
         if (e.keyCode === 13)
             $(this).hideKeyboard();
     });
-    
-    if(deviceDetector.device == 'desktop')
-    // You're on a desktop.
-    else{
-        if(deviceDetector.device == 'tablet')
-          // You're on a tablet.
-        else
-          // You're on a phone.
+
+    if(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')
+        $('#timeTable').addClass('centeredDialog');
+    else {
+        $('#timeTable').addClass('fullscreen-dialog');
+        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     }
 });
 
@@ -770,3 +773,9 @@ $.fn.hideKeyboard = function () {
     }, 100);
     return this;
 };
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+function doOnOrientationChange() {
+    location.reload();
+}

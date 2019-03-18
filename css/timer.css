@@ -178,7 +178,7 @@ footer {
     width:100%; 
 }
 
-#my-table td, th, .mdl-data-table__cell--non-numeric {
+td, th, .mdl-data-table__cell--non-numeric {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -222,6 +222,13 @@ footer {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.fullscreen-dialog {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #options button{
