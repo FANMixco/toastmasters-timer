@@ -757,12 +757,12 @@ $(function(){
             $(this).hideKeyboard();
     });
 
+    document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+
     if(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')
         $('#timeTable').addClass('centeredDialog');
-    else {
+    else
         $('#timeTable').addClass('fullscreen-dialog');
-        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-    }
 });
 
 resizeScreen();
