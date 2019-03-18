@@ -745,9 +745,9 @@ $(function(){
             let _this = this;
             setTimeout(function () {
                 if ($("#lblTickAll").is('.is-checked'))
-                    _this.MaterialCheckbox.uncheck();
-                else
                     _this.MaterialCheckbox.check();
+                else
+                    _this.MaterialCheckbox.uncheck();
             }, 10);
         });
     });
