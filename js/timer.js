@@ -742,11 +742,12 @@ checkMode();
 $(function(){
     $("#tickAll").change(function () {
         $(".mdl-js-checkbox").not("#lblTickAll").each(function () {
+            let _this = this;
             setTimeout(function () {
                 if ($("#lblTickAll").is('.is-checked'))
-                    this.MaterialCheckbox.uncheck();
+                    _this.MaterialCheckbox.uncheck();
                 else
-                    this.MaterialCheckbox.check();
+                    _this.MaterialCheckbox.check();
             }, 10);
         });
     });
