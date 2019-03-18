@@ -750,6 +750,15 @@ $(function(){
         if (e.keyCode === 13)
             $(this).hideKeyboard();
     });
+    
+    if(deviceDetector.device == 'desktop')
+    // You're on a desktop.
+    else{
+        if(deviceDetector.device == 'tablet')
+          // You're on a tablet.
+        else
+          // You're on a phone.
+    }
 });
 
 resizeScreen();
