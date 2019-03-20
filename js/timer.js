@@ -239,27 +239,34 @@ window.onresize = function(event) {
     resizeScreen();
 };
 
-function resizeScreen(){
-    $('#superContainer').css("height", `${window.innerHeight}px`);
-    $('#superContainer').css("transform-origin", "50% 0% 0px");
-    
+function resizeScreen() {
     let scaleVal = window.innerHeight / 600;
-    setTimeout(function() {
-		$('#superContainer').css("transform", `scale(${scaleVal}`);
-    }, 100);
-    
-    setTimeout(function() {
-        if ($(".mdl-textfield__input")[0].getBoundingClientRect().width > $('body').outerWidth()){
-            $('#superContainer').css("transform", `scale(${scaleVal - (scaleVal - $(".mdl-textfield__input")[0].getBoundingClientRect().width / $('body').outerWidth())}`);
-        }
-    }, 100);
-
     if (window.innerHeight < 514 && window.innerWidth > window.innerHeight) {
+        $('body').prepend($('<div id="externalContainer"></div>'));
+        $('#externalContainer').append($('#superContainer'));
+        $('#externalContainer').css("height", `${window.innerHeight}px`);
+
+        $('#superContainer').css("transform-origin", "50% 0% 0px");
+        
         setTimeout(function() {
-			let innerScale = 1 - scaleVal;
-			$('#superContainer').width($("body").width() + $("body").width() * 1.5 * innerScale);
-			$('#superContainer').height($("body").height() + $("body").height() * 1.5 * innerScale);
-			$('#superContainer').css("transform-origin", "0% 0% 0px");
+            $('#superContainer').css("transform", `scale(${scaleVal}`);
+            setTimeout(function() {
+                $('#superContainer').css("height", `${(1 + scaleVal) * window.innerHeight}px`);
+            }, 100);
+        }, 100);
+    }
+    else {
+        $('#superContainer').css("height", `${window.innerHeight}px`);
+        $('#superContainer').css("transform-origin", "50% 0% 0px");
+        
+        setTimeout(function() {
+            $('#superContainer').css("transform", `scale(${scaleVal}`);
+        }, 100);
+        
+        setTimeout(function() {
+            if ($(".mdl-textfield__input")[0].getBoundingClientRect().width > $('body').outerWidth()){
+                $('#superContainer').css("transform", `scale(${scaleVal - (scaleVal - $(".mdl-textfield__input")[0].getBoundingClientRect().width / $('body').outerWidth())}`);
+            }
         }, 100);
     }
 }
@@ -730,6 +737,17 @@ lastColor = bgColors[selectedColor];
 invertColors();
 
 setTimeout(function () {
+    if(!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
+        $("#timeTable").prepend("<div id='row'><div class='leftTitle'><h4 id='btnCloseMobile' class='mdl-dialog__title'><span class='mdi mdi-close'></span></h4></div><div class='rightTitle'></div></div></div>");
+        
+        $(".rightTitle").append($("#titleMeeting"));
+        
+        $("#btnCloseMeeting").hide();
+        
+        $("#btnCloseMobile").click(function() {
+            dialogTimeTable.close();
+        });
+    }
     titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment((new Date())).format(dateFormat)}`;
 }, 100);
 
@@ -757,12 +775,19 @@ $(function(){
             $(this).hideKeyboard();
     });
 
-    document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-
-    if(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')
+    if(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet') {
         $('#timeTable').addClass('centeredDialog');
-    else
+        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+    }
+    else {
+        if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
+            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+        else
+            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.68}px`;        
+        
         $('#timeTable').addClass('fullscreen-dialog');
+        
+    }
     
     if (typeof HTMLDialogElement !== 'function') {
         $("#welcomeDialog").removeClass("centeredDialog");

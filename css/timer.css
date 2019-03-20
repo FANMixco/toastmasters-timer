@@ -138,6 +138,17 @@ footer {
 
 #e-pointer { transition: transform 0.7s; }
 
+.leftTitle {
+  float: left;
+  width: 15%;
+}
+
+.rightTitle {
+  float: left;
+  width: 85%;
+    text-align: left;
+}
+
 .column {
   float: left;
   width: 33.33%;
