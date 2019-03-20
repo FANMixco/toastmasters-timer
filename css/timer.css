@@ -224,6 +224,11 @@ td, th, .mdl-data-table__cell--non-numeric {
     transform: translateY(-50%);
 }
 
+.centeredDialogNoSupport {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .fullscreen-dialog {
   height: 100%;
   width: 100%;

@@ -763,6 +763,11 @@ $(function(){
         $('#timeTable').addClass('centeredDialog');
     else
         $('#timeTable').addClass('fullscreen-dialog');
+    
+    if (typeof HTMLDialogElement !== 'function') {
+        $("#welcomeDialog").removeClass("centeredDialog");
+        $("#welcomeDialog").addClass("centeredDialogNoSupport");
+    }
 });
 
 resizeScreen();
