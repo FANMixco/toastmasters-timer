@@ -234,7 +234,7 @@ function timer(seconds) { //counts time, takes seconds
             startVibrate();
             lastColor = "red";
         }
-        if (counter >= maximum + 30) {
+        if (counter >= maximum + clappingTime) {
             if (!clappingStarted)
                 startClapping();
             clappingStarted = true;
