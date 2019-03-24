@@ -18,6 +18,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnYesConfirm = document.getElementById('btnYesConfirm'),
     btnYesChanges = document.getElementById('btnYesChanges'),
     btnSave = document.getElementById('btnSave'),
+    btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
     imgClap = document.getElementById('imgClap'),
     dialogTimeTable = document.getElementById('timeTable'),
@@ -37,13 +38,16 @@ const displayOutput = document.querySelector('.display-remain-time'),
     maxH = document.getElementById('maxH'),
     maxM = document.getElementById('maxM'),
     maxS = document.getElementById('maxS'),
+    clapM = document.getElementById('clapM'),
+    clapS = document.getElementById('clapS'),
     cmbSpeechType = document.getElementById('cmbSpeechType'),
     remainTime = document.getElementById('remainTime'),
     titleMeeting = document.getElementById('titleMeeting'),
     divSpeaker = document.getElementById('divSpeaker'),
     snackbarMsg = document.getElementById('snackbarMsg');
 
-let wholeTime = 30,
+let clappingTime = 30,
+    wholeTime = 30,
     selected = -1,
     minimum = 0,
     average = 0,
@@ -51,7 +55,10 @@ let wholeTime = 30,
     selectedColor = 0,
     green = 0,
     yellow = 0,
-    red = 0;
+    red = 0,
+    count = 0;
+
+let elements = new Map();
 
 let isPaused = false,
     isStarted = false,
@@ -496,7 +503,7 @@ function storeTime(isTimeStored) {
 
     if (isTimeStored) {
         let counter = maximum - timeLeft;
-        addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + 30)) || (counter < (minimum - 30))));
+        addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + clappingTime)) || (counter < (minimum - clappingTime))));
     }
 
     //Perform the reset before selecting the maximum
@@ -599,9 +606,6 @@ btnBeep.addEventListener('click', event => {
     setBeep();
 });
 
-let count = 0;
-let elements = new Map();
-
 btnClap.addEventListener('click', function(event) {
 
     let countdown;
@@ -647,13 +651,16 @@ btnClap.addEventListener('click', function(event) {
 
 btnClap.addEventListener('trplclick', function(event) {
     dialogClapping.showModal();
-    setDropDownValue("#clapM0", "#clapM");
-    setDropDownValue("#clapS30", "#clapS");
+    setDropDownValue("#clapM0", "#divClapM");
+    setDropDownValue("#clapS30", "#divClapS");
     return false;
 });
 
-btnSave.addEventListener('click', event => {
-    saveChanges();
+btnSave.addEventListener('click', saveChanges);
+
+btnSaveClap.addEventListener('click', event => {
+    clappingTime = getSeconds(`00:${clapM.value}:${clapS.value}`);
+    dialogClapping.close();
 });
 
 if (!dialogTimeTable.showModal) {
@@ -679,7 +686,6 @@ if (!dialogCustomTimes.showModal) {
 if (!dialogWelcome.showModal) {
     dialogPolyfill.registerDialog(dialogWelcome);
 }
-
 
 if (!dialogConfirm.showModal) {
     dialogPolyfill.registerDialog(dialogConfirm);
@@ -866,7 +872,6 @@ $(function() {
             document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.68}px`;
 
         $('#timeTable').addClass('fullscreen-dialog');
-
     }
 
     if (typeof HTMLDialogElement !== 'function') {
