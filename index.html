@@ -162,10 +162,51 @@
             <button type="button" class="mdl-button close" data-tag="cancel"></button>
          </div>
       </dialog>
+      <dialog class="mdl-dialog" id="clappingDialog">
+         <div class="mdl-dialog__content">
+            <div id="fakeContainer">
+               <input class="fakeTxt" type="text" readonly/>
+            </div>
+            <h4 class="mdl-dialog__title"><span class="mdi mdi-egg-easter"></span></h4>
+            <div>
+               <h4 class="hCustom" data-tag="clapping"></h4>
+               <div class="rowFull">
+                  <div class="columnClap">
+                     <div id="clapM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                        <input type="text" value="" class="mdl-textfield__input" id="clapM" readonly>
+                        <input type="hidden" value="" name="clapM">
+                        <label for="clapM" class="mdl-textfield__label">M</label>
+                        <ul for="clapM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                           <li class="mdl-menu__item" data-val="0" id="clapM0">00</li>
+                           <li class="mdl-menu__item" data-val="1" id="clapM1">01</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="columnClap">
+                     <div id="clapS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                        <input type="text" value="" class="mdl-textfield__input" id="clapS" readonly>
+                        <input type="hidden" value="" name="clapS">
+                        <label for="clapS" class="mdl-textfield__label">S</label>
+                        <ul for="clapS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                           <li class="mdl-menu__item" data-val="0" id="clapS0">00</li>
+                           <li class="mdl-menu__item" data-val="15" id="clapS15">15</li>
+                           <li class="mdl-menu__item" data-val="30" id="clapS30">30</li>
+                           <li class="mdl-menu__item" data-val="45" id="clapS45">45</li>
+                        </ul>
+                     </div>
+                  </div>
+                </div>
+             </div>
+             <div class="mdl-dialog__actions">
+                <button id="btnSaveClap" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
+                <button type="button" class="mdl-button close" data-tag="close"></button>
+             </div>
+          </div>
+       </dialog>       
       <dialog class="mdl-dialog" id="customTimes">
          <div class="mdl-dialog__content">
             <div id="fakeContainer">
-               <input id="fakeTxt" type="text" readonly/>
+               <input class="fakeTxt" type="text" readonly/>
             </div>
             <div>
                 <div id="customMin">
@@ -173,12 +214,12 @@
                 </div>
                <div class="rowFull">
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divMinH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="minH" readonly>
                         <input type="hidden" value="" name="minH">
                         <label for="minH" class="mdl-textfield__label">H</label>
                         <ul for="minH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="minH0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -206,12 +247,12 @@
                      </div>
                   </div>
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divMinM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="minM" readonly>
                         <input type="hidden" value="" name="minM">
                         <label for="minM" class="mdl-textfield__label">M</label>
                         <ul for="minM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="minM0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -275,12 +316,12 @@
                      </div>
                   </div>
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divMinS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="minS" readonly>
                         <input type="hidden" value="" name="minS">
                         <label for="minS" class="mdl-textfield__label">S</label>
                         <ul for="minS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="minS0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -351,12 +392,12 @@
                 </div>
                <div class="rowFull">
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divAvgH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="avgH" readonly>
                         <input type="hidden" value="" name="avgH">
                         <label for="avgH" class="mdl-textfield__label">H</label>
                         <ul for="avgH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="avgH0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -384,12 +425,12 @@
                      </div>
                   </div>
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divAvgM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="avgM" readonly>
                         <input type="hidden" value="" name="avgM">
                         <label for="avgM" class="mdl-textfield__label">M</label>
                         <ul for="avgM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="avgM0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -453,12 +494,12 @@
                      </div>
                   </div>
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divAvgS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="avgS" readonly>
                         <input type="hidden" value="" name="avgS">
                         <label for="avgS" class="mdl-textfield__label">S</label>
                         <ul for="avgS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="avgS0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -529,12 +570,12 @@
                 </div>
                <div class="rowFull">
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divMaxH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="maxH" readonly>
                         <input type="hidden" value="" name="maxH">
                         <label for="maxH" class="mdl-textfield__label">H</label>
                         <ul for="maxH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li id="defaultVal" class="mdl-menu__item" data-val="0">00</li>
+                           <li id="maxH0" class="mdl-menu__item" data-val="0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -562,12 +603,12 @@
                      </div>
                   </div>
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divMaxM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="maxM" readonly>
                         <input type="hidden" value="" name="maxM">
                         <label for="maxM" class="mdl-textfield__label">M</label>
                         <ul for="maxM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="maxM0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>
@@ -631,12 +672,12 @@
                      </div>
                   </div>
                   <div class="column">
-                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                     <div id="divMaxS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
                         <input type="text" value="" class="mdl-textfield__input" id="maxS" readonly>
                         <input type="hidden" value="" name="maxS">
                         <label for="maxS" class="mdl-textfield__label">S</label>
                         <ul for="maxS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0">00</li>
+                           <li class="mdl-menu__item" data-val="0" id="maxS0">00</li>
                            <li class="mdl-menu__item" data-val="1">01</li>
                            <li class="mdl-menu__item" data-val="2">02</li>
                            <li class="mdl-menu__item" data-val="3">03</li>

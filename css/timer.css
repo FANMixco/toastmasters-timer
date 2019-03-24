@@ -154,6 +154,11 @@ footer {
   width: 33.33%;
 }
 
+.columnClap {
+  float: left;
+  width: 50%;
+}
+
 .row:after {
   content: "";
   display: table;
@@ -264,14 +269,14 @@ td, th, .mdl-data-table__cell--non-numeric {
     overflow-y: auto;
 }
 
-#fakeTxt {
+.fakeTxt {
     width: 0px;
     height: 0px;
     outline: none;
     border: transparent;
 }
 
-#fakeTxt:focus {
+.fakeTxt:focus {
     outline: none; 
 }
 
