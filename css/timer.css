@@ -252,6 +252,17 @@ td, th, .mdl-data-table__cell--non-numeric {
   overflow-y: hidden;
 }
 
+.fakeTxt {
+    width: 0px;
+    height: 0px;
+    outline: none;
+    border: transparent;
+}
+
+.fakeTxt:focus {
+    outline: none; 
+}
+
 #options button{
     font-size: 3em;
 }
@@ -265,19 +276,13 @@ td, th, .mdl-data-table__cell--non-numeric {
     width: 36px;
 }
 
+#egTitle {
+   color: #ff80ab;
+   font-size: 2em!important;
+}
+
 #divSpeakers{
     overflow-y: auto;
-}
-
-.fakeTxt {
-    width: 0px;
-    height: 0px;
-    outline: none;
-    border: transparent;
-}
-
-.fakeTxt:focus {
-    outline: none; 
 }
 
 #fakeContainer {
