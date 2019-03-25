@@ -209,6 +209,8 @@ function resetState() {
 }
 
 function timer(seconds) { //counts time, takes seconds
+    if (seconds === undefined)
+        seconds = maximum;
     let remainTime = Date.now() + (seconds * 1000);
     displayTimeLeft(seconds);
 
@@ -259,7 +261,10 @@ function resizeScreen() {
         setTimeout(function() {
             $('#superContainer').css("transform", `scale(${scaleVal}`);
             setTimeout(function() {
-                $('#superContainer').css("height", `${(1 + scaleVal) * window.innerHeight}px`);
+                var cHeight = (1 + scaleVal) * window.innerHeight;
+                if (cHeight < 514)
+                    cHeight = 514;
+                $('#superContainer').css("height", `${cHeight}px`);
             }, 100);
         }, 100);
     } else {
