@@ -261,7 +261,7 @@ function resizeScreen() {
         setTimeout(function() {
             $('#superContainer').css("transform", `scale(${scaleVal}`);
             setTimeout(function() {
-                var cHeight = (1 + scaleVal) * window.innerHeight;
+                let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
                 $('#superContainer').css("height", `${cHeight}px`);
