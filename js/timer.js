@@ -582,6 +582,19 @@ function saveChanges() {
     }
 }
 
+function resizeSelect() {
+    setTimeout(function() {
+        $($(".mdl-menu__outline")[0]).width(300);
+        $($(".mdl-menu__container")[0]).width(300);
+        $($(".mdl-menu__outline")[0]).height(310);
+        $($(".mdl-menu__container")[0]).height(310);
+        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
+        res[1] = res[1].replace("px", "");
+        res[2] = res[2].replace("px", "");
+        $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
+    }, 50);    
+}
+
 btnPause.addEventListener('click', pauseTimer);
 
 btnRestart.addEventListener('click', event => {
@@ -612,7 +625,6 @@ btnBeep.addEventListener('click', event => {
 });
 
 btnClap.addEventListener('click', function(event) {
-
     let countdown;
 
     function reset() {
@@ -793,18 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cmbSpeechType.onchange = changeEventHandler;
 }, false);
 
-cmbSpeechType.addEventListener('click', function() {
-    setTimeout(function() {
-        $($(".mdl-menu__outline")[0]).width(300);
-        $($(".mdl-menu__container")[0]).width(300);
-        $($(".mdl-menu__outline")[0]).height(310);
-        $($(".mdl-menu__container")[0]).height(310);
-        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
-        res[1] = res[1].replace("px", "");
-        res[2] = res[2].replace("px", "");
-        $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
-    }, 50);
-});
+cmbSpeechType.addEventListener('click', resizeSelect);
 
 maximum = 0;
 wholeTime = 0;
@@ -883,6 +884,11 @@ $(function() {
         $("#welcomeDialog").removeClass("centeredDialog");
         $("#welcomeDialog").addClass("centeredDialogNoSupport");
     }
+    
+   $('body').focusin(function() {
+       if ($(".mdl-menu__outline").eq(0).css('z-index') != "-1")
+            resizeSelect();
+   });
 });
 
 resizeScreen();
