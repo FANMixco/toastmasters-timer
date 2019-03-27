@@ -863,7 +863,7 @@ $(function() {
         });
     });
 
-    $("#txtMember").on('keyup', function(e) {
+    $("#txtSpeaker").on('keyup', function(e) {
         if (e.keyCode === 13)
             $(this).hideKeyboard();
     });
