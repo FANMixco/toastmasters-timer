@@ -889,6 +889,8 @@ $(function() {
        if ($(".mdl-menu__outline").eq(0).css('z-index') != "-1")
             resizeSelect();
    });
+    
+   $('html').show();
 });
 
 resizeScreen();
