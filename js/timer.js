@@ -291,6 +291,7 @@ function pauseTimer(event) {
             showSnackbar(lngObject.chooseTime);
         return;
     }
+    browserStopClapping();
 
     btnInvert.disabled = true;
     cmbSpeechType.disabled = true;
