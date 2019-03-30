@@ -284,7 +284,7 @@ function resizeScreen() {
 }
 
 function pauseTimer(event) {
-    if (minimum === 0 && maximum === 0 && average === 0) {
+    if ((minimum === 0 && maximum === 0 && average === 0) || selected === -1) {
         if (isCustom)
             showSnackbar(lngObject.notSaved);
         else
@@ -668,8 +668,10 @@ btnClap.addEventListener('click', function(event) {
 
 btnClap.addEventListener('trplclick', function(event) {
     dialogClapping.showModal();
-    setDropDownValue("#clapM0", "#divClapM");
-    setDropDownValue("#clapS30", "#divClapS");
+    if (clappingTime === 30) {
+        setDropDownValue("#clapM0", "#divClapM");
+        setDropDownValue("#clapS30", "#divClapS");
+    }
     return false;
 });
 
@@ -768,10 +770,6 @@ btnMultiple.addEventListener('click', function() {
 
 dialogTimeTable.querySelector('.close').addEventListener('click', function() {
     dialogTimeTable.close();
-});
-
-dialogClapping.querySelector('.close').addEventListener('click', function() {
-    dialogClapping.close();
 });
 
 dialogCustomTimes.querySelector('.close').addEventListener('click', function() {
