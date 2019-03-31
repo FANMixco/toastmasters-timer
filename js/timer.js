@@ -889,7 +889,7 @@ $(function() {
             resizeSelect();
    });
     
-   $('html').show();
+   //$('html').show();
 });
 
 resizeScreen();
