@@ -767,6 +767,7 @@ btnMultiple.addEventListener('click', function() {
         $(".tdDel,#thDel").hide();
     }
     multipleEnabled = !multipleEnabled;
+    refreshControls();
 });
 
 dialogTimeTable.querySelector('.close').addEventListener('click', function() {
@@ -863,6 +864,7 @@ $(function() {
                     _this.MaterialCheckbox.uncheck();
             }, 10);
         });
+        refreshControls();
     });
 
     $("#txtSpeaker").on('keyup', function(e) {

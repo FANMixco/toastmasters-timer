@@ -80,7 +80,7 @@ function printTable() {
             $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked="checked" /></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
             cursor.continue();
         } else {
-            componentHandler.upgradeAllRegistered();
+            refreshControls();
             addCheckTaps();
         }
     };
@@ -103,6 +103,7 @@ function deleteByIDs() {
 		transaction.objectStore("timeTable").delete(ids[i]);
 		$(`#tr${ids[i]}`).hide();
     }
+    refreshControls();
     let objectStoreRequest = transaction.objectStore("timeTable").count();
 	objectStoreRequest.onsuccess = function() {
 		if (objectStoreRequest.result === 0) {

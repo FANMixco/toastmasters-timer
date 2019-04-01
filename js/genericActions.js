@@ -26,3 +26,9 @@ function showSnackbar(msg) {
     };
     snackbarMsg.MaterialSnackbar.showSnackbar(data);
 }
+
+function refreshControls() {
+    setTimeout(function () {
+        componentHandler.upgradeAllRegistered();
+    }, 10);
+}
