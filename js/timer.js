@@ -830,15 +830,18 @@ invertColors();
 
 setTimeout(function() {
     if (!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
-        $("#timeTable").prepend("<div id='row'><div class='leftTitle'><h4 id='btnCloseMobile' class='mdl-dialog__title'><span class='mdi mdi-close'></span></h4></div><div class='rightTitle'></div></div></div>");
+        $("#timeTable").prepend(`<div id='titleContainer'><div id='titleInnerContainer'><span style='font-size:1.5em; margin-right:32px;' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
 
-        $(".rightTitle").append($("#titleMeeting"));
+            $("#titleMeeting").removeClass('mdl-dialog__title');
+            $("#titleMeeting").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
 
-        $("#btnCloseMeeting").hide();
+            $("#spanTitle").append($("#titleMeeting"));
 
-        $("#btnCloseMobile").click(function() {
-            dialogTimeTable.close();
-        });
+            $("#btnCloseMeeting").hide();
+
+            $("#btnCloseMobile").click(function () {
+                dialogTimeTable.close();
+            });
     }
     titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment((new Date())).format(dateFormat)}`;
 }, 100);

@@ -138,15 +138,26 @@ footer {
 
 #e-pointer { transition: transform 0.7s; }
 
-.leftTitle {
-  float: left;
-  width: 15%;
+#btnCloseMobile {
+    font-size: 1.5em;
+    margin-right: 32px;
 }
 
-.rightTitle {
-  float: left;
-  width: 85%;
+#titleContainer {
+    height: 56px;
+    background: #616161;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin-top: -14px;
+    margin-left: -14px;
+    margin-right: -14px;
     text-align: left;
+}
+
+#titleInnerContainer {
+    padding-top: 16px;
+    padding-left: 16px
 }
 
 .column {
