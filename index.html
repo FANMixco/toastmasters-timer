@@ -27,18 +27,19 @@
             <input type="hidden" value="" name="hiddenSpeechType" id="hiddenSpeechType">
             <label for="cmbSpeechType" class="mdl-textfield__label" data-tag="chooseSpeech"></label>
             <ul for="cmbSpeechType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-               <li class="mdl-menu__item" data-val="0" data-tag="opt1"></li>
-               <li class="mdl-menu__item" data-val="1" data-tag="opt2"></li>
-               <li class="mdl-menu__item" data-val="2" data-tag="opt3"></li>
-               <li class="mdl-menu__item" data-val="3" data-tag="opt4"></li>
-               <li class="mdl-menu__item" data-val="4" data-tag="opt5"></li>
-               <li class="mdl-menu__item" data-val="5" data-tag="opt6"></li>
-               <li class="mdl-menu__item" data-val="6" data-tag="opt7"></li>
-               <li class="mdl-menu__item" data-val="7" data-tag="opt8"></li>
-               <li class="mdl-menu__item" data-val="8" data-tag="opt9"></li>
-               <li class="mdl-menu__item" data-val="9" data-tag="opt10"></li>
-               <li class="mdl-menu__item" data-val="10" data-tag="opt11"></li>
-               <li class="mdl-menu__item" data-val="11" data-tag="opt12"></li>
+                <li class="mdl-menu__item" data-val="0" data-tag="opt1"></li>
+                <li class="mdl-menu__item" data-val="1" data-tag="opt2"></li>
+                <li class="mdl-menu__item" data-val="2" data-tag="opt3"></li>
+                <li class="mdl-menu__item" data-val="12" data-tag="opt13"></li>
+                <li class="mdl-menu__item" data-val="4" data-tag="opt5"></li>
+                <li class="mdl-menu__item" data-val="5" data-tag="opt6"></li>
+                <li class="mdl-menu__item" data-val="6" data-tag="opt7"></li>
+                <li class="mdl-menu__item" data-val="7" data-tag="opt8"></li>
+                <li class="mdl-menu__item" data-val="3" data-tag="opt4"></li>
+                <li class="mdl-menu__item" data-val="8" data-tag="opt9"></li>
+                <li class="mdl-menu__item" data-val="9" data-tag="opt10"></li>
+                <li class="mdl-menu__item" data-val="10" data-tag="opt11"></li>
+                <li class="mdl-menu__item" data-val="11" data-tag="opt12"></li>
             </ul>
          </div>
          <div id="options">
@@ -207,7 +208,11 @@
             <div id="fakeContainer">
                <input class="fakeTxt" type="text" readonly/>
             </div>
-            <div>
+            <div id="divCustom" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="txtCustom">
+                <label class="mdl-textfield__label" for="txtCustom" data-tag="opt12"></label>
+            </div>
+            <div class="customSections">
                 <div id="customMin">
                     <h4 class="hCustom" data-tag="timeMinimum"></h4>
                 </div>
@@ -385,7 +390,7 @@
                   </div>
                </div>
             </div>
-            <div>
+            <div class="customSections">
                 <div id="customAvg">
                     <h4 class="hCustom" data-tag="timeHalfway"></h4>
                 </div>
@@ -563,7 +568,7 @@
                   </div>
                </div>
             </div>
-            <div>
+            <div class="customSections">
                 <div id="customMax">
                     <h4 class="hCustom" data-tag="timeMaximum"></h4>
                 </div>

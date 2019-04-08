@@ -1,8 +1,8 @@
 @import url('../css/roboto.font.css');
 
 html {
-    overflow-x: hidden;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body, #superContainer {
@@ -138,12 +138,12 @@ footer {
 
 #e-pointer { transition: transform 0.7s; }
 
-#btnCloseMobile {
+.btnCloseMobile {
     font-size: 1.5em;
     margin-right: 32px;
 }
 
-#titleContainer {
+.titleContainer {
     height: 56px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -153,9 +153,15 @@ footer {
     text-align: left;
 }
 
-#titleInnerContainer {
+.titleInnerContainer {
     padding-top: 16px;
     padding-left: 16px
+}
+
+#spanSave {
+    float: right;
+    margin-right: 16px;
+    margin-top: -6px;
 }
 
 .column {
@@ -249,16 +255,24 @@ td, th, .mdl-data-table__cell--non-numeric {
     transform: translateY(-50%);
 }
 
+.customSections {
+    margin-top: -22px;
+}
+
 .centeredDialogNoSupport {
     top: 50%;
     transform: translateY(-50%);
 }
 
 .fullscreen-dialog {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+    height: calc(100% - 28px) !important;
+    width: calc(100% - 28px) !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.fullscreen-dialog-tablet {
+    width: calc(85% - 28px) !important;
 }
 
 .fakeTxt {
@@ -276,18 +290,14 @@ td, th, .mdl-data-table__cell--non-numeric {
     font-size: 3em;
 }
 
-#timeTable {
-    width: 95%!important;
+#egTitle {
+   color: #ff80ab;
+   font-size: 4em!important;
 }
 
 #imgClap{
     margin-top: -8px;
     width: 36px;
-}
-
-#egTitle {
-   color: #ff80ab;
-   font-size: 4em!important;
 }
 
 #divSpeakers{

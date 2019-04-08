@@ -29,6 +29,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
     dialogAbout = document.getElementById('aboutDialog'),
     dialogClapping = document.getElementById('clappingDialog'),
     txtSpeaker = document.getElementById('txtSpeaker'),
+    txtCustom = document.getElementById('txtCustom'),
     minH = document.getElementById('minH'),
     minM = document.getElementById('minM'),
     minS = document.getElementById('minS'),
@@ -44,7 +45,8 @@ const displayOutput = document.querySelector('.display-remain-time'),
     remainTime = document.getElementById('remainTime'),
     titleMeeting = document.getElementById('titleMeeting'),
     divSpeaker = document.getElementById('divSpeaker'),
-    snackbarMsg = document.getElementById('snackbarMsg');
+    snackbarMsg = document.getElementById('snackbarMsg'),
+    length = Math.PI * 2 * 100;
 
 let clappingTime = 30,
     wholeTime = 30,
@@ -56,12 +58,13 @@ let clappingTime = 30,
     green = 0,
     yellow = 0,
     red = 0,
-    count = 0;
+    timeLeft = 0;
 
 let elements = new Map();
 
 let isPaused = false,
     isStarted = false,
+    isStopped = true,
     isBeepEnabled = false,
     isVibrateEnabled = false,
     isClappingEnabled = false,
@@ -69,7 +72,8 @@ let isPaused = false,
     isCustom = false,
     isFirstRun = true,
     clappingStarted = false,
-    multipleEnabled = false;
+    multipleEnabled = false,
+    isNinjaMode = false;
 
 let dateFormat = "DD/MM/YYYY",
     latestDB = "1.0",
@@ -101,17 +105,17 @@ let times = [
     //15m
     [780, 840, 900],
     //20m
-    [1080, 1170, 1200]
+    [1080, 1170, 1200],
+    //1m
+    [30, 45, 60]
 ];
 
 //circle start
 let progressBar = document.querySelector('.e-c-progress'),
     indicator = document.getElementById('e-indicator'),
-    pointer = document.getElementById('e-pointer'),
-    length = Math.PI * 2 * 100;
+    pointer = document.getElementById('e-pointer');
 
 let intervalTimer;
-let timeLeft;
 
 var results = [];
 
@@ -123,7 +127,7 @@ function update(value, timePercent) {
         progressBar.style.strokeDashoffset = -offset;
         pointer.style.transform = `rotate(${360 * value / (-timePercent)}deg)`;
     }
-};
+}
 
 update(wholeTime, wholeTime); //refreshes progress bar
 displayTimeLeft(wholeTime);
@@ -158,7 +162,7 @@ function checkMode() {
 }
 
 function changeWholeTime(seconds) {
-    if ((wholeTime + seconds) > 0) {
+    if (wholeTime + seconds > 0) {
         wholeTime += seconds;
         update(wholeTime, wholeTime);
     }
@@ -205,13 +209,15 @@ function resetState() {
     btnInvert.disabled = false;
     btnRestart.disabled = false;
     cmbSpeechType.disabled = false;
+    isStopped = true;
+    isPaused = false;
     btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
+    timeLeft = 0;
+    currentState = 1;
 }
 
 function timer(seconds) { //counts time, takes seconds
-    if (seconds === undefined)
-        seconds = maximum;
-    let remainTime = Date.now() + (seconds * 1000);
+    let remainTime = Date.now() + seconds * 1000;
     displayTimeLeft(seconds);
 
     intervalTimer = setInterval(function() {
@@ -245,7 +251,7 @@ function timer(seconds) { //counts time, takes seconds
     }, 1000);
 }
 
-window.onresize = function(event) {
+window.onresize = function () {
     resizeScreen();
 };
 
@@ -283,32 +289,49 @@ function resizeScreen() {
     }
 }
 
-function pauseTimer(event) {
-    if ((minimum === 0 && maximum === 0 && average === 0) || selected === -1) {
+function resizeSelect() {
+    setTimeout(function () {
+        $($(".mdl-menu__outline")[0]).width(300);
+        $($(".mdl-menu__container")[0]).width(300);
+        $($(".mdl-menu__outline")[0]).height(310);
+        $($(".mdl-menu__container")[0]).height(310);
+        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
+        res[1] = res[1].replace("px", "");
+        res[2] = res[2].replace("px", "");
+        $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
+    }, 50);
+}
+
+function pauseTimer() {
+    if (minimum === 0 && maximum === 0 && average === 0 || selected === -1) {
         if (isCustom)
             showSnackbar(lngObject.notSaved);
         else
             showSnackbar(lngObject.chooseTime);
         return;
     }
+    validateProperIntervals();
+
     browserStopClapping();
+
+    isStopped = false;
 
     btnInvert.disabled = true;
     cmbSpeechType.disabled = true;
 
-    if (isStarted === false) {
+    if (!isStarted || timeLeft === undefined) {
         timer(wholeTime);
         isStarted = true;
-        this.classList.remove('play');
-        this.classList.add('pause');
+        btnPause.classList.remove('play');
+        btnPause.classList.add('pause');
     } else if (isPaused) {
-        this.classList.remove('play');
-        this.classList.add('pause');
+        btnPause.classList.remove('play');
+        btnPause.classList.add('pause');
         timer(timeLeft);
-        isPaused = isPaused ? false : true
+        isPaused = isPaused ? false : true;
     } else {
-        this.classList.remove('pause');
-        this.classList.add('play');
+        btnPause.classList.remove('pause');
+        btnPause.classList.add('play');
         clearInterval(intervalTimer);
         isPaused = isPaused ? false : true;
     }
@@ -318,6 +341,11 @@ function pauseTimer(event) {
     if (btnRestart.disabled) {
         btnRestart.innerHTML = "<span class='mdi mdi-restart-off'></span>";
         $('footer,#divSpeechType,#options,#divSpeaker').fadeTo("fast", '0.1');
+
+        if (isNinjaMode) {
+            $('.circle').fadeTo("fast", '0');
+            $('#controls').fadeTo("fast", '0.5');
+        }
     } else {
         btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
         $('footer,#divSpeechType,#options,#divSpeaker').fadeTo("fast", '1');
@@ -341,20 +369,38 @@ function setDropDownValue(idVal, idContainer) {
     } catch (e) {}
 }
 
-function changeEventHandler(event) {
-    let wasCustom = selected == "11";
+function validateProperIntervals() {
+    if (isCustom) {
+        minimum = getMinCustom();
+        average = getAvgCustom();
+        maximum = getMaxCustom();
+    } else
+        setBasicIntervals();
+    if (timeLeft === 0)
+        wholeTime = maximum;
+}
 
-    selected = hiddenSpeechType.value;
+function setBasicIntervals() {
+    let selectedVal = selected;
+    if (selected > 11) selectedVal--;
+    minimum = times[selectedVal][0];
+    average = times[selectedVal][1];
+    maximum = times[selectedVal][2];
+}
 
-    if (parseInt(selected) != 11) {
-        minimum = times[selected][0];
-        average = times[selected][1];
-        maximum = times[selected][2];
+function changeEventHandler() {
+    let wasCustom = selected === 11;
+
+    selected = parseInt(hiddenSpeechType.value);
+
+    if (selected !== 11) {
+        setBasicIntervals();
 
         wholeTime = maximum;
-        update(wholeTime, wholeTime); //refreshes progress bar
-        displayTimeLeft(wholeTime);
-    } else {
+        updateDisplay();
+        isCustom = false;
+    }
+    else {
         if (!wasCustom) {
             minimum = 0;
             maximum = 0;
@@ -371,8 +417,34 @@ function changeEventHandler(event) {
             setDropDownValue("#maxH0", "#divMaxH");
             setDropDownValue("#maxM0", "#divMaxM");
             setDropDownValue("#maxS0", "#divMaxS");
+            $("#txtCustom")[0].parentElement.MaterialTextfield.change(jsonTrans.opt12);
         }
+        else if (wasCustom && !isFirstTime) {
+            $("#txtCustom")[0].parentElement.MaterialTextfield.change(getLocalStorageValue("txtCustom"));
+            let hours = Math.floor(minimum / 3600);
+            let minutes = Math.floor(minimum / 60);
+            let seconds = minimum % 60;
 
+            setDropDownValue(`#minH${hours}`, "#divMinH");
+            setDropDownValue(`#minM${minutes}`, "#divMinM");
+            setDropDownValue(`#minS${seconds}`, "#divMinS");
+
+            hours = Math.floor(average / 3600);
+            minutes = Math.floor(average / 60);
+            seconds = average % 60;
+
+            setDropDownValue(`#avgH${hours}`, "#divAvgH");
+            setDropDownValue(`#avgM${minutes}`, "#divAvgM");
+            setDropDownValue(`#avgS${seconds}`, "#divAvgS");
+
+            hours = Math.floor(maximum / 3600);
+            minutes = Math.floor(maximum / 60);
+            seconds = maximum % 60;
+
+            setDropDownValue(`#maxH${hours}`, "#divMaxH");
+            setDropDownValue(`#maxM${minutes}`, "#divMaxM");
+            setDropDownValue(`#maxS${seconds}`, "#divMaxS");
+        }
         isCustom = true;
         dialogCustomTimes.showModal();
     }
@@ -403,37 +475,44 @@ function stopClapping() {
 
 function getVibrate() {
     if (getLocalStorageValue("isVibrateEnabled") !== null)
-        isVibrateEnabled = (getLocalStorageValue("isVibrateEnabled") === 'true');
+        isVibrateEnabled = getLocalStorageValue("isVibrateEnabled") === 'true';
     else
         setVibrate();
 }
 
 function getClapping() {
     if (getLocalStorageValue("isClappingEnabled") !== null)
-        isClappingEnabled = (getLocalStorageValue("isClappingEnabled") === 'true');
+        isClappingEnabled = getLocalStorageValue("isClappingEnabled") === 'true';
     else
         setClapping();
 }
 
 function getBeep() {
     if (getLocalStorageValue("isBeepEnabled") !== null)
-        isBeepEnabled = (getLocalStorageValue("isBeepEnabled") === 'true');
+        isBeepEnabled = getLocalStorageValue("isBeepEnabled") === 'true';
     else
         setBeep();
 }
 
 function getContestMode() {
     if (getLocalStorageValue("isContestMode") !== null)
-        isContestMode = (getLocalStorageValue("isContestMode") === 'true');
+        isContestMode = getLocalStorageValue("isContestMode") === 'true';
     else
         setContestMode();
 }
 
 function getFirstRun() {
     if (getLocalStorageValue("isFirstRun") !== null)
-        isFirstRun = (getLocalStorageValue("isFirstRun") === 'true');
+        isFirstRun = getLocalStorageValue("isFirstRun") === 'true';
     else
         setFirstRun();
+}
+
+function getNinjaMode() {
+    if (getLocalStorageValue("isNinjaMode") !== null)
+        isNinjaMode = getLocalStorageValue("isNinjaMode") === 'true';
+    else
+        setLocalStorage("isNinjaMode", false);
 }
 
 function getSelectedColor() {
@@ -509,7 +588,10 @@ function storeTime(isTimeStored) {
 
     if (isTimeStored) {
         let counter = maximum - timeLeft;
-        addNewTime(txtSpeaker.value, cmbSpeechType.value, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, ((counter > (maximum + clappingTime)) || (counter < (minimum - clappingTime))));
+        let titleSpeechType = cmbSpeechType.value;
+        if (selected === 11)
+            titleSpeechType = txtCustom.value;
+        addNewTime(txtSpeaker.value, titleSpeechType, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, counter > maximum + clappingTime || counter < minimum - clappingTime);
     }
 
     //Perform the reset before selecting the maximum
@@ -518,8 +600,11 @@ function storeTime(isTimeStored) {
     red = 0;
     basicReset();
 
-    if (!isCustom)
-        maximum = times[selected][2];
+    if (!isCustom) {
+        let selectedVal = selected;
+        if (selected > 11) selectedVal--;
+        maximum = times[selectedVal][2];
+    }
     else
         maximum = getMaxCustom();
 
@@ -563,6 +648,13 @@ function getMaxCustom() {
     return intMaxH * 3600 + intMaxM * 60 + intMaxS;
 }
 
+function closeCustomDialog() {
+    if (getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0)
+        dialogChanges.showModal();
+    else
+        dialogCustomTimes.close();
+}
+
 function saveChanges() {
     let minTime = getMinCustom(),
         avgTime = getAvgCustom(),
@@ -579,106 +671,72 @@ function saveChanges() {
         average = avgTime;
         maximum = maxTime;
         wholeTime = maximum;
+        updateDisplay();
         dialogCustomTimes.close();
     }
 }
 
-function resizeSelect() {
-    setTimeout(function() {
-        $($(".mdl-menu__outline")[0]).width(300);
-        $($(".mdl-menu__container")[0]).width(300);
-        $($(".mdl-menu__outline")[0]).height(310);
-        $($(".mdl-menu__container")[0]).height(310);
-        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
-        res[1] = res[1].replace("px", "");
-        res[2] = res[2].replace("px", "");
-        $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
-    }, 50);    
-}
+btnPause.addEventListener('click', function (event) {
+    if (event.detail === 1) {
+        pauseTimer();
+    }
+});
 
-btnPause.addEventListener('click', pauseTimer);
-
-btnRestart.addEventListener('click', event => {
+btnRestart.addEventListener('click', () => {
     storeTime(false);
 });
 
-btnStop.addEventListener('click', event => {
+btnStop.addEventListener('click', () => {
     storeTime(true);
 });
 
-btnChampion.addEventListener('click', event => {
-    isContestMode = !isContestMode;
-    setContestImg();
-    checkMode();
-    setContestMode();
+btnChampion.addEventListener('click', function (event) {
+    if (event.detail === 3) {
+        isNinjaMode = !isNinjaMode;
+
+        if (isNinjaMode)
+            showSnackbar(jsonTrans.ninjaEnabled, false);
+        else
+            showSnackbar(jsonTrans.ninjaDisabled, false);
+        setLocalStorage("isNinjaMode", isNinjaMode);
+    } else {
+        isContestMode = !isContestMode;
+        setContestImg();
+        checkMode();
+        setContestMode();
+    }
 });
 
-btnVibrate.addEventListener('click', event => {
+btnVibrate.addEventListener('click', () => {
     isVibrateEnabled = !isVibrateEnabled;
     setVibrateImg();
     setVibrate();
 });
 
-btnBeep.addEventListener('click', event => {
+btnBeep.addEventListener('click', () => {
     isBeepEnabled = !isBeepEnabled;
     setBeepImg();
     setBeep();
 });
 
 btnClap.addEventListener('click', function(event) {
-    let countdown;
-
-    function reset() {
-        count = 0;
-        countdown = null;
-    }
-
-    count++;
-
-    if (count === 3) {
-        if (!elements.has(event.target)) {
-            elements.set(event.target, 1);
-        } else {
-            let currentCount = elements.get(event.target);
-            currentCount++;
-            elements.set(event.target, currentCount);
+    if (event.detail === 3) {
+        dialogClapping.showModal();
+        if (clappingTime === 30) {
+            setDropDownValue("#clapM0", "#divClapM");
+            setDropDownValue("#clapS30", "#divClapS");
         }
-
-        let tripleClick = new CustomEvent('trplclick', {
-            bubbles: true,
-            detail: {
-                numberOfTripleClicks: elements.get(event.target)
-            }
-        });
-
-        event.target.dispatchEvent(tripleClick);
-        reset();
-    } else {
+    }
+    else {
         isClappingEnabled = !isClappingEnabled;
         setClappingImg();
         setClapping();
-
     }
-
-    if (!countdown) {
-        countdown = window.setTimeout(function() {
-            reset();
-        }, 500);
-    }
-});
-
-btnClap.addEventListener('trplclick', function(event) {
-    dialogClapping.showModal();
-    if (clappingTime === 30) {
-        setDropDownValue("#clapM0", "#divClapM");
-        setDropDownValue("#clapS30", "#divClapS");
-    }
-    return false;
 });
 
 btnSave.addEventListener('click', saveChanges);
 
-btnSaveClap.addEventListener('click', event => {
+btnSaveClap.addEventListener('click', () => {
     clappingTime = getSeconds(`00:${clapM.value}:${clapS.value}`);
     dialogClapping.close();
 });
@@ -774,12 +832,7 @@ dialogTimeTable.querySelector('.close').addEventListener('click', function() {
     dialogTimeTable.close();
 });
 
-dialogCustomTimes.querySelector('.close').addEventListener('click', function() {
-    if (getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0)
-        dialogChanges.showModal();
-    else
-        dialogCustomTimes.close();
-});
+dialogCustomTimes.querySelector('.close').addEventListener('click', closeCustomDialog);
 
 dialogConfirm.querySelector('.close').addEventListener('click', function() {
     dialogConfirm.close();
@@ -801,6 +854,16 @@ dialogWelcome.querySelector('.close').addEventListener('click', function() {
     showSnackbar(lngObject.noHints);
 });
 
+txtCustom.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13)
+        $("#txtCustom").hideKeyboard();
+});
+
+txtSpeaker.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13)
+        $("#txtSpeaker").hideKeyboard();
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     cmbSpeechType.onchange = changeEventHandler;
 }, false);
@@ -815,6 +878,7 @@ getVibrate();
 getClapping();
 getContestMode();
 getSelectedColor();
+getNinjaMode();
 getFirstRun();
 
 setContestImg();
@@ -831,18 +895,30 @@ invertColors();
 
 setTimeout(function() {
     if (!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
-        $("#timeTable").prepend(`<div id='titleContainer'><div id='titleInnerContainer'><span style='font-size:1.5em; margin-right:32px;' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
+	$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
 
-            $("#titleMeeting").removeClass('mdl-dialog__title');
-            $("#titleMeeting").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
+        $("#titleMeeting").removeClass('mdl-dialog__title');
+        $("#titleMeeting").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
 
-            $("#spanTitle").append($("#titleMeeting"));
+        $("#spanTitle").append($("#titleMeeting"));
 
-            $("#btnCloseMeeting").hide();
+        $("#btnCloseMeeting").hide();
 
-            $("#btnCloseMobile").click(function () {
-                dialogTimeTable.close();
-            });
+        $("#btnCloseMobile").click(function () {
+            dialogTimeTable.close();
+        });
+
+        $("#customTimes").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileCustom'><span class='mdi mdi-close'></span></span><span id='spanTitleCustom'><h4 id='customTitle'>&nbsp;</h4></span><span id='spanSave'></span></div></div>`);
+
+        $("#customTitle").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
+
+        $("#btnCloseMobileCustom").click(function () {
+            closeCustomDialog();
+        });
+
+        $("#spanSave").append($("#btnSave"));
+
+        $("#btnCloseCustom,#footerCustom").hide();
     }
     titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment((new Date())).format(dateFormat)}`;
 }, 100);
@@ -867,21 +943,20 @@ $(function() {
         refreshControls();
     });
 
-    $("#txtSpeaker").on('keyup', function(e) {
-        if (e.keyCode === 13)
-            $(this).hideKeyboard();
-    });
-
-    if (deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet') {
+    if (deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet') {
         $('#timeTable').addClass('centeredDialog');
+        if (deviceDetector.device === 'tablet')
+            $('#timeTable').addClass('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-    } else {
+    }
+    else {
         if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
-            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
         else
-            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.68}px`;
+            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.75}px`;
 
         $('#timeTable').addClass('fullscreen-dialog');
+        $('#customTimes').addClass('fullscreen-dialog');
     }
 
     if (typeof HTMLDialogElement !== 'function') {
@@ -889,10 +964,10 @@ $(function() {
         $("#welcomeDialog").addClass("centeredDialogNoSupport");
     }
     
-   $('body').focusin(function() {
-       if ($(".mdl-menu__outline").eq(0).css('z-index') != "-1")
+    $('body').focus(function () {
+        if ($(".mdl-menu__outline").eq(0).css('z-index') !== "-1")
             resizeSelect();
-   });
+    });
     
    //$('html').show();
 });
