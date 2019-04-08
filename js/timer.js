@@ -943,10 +943,12 @@ $(function() {
         refreshControls();
     });
 
+    btnShare.style.visibility = 'hidden';
+    btnEmail.style.visibility = 'hidden';
+    
     if (deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet') {
         $('#timeTable').addClass('centeredDialog');
-        if (deviceDetector.device === 'tablet')
-            $('#timeTable').addClass('fullscreen-dialog-tablet');
+        $('#timeTable').addClass('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     }
     else {
