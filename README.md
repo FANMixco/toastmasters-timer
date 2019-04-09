@@ -48,7 +48,7 @@ Also, the project is open-source and can be implemented, modified or improved fr
 
 ![timer1](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/0d119977339261.5c994372037cb.png)
 
-![timer2](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/0a4dfc77339261.5c880adaa28d9.png)
+![timer2](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/8d768377339261.5cac2935f1701.png)
 
 ![timer3](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/64153977339261.5c99437203401.png)
 
@@ -60,7 +60,7 @@ Also, the project is open-source and can be implemented, modified or improved fr
 
 ![timer7](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/f30a4277339261.5c880adaa3863.png)
 
-![timer8](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/29048a77339261.5c97fa3317074.png)
+![timer8](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/3e16b477339261.5cac2935f1421.png)
 
 ![timer9](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/48a96d77339261.5c994448ccafd.png)
 
