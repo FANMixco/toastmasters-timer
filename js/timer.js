@@ -417,7 +417,7 @@ function changeEventHandler() {
             setDropDownValue("#maxH0", "#divMaxH");
             setDropDownValue("#maxM0", "#divMaxM");
             setDropDownValue("#maxS0", "#divMaxS");
-            $("#txtCustom")[0].parentElement.MaterialTextfield.change(jsonTrans.opt12);
+            $("#txtCustom")[0].parentElement.MaterialTextfield.change(lngObject.opt12);
         }
         else if (wasCustom && !isFirstTime) {
             $("#txtCustom")[0].parentElement.MaterialTextfield.change(getLocalStorageValue("txtCustom"));
@@ -695,9 +695,9 @@ btnChampion.addEventListener('click', function (event) {
         isNinjaMode = !isNinjaMode;
 
         if (isNinjaMode)
-            showSnackbar(jsonTrans.ninjaEnabled, false);
+            showSnackbar(lngObject.ninjaEnabled, false);
         else
-            showSnackbar(jsonTrans.ninjaDisabled, false);
+            showSnackbar(lngObject.ninjaDisabled, false);
         setLocalStorage("isNinjaMode", isNinjaMode);
     } else {
         isContestMode = !isContestMode;
@@ -920,7 +920,7 @@ setTimeout(function() {
 
         $("#btnCloseCustom,#footerCustom").hide();
     }
-    titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment((new Date())).format(dateFormat)}`;
+    titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
 }, 100);
 
 if (isFirstRun) {
