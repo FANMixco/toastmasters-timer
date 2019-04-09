@@ -73,7 +73,8 @@ let isPaused = false,
     isFirstRun = true,
     clappingStarted = false,
     multipleEnabled = false,
-    isNinjaMode = false;
+    isNinjaMode = false,
+    isFirstTime = false;
 
 let dateFormat = "DD/MM/YYYY",
     latestDB = "1.0",
@@ -945,6 +946,7 @@ $(function() {
 
     btnShare.style.visibility = 'hidden';
     btnEmail.style.visibility = 'hidden';
+    isFirstTime = true;
     
     if (deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet') {
         $('#timeTable').addClass('centeredDialog');
