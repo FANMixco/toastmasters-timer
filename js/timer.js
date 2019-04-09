@@ -349,7 +349,7 @@ function pauseTimer() {
         }
     } else {
         btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
-        $('footer,#divSpeechType,#options,#divSpeaker').fadeTo("fast", '1');
+        $('footer,#divSpeechType,#options,#divSpeaker,.circle,#controls').fadeTo("fast", '1');
     }
 }
 
@@ -610,7 +610,7 @@ function storeTime(isTimeStored) {
         maximum = getMaxCustom();
 
     wholeTime = maximum;
-    $('footer,#divSpeechType,#options,#divSpeaker').fadeTo("fast", '1');
+    $('footer,#divSpeechType,#options,#divSpeaker,.circle,#controls').fadeTo("fast", '1');
 }
 
 function getMinCustom() {
