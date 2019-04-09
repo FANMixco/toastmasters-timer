@@ -324,9 +324,3 @@ td, th, .mdl-data-table__cell--non-numeric {
 	overflow-y: auto;
 	overflow-x: hidden;
 }
-
-@media screen and (min-width: 700px) {
-	#aboutDialog {
-	    width: 30%!important;
-	}
-}

@@ -896,7 +896,7 @@ invertColors();
 
 setTimeout(function() {
     if (!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
-	$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
+		$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
 
         $("#titleMeeting").removeClass('mdl-dialog__title');
         $("#titleMeeting").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
@@ -920,6 +920,19 @@ setTimeout(function() {
         $("#spanSave").append($("#btnSave"));
 
         $("#btnCloseCustom,#footerCustom").hide();
+		
+		$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileAbout'><span class='mdi mdi-close'></span></span><span id='spanTitleAbout'></span></div></div>`);
+
+        $("#titleAbout").removeClass('mdl-dialog__title');
+        $("#titleAbout").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
+
+        $("#spanTitleAbout").append($("#titleAbout"));
+
+        $("#btnCloseMobileAbout").click(function () {
+            dialogAbout.close();
+        });
+		
+        $("#divCloseAbout").hide();
     }
     titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
 }, 100);
@@ -961,6 +974,7 @@ $(function() {
 
         $('#timeTable').addClass('fullscreen-dialog');
         $('#customTimes').addClass('fullscreen-dialog');
+        $('#aboutDialog').addClass('fullscreen-dialog');
     }
 
     if (typeof HTMLDialogElement !== 'function') {
