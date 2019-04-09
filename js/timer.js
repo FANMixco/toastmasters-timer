@@ -896,7 +896,7 @@ invertColors();
 
 setTimeout(function() {
     if (!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
-		$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
+	$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
 
         $("#titleMeeting").removeClass('mdl-dialog__title');
         $("#titleMeeting").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
@@ -921,7 +921,7 @@ setTimeout(function() {
 
         $("#btnCloseCustom,#footerCustom").hide();
 		
-		$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileAbout'><span class='mdi mdi-close'></span></span><span id='spanTitleAbout'></span></div></div>`);
+	$("#aboutDialog").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileAbout'><span class='mdi mdi-close'></span></span><span id='spanTitleAbout'></span></div></div>`);
 
         $("#titleAbout").removeClass('mdl-dialog__title');
         $("#titleAbout").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
