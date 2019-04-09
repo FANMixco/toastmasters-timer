@@ -961,10 +961,10 @@ $(function() {
     btnEmail.style.visibility = 'hidden';
     isFirstTime = true;
     
-    $('#aboutDialog').addClass('fullscreen-dialog-tablet');
     if (deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet') {
         $('#timeTable').addClass('centeredDialog');
         $('#timeTable').addClass('fullscreen-dialog-tablet');
+        $('#aboutDialog').addClass('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     }
     else {
