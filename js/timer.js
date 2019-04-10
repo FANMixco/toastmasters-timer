@@ -1,3 +1,4 @@
+//$('body').height() - ($("#customAvg").position().top + 75) - 30
 //circle ends
 const displayOutput = document.querySelector('.display-remain-time'),
     btnPause = document.getElementById('pause'),
