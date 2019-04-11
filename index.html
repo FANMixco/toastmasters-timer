@@ -163,6 +163,194 @@
             <button type="button" class="mdl-button close" data-tag="cancel"></button>
          </div>
       </dialog>
+	  <dialog class="mdl-dialog" id="setTimeDialog">
+         <div class="mdl-dialog__content">
+            <div id="fakeContainer">
+               <input class="fakeTxt" type="text" readonly/>
+            </div>
+            <h4 class="mdl-dialog__title">Set time</h4>
+            <div class="mdl-dialog__content">
+				<div class="rowFull">
+					<div class="column">
+						<div id="divSetTimeH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height_setTime">
+							<input type="text" value="" class="mdl-textfield__input" id="setTimeH" readonly>
+							<input type="hidden" value="" name="setTimeH">
+							<label for="setTimeH" class="mdl-textfield__label">H</label>
+							<ul for="setTimeH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+								<li class='mdl-menu__item' data-val='0' id='setTimeH0'>00</li>
+								<li class='mdl-menu__item' data-val='1' id='setTimeH1'>01</li>
+								<li class='mdl-menu__item' data-val='2' id='setTimeH2'>02</li>
+								<li class='mdl-menu__item' data-val='3' id='setTimeH3'>03</li>
+								<li class='mdl-menu__item' data-val='4' id='setTimeH4'>04</li>
+								<li class='mdl-menu__item' data-val='5' id='setTimeH5'>05</li>
+								<li class='mdl-menu__item' data-val='6' id='setTimeH6'>06</li>
+								<li class='mdl-menu__item' data-val='7' id='setTimeH7'>07</li>
+								<li class='mdl-menu__item' data-val='8' id='setTimeH8'>08</li>
+								<li class='mdl-menu__item' data-val='9' id='setTimeH9'>09</li>
+								<li class='mdl-menu__item' data-val='10' id='setTimeH10'>10</li>
+								<li class='mdl-menu__item' data-val='11' id='setTimeH11'>11</li>
+								<li class='mdl-menu__item' data-val='12' id='setTimeH12'>12</li>
+								<li class='mdl-menu__item' data-val='13' id='setTimeH13'>13</li>
+								<li class='mdl-menu__item' data-val='14' id='setTimeH14'>14</li>
+								<li class='mdl-menu__item' data-val='15' id='setTimeH15'>15</li>
+								<li class='mdl-menu__item' data-val='16' id='setTimeH16'>16</li>
+								<li class='mdl-menu__item' data-val='17' id='setTimeH17'>17</li>
+								<li class='mdl-menu__item' data-val='18' id='setTimeH18'>18</li>
+								<li class='mdl-menu__item' data-val='19' id='setTimeH19'>19</li>
+								<li class='mdl-menu__item' data-val='20' id='setTimeH20'>20</li>
+								<li class='mdl-menu__item' data-val='21' id='setTimeH21'>21</li>
+								<li class='mdl-menu__item' data-val='22' id='setTimeH22'>22</li>
+								<li class='mdl-menu__item' data-val='23' id='setTimeH23'>23</li>
+							</ul>
+						</div>
+					</div>
+					<div class="column">
+						<div id="divSetTimeM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height_setTime">
+							<input type="text" value="" class="mdl-textfield__input" id="setTimeM" readonly>
+							<input type="hidden" value="" name="setTimeM">
+							<label for="setTimeM" class="mdl-textfield__label">M</label>
+							<ul for="setTimeM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+								<li class='mdl-menu__item' data-val='0' id='setTimeM0'>00</li>
+								<li class='mdl-menu__item' data-val='1' id='setTimeM1'>01</li>
+								<li class='mdl-menu__item' data-val='2' id='setTimeM2'>02</li>
+								<li class='mdl-menu__item' data-val='3' id='setTimeM3'>03</li>
+								<li class='mdl-menu__item' data-val='4' id='setTimeM4'>04</li>
+								<li class='mdl-menu__item' data-val='5' id='setTimeM5'>05</li>
+								<li class='mdl-menu__item' data-val='6' id='setTimeM6'>06</li>
+								<li class='mdl-menu__item' data-val='7' id='setTimeM7'>07</li>
+								<li class='mdl-menu__item' data-val='8' id='setTimeM8'>08</li>
+								<li class='mdl-menu__item' data-val='9' id='setTimeM9'>09</li>
+								<li class='mdl-menu__item' data-val='10' id='setTimeM10'>10</li>
+								<li class='mdl-menu__item' data-val='11' id='setTimeM11'>11</li>
+								<li class='mdl-menu__item' data-val='12' id='setTimeM12'>12</li>
+								<li class='mdl-menu__item' data-val='13' id='setTimeM13'>13</li>
+								<li class='mdl-menu__item' data-val='14' id='setTimeM14'>14</li>
+								<li class='mdl-menu__item' data-val='15' id='setTimeM15'>15</li>
+								<li class='mdl-menu__item' data-val='16' id='setTimeM16'>16</li>
+								<li class='mdl-menu__item' data-val='17' id='setTimeM17'>17</li>
+								<li class='mdl-menu__item' data-val='18' id='setTimeM18'>18</li>
+								<li class='mdl-menu__item' data-val='19' id='setTimeM19'>19</li>
+								<li class='mdl-menu__item' data-val='20' id='setTimeM20'>20</li>
+								<li class='mdl-menu__item' data-val='21' id='setTimeM21'>21</li>
+								<li class='mdl-menu__item' data-val='22' id='setTimeM22'>22</li>
+								<li class='mdl-menu__item' data-val='23' id='setTimeM23'>23</li>
+								<li class='mdl-menu__item' data-val='24' id='setTimeM24'>24</li>
+								<li class='mdl-menu__item' data-val='25' id='setTimeM25'>25</li>
+								<li class='mdl-menu__item' data-val='26' id='setTimeM26'>26</li>
+								<li class='mdl-menu__item' data-val='27' id='setTimeM27'>27</li>
+								<li class='mdl-menu__item' data-val='28' id='setTimeM28'>28</li>
+								<li class='mdl-menu__item' data-val='29' id='setTimeM29'>29</li>
+								<li class='mdl-menu__item' data-val='30' id='setTimeM30'>30</li>
+								<li class='mdl-menu__item' data-val='31' id='setTimeM31'>31</li>
+								<li class='mdl-menu__item' data-val='32' id='setTimeM32'>32</li>
+								<li class='mdl-menu__item' data-val='33' id='setTimeM33'>33</li>
+								<li class='mdl-menu__item' data-val='34' id='setTimeM34'>34</li>
+								<li class='mdl-menu__item' data-val='35' id='setTimeM35'>35</li>
+								<li class='mdl-menu__item' data-val='36' id='setTimeM36'>36</li>
+								<li class='mdl-menu__item' data-val='37' id='setTimeM37'>37</li>
+								<li class='mdl-menu__item' data-val='38' id='setTimeM38'>38</li>
+								<li class='mdl-menu__item' data-val='39' id='setTimeM39'>39</li>
+								<li class='mdl-menu__item' data-val='40' id='setTimeM40'>40</li>
+								<li class='mdl-menu__item' data-val='41' id='setTimeM41'>41</li>
+								<li class='mdl-menu__item' data-val='42' id='setTimeM42'>42</li>
+								<li class='mdl-menu__item' data-val='43' id='setTimeM43'>43</li>
+								<li class='mdl-menu__item' data-val='44' id='setTimeM44'>44</li>
+								<li class='mdl-menu__item' data-val='45' id='setTimeM45'>45</li>
+								<li class='mdl-menu__item' data-val='46' id='setTimeM46'>46</li>
+								<li class='mdl-menu__item' data-val='47' id='setTimeM47'>47</li>
+								<li class='mdl-menu__item' data-val='48' id='setTimeM48'>48</li>
+								<li class='mdl-menu__item' data-val='49' id='setTimeM49'>49</li>
+								<li class='mdl-menu__item' data-val='50' id='setTimeM50'>50</li>
+								<li class='mdl-menu__item' data-val='51' id='setTimeM51'>51</li>
+								<li class='mdl-menu__item' data-val='52' id='setTimeM52'>52</li>
+								<li class='mdl-menu__item' data-val='53' id='setTimeM53'>53</li>
+								<li class='mdl-menu__item' data-val='54' id='setTimeM54'>54</li>
+								<li class='mdl-menu__item' data-val='55' id='setTimeM55'>55</li>
+								<li class='mdl-menu__item' data-val='56' id='setTimeM56'>56</li>
+								<li class='mdl-menu__item' data-val='57' id='setTimeM57'>57</li>
+								<li class='mdl-menu__item' data-val='58' id='setTimeM58'>58</li>
+								<li class='mdl-menu__item' data-val='59' id='setTimeM59'>59</li>
+							</ul>
+						</div>
+					</div>
+					<div class="column">
+						<div id="divSetTimeS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height_setTime">
+							<input type="text" value="" class="mdl-textfield__input" id="setTimeS" readonly>
+							<input type="hidden" value="" name="setTimeS">
+							<label for="setTimeS" class="mdl-textfield__label">S</label>
+							<ul for="setTimeS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+								<li class='mdl-menu__item' data-val='0' id='setTimeS0'>00</li>
+								<li class='mdl-menu__item' data-val='1' id='setTimeS1'>01</li>
+								<li class='mdl-menu__item' data-val='2' id='setTimeS2'>02</li>
+								<li class='mdl-menu__item' data-val='3' id='setTimeS3'>03</li>
+								<li class='mdl-menu__item' data-val='4' id='setTimeS4'>04</li>
+								<li class='mdl-menu__item' data-val='5' id='setTimeS5'>05</li>
+								<li class='mdl-menu__item' data-val='6' id='setTimeS6'>06</li>
+								<li class='mdl-menu__item' data-val='7' id='setTimeS7'>07</li>
+								<li class='mdl-menu__item' data-val='8' id='setTimeS8'>08</li>
+								<li class='mdl-menu__item' data-val='9' id='setTimeS9'>09</li>
+								<li class='mdl-menu__item' data-val='10' id='setTimeS10'>10</li>
+								<li class='mdl-menu__item' data-val='11' id='setTimeS11'>11</li>
+								<li class='mdl-menu__item' data-val='12' id='setTimeS12'>12</li>
+								<li class='mdl-menu__item' data-val='13' id='setTimeS13'>13</li>
+								<li class='mdl-menu__item' data-val='14' id='setTimeS14'>14</li>
+								<li class='mdl-menu__item' data-val='15' id='setTimeS15'>15</li>
+								<li class='mdl-menu__item' data-val='16' id='setTimeS16'>16</li>
+								<li class='mdl-menu__item' data-val='17' id='setTimeS17'>17</li>
+								<li class='mdl-menu__item' data-val='18' id='setTimeS18'>18</li>
+								<li class='mdl-menu__item' data-val='19' id='setTimeS19'>19</li>
+								<li class='mdl-menu__item' data-val='20' id='setTimeS20'>20</li>
+								<li class='mdl-menu__item' data-val='21' id='setTimeS21'>21</li>
+								<li class='mdl-menu__item' data-val='22' id='setTimeS22'>22</li>
+								<li class='mdl-menu__item' data-val='23' id='setTimeS23'>23</li>
+								<li class='mdl-menu__item' data-val='24' id='setTimeS24'>24</li>
+								<li class='mdl-menu__item' data-val='25' id='setTimeS25'>25</li>
+								<li class='mdl-menu__item' data-val='26' id='setTimeS26'>26</li>
+								<li class='mdl-menu__item' data-val='27' id='setTimeS27'>27</li>
+								<li class='mdl-menu__item' data-val='28' id='setTimeS28'>28</li>
+								<li class='mdl-menu__item' data-val='29' id='setTimeS29'>29</li>
+								<li class='mdl-menu__item' data-val='30' id='setTimeS30'>30</li>
+								<li class='mdl-menu__item' data-val='31' id='setTimeS31'>31</li>
+								<li class='mdl-menu__item' data-val='32' id='setTimeS32'>32</li>
+								<li class='mdl-menu__item' data-val='33' id='setTimeS33'>33</li>
+								<li class='mdl-menu__item' data-val='34' id='setTimeS34'>34</li>
+								<li class='mdl-menu__item' data-val='35' id='setTimeS35'>35</li>
+								<li class='mdl-menu__item' data-val='36' id='setTimeS36'>36</li>
+								<li class='mdl-menu__item' data-val='37' id='setTimeS37'>37</li>
+								<li class='mdl-menu__item' data-val='38' id='setTimeS38'>38</li>
+								<li class='mdl-menu__item' data-val='39' id='setTimeS39'>39</li>
+								<li class='mdl-menu__item' data-val='40' id='setTimeS40'>40</li>
+								<li class='mdl-menu__item' data-val='41' id='setTimeS41'>41</li>
+								<li class='mdl-menu__item' data-val='42' id='setTimeS42'>42</li>
+								<li class='mdl-menu__item' data-val='43' id='setTimeS43'>43</li>
+								<li class='mdl-menu__item' data-val='44' id='setTimeS44'>44</li>
+								<li class='mdl-menu__item' data-val='45' id='setTimeS45'>45</li>
+								<li class='mdl-menu__item' data-val='46' id='setTimeS46'>46</li>
+								<li class='mdl-menu__item' data-val='47' id='setTimeS47'>47</li>
+								<li class='mdl-menu__item' data-val='48' id='setTimeS48'>48</li>
+								<li class='mdl-menu__item' data-val='49' id='setTimeS49'>49</li>
+								<li class='mdl-menu__item' data-val='50' id='setTimeS50'>50</li>
+								<li class='mdl-menu__item' data-val='51' id='setTimeS51'>51</li>
+								<li class='mdl-menu__item' data-val='52' id='setTimeS52'>52</li>
+								<li class='mdl-menu__item' data-val='53' id='setTimeS53'>53</li>
+								<li class='mdl-menu__item' data-val='54' id='setTimeS54'>54</li>
+								<li class='mdl-menu__item' data-val='55' id='setTimeS55'>55</li>
+								<li class='mdl-menu__item' data-val='56' id='setTimeS56'>56</li>
+								<li class='mdl-menu__item' data-val='57' id='setTimeS57'>57</li>
+								<li class='mdl-menu__item' data-val='58' id='setTimeS58'>58</li>
+								<li class='mdl-menu__item' data-val='59' id='setTimeS59'>59</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+         <div class="mdl-dialog__actions">
+            <button id="btnSetTime" type="button" class="mdl-button mdl-button--primary">Set</button>
+            <button type="button" class="mdl-button close" data-tag="close">Cancel</button>
+            <button id="btnClearTime" type="button" class="mdl-button mdl-button">Clear</button>
+         </div>
+	  </dialog>
       <dialog class="mdl-dialog" id="clappingDialog">
          <div class="mdl-dialog__content">
             <div id="fakeContainer">
@@ -202,7 +390,7 @@
                 <button id="btnSaveClap" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
              </div>
           </div>
-       </dialog>       
+       </dialog>
       <dialog class="mdl-dialog" id="customTimes">
          <div class="mdl-dialog__content">
             <div id="fakeContainer">
@@ -216,725 +404,39 @@
                 <div id="customMin">
                     <h4 class="hCustom" data-tag="timeMinimum"></h4>
                 </div>
-               <div class="rowFull">
-                  <div class="column">
-                     <div id="divMinH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="minH" readonly>
-                        <input type="hidden" value="" name="minH">
-                        <label for="minH" class="mdl-textfield__label">H</label>
-                        <ul for="minH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="minH0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divMinM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="minM" readonly>
-                        <input type="hidden" value="" name="minM">
-                        <label for="minM" class="mdl-textfield__label">M</label>
-                        <ul for="minM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="minM0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divMinS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="minS" readonly>
-                        <input type="hidden" value="" name="minS">
-                        <label for="minS" class="mdl-textfield__label">S</label>
-                        <ul for="minS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="minS0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
+				<div class="mdl-textfield mdl-js-textfield">
+					<label id='btnClockMin' class="mdl-button mdl-js-button mdl-button--icon" for="txtMin" style='left: 202px;'>
+						<span class="mdi mdi-av-timer"></span>
+					</label>
+					<input class="mdl-textfield__input" type="text" id="txtMin" readonly value="00:00:00">
+					<label class="mdl-textfield__label" for="txtMin">HH:MM:SS</label>
+				</div>
                </div>
-            </div>
             <div class="customSections">
                 <div id="customAvg">
                     <h4 class="hCustom" data-tag="timeHalfway"></h4>
                 </div>
-               <div class="rowFull">
-                  <div class="column">
-                     <div id="divAvgH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="avgH" readonly>
-                        <input type="hidden" value="" name="avgH">
-                        <label for="avgH" class="mdl-textfield__label">H</label>
-                        <ul for="avgH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="avgH0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divAvgM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="avgM" readonly>
-                        <input type="hidden" value="" name="avgM">
-                        <label for="avgM" class="mdl-textfield__label">M</label>
-                        <ul for="avgM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="avgM0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divAvgS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="avgS" readonly>
-                        <input type="hidden" value="" name="avgS">
-                        <label for="avgS" class="mdl-textfield__label">S</label>
-                        <ul for="avgS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="avgS0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
+				<div class="mdl-textfield mdl-js-textfield">
+					<label id='btnClockAvg' class="mdl-button mdl-js-button mdl-button--icon" for="txtAvg" style='left: 202px;'>
+						<span class="mdi mdi-av-timer"></span>
+					</label>
+					<input class="mdl-textfield__input" type="text" id="txtAvg" readonly value="00:00:00">
+					<label class="mdl-textfield__label" for="txtAvg">HH:MM:SS</label>
+				</div>
                </div>
-            </div>
-            <div class="customSections">
+`            <div class="customSections">
                 <div id="customMax">
                     <h4 class="hCustom" data-tag="timeMaximum"></h4>
                 </div>
-               <div class="rowFull">
-                  <div class="column">
-                     <div id="divMaxH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="maxH" readonly>
-                        <input type="hidden" value="" name="maxH">
-                        <label for="maxH" class="mdl-textfield__label">H</label>
-                        <ul for="maxH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li id="maxH0" class="mdl-menu__item" data-val="0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divMaxM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="maxM" readonly>
-                        <input type="hidden" value="" name="maxM">
-                        <label for="maxM" class="mdl-textfield__label">M</label>
-                        <ul for="maxM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="maxM0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divMaxS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                        <input type="text" value="" class="mdl-textfield__input" id="maxS" readonly>
-                        <input type="hidden" value="" name="maxS">
-                        <label for="maxS" class="mdl-textfield__label">S</label>
-                        <ul for="maxS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="maxS0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
+				<div class="mdl-textfield mdl-js-textfield">
+					<label id='btnClockMax' class="mdl-button mdl-js-button mdl-button--icon" for="txtMax" style='left: 202px;'>
+						<span class="mdi mdi-av-timer"></span>
+					</label>
+					<input class="mdl-textfield__input" type="text" id="txtMax" readonly value="00:00:00">
+					<label class="mdl-textfield__label" for="txtMax">HH:MM:SS</label>
+				</div>
                </div>
-            </div>
          </div>
-	  <dialog class="mdl-dialog" id="setTimeDialog">
-         <div class="mdl-dialog__content">
-            <div id="fakeContainer">
-               <input class="fakeTxt" type="text" readonly/>
-            </div>
-            <h4 class="mdl-dialog__title">Set time</h4>
-            <div class="mdl-dialog__content">
-               <div class="rowFull">
-                  <div class="column">
-                     <div id="divMinH" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height_setTime">
-                        <input type="text" value="" class="mdl-textfield__input" id="minH" readonly>
-                        <input type="hidden" value="" name="minH">
-                        <label for="minH" class="mdl-textfield__label">H</label>
-                        <ul for="minH" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="minH0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divMinM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height_setTime">
-                        <input type="text" value="" class="mdl-textfield__input" id="minM" readonly>
-                        <input type="hidden" value="" name="minM">
-                        <label for="minM" class="mdl-textfield__label">M</label>
-                        <ul for="minM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="minM0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="column">
-                     <div id="divMinS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height_setTime">
-                        <input type="text" value="" class="mdl-textfield__input" id="minS" readonly>
-                        <input type="hidden" value="" name="minS">
-                        <label for="minS" class="mdl-textfield__label">S</label>
-                        <ul for="minS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                           <li class="mdl-menu__item" data-val="0" id="minS0">00</li>
-                           <li class="mdl-menu__item" data-val="1">01</li>
-                           <li class="mdl-menu__item" data-val="2">02</li>
-                           <li class="mdl-menu__item" data-val="3">03</li>
-                           <li class="mdl-menu__item" data-val="4">04</li>
-                           <li class="mdl-menu__item" data-val="5">05</li>
-                           <li class="mdl-menu__item" data-val="6">06</li>
-                           <li class="mdl-menu__item" data-val="7">07</li>
-                           <li class="mdl-menu__item" data-val="8">08</li>
-                           <li class="mdl-menu__item" data-val="9">09</li>
-                           <li class="mdl-menu__item" data-val="10">10</li>
-                           <li class="mdl-menu__item" data-val="11">11</li>
-                           <li class="mdl-menu__item" data-val="12">12</li>
-                           <li class="mdl-menu__item" data-val="13">13</li>
-                           <li class="mdl-menu__item" data-val="14">14</li>
-                           <li class="mdl-menu__item" data-val="15">15</li>
-                           <li class="mdl-menu__item" data-val="16">16</li>
-                           <li class="mdl-menu__item" data-val="17">17</li>
-                           <li class="mdl-menu__item" data-val="18">18</li>
-                           <li class="mdl-menu__item" data-val="19">19</li>
-                           <li class="mdl-menu__item" data-val="20">20</li>
-                           <li class="mdl-menu__item" data-val="21">21</li>
-                           <li class="mdl-menu__item" data-val="22">22</li>
-                           <li class="mdl-menu__item" data-val="23">23</li>
-                           <li class="mdl-menu__item" data-val="24">24</li>
-                           <li class="mdl-menu__item" data-val="25">25</li>
-                           <li class="mdl-menu__item" data-val="26">26</li>
-                           <li class="mdl-menu__item" data-val="27">27</li>
-                           <li class="mdl-menu__item" data-val="28">28</li>
-                           <li class="mdl-menu__item" data-val="29">29</li>
-                           <li class="mdl-menu__item" data-val="30">30</li>
-                           <li class="mdl-menu__item" data-val="31">31</li>
-                           <li class="mdl-menu__item" data-val="32">32</li>
-                           <li class="mdl-menu__item" data-val="33">33</li>
-                           <li class="mdl-menu__item" data-val="34">34</li>
-                           <li class="mdl-menu__item" data-val="35">35</li>
-                           <li class="mdl-menu__item" data-val="36">36</li>
-                           <li class="mdl-menu__item" data-val="37">37</li>
-                           <li class="mdl-menu__item" data-val="38">38</li>
-                           <li class="mdl-menu__item" data-val="39">39</li>
-                           <li class="mdl-menu__item" data-val="40">40</li>
-                           <li class="mdl-menu__item" data-val="41">41</li>
-                           <li class="mdl-menu__item" data-val="42">42</li>
-                           <li class="mdl-menu__item" data-val="43">43</li>
-                           <li class="mdl-menu__item" data-val="44">44</li>
-                           <li class="mdl-menu__item" data-val="45">45</li>
-                           <li class="mdl-menu__item" data-val="46">46</li>
-                           <li class="mdl-menu__item" data-val="47">47</li>
-                           <li class="mdl-menu__item" data-val="48">48</li>
-                           <li class="mdl-menu__item" data-val="49">49</li>
-                           <li class="mdl-menu__item" data-val="50">50</li>
-                           <li class="mdl-menu__item" data-val="51">51</li>
-                           <li class="mdl-menu__item" data-val="52">52</li>
-                           <li class="mdl-menu__item" data-val="53">53</li>
-                           <li class="mdl-menu__item" data-val="54">54</li>
-                           <li class="mdl-menu__item" data-val="55">55</li>
-                           <li class="mdl-menu__item" data-val="56">56</li>
-                           <li class="mdl-menu__item" data-val="57">57</li>
-                           <li class="mdl-menu__item" data-val="58">58</li>
-                           <li class="mdl-menu__item" data-val="59">59</li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-			</div>
-		</div>
-         <div class="mdl-dialog__actions">
-            <button type="button" class="mdl-button mdl-button--primary">Set</button>
-            <button type="button" class="mdl-button mdl-button">Cancel</button>
-            <button type="button" class="mdl-button mdl-button">Clear</button>
-         </div>
-	  </dialog>         
          <div class="mdl-dialog__actions">
             <button id="btnSave" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
             <button id="btnCloseCustom" type="button" class="mdl-button close" data-tag="close"></button>
@@ -955,6 +457,7 @@
       <script src="browserSpecific/js/actions.js"></script>
        
       <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/setTimeDialog.js"></script>
       <script src="js/moment.min.js"></script>
       <script src="js/db/customDBActions.js"></script>
       <script src="js/db/dbHandler.js"></script>

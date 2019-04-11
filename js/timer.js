@@ -21,25 +21,22 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnSave = document.getElementById('btnSave'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
+    btnClockMin = document.getElementById('btnClockMin'),
+    btnClockAvg = document.getElementById('btnClockAvg'),
+    btnClockMax = document.getElementById('btnClockMax'),
     imgClap = document.getElementById('imgClap'),
     dialogTimeTable = document.getElementById('timeTable'),
     dialogWelcome = document.getElementById('welcomeDialog'),
     dialogConfirm = document.getElementById('confirmDialog'),
-    dialogCustomTimes = document.getElementById('customTimes'),
     dialogChanges = document.getElementById('changesDialog'),
+    dialogCustomTimes = document.getElementById('customTimes'),
     dialogAbout = document.getElementById('aboutDialog'),
     dialogClapping = document.getElementById('clappingDialog'),
     txtSpeaker = document.getElementById('txtSpeaker'),
     txtCustom = document.getElementById('txtCustom'),
-    minH = document.getElementById('minH'),
-    minM = document.getElementById('minM'),
-    minS = document.getElementById('minS'),
-    avgH = document.getElementById('avgH'),
-    avgM = document.getElementById('avgM'),
-    avgS = document.getElementById('avgS'),
-    maxH = document.getElementById('maxH'),
-    maxM = document.getElementById('maxM'),
-    maxS = document.getElementById('maxS'),
+    txtMin = document.getElementById('txtMin'),
+    txtAvg = document.getElementById('txtAvg'),
+    txtMax = document.getElementById('txtMax'),
     clapM = document.getElementById('clapM'),
     clapS = document.getElementById('clapS'),
     cmbSpeechType = document.getElementById('cmbSpeechType'),
@@ -615,39 +612,18 @@ function storeTime(isTimeStored) {
 }
 
 function getMinCustom() {
-    let intMinH = 0,
-        intMinM = 0,
-        intMinS = 0;
-
-    if (minH.value) intMinH = parseInt(minH.value);
-    if (minM.value) intMinM = parseInt(minM.value);
-    if (minS.value) intMinS = parseInt(minS.value);
-
-    return intMinH * 3600 + intMinM * 60 + intMinS;
+	let unit = txtMin.value.split(":");
+    return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function getAvgCustom() {
-    let intAvgH = 0,
-        intAvgM = 0,
-        intAvgS = 0;
-
-    if (avgH.value) intAvgH = parseInt(avgH.value);
-    if (avgM.value) intAvgM = parseInt(avgM.value);
-    if (avgS.value) intAvgS = parseInt(avgS.value);
-
-    return intAvgH * 3600 + intAvgM * 60 + intAvgS;
+	let unit = txtAvg.value.split(":");
+    return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function getMaxCustom() {
-    let intMaxH = 0,
-        intMaxM = 0,
-        intMaxS = 0;
-
-    if (maxH.value) intMaxH = parseInt(maxH.value);
-    if (maxM.value) intMaxM = parseInt(maxM.value);
-    if (maxS.value) intMaxS = parseInt(maxS.value);
-
-    return intMaxH * 3600 + intMaxM * 60 + intMaxS;
+	let unit = txtMax.value.split(":");
+    return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function closeCustomDialog() {
@@ -808,6 +784,30 @@ btnEmail.addEventListener('click', function() {});
 
 btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
+});
+
+btnClockMin.addEventListener('click', function() {
+	setNewTime('txtMin');
+});
+
+txtMin.addEventListener('click', function() {
+	setNewTime('txtMin');
+});
+
+txtMax.addEventListener('click', function() {
+	setNewTime('txtMax');
+});
+
+btnClockMax.addEventListener('click', function() {
+	setNewTime('btnClockMax');
+});
+
+txtAvg.addEventListener('click', function() {
+	setNewTime('txtAvg');
+});
+
+btnClockAvg.addEventListener('click', function() {
+	setNewTime('btnClockAvg');
 });
 
 btnDownload.addEventListener('click', browserExport);
