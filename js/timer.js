@@ -787,27 +787,27 @@ btnAbout.addEventListener('click', function() {
 });
 
 btnClockMin.addEventListener('click', function() {
-	setNewTime('txtMin');
+	setNewTime('txtMin', txtMin.value);
 });
 
 txtMin.addEventListener('click', function() {
-	setNewTime('txtMin');
+	setNewTime('txtMin', txtMin.value);
 });
 
 txtMax.addEventListener('click', function() {
-	setNewTime('txtMax');
+	setNewTime('txtMax', txtMax.value);
 });
 
 btnClockMax.addEventListener('click', function() {
-	setNewTime('btnClockMax');
+	setNewTime('txtMax', txtMax.value);
 });
 
 txtAvg.addEventListener('click', function() {
-	setNewTime('txtAvg');
+	setNewTime('txtAvg', txtAvg.value);
 });
 
 btnClockAvg.addEventListener('click', function() {
-	setNewTime('btnClockAvg');
+	setNewTime('txtAvg', txtAvg.value);
 });
 
 btnDownload.addEventListener('click', browserExport);

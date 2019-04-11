@@ -33,11 +33,15 @@ function openSetDialog(time){
 	setDropDownValue(`#setTimeS${parseInt(unit[2]) % 60}`, "#divSetTimeS");
 }
 
-function setNewTime(inputText){
+function setNewTime(inputText, currentTxt){
 	chosenInputText = inputText;
-	setDropDownValue("#setTimeH0", "#divSetTimeH");
-	setDropDownValue("#setTimeM0", "#divSetTimeM");	
-	setDropDownValue("#setTimeS0", "#divSetTimeS");
+	if (currentTxt === '00:00:00' || currentTxt === '' || currentTxt === undefined) {
+		setDropDownValue("#setTimeH0", "#divSetTimeH");
+		setDropDownValue("#setTimeM0", "#divSetTimeM");	
+		setDropDownValue("#setTimeS0", "#divSetTimeS");
+	}
+	else
+		openSetDialog(currentTxt);
 	try {
 		dialogSetTime.showModal();
 	}
