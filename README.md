@@ -60,7 +60,7 @@ Also, the project is open-source and can be implemented, modified or improved fr
 
 ![timer7](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/f30a4277339261.5c880adaa3863.png)
 
-![timer8](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/3e16b477339261.5cac2935f1421.png)
+![timer8](https://mir-cdn.behance.net/v1/rendition/project_modules/1400/b235bd77339261.5cb0447806930.png)
 
 ![timer9](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/48a96d77339261.5c994448ccafd.png)
 
