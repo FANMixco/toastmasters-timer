@@ -168,7 +168,7 @@
             <div id="fakeContainer">
                <input class="fakeTxt" type="text" readonly/>
             </div>
-            <h4 class="mdl-dialog__title">Set time</h4>
+            <h4 class="mdl-dialog__title" data-tag="setTime"></h4>
             <div class="mdl-dialog__content">
 				<div class="rowFull">
 					<div class="column">
@@ -346,9 +346,9 @@
 			</div>
 		</div>
          <div class="mdl-dialog__actions">
-            <button id="btnSetTime" type="button" class="mdl-button mdl-button--primary">Set</button>
-            <button type="button" class="mdl-button close" data-tag="close">Cancel</button>
-            <button id="btnClearTime" type="button" class="mdl-button mdl-button">Clear</button>
+            <button id="btnSetTime" type="button" class="mdl-button mdl-button--primary" data-tag="set">Set</button>
+            <button type="button" class="mdl-button close" data-tag="cancelBtn"></button>
+            <button id="btnClearTime" type="button" class="mdl-button mdl-button" data-tag="clear"></button>
          </div>
 	  </dialog>
       <dialog class="mdl-dialog" id="clappingDialog">
@@ -405,7 +405,7 @@
                     <h4 class="hCustom" data-tag="timeMinimum"></h4>
                 </div>
 				<div class="mdl-textfield mdl-js-textfield">
-					<label id='btnClockMin' class="mdl-button mdl-js-button mdl-button--icon" for="txtMin" style='left: 202px;'>
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="txtMin" style='left: 202px;'>
 						<span class="mdi mdi-av-timer"></span>
 					</label>
 					<input class="mdl-textfield__input" type="text" id="txtMin" readonly value="00:00:00">
@@ -417,7 +417,7 @@
                     <h4 class="hCustom" data-tag="timeHalfway"></h4>
                 </div>
 				<div class="mdl-textfield mdl-js-textfield">
-					<label id='btnClockAvg' class="mdl-button mdl-js-button mdl-button--icon" for="txtAvg" style='left: 202px;'>
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="txtAvg" style='left: 202px;'>
 						<span class="mdi mdi-av-timer"></span>
 					</label>
 					<input class="mdl-textfield__input" type="text" id="txtAvg" readonly value="00:00:00">
@@ -429,7 +429,7 @@
                     <h4 class="hCustom" data-tag="timeMaximum"></h4>
                 </div>
 				<div class="mdl-textfield mdl-js-textfield">
-					<label id='btnClockMax' class="mdl-button mdl-js-button mdl-button--icon" for="txtMax" style='left: 202px;'>
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="txtMax" style='left: 202px;'>
 						<span class="mdi mdi-av-timer"></span>
 					</label>
 					<input class="mdl-textfield__input" type="text" id="txtMax" readonly value="00:00:00">
