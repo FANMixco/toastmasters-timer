@@ -21,9 +21,6 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnSave = document.getElementById('btnSave'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
-    btnClockMin = document.getElementById('btnClockMin'),
-    btnClockAvg = document.getElementById('btnClockAvg'),
-    btnClockMax = document.getElementById('btnClockMax'),
     imgClap = document.getElementById('imgClap'),
     dialogTimeTable = document.getElementById('timeTable'),
     dialogWelcome = document.getElementById('welcomeDialog'),
@@ -786,10 +783,6 @@ btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
 });
 
-btnClockMin.addEventListener('click', function() {
-	setNewTime('txtMin', txtMin.value);
-});
-
 txtMin.addEventListener('click', function() {
 	setNewTime('txtMin', txtMin.value);
 });
@@ -798,15 +791,7 @@ txtMax.addEventListener('click', function() {
 	setNewTime('txtMax', txtMax.value);
 });
 
-btnClockMax.addEventListener('click', function() {
-	setNewTime('txtMax', txtMax.value);
-});
-
 txtAvg.addEventListener('click', function() {
-	setNewTime('txtAvg', txtAvg.value);
-});
-
-btnClockAvg.addEventListener('click', function() {
 	setNewTime('txtAvg', txtAvg.value);
 });
 

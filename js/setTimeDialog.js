@@ -28,9 +28,9 @@ dialogSetTime.querySelector('.close').addEventListener('click', function() {
 
 function openSetDialog(time){
 	let unit = time.split(":");
-	setDropDownValue(`#setTimeH${Math.floor(parseInt(unit[0]) / 3600)}`, "#divSetTimeH");
-	setDropDownValue(`#setTimeM${Math.floor(parseInt(unit[1]) / 60)}`, "#divSetTimeM");
-	setDropDownValue(`#setTimeS${parseInt(unit[2]) % 60}`, "#divSetTimeS");
+	setDropDownValue(`#setTimeH${parseInt(unit[0])}`, "#divSetTimeH");
+	setDropDownValue(`#setTimeM${parseInt(unit[1])}`, "#divSetTimeM");
+	setDropDownValue(`#setTimeS${parseInt(unit[2])}`, "#divSetTimeS");
 }
 
 function setNewTime(inputText, currentTxt){
