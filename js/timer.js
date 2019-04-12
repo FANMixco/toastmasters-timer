@@ -1,4 +1,3 @@
-//$('body').height() - ($("#customAvg").position().top + 75) - 30
 //circle ends
 const displayOutput = document.querySelector('.display-remain-time'),
     btnPause = document.getElementById('pause'),
@@ -247,7 +246,7 @@ function timer(seconds) { //counts time, takes seconds
     }, 1000);
 }
 
-window.onresize = function () {
+window.onresize = function() {
     resizeScreen();
 };
 
@@ -286,7 +285,7 @@ function resizeScreen() {
 }
 
 function resizeSelect() {
-    setTimeout(function () {
+    setTimeout(function() {
         $($(".mdl-menu__outline")[0]).width(300);
         $($(".mdl-menu__container")[0]).width(300);
         $($(".mdl-menu__outline")[0]).height(310);
@@ -395,8 +394,7 @@ function changeEventHandler() {
         wholeTime = maximum;
         updateDisplay();
         isCustom = false;
-    }
-    else {
+    } else {
         if (!wasCustom) {
             minimum = 0;
             maximum = 0;
@@ -414,8 +412,7 @@ function changeEventHandler() {
             setDropDownValue("#maxM0", "#divMaxM");
             setDropDownValue("#maxS0", "#divMaxS");
             $("#txtCustom")[0].parentElement.MaterialTextfield.change(lngObject.opt12);
-        }
-        else if (wasCustom && !isFirstTime) {
+        } else if (wasCustom && !isFirstTime) {
             $("#txtCustom")[0].parentElement.MaterialTextfield.change(getLocalStorageValue("txtCustom"));
             let hours = Math.floor(minimum / 3600);
             let minutes = Math.floor(minimum / 60);
@@ -600,8 +597,7 @@ function storeTime(isTimeStored) {
         let selectedVal = selected;
         if (selected > 11) selectedVal--;
         maximum = times[selectedVal][2];
-    }
-    else
+    } else
         maximum = getMaxCustom();
 
     wholeTime = maximum;
@@ -609,17 +605,17 @@ function storeTime(isTimeStored) {
 }
 
 function getMinCustom() {
-	let unit = txtMin.value.split(":");
+    let unit = txtMin.value.split(":");
     return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function getAvgCustom() {
-	let unit = txtAvg.value.split(":");
+    let unit = txtAvg.value.split(":");
     return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function getMaxCustom() {
-	let unit = txtMax.value.split(":");
+    let unit = txtMax.value.split(":");
     return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
@@ -651,7 +647,7 @@ function saveChanges() {
     }
 }
 
-btnPause.addEventListener('click', function (event) {
+btnPause.addEventListener('click', function(event) {
     if (event.detail === 1) {
         pauseTimer();
     }
@@ -665,7 +661,7 @@ btnStop.addEventListener('click', () => {
     storeTime(true);
 });
 
-btnChampion.addEventListener('click', function (event) {
+btnChampion.addEventListener('click', function(event) {
     if (event.detail === 3) {
         isNinjaMode = !isNinjaMode;
 
@@ -701,8 +697,7 @@ btnClap.addEventListener('click', function(event) {
             setDropDownValue("#clapM0", "#divClapM");
             setDropDownValue("#clapS30", "#divClapS");
         }
-    }
-    else {
+    } else {
         isClappingEnabled = !isClappingEnabled;
         setClappingImg();
         setClapping();
@@ -784,15 +779,15 @@ btnAbout.addEventListener('click', function() {
 });
 
 txtMin.addEventListener('click', function() {
-	setNewTime('txtMin', txtMin.value);
+    setNewTime('txtMin', txtMin.value);
 });
 
 txtMax.addEventListener('click', function() {
-	setNewTime('txtMax', txtMax.value);
+    setNewTime('txtMax', txtMax.value);
 });
 
 txtAvg.addEventListener('click', function() {
-	setNewTime('txtAvg', txtAvg.value);
+    setNewTime('txtAvg', txtAvg.value);
 });
 
 btnDownload.addEventListener('click', browserExport);
@@ -841,12 +836,12 @@ dialogWelcome.querySelector('.close').addEventListener('click', function() {
     showSnackbar(lngObject.noHints);
 });
 
-txtCustom.addEventListener("keyup", function (e) {
+txtCustom.addEventListener("keyup", function(e) {
     if (e.keyCode === 13)
         $("#txtCustom").hideKeyboard();
 });
 
-txtSpeaker.addEventListener("keyup", function (e) {
+txtSpeaker.addEventListener("keyup", function(e) {
     if (e.keyCode === 13)
         $("#txtSpeaker").hideKeyboard();
 });
@@ -882,42 +877,60 @@ invertColors();
 
 setTimeout(function() {
     if (!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
-	$("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
+        $("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
 
         $("#titleMeeting").removeClass('mdl-dialog__title');
-        $("#titleMeeting").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
+        $("#titleMeeting").css({
+            'margin': '0',
+            'margin-top': '16px',
+            'font-weight': '1000',
+            'font-size': '1.25em',
+            'display': 'inline'
+        });
 
         $("#spanTitle").append($("#titleMeeting"));
 
         $("#btnCloseMeeting").hide();
 
-        $("#btnCloseMobile").click(function () {
+        $("#btnCloseMobile").click(function() {
             dialogTimeTable.close();
         });
 
         $("#customTimes").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileCustom'><span class='mdi mdi-close'></span></span><span id='spanTitleCustom'><h4 id='customTitle'>&nbsp;</h4></span><span id='spanSave'></span></div></div>`);
 
-        $("#customTitle").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
+        $("#customTitle").css({
+            'margin': '0',
+            'margin-top': '16px',
+            'font-weight': '1000',
+            'font-size': '1.25em',
+            'display': 'inline'
+        });
 
-        $("#btnCloseMobileCustom").click(function () {
+        $("#btnCloseMobileCustom").click(function() {
             closeCustomDialog();
         });
 
         $("#spanSave").append($("#btnSave"));
 
         $("#btnCloseCustom,#footerCustom").hide();
-		
-	$("#aboutDialog").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileAbout'><span class='mdi mdi-close'></span></span><span id='spanTitleAbout'></span></div></div>`);
+
+        $("#aboutDialog").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileAbout'><span class='mdi mdi-close'></span></span><span id='spanTitleAbout'></span></div></div>`);
 
         $("#titleAbout").removeClass('mdl-dialog__title');
-        $("#titleAbout").css({ 'margin': '0', 'margin-top': '16px', 'font-weight': '1000', 'font-size': '1.25em', 'display': 'inline' });
+        $("#titleAbout").css({
+            'margin': '0',
+            'margin-top': '16px',
+            'font-weight': '1000',
+            'font-size': '1.25em',
+            'display': 'inline'
+        });
 
         $("#spanTitleAbout").append($("#titleAbout"));
 
-        $("#btnCloseMobileAbout").click(function () {
+        $("#btnCloseMobileAbout").click(function() {
             dialogAbout.close();
         });
-		
+
         $("#divCloseAbout").hide();
     }
     titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
@@ -946,14 +959,13 @@ $(function() {
     btnShare.style.visibility = 'hidden';
     btnEmail.style.visibility = 'hidden';
     isFirstTime = true;
-    
+
     if (deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet') {
         $('#timeTable').addClass('centeredDialog');
         $('#timeTable').addClass('fullscreen-dialog-tablet');
         $('#aboutDialog').addClass('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-    }
-    else {
+    } else {
         if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
             document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
         else
@@ -968,13 +980,11 @@ $(function() {
         $("#welcomeDialog").removeClass("centeredDialog");
         $("#welcomeDialog").addClass("centeredDialogNoSupport");
     }
-    
-    $('body').focus(function () {
+
+    $('body').focus(function() {
         if ($(".mdl-menu__outline").eq(0).css('z-index') !== "-1")
             resizeSelect();
     });
-    
-   //$('html').show();
 });
 
 resizeScreen();
