@@ -280,6 +280,11 @@ td, th, .mdl-data-table__cell--non-numeric {
     width: calc(85% - 28px) !important;
 }
 
+.customBodyMobile{
+    height: 90%;
+    overflow-y: auto;
+}
+
 .fakeTxt {
     width: 0px;
     height: 0px;

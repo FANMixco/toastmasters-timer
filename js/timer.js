@@ -955,7 +955,7 @@ $(function() {
         });
         refreshControls();
     });
-
+    
     btnShare.style.visibility = 'hidden';
     btnEmail.style.visibility = 'hidden';
     isFirstTime = true;
@@ -966,6 +966,7 @@ $(function() {
         $('#aboutDialog').addClass('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     } else {
+        $('#bodyCustomTimes').addClass('customBodyMobile');
         if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
             document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
         else
