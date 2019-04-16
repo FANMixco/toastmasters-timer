@@ -781,6 +781,13 @@ btnEmail.addEventListener('click', function() {});
 
 btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
+    if (!(deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet')) {
+		setTimeout(function(){
+			$('#bodyAbout').css({
+				 'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`
+			});
+		}, 100);
+	}
 });
 
 txtMin.addEventListener('click', function() {
@@ -929,10 +936,6 @@ setTimeout(function() {
             'font-size': '1.25em',
             'display': 'inline'
         });
-		
-	$('#bodyAbout').css({
-	     'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`
-	});
 
         $("#spanTitleAbout").append($("#titleAbout"));
 
