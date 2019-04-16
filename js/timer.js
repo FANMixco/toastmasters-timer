@@ -438,6 +438,15 @@ function changeEventHandler() {
             setDropDownValue(`#maxM${minutes}`, "#divMaxM");
             setDropDownValue(`#maxS${seconds}`, "#divMaxS");
         }
+        
+        if (!(deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet')) {
+            setTimeout(function () {
+                $('#bodyCustomTimes').css({
+                    'height': `${($('#bodyCustomTimes').height() * 100) / $('html').height()}%`
+                });
+            }, 100);
+        }
+        
         isCustom = true;
         dialogCustomTimes.showModal();
     }
