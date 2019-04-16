@@ -929,6 +929,10 @@ setTimeout(function() {
             'font-size': '1.25em',
             'display': 'inline'
         });
+		
+		$('#bodyAbout').css({
+			'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`;
+		});
 
         $("#spanTitleAbout").append($("#titleAbout"));
 
