@@ -930,9 +930,9 @@ setTimeout(function() {
             'display': 'inline'
         });
 		
-		$('#bodyAbout').css({
-			'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`;
-		});
+	$('#bodyAbout').css({
+	     'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`
+	});
 
         $("#spanTitleAbout").append($("#titleAbout"));
 
