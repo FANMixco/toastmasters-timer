@@ -31,11 +31,6 @@ footer {
   margin-right: 28px;
 }
 
-.getmdl-select__fix-height_setTime .mdl-menu__container .mdl-menu {
-	overflow-y: auto;
-	max-height: 138px !important
-}
-
 .seconds-set { float: right; }
 
 #controls {
@@ -72,6 +67,10 @@ footer {
   font-size: x-large;
   text-align: center;
   color: black;
+}
+
+.centeredText {
+	text-align: center!important;
 }
 
 .play::before {

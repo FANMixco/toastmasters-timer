@@ -20,6 +20,12 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnSave = document.getElementById('btnSave'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
+    btnUpH = document.getElementById('btnUpH'),
+    btnUpM = document.getElementById('btnUpM'),
+    btnUpS = document.getElementById('btnUpS'),
+    btnDownH = document.getElementById('btnDownH'),
+    btnDownM = document.getElementById('btnDownM'),
+    btnDownS = document.getElementById('btnDownS'),
     imgClap = document.getElementById('imgClap'),
     dialogTimeTable = document.getElementById('timeTable'),
     dialogWelcome = document.getElementById('welcomeDialog'),
@@ -648,9 +654,8 @@ function saveChanges() {
 }
 
 btnPause.addEventListener('click', function(event) {
-    if (event.detail === 1) {
+    if (event.detail === 1)
         pauseTimer();
-    }
 });
 
 btnRestart.addEventListener('click', () => {
