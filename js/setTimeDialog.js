@@ -16,22 +16,24 @@ btnSetTime.addEventListener('click', function () {
 
 btnClearTime.addEventListener('click', function () {
     setTimeControls('00', '00', '00');
+    clearIntervals();
     enableButtons(false);
 });
 
 dialogSetTime.querySelector('.close').addEventListener('click', function () {
     removeDialogFromStack('setTime');
+    clearIntervals();
     dialogSetTime.close();
 });
-
-if (!dialogSetTime.showModal) {
-    dialogPolyfill.registerDialog(dialogSetTime);
-}
 
 function setTimeControls(h, m, s) {
     txtH.value = h;
     txtM.value = m;
     txtS.value = s;
+}
+
+if (!dialogSetTime.showModal) {
+    dialogPolyfill.registerDialog(dialogSetTime);
 }
 
 function openSetDialog(time) {
@@ -42,6 +44,7 @@ function openSetDialog(time) {
 }
 
 function setNewTime(inputText, currentTxt) {
+    clearIntervals();
     chosenInputText = inputText;
     if (currentTxt === '00:00:00' || currentTxt === '' || currentTxt === undefined) {
         setTimeControls('00', '00', '00');
@@ -54,6 +57,23 @@ function setNewTime(inputText, currentTxt) {
     } catch (e) { }
 }
 
+function clearIntervals() {
+    if (timeOutS !== 0) {
+        i = 0;
+        clearInterval(timeOutS);
+        timeOutS = 0;
+    }
+    if (timeOutM !== 0) {
+        j = 0;
+        clearInterval(timeOutM);
+        timeOutM = 0;
+    }
+    if (timeOutH !== 0) {
+        k = 0;
+        clearInterval(timeOutH);
+        timeOutH = 0;
+    }
+}
 
 function enableButtons(disabled) {
     btnUpS.disabled = disabled;
@@ -81,6 +101,7 @@ $('#btnUpS').on('mousedown touchstart', function () {
                     enableButtons(true);
                     i = 0;
                     clearInterval(timeOutS);
+                    timeOutS = 0;
                 } else {
                     txtM.value = 0;
                     txtH.value = `${h < 10 ? '0' : ''}${h}`;
@@ -91,6 +112,7 @@ $('#btnUpS').on('mousedown touchstart', function () {
 }).bind('mouseup mouseleave touchend', function () {
     i = 0;
     clearInterval(timeOutS);
+    timeOutS = 0;
 }).bind('click', function () {
     if (parseInt(txtS.value) > 0)
         i = parseInt(txtS.value);
@@ -110,6 +132,7 @@ $('#btnUpS').on('mousedown touchstart', function () {
                 enableButtons(true);
                 i = 0;
                 clearInterval(timeOutS);
+                timeOutS = 0;
             } else {
                 txtM.value = 0;
                 txtH.value = `${h < 10 ? '0' : ''}${h}`;
@@ -129,11 +152,13 @@ $('#btnDownS').on('mousedown touchstart', function (e) {
         else {
             i = 0;
             clearInterval(timeOutS);
+            timeOutS = 0;
         }
     }, 100);
 }).bind('mouseup mouseleave touchend', function () {
     i = 0;
     clearInterval(timeOutS);
+    timeOutS = 0;
 }).bind('click', function () {
     enableButtons(false);
     if (parseInt(txtS.value) > 0)
@@ -144,6 +169,7 @@ $('#btnDownS').on('mousedown touchstart', function (e) {
     else {
         i = 0;
         clearInterval(timeOutS);
+        timeOutS = 0;
     }
 });
 
@@ -158,6 +184,7 @@ $('#btnDownM').on('mousedown touchstart', function (e) {
         else {
             j = 0;
             clearInterval(timeOutM);
+            timeOutM = 0;
         }
     }, 100);
 }).bind('mouseup mouseleave touchend', function () {
@@ -173,6 +200,7 @@ $('#btnDownM').on('mousedown touchstart', function (e) {
     else {
         j = 0;
         clearInterval(timeOutM);
+        timeOutM = 0;
     }
 });
 
@@ -187,6 +215,7 @@ $('#btnDownH').on('mousedown touchstart', function () {
         else {
             k = 0;
             clearInterval(timeOutH);
+            timeOutH = 0;
         }
     }, 100);
 }).bind('mouseup mouseleave touchend', function () {
@@ -202,6 +231,7 @@ $('#btnDownH').on('mousedown touchstart', function () {
     else {
         k = 0;
         clearInterval(timeOutH);
+        timeOutH = 0;
     }
 });
 
@@ -220,6 +250,7 @@ $('#btnUpM').on('mousedown touchstart', function () {
                 enableButtons(true);
                 j = 0;
                 clearInterval(timeOutM);
+                timeOutM = 0;
             } else {
                 txtM.value = 0;
                 txtH.value = `${h < 10 ? '0' : ''}${h}`;
@@ -243,6 +274,7 @@ $('#btnUpM').on('mousedown touchstart', function () {
             enableButtons(true);
             j = 0;
             clearInterval(timeOutM);
+            timeOutM = 0;
         } else {
             txtM.value = 0;
             txtH.value = `${h < 10 ? '0' : ''}${h}`;
@@ -260,12 +292,14 @@ $('#btnUpH').on('mousedown touchstart', function () {
             enableButtons(true);
             k = 0;
             clearInterval(timeOutH);
+            timeOutH = 0;
         } else
             txtH.value = `${k < 10 ? '0' : ''}${k}`;
     }, 100);
 }).bind('mouseup mouseleave touchend', function () {
     k = 0;
     clearInterval(timeOutH);
+    timeOutH = 0;
 }).bind('click', function () {
     if (parseInt(txtH.value) > 0)
         k = parseInt(txtH.value);
@@ -275,6 +309,7 @@ $('#btnUpH').on('mousedown touchstart', function () {
         enableButtons(true);
         k = 0;
         clearInterval(timeOutH);
+        timeOutH = 0;
     } else
         txtH.value = `${k < 10 ? '0' : ''}${k}`;
 });
