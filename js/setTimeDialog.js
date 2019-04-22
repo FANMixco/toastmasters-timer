@@ -10,7 +10,6 @@ let i = 0, j = 0, k = 0, timeOutS = 0, timeOutM = 0, timeOutH = 0;
 
 btnSetTime.addEventListener('click', function () {
     $(`#${chosenInputText}`)[0].parentElement.MaterialTextfield.change(`${txtH.value}:${txtM.value}:${txtS.value}`);
-    removeDialogFromStack('setTime');
     dialogSetTime.close();
 });
 
@@ -21,7 +20,6 @@ btnClearTime.addEventListener('click', function () {
 });
 
 dialogSetTime.querySelector('.close').addEventListener('click', function () {
-    removeDialogFromStack('setTime');
     clearIntervals();
     dialogSetTime.close();
 });
@@ -52,7 +50,6 @@ function setNewTime(inputText, currentTxt) {
     } else
         openSetDialog(currentTxt);
     try {
-        addDialogToStack('setTime');
         dialogSetTime.showModal();
     } catch (e) { }
 }

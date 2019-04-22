@@ -57,10 +57,27 @@ footer {
   position: relative;
 }
 
-.btnAction {
-  font-size: xx-large;
-  text-align: center;
-  color: black;
+@supports (-webkit-overflow-scrolling: touch) {
+    .btnAction {
+      font-size: xx-large;
+      text-align: center;
+      color: black;
+      padding: 0px;
+    }
+    .btnClock{
+        left: 264px;
+    }
+}
+
+@supports not (-webkit-overflow-scrolling: touch) {
+    .btnAction {
+      font-size: xx-large;
+      text-align: center;
+      color: black;
+    }
+    .btnClock{
+        left: 202px;
+    }
 }
 
 .btnPopUp {

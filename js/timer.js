@@ -1007,6 +1007,8 @@ $(function() {
     if (typeof HTMLDialogElement !== 'function') {
         $("#welcomeDialog").removeClass("centeredDialog");
         $("#welcomeDialog").addClass("centeredDialogNoSupport");
+        $("#setTimeDialog").removeClass("centeredDialog");
+        $("#setTimeDialog").addClass("centeredDialogNoSupport");
     }
 
     $('body').focus(function() {
