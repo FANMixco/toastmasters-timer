@@ -279,6 +279,10 @@ td, th, .mdl-data-table__cell--non-numeric {
     width: calc(85% - 28px) !important;
 }
 
+.fullscreen-dialog-desktop {
+    width: calc(50% - 28px) !important;
+}
+
 .customBodyMobile{
     height: 90%;
     overflow-y: auto;

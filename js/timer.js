@@ -445,7 +445,7 @@ function changeEventHandler() {
             setDropDownValue(`#maxS${seconds}`, "#divMaxS");
         }
         
-        if (!(deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet')) {
+        if (deviceDetector.device === 'phone') {
             setTimeout(function () {
                 $('#bodyCustomTimes').css({
                     'height': `${($('#bodyCustomTimes').height() * 100) / $('html').height()}%`
@@ -790,7 +790,7 @@ btnEmail.addEventListener('click', function() {});
 
 btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
-    if (!(deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet')) {
+    if (deviceDetector.device === 'phone') {
 		setTimeout(function(){
 			$('#bodyAbout').css({
 				 'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`
@@ -897,7 +897,7 @@ lastColor = bgColors[selectedColor];
 invertColors();
 
 setTimeout(function() {
-    if (!(deviceDetector.device == 'desktop' || deviceDetector.device == 'tablet')) {
+    if (deviceDetector.device == 'phone') {
         $("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
 
         $("#titleMeeting").removeClass('mdl-dialog__title');
@@ -981,7 +981,13 @@ $(function() {
     btnEmail.style.visibility = 'hidden';
     isFirstTime = true;
 
-    if (deviceDetector.device === 'desktop' || deviceDetector.device === 'tablet') {
+    if (deviceDetector.device === 'desktop') {
+        $('#timeTable').addClass('centeredDialog');
+        $('#timeTable').addClass('fullscreen-dialog-tablet');
+        $('#aboutDialog').addClass('fullscreen-dialog-desktop');
+        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;        
+    }
+    else if (deviceDetector.device === 'tablet') {
         $('#timeTable').addClass('centeredDialog');
         $('#timeTable').addClass('fullscreen-dialog-tablet');
         $('#aboutDialog').addClass('fullscreen-dialog-tablet');
