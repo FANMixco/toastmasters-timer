@@ -292,14 +292,14 @@ function resizeScreen() {
 
 function resizeSelect() {
     setTimeout(function() {
-        $($(".mdl-menu__outline")[0]).width(300);
-        $($(".mdl-menu__container")[0]).width(300);
-        $($(".mdl-menu__outline")[0]).height(310);
-        $($(".mdl-menu__container")[0]).height(310);
-        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
+        $(".mdl-menu__outline").first().width(300);
+        $(".mdl-menu__container").first().width(300);
+        $(".mdl-menu__outline").first().height(310);
+        $(".mdl-menu__container").first().height(310);
+        var res = $('.mdl-menu').first().css('clip').split(", ");
         res[1] = res[1].replace("px", "");
         res[2] = res[2].replace("px", "");
-        $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
+        $('.mdl-menu').first().css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
     }, 50);
 }
 
