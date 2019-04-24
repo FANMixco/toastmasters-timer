@@ -57,10 +57,13 @@ if (!(os == "iOS" || os == "Android")) {
     audioElementClapping.addEventListener("canplay", function() {});
 
     audioElementClapping.addEventListener("timeupdate", function() {});
-
+    
     btnVibrate.style.display = 'none';
     btnShare.style.display = 'none';
     btnEmail.style.display = 'none';
+
+    document.body.insertBefore(audioBeepElement, document.getElementById("snackbarMsg"));
+    document.body.insertBefore(audioElementClapping, document.getElementById("snackbarMsg"));
 } else {
     btnClap.style.display = 'none';
     btnBeep.style.display = 'none';
