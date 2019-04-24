@@ -4,12 +4,12 @@ let os = getMobileOperatingSystem();
 function browserStartBeep() {
     if (isBeepEnabled === "true" && !(os == "iOS" || os == "Android")) {
         if (green === 1 || yellow === 1 || red === 1) {
-            audioElement.play();
+            audioBeepElement.play();
             setTimeout(function() {
-                audioElement.pause();
+                audioBeepElement.pause();
             }, 500);
         } else {
-            audioElement.pause();
+            audioBeepElement.pause();
         }
     }
 }
@@ -17,13 +17,12 @@ function browserStartBeep() {
 function browserStartVibrate() {
     if (isVibrateEnabled === "true")
         if (green === 1 || yellow === 1 || red === 1)
-			if (hasVibrator)
+            if (hasVibrator)
                 navigator.vibrate(1000);
 }
 
 function browserStartClapping() {
-    if (isClappingEnabled === "true" && !(os == "iOS" || os == "Android"))
-    {
+    if (isClappingEnabled === "true" && !(os == "iOS" || os == "Android")) {
         audioElementClapping.play();
         setTimeout(function() {
             audioElementClapping.pause();
@@ -33,26 +32,26 @@ function browserStartClapping() {
 
 function browserStopClapping() {
     if (!(os == "iOS" || os == "Android"))
-	    audioElementClapping.pause();
+        audioElementClapping.pause();
 }
 
 if (!(os == "iOS" || os == "Android")) {
-    audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', './browserSpecific/sounds/beep.mp3');
+    audioBeepElement = document.createElement('audio');
+    audioBeepElement.setAttribute('src', './browserSpecific/sounds/beep.mp3');
 
-    audioElement.addEventListener('ended', function() {
-    this.play();
+    audioBeepElement.addEventListener('ended', function() {
+        this.play();
     }, false);
 
-    audioElement.addEventListener("canplay", function() {});
+    audioBeepElement.addEventListener("canplay", function() {});
 
-    audioElement.addEventListener("timeupdate", function() {});
+    audioBeepElement.addEventListener("timeupdate", function() {});
 
     audioElementClapping = document.createElement('audio');
     audioElementClapping.setAttribute('src', './browserSpecific/sounds/clapping.mp3');
 
     audioElementClapping.addEventListener('ended', function() {
-    this.play();
+        this.play();
     }, false);
 
     audioElementClapping.addEventListener("canplay", function() {});
