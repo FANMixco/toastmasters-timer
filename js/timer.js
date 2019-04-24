@@ -977,8 +977,12 @@ $(function() {
         refreshControls();
     });
     
-    btnShare.style.visibility = 'hidden';
-    btnEmail.style.visibility = 'hidden';
+    if (os !== "iOS") {
+        btnShare.style.visibility = 'hidden';
+        btnEmail.style.visibility = 'hidden';
+    }
+    else
+        $('#btnShare,#btnEmail').hide();
     isFirstTime = true;
 
     if (deviceDetector.device === 'desktop') {
