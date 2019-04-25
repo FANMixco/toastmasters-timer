@@ -954,7 +954,9 @@ setTimeout(function() {
 
         $("#divCloseAbout").hide();
     }
-    titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
+	setTimeout(function() {
+		titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
+	}, 1000);
 }, 100);
 
 if (isFirstRun) {
