@@ -954,9 +954,13 @@ setTimeout(function() {
 
         $("#divCloseAbout").hide();
     }
-	setTimeout(function() {
-		titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
-	}, 1000);
+	let exit = 0;
+	while (lngObject.meetingAt === undefined && exit < 5) {
+		setTimeout(function() {
+			titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
+		}, 1000);
+		exit++;
+	}
 }, 100);
 
 if (isFirstRun) {
