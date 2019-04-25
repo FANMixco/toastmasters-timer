@@ -20,29 +20,22 @@ function Translate() {
     //translate 
     this.process = function(){
                 _self = this;
-                let xrhFile = new XMLHttpRequest();
-                //load content data
-                xrhFile.open("GET", "./js/lang/"+this.lng+".json", false);
-                xrhFile.onreadystatechange = function ()
-                {
-                    if(xrhFile.readyState === 4)
-                    {
-                        if(xrhFile.status === 200 || xrhFile.status == 0)
-                        {
-                            lngObject = JSON.parse(xrhFile.responseText);
-                            let allDom = document.getElementsByTagName("*");
-                            for(let i =0; i < allDom.length; i++){
-                                let elem = allDom[i];
-                                let key = elem.getAttribute(_self.attribute);
-                                 
-                                if(key != null) {
-                                     //console.log(key);
-                                     elem.innerHTML = lngObject[key];
-                                }
-                            }
-                        }
-                    }
-                }
-                xrhFile.send();
-    }    
+				fetch("./js/lang/"+this.lng+".json")
+				.then((response) => {
+					response.json().then((data) => { 
+						lngObject = data;
+						let allDom = document.getElementsByTagName("*");
+						for(let i =0; i < allDom.length; i++){
+							let elem = allDom[i];
+							let key = elem.getAttribute(_self.attribute);
+							 
+							if(key != null) {
+								 //console.log(key);
+								 elem.innerHTML = lngObject[key];
+							}
+						}
+					});
+				})
+				.catch((err) => {  });
+				}
 }

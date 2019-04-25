@@ -1,30 +1,31 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta name="description" content="Toastmasters Timer">
     <meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Toastmasters,The Leader Ship,Lodz,Poland,Polska">
+	<meta name="theme-color" content="#ffffff">
     <meta name="author" content="Federico Navarrete">
     <title>Toastmasters Timer - Material Design</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <link rel="stylesheet" href="css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="css/timer.css" />
-    <link rel="stylesheet" href="css/material.indigo-pink.min.css" />
-    <link rel="stylesheet" href="css/getmdl-select.min.css" />
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" defer />
+    <link rel="stylesheet" href="css/timer.css" defer />
+    <link rel="stylesheet" href="css/material.indigo-pink.min.css" defer />
+    <link rel="stylesheet" href="css/getmdl-select.min.css" defer />
     <link rel="stylesheet" href="browserSpecific/css/dialog-polyfill.css" />
 	<link rel='manifest' href='/manifest.json' />
     <script defer src="js/material.min.js"></script>
-    <script src="js/translate.js"></script>
+    <script src="js/translate.min.js"></script>
     <script src="js/devicedetector-min.js"></script>
     <script src="js/getmdl-select.min.js"></script>
 </head>
 <body>
     <div id="superContainer">
         <div id="divSpeechType" class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fix-height">
-            <input type="text" value="" class="mdl-textfield__input" id="cmbSpeechType" readonly>
-            <input type="hidden" value="" name="hiddenSpeechType" id="hiddenSpeechType">
+            <input type="text" value="" class="mdl-textfield__input" id="cmbSpeechType" readonly />
+            <input type="hidden" value="" name="hiddenSpeechType" id="hiddenSpeechType" />
             <label for="cmbSpeechType" class="mdl-textfield__label" data-tag="chooseSpeech"></label>
             <ul for="cmbSpeechType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                 <li class="mdl-menu__item" data-val="0" data-tag="opt1"></li>
@@ -43,13 +44,13 @@
             </ul>
         </div>
         <div id="options">
-            <button id="btnChampion" class="btnAction"><span class="mdi mdi-trophy"></span></button>
-            <button id="btnTimetable" class="btnAction"><span class="mdi mdi-timetable"></span></button>
-            <button id="btnInvert" class="btnAction"><span class="mdi mdi-yin-yang"></span></button>
-            <button id="btnBeep" class="btnAction"><span class="mdi mdi-volume-high"></span></button>
-            <button id="btnVibrate" class="btnAction"><span class="mdi mdi-vibrate"></span></button>
-            <button id="btnClap" class="btnAction"><img id="imgClap" src="img/clapping-hands.svg"></button>
-            <button id="btnAbout" class="btnAction"><span class="mdi mdi-information-variant"></span></button>
+            <button aria-label='champion mode' id="btnChampion" class="btnAction"><span class="mdi mdi-trophy"></span></button>
+            <button aria-label='agenda' id="btnTimetable" class="btnAction"><span class="mdi mdi-timetable"></span></button>
+            <button aria-label='invert colors' id="btnInvert" class="btnAction"><span class="mdi mdi-yin-yang"></span></button>
+            <button aria-label='enable or disable beeping' id="btnBeep" class="btnAction"><span class="mdi mdi-volume-high"></span></button>
+            <button aria-label='enable or disable vibration' id="btnVibrate" class="btnAction"><span class="mdi mdi-vibrate"></span></button>
+            <button aria-label='enable or disable clapping' id="btnClap" class="btnAction"><img id="imgClap" src="img/clapping-hands.svg"></button>
+            <button aria-label='about us' id="btnAbout" class="btnAction"><span class="mdi mdi-information-variant"></span></button>
         </div>
         <div id="divSpeaker" class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="txtSpeaker">
@@ -73,13 +74,13 @@
                 <div id="remainTime" class="display-remain-time">00:00:00</div>
                 <div class="row">
                     <div class="column">
-                        <button class="btnAction" id="btnRestart"><span class="mdi mdi-restart"></span></button>
+                        <button aria-label='reset' class="btnAction" id="btnRestart"><span class="mdi mdi-restart"></span></button>
                     </div>
                     <div class="column">
-                        <button class="play" id="pause"></button>
+                        <button aria-label='play or pause' class="play" id="pause"></button>
                     </div>
                     <div class="column">
-                        <button class="btnAction" id="btnStop"><span class="mdi mdi-stop"></span></button>
+                        <button aria-label='stop and save' class="btnAction" id="btnStop"><span class="mdi mdi-stop"></span></button>
                     </div>
                 </div>
             </div>
@@ -89,11 +90,11 @@
         <h4 class="mdl-dialog__title" id="titleMeeting"></h4>
         <div class="mdl-dialog__content">
             <div>
-                <button id="btnMultiple" type="button" class="btnPopUp"><span class="mdi mdi-check-box-outline"></span></button>
-                <button id="btnEmail" type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
-                <button id="btnShare" type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
-                <button id="btnDownload" type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
-                <button id="btnDelete" type="button" class="btnPopUp"><span class="mdi mdi-trash-can"></span></button>
+                <button aria-label='choose multiple' id="btnMultiple" type="button" class="btnPopUp"><span class="mdi mdi-check-box-outline"></span></button>
+                <button aria-label='send email' id="btnEmail" type="button" class="btnPopUp"><span class="mdi mdi-send"></span></button>
+                <button aria-label='share results' id="btnShare" type="button" class="btnPopUp"><span class="mdi mdi-share"></span></button>
+                <button aria-label='download agenda' id="btnDownload" type="button" class="btnPopUp"><span class="mdi mdi-download"></span></button>
+                <button aria-label='delete' id="btnDelete" type="button" class="btnPopUp"><span class="mdi mdi-trash-can"></span></button>
             </div>
             <div id="divSpeakers">
                 <table id="tblResults" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
@@ -145,7 +146,7 @@
             <p data-tag="about2"></p>
             <p>Federico Navarrete <a href="mailto:fanmixco@gmail.com?Subject=TMTimer%20PWA" target="_top">fanmixco@gmail.com</a></p>
             <p data-tag="about4"></p>
-            <p><a href="https://www.supernovaic.tk" target="_blank">www.supernovaic.tk</a></p>
+            <p><a rel="noreferrer" href="https://www.supernovaic.tk" target="_blank">www.supernovaic.tk</a></p>
             <p><img src="img/supernova.png" style="width: 96px"></p>
             <p data-tag="about3"></p>
         </div>
@@ -166,13 +167,13 @@
     <dialog class="mdl-dialog" id="setTimeDialog">
         <div class="mdl-dialog__content">
             <div class="fakeContainer">
-                <input class="fakeTxt" type="text" readonly/>
+                <input class="fakeTxt" type="text" readonly />
             </div>
             <h4 class="mdl-dialog__title" data-tag="setTime"></h4>
             <div class="mdl-dialog__content">
                 <div class="rowFull">
                     <div class="column">
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id='btnUpH'>
+                        <button aria-label='increase hours' class="mdl-button mdl-js-button mdl-button--icon" id='btnUpH'>
                      <span class="mdi mdi-plus"></span>
                      </button>
                         <br />
@@ -181,12 +182,12 @@
                             <label class="mdl-textfield__label centeredText" for="txtH">H</label>
                         </div>
                         <br />
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id='btnDownH'>
+                        <button aria-label='reduce hours' class="mdl-button mdl-js-button mdl-button--icon" id='btnDownH'>
                      <span class="mdi mdi-minus"></span>
                      </button>
                     </div>
                     <div class="column">
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id='btnUpM'>
+                        <button aria-label='increase minutes' class="mdl-button mdl-js-button mdl-button--icon" id='btnUpM'>
                      <span class="mdi mdi-plus"></span>
                      </button>
                         <br />
@@ -195,12 +196,12 @@
                             <label class="mdl-textfield__label centeredText" for="txtM">M</label>
                         </div>
                         <br />
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id='btnDownM'>
+                        <button aria-label='reduce minutes' class="mdl-button mdl-js-button mdl-button--icon" id='btnDownM'>
                      <span class="mdi mdi-minus"></span>
                      </button>
                     </div>
                     <div class="column">
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id='btnUpS'>
+                        <button aria-label='increase seconds' class="mdl-button mdl-js-button mdl-button--icon" id='btnUpS'>
                      <span class="mdi mdi-plus"></span>
                      </button>
                         <br />
@@ -209,7 +210,7 @@
                             <label class="mdl-textfield__label centeredText" for="txtS">S</label>
                         </div>
                         <br />
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id='btnDownS'>
+                        <button aria-label='reduce seconds' class="mdl-button mdl-js-button mdl-button--icon" id='btnDownS'>
                      <span class="mdi mdi-minus"></span>
                      </button>
                     </div>
@@ -217,14 +218,14 @@
             </div>
         </div>
         <div class="mdl-dialog__actions">
-            <button id="btnSetTime" type="button" class="mdl-button mdl-button--primary" data-tag="set">Set</button>
-            <button type="button" class="mdl-button close" data-tag="cancelBtn"></button>
-            <button id="btnClearTime" type="button" class="mdl-button mdl-button" data-tag="clear"></button>
+            <button aria-label='set' id="btnSetTime" type="button" class="mdl-button mdl-button--primary" data-tag="set">Set</button>
+            <button aria-label='cancel' type="button" class="mdl-button close" data-tag="cancelBtn"></button>
+            <button aria-label='clear' id="btnClearTime" type="button" class="mdl-button mdl-button" data-tag="clear"></button>
         </div>
     </dialog>
     <dialog class="mdl-dialog" id="clappingDialog">
         <div class="mdl-dialog__content">
-            <div id="fakeContainer">
+            <div class="fakeContainer">
                 <input class="fakeTxt" type="text" readonly/>
             </div>
             <h4 id="egTitle" class="mdl-dialog__title"><span class="mdi mdi-egg-easter"></span></h4>
@@ -258,13 +259,13 @@
                 </div>
             </div>
             <div class="mdl-dialog__actions">
-                <button id="btnSaveClap" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
+                <button aria-label='save' id="btnSaveClap" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
             </div>
         </div>
     </dialog>
     <dialog class="mdl-dialog" id="customTimes">
         <div class="mdl-dialog__content" id="bodyCustomTimes">
-            <div id="fakeContainer">
+            <div class="fakeContainer">
                 <input class="fakeTxt" type="text" readonly/>
             </div>
             <div id="divCustom" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -309,30 +310,30 @@
             </div>
         </div>
         <div class="mdl-dialog__actions">
-            <button id="btnSave" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
-            <button id="btnCloseCustom" type="button" class="mdl-button close" data-tag="close"></button>
+            <button aria-label='save' id="btnSave" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
+            <button aria-label='close' id="btnCloseCustom" type="button" class="mdl-button close" data-tag="close"></button>
         </div>
     </dialog>
     <div id="snackbarMsg" class="mdl-js-snackbar mdl-snackbar">
         <div class="mdl-snackbar__text"></div>
-        <button class="mdl-snackbar__action" type="button"></button>
+        <button aria-label='close' class="mdl-snackbar__action" type="button"></button>
     </div>
     <footer>
-        <span data-tag="copyright1"></span><a class="externalLinks" href="http://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a class="externalLinks" href="http://theleadership.pl">The Leader Ship Toastmasters</a>
+        <span data-tag="copyright1"></span><a rel='noreferrer' class="externalLinks" href="http://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a rel='noreferrer' class="externalLinks" href="http://theleadership.pl">The Leader Ship Toastmasters</a>
         <span data-tag="copyright3"></span><span>.</span>
     </footer>
     <!--Browser ONLY actions-->
     <script src="browserSpecific/js/dialog-polyfill.js"></script>
-    <script src="browserSpecific/js/jspdf.min.js"></script>
+    <script src="browserSpecific/js/jspdf.min.js" defer></script>
     <script src="browserSpecific/js/getOS.min.js"></script>
     <script src="browserSpecific/js/actions.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src="js/setTimeDialog.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src="js/db/customDBActions.js"></script>
-    <script src="js/db/dbHandler.js"></script>
-    <script src="js/genericActions.js"></script>
-    <script src="js/timer.js"></script>
+    <script src="js/setTimeDialog.min.js" defer></script>
+    <script src="js/moment.min.js" defer></script>
+    <script src="js/db/customDBActions.min.js"></script>
+    <script src="js/db/dbHandler.min.js"></script>
+    <script src="js/genericActions.min.js"></script>
+    <script src="js/timer.min.js"></script>
     <script>
         load();
 		
