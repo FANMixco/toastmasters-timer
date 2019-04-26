@@ -955,12 +955,15 @@ setTimeout(function() {
         $("#divCloseAbout").hide();
     }
 	let exit = 0;
-	while (lngObject.meetingAt === undefined && exit < 5) {
+	do {
 		setTimeout(function() {
-			titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
+            try {
+                titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
+            }
+            catch (e) {}
 		}, 1000);
 		exit++;
-	}
+	} while (lngObject === undefined && exit < 5);
 }, 100);
 
 if (isFirstRun) {
