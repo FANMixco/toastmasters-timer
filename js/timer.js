@@ -259,7 +259,8 @@ window.onresize = function() {
 function resizeScreen() {
     let scaleVal = window.innerHeight / 600;
     if (window.innerHeight < 514) {
-        $('body').prepend($('<div id="externalContainer"></div>'));
+        if ($('#externalContainer').length === 0)
+            $('body').prepend($('<div id="externalContainer"></div>'));
         $('#externalContainer').append($('#superContainer'));
         $('#externalContainer').css("height", `${window.innerHeight}px`);
 
