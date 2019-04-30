@@ -1,3 +1,33 @@
+<!--
+                   ,,,, 
+             ,;) .';;;;',
+ ;;,,_,-.-.,;;'_,|I\;;;/),,_
+  `';;/:|:);{ ;;;|| \;/ /;;;\__
+      L;/-';/ \;;\',/;\/;;;.') \
+      .:`''` - \;;'.__/;;;/  . _'-._ 
+    .'/   \     \;;;;;;/.'_7:.  '). \_
+  .''/     | '._ );}{;//.'    '-:  '.,L
+.'. /       \  ( |;;;/_/         \._./;\   _,
+ . /        |\ ( /;;/_/             ';;;\,;;_,
+. /         )__(/;;/_/                (;;'''''
+ /        _;:':;;;;:';-._             );
+/        /   \  `'`   --.'-._         \/
+       .'     '.  ,'         '-,
+      /    /   r--,..__       '.\
+    .'    '  .'        '--._     ]
+    (     :.(;>        _ .' '- ;/
+    |      /:;(    ,_.';(   __.'
+     '- -'"|;:/    (;;;;-'--'
+           |;/      ;;(
+ snd       ''      /;;|
+                   \;;|
+                    \/
+https://www.asciiart.eu/comics/spiderman
+"With great power comes great responsibility." Uncle Ben
+
+Feel free to contact me:
+https://goo.gl/forms/JArck4uzbGGmTuG72
+-->
 <!doctype html>
 <html lang='en'>
 <head>
@@ -5,8 +35,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta name="description" content="Toastmasters Timer">
-    <meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Toastmasters,The Leader Ship,Lodz,Poland,Polska">
-	<meta name="theme-color" content="#ffffff">
+    <meta name="keywords" content="Timer,Stopwatch,Material Design,HTML,CSS,JavaScript,jQuery,Toastmasters,The Leader Ship,Lodz,Poland,Polska,Easter Egg,Spiderman">
+    <meta name="theme-color" content="#ffffff">
     <meta name="author" content="Federico Navarrete">
     <title>Toastmasters Timer - Material Design</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -15,7 +45,7 @@
     <link rel="stylesheet" href="css/material.indigo-pink.min.css" defer />
     <link rel="stylesheet" href="css/getmdl-select.min.css" defer />
     <link rel="stylesheet" href="browserSpecific/css/dialog-polyfill.css" />
-	<link rel='manifest' href='/manifest.json' />
+    <link rel='manifest' href='manifest.json' />
     <script defer src="js/material.min.js"></script>
     <script src="js/translate.min.js"></script>
     <script src="js/devicedetector-min.js"></script>
@@ -53,7 +83,7 @@
             <button aria-label='about us' id="btnAbout" class="btnAction"><span class="mdi mdi-information-variant"></span></button>
         </div>
         <div id="divSpeaker" class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" id="txtSpeaker">
+            <input class="mdl-textfield__input" type="text" id="txtSpeaker" />
             <label class="mdl-textfield__label" for="txtSpeaker" data-tag="pMember"></label>
         </div>
         <div class="container">
@@ -102,8 +132,8 @@
                         <tr>
                             <th id="thDel" class="mdl-data-table__cell--non-numeric hiddenObject minSizeCol">
                                 <label id="lblTickAll" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect chkOpt" for="tickAll">
-                           <input type="checkbox" id="tickAll" class="mdl-checkbox__input" checked="checked" />
-                           </label>
+                                   <input type="checkbox" id="tickAll" class="mdl-checkbox__input" checked="checked" />
+                                </label>
                             </th>
                             <th class="mdl-data-table__cell--non-numeric" data-tag="pMember"></th>
                             <th class="mdl-data-table__cell--non-numeric" data-tag="chooseSpeech"></th>
@@ -226,7 +256,7 @@
     <dialog class="mdl-dialog" id="clappingDialog">
         <div class="mdl-dialog__content">
             <div class="fakeContainer">
-                <input class="fakeTxt" type="text" readonly/>
+                <input class="fakeTxt" type="text" readonly />
             </div>
             <h4 id="egTitle" class="mdl-dialog__title"><span class="mdi mdi-egg-easter"></span></h4>
             <div class="mdl-dialog__content">
@@ -234,8 +264,8 @@
                 <div class="rowFull">
                     <div class="columnClap">
                         <div id="divClapM" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                            <input type="text" value="" class="mdl-textfield__input" id="clapM" readonly>
-                            <input type="hidden" value="" name="clapM">
+                            <input type="text" value="" class="mdl-textfield__input" id="clapM" readonly />
+                            <input type="hidden" value="" name="clapM" />
                             <label for="clapM" class="mdl-textfield__label">M</label>
                             <ul for="clapM" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                                 <li class="mdl-menu__item" data-val="0" id="clapM0">00</li>
@@ -245,8 +275,8 @@
                     </div>
                     <div class="columnClap">
                         <div id="divClapS" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                            <input type="text" value="" class="mdl-textfield__input" id="clapS" readonly>
-                            <input type="hidden" value="" name="clapS">
+                            <input type="text" value="" class="mdl-textfield__input" id="clapS" readonly />
+                            <input type="hidden" value="" name="clapS" />
                             <label for="clapS" class="mdl-textfield__label">S</label>
                             <ul for="clapS" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                                 <li class="mdl-menu__item" data-val="0">00</li>
@@ -266,7 +296,7 @@
     <dialog class="mdl-dialog" id="customTimes">
         <div class="mdl-dialog__content" id="bodyCustomTimes">
             <div class="fakeContainer">
-                <input class="fakeTxt" type="text" readonly/>
+                <input class="fakeTxt" type="text" readonly />
             </div>
             <div id="divCustom" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="txtCustom">
@@ -278,8 +308,8 @@
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
                     <label class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtMin">
-                  <span class="mdi mdi-av-timer"></span>
-                  </label>
+                       <span class="mdi mdi-av-timer"></span>
+                    </label>
                     <input class="mdl-textfield__input" type="text" id="txtMin" readonly value="00:00:00">
                     <label class="mdl-textfield__label" for="txtMin">HH:MM:SS</label>
                 </div>
@@ -290,8 +320,8 @@
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
                     <label class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtAvg">
-                  <span class="mdi mdi-av-timer"></span>
-                  </label>
+                       <span class="mdi mdi-av-timer"></span>
+                    </label>
                     <input class="mdl-textfield__input" type="text" id="txtAvg" readonly value="00:00:00">
                     <label class="mdl-textfield__label" for="txtAvg">HH:MM:SS</label>
                 </div>
@@ -302,8 +332,8 @@
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
                     <label class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtMax">
-                  <span class="mdi mdi-av-timer"></span>
-                  </label>
+                       <span class="mdi mdi-av-timer"></span>
+                    </label>
                     <input class="mdl-textfield__input" type="text" id="txtMax" readonly value="00:00:00">
                     <label class="mdl-textfield__label" for="txtMax">HH:MM:SS</label>
                 </div>
@@ -337,25 +367,25 @@
     <script>
         load();
 		
-		// This is the "Offline page" service worker
+	// This is the "Offline page" service worker
 
-		// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+	// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
 
-		// Check compatibility for the browser we're running this in
-		if ("serviceWorker" in navigator) {
-		  if (navigator.serviceWorker.controller) {
-			console.log("[PWA Builder] active service worker found, no need to register");
-		  } else {
-			// Register the service worker
-			navigator.serviceWorker
-			  .register("pwabuilder-sw.js", {
-				scope: "./"
-			  })
-			  .then(function (reg) {
-				console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-			  });
-		  }
-		}
+	// Check compatibility for the browser we're running this in
+	if ("serviceWorker" in navigator) {
+	  if (navigator.serviceWorker.controller) {
+		console.log("[PWA Builder] active service worker found, no need to register");
+	  } else {
+		// Register the service worker
+		navigator.serviceWorker
+		  .register("pwabuilder-sw.js", {
+			scope: "./"
+		  })
+		  .then(function (reg) {
+			console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+		  });
+	  }
+	}
     </script>
 </body>
 </html>
