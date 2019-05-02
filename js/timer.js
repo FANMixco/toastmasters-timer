@@ -20,12 +20,6 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnSave = document.getElementById('btnSave'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
-    btnUpH = document.getElementById('btnUpH'),
-    btnUpM = document.getElementById('btnUpM'),
-    btnUpS = document.getElementById('btnUpS'),
-    btnDownH = document.getElementById('btnDownH'),
-    btnDownM = document.getElementById('btnDownM'),
-    btnDownS = document.getElementById('btnDownS'),
     imgClap = document.getElementById('imgClap'),
     dialogTimeTable = document.getElementById('timeTable'),
     dialogWelcome = document.getElementById('welcomeDialog'),
@@ -43,10 +37,13 @@ const displayOutput = document.querySelector('.display-remain-time'),
     clapS = document.getElementById('clapS'),
     cmbSpeechType = document.getElementById('cmbSpeechType'),
     remainTime = document.getElementById('remainTime'),
-    titleMeeting = document.getElementById('titleMeeting'),
     divSpeaker = document.getElementById('divSpeaker'),
     snackbarMsg = document.getElementById('snackbarMsg'),
     length = Math.PI * 2 * 100;
+
+let titleMeeting = document.getElementById('titleMeeting');
+
+let externalContainer = null;
 
 let clappingTime = 30,
     wholeTime = 30,
@@ -91,8 +88,8 @@ let times = [
     [240, 300, 360],
     //1-9 (5 to 7)
     [300, 360, 420],
-    //10 (8 to 10)
-    [480, 540, 600],
+    //1m
+    [30, 45, 60],
     //Evaluator intro
     [60, 75, 90],
     //Evaluator
@@ -101,14 +98,14 @@ let times = [
     [300, 330, 360],
     //TT
     [60, 90, 120],
+    //10 (8 to 10)
+    [480, 540, 600],
     //12m
     [600, 660, 720],
     //15m
     [780, 840, 900],
     //20m
-    [1080, 1170, 1200],
-    //1m
-    [30, 45, 60]
+    [1080, 1170, 1200]
 ];
 
 //circle start
@@ -257,36 +254,41 @@ window.onresize = function() {
 };
 
 function resizeScreen() {
-    let scaleVal = window.innerHeight / 600;
+	let scaleVal = window.innerHeight / 600;
     if (window.innerHeight < 514) {
-        if ($('#externalContainer').length === 0)
-            $('body').prepend($('<div id="externalContainer"></div>'));
-        $('#externalContainer').append($('#superContainer'));
-        $('#externalContainer').css("height", `${window.innerHeight}px`);
+        if (externalContainer === null) {
+            let bodyTmp = document.body;
+            let divTmp = document.createElement("div");
+            divTmp.id = 'externalContainer';
+            bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
+        }
+        externalContainer = document.getElementById('externalContainer');
+        let sContainer = document.getElementById('superContainer');
+        externalContainer.append(sContainer);
+        externalContainer.style.height = `${window.innerHeight}px`;
+        sContainer.style.transformOrigin = "50% 0% 0px";
 
-        $('#superContainer').css("transform-origin", "50% 0% 0px");
-
-        setTimeout(function() {
-            $('#superContainer').css("transform", `scale(${scaleVal}`);
-            setTimeout(function() {
+        setTimeout(function () {
+            sContainer.style.transform = `scale(${scaleVal})`;
+            setTimeout(function () {
                 let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
-                $('#superContainer').css("height", `${cHeight}px`);
+                sContainer.style.height = `${cHeight}px`;
             }, 100);
         }, 100);
     } else {
-        $('#superContainer').css("height", `${window.innerHeight}px`);
-        $('#superContainer').css("transform-origin", "50% 0% 0px");
+        let sContainer = document.getElementById('superContainer');
+        sContainer.style.height = `${window.innerHeight}px`;
+        sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(function() {
-            $('#superContainer').css("transform", `scale(${scaleVal}`);
+        setTimeout(function () {
+            sContainer.style.transform = `scale(${scaleVal})`;
         }, 100);
 
-        setTimeout(function() {
-            if ($(".mdl-textfield__input")[0].getBoundingClientRect().width > $('body').outerWidth()) {
-                $('#superContainer').css("transform", `scale(${scaleVal - (scaleVal - $(".mdl-textfield__input")[0].getBoundingClientRect().width / $('body').outerWidth())}`);
-            }
+        setTimeout(function () {
+            if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
+                sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
         }, 100);
     }
 }
@@ -342,16 +344,28 @@ function pauseTimer() {
 
     if (btnRestart.disabled) {
         btnRestart.innerHTML = "<span class='mdi mdi-restart-off'></span>";
-        $('footer,#divSpeechType,#options,#divSpeaker').fadeTo("fast", '0.1');
+        fade.to(document.getElementById('divSpeechType'), fastTransition, 0.1);
+        fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
+        fade.to(document.getElementById('options'), fastTransition, 0.1);
+        fade.to(document.getElementsByTagName('footer')[0], fastTransition, 0.1);
 
         if (isNinjaMode) {
-            $('.circle').fadeTo("fast", '0');
-            $('#controls').fadeTo("fast", '0.5');
+            fade.to(document.getElementById('controls'), fastTransition, 0.5);
+            fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
         }
     } else {
-        btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
-        $('footer,#divSpeechType,#options,#divSpeaker,.circle,#controls').fadeTo("fast", '1');
-    }
+		btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
+        unfadeElements();
+	}
+}
+
+function unfadeElements() {
+    fade.to(document.getElementById('divSpeechType'), fastTransition, 1);
+    fade.to(document.getElementById('divSpeaker'), fastTransition, 1);
+    fade.to(document.getElementById('options'), fastTransition, 1);
+    fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1);
+    fade.to(document.getElementById('controls'), fastTransition, 1);
+    fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1);
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
@@ -366,7 +380,7 @@ function displayTimeLeft(timeLeft) { //displays time on the input
 
 function setDropDownValue(idVal, idContainer) {
     try {
-        $(idVal).attr("data-selected", "true");
+		document.getElementById(idVal).dataset.selected = "true";
         getmdlSelect.init(idContainer);
     } catch (e) {}
 }
@@ -395,65 +409,51 @@ function changeEventHandler() {
 
     selected = parseInt(hiddenSpeechType.value);
 
-    if (selected !== 11) {
+    if (selected !== 99) {
         setBasicIntervals();
-
         wholeTime = maximum;
+        setLocalStorage("wholeTime", maximum);
         updateDisplay();
+        setSpeechTime();
         isCustom = false;
-    } else {
+    }
+    else {
         if (!wasCustom) {
             minimum = 0;
             maximum = 0;
             average = 0;
 
-            setDropDownValue("#minH0", "#divMinH");
-            setDropDownValue("#minM0", "#divMinM");
-            setDropDownValue("#minS0", "#divMinS");
+            txtCustom.parentElement.MaterialTextfield.change(lngObject.opt12);
+        }
+        else if (wasCustom && !isFirstTime) {
+            setCustomText();
 
-            setDropDownValue("#avgH0", "#divAvgH");
-            setDropDownValue("#avgM0", "#divAvgM");
-            setDropDownValue("#avgS0", "#divAvgS");
-
-            setDropDownValue("#maxH0", "#divMaxH");
-            setDropDownValue("#maxM0", "#divMaxM");
-            setDropDownValue("#maxS0", "#divMaxS");
-            $("#txtCustom")[0].parentElement.MaterialTextfield.change(lngObject.opt12);
-        } else if (wasCustom && !isFirstTime) {
-            $("#txtCustom")[0].parentElement.MaterialTextfield.change(getLocalStorageValue("txtCustom"));
             let hours = Math.floor(minimum / 3600);
             let minutes = Math.floor(minimum / 60);
             let seconds = minimum % 60;
 
-            setDropDownValue(`#minH${hours}`, "#divMinH");
-            setDropDownValue(`#minM${minutes}`, "#divMinM");
-            setDropDownValue(`#minS${seconds}`, "#divMinS");
+            txtMin.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
 
             hours = Math.floor(average / 3600);
             minutes = Math.floor(average / 60);
             seconds = average % 60;
 
-            setDropDownValue(`#avgH${hours}`, "#divAvgH");
-            setDropDownValue(`#avgM${minutes}`, "#divAvgM");
-            setDropDownValue(`#avgS${seconds}`, "#divAvgS");
+            txtAvg.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
 
             hours = Math.floor(maximum / 3600);
             minutes = Math.floor(maximum / 60);
             seconds = maximum % 60;
 
-            setDropDownValue(`#maxH${hours}`, "#divMaxH");
-            setDropDownValue(`#maxM${minutes}`, "#divMaxM");
-            setDropDownValue(`#maxS${seconds}`, "#divMaxS");
+            txtMax.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
         }
-        
+
         if (deviceDetector.device === 'phone') {
             setTimeout(function () {
-                $('#bodyCustomTimes').css({
-                    'height': `${($('#bodyCustomTimes').height() * 100) / $('html').height()}%`
-                });
+                let bCustomTimes = document.getElementById('bodyCustomTimes');
+                bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
             }, 100);
         }
-        
+
         isCustom = true;
         dialogCustomTimes.showModal();
     }
@@ -585,9 +585,9 @@ function setClappingImg() {
 
 function invertColors() {
     if (selectedColor === 1)
-        $('body').css('filter', 'invert(100%)');
+        document.body.style.filter = "invert(100%)";
     else
-        $('body').css('filter', 'invert(0%)');
+        document.body.style.filter = "invert(0%)";
     document.body.style.background = lastColor;
 }
 
@@ -617,7 +617,7 @@ function storeTime(isTimeStored) {
         maximum = getMaxCustom();
 
     wholeTime = maximum;
-    $('footer,#divSpeechType,#options,#divSpeaker,.circle,#controls').fadeTo("fast", '1');
+	unfadeElements();
 }
 
 function getMinCustom() {
@@ -709,8 +709,8 @@ btnClap.addEventListener('click', function(event) {
     if (event.detail === 3) {
         dialogClapping.showModal();
         if (clappingTime === 30) {
-            setDropDownValue("#clapM0", "#divClapM");
-            setDropDownValue("#clapS30", "#divClapS");
+            setDropDownValue("clapM0", "#divClapM");
+            setDropDownValue("clapS30", "#divClapS");
         }
     } else {
         isClappingEnabled = !isClappingEnabled;
@@ -793,9 +793,7 @@ btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
     if (deviceDetector.device === 'phone') {
 		setTimeout(function(){
-			$('#bodyAbout').css({
-				 'height': `${($('#bodyAbout').height() * 100) / $('html').height()}%`
-			});
+			dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`
 		}, 100);
 	}
 });
@@ -823,10 +821,10 @@ btnMultiple.addEventListener('click', function() {
     });
     if (!multipleEnabled) {
         btnMultiple.innerHTML = "<span class='mdi mdi-checkbox-blank-outline'></span>";
-        $(".tdDel,#thDel").show();
+		showCheckBoxes();
     } else {
         btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
-        $(".tdDel,#thDel").hide();
+        hideCheckBoxes();
     }
     multipleEnabled = !multipleEnabled;
     refreshControls();
@@ -899,61 +897,144 @@ invertColors();
 
 setTimeout(function() {
     if (deviceDetector.device == 'phone') {
-        $("#timeTable").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobile'><span class='mdi mdi-close'></span></span><span id='spanTitle'></span></div></div>`);
+		//Timetable Dialog
+		let timeTableTmp = document.getElementById('timeTable');
+		let divTitleContainerTmp = document.createElement("div");
+		divTitleContainerTmp.className = "titleContainer";
 
-        $("#titleMeeting").removeClass('mdl-dialog__title');
-        $("#titleMeeting").css({
-            'margin': '0',
-            'margin-top': '16px',
-            'font-weight': '1000',
-            'font-size': '1.25em',
-            'display': 'inline'
-        });
+		let divTitleInnerContainer = document.createElement("div");
+		divTitleInnerContainer.className = "titleInnerContainer";
 
-        $("#spanTitle").append($("#titleMeeting"));
+		let spanCloseMobile = document.createElement("span");
+		spanCloseMobile.className = "closeMobile";
+		spanCloseMobile.id = 'btnCloseMobile';
 
-        $("#btnCloseMeeting").hide();
+		let spanCloseIcon = document.createElement("span");
+		spanCloseIcon.className = "mdi mdi-close";
 
-        $("#btnCloseMobile").click(function() {
-            dialogTimeTable.close();
-        });
+		let spanTitle = document.createElement("span");
+		spanTitle.id = 'spanTitle';
 
-        $("#customTimes").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileCustom'><span class='mdi mdi-close'></span></span><span id='spanTitleCustom'><h4 id='customTitle'>&nbsp;</h4></span><span id='spanSave'></span></div></div>`);
+		spanCloseMobile.appendChild(spanCloseIcon);
 
-        $("#customTitle").css({
-            'margin': '0',
-            'margin-top': '16px',
-            'font-weight': '1000',
-            'font-size': '1.25em',
-            'display': 'inline'
-        });
+		divTitleInnerContainer.appendChild(spanCloseMobile);
+		divTitleInnerContainer.appendChild(spanTitle);
 
-        $("#btnCloseMobileCustom").click(function() {
-            closeCustomDialog();
-        });
+		divTitleContainerTmp.appendChild(divTitleInnerContainer);
 
-        $("#spanSave").append($("#btnSave"));
+		timeTableTmp.insertBefore(divTitleContainerTmp, timeTableTmp.firstChild);
 
-        $("#btnCloseCustom,#footerCustom").hide();
+		titleMeeting = document.getElementById('titleMeeting');
+		titleMeeting.classList.remove('mdl-dialog__title');
+		titleMeeting.style.margin = '0';
+		titleMeeting.style.marginTop = '16px';
+		titleMeeting.style.fontWeight = 1000;
+		titleMeeting.style.fontSize = '1.25em';
+		titleMeeting.style.display = 'inline';
 
-        $("#aboutDialog").prepend(`<div class='titleContainer'><div class='titleInnerContainer'><span class='closeMobile' id='btnCloseMobileAbout'><span class='mdi mdi-close'></span></span><span id='spanTitleAbout'></span></div></div>`);
+		document.getElementById('spanTitle').append(titleMeeting);
 
-        $("#titleAbout").removeClass('mdl-dialog__title');
-        $("#titleAbout").css({
-            'margin': '0',
-            'margin-top': '16px',
-            'font-weight': '1000',
-            'font-size': '1.25em',
-            'display': 'inline'
-        });
+		document.getElementById('btnCloseMeeting').style.display = 'none';
 
-        $("#spanTitleAbout").append($("#titleAbout"));
+		document.getElementById('btnCloseMobile').addEventListener('click', function () {
+			dialogTimeTable.close();
+		});
+		
+		//Custom Dialog
+		let customTimesTmp = document.getElementById('customTimes');
+		let divTitleContainerCT = document.createElement("div");
+		divTitleContainerCT.className = "titleContainer";
 
-        $("#btnCloseMobileAbout").click(function() {
-            dialogAbout.close();
-        });
+		let divTitleInnerContainerCT = document.createElement("div");
+		divTitleInnerContainerCT.className = "titleInnerContainer";
 
-        $("#divCloseAbout").hide();
+		let spanCloseMobileCT = document.createElement("span");
+		spanCloseMobileCT.className = "closeMobile";
+		spanCloseMobileCT.id = 'btnCloseMobileCustom';
+
+		let spanCloseIconCT = document.createElement("span");
+		spanCloseIconCT.className = "mdi mdi-close";
+
+		let spanTitleCT = document.createElement("span");
+		spanTitleCT.id = 'spanTitleCustom';
+
+		let customTitleCT = document.createElement("h4");
+		customTitleCT.innerHTML = '&nbsp;';
+		customTitleCT.id = 'customTitle';
+
+		let spanSaveCT = document.createElement("span");
+		spanSaveCT.id = 'spanSave';
+
+		spanCloseMobileCT.appendChild(spanCloseIconCT);
+		spanTitleCT.appendChild(customTitleCT);
+
+		divTitleInnerContainerCT.appendChild(spanCloseMobileCT);
+		divTitleInnerContainerCT.appendChild(spanTitleCT);
+		divTitleInnerContainerCT.appendChild(spanSaveCT);
+
+		divTitleContainerCT.appendChild(divTitleInnerContainerCT);
+
+		customTimesTmp.insertBefore(divTitleContainerCT, customTimesTmp.firstChild);
+
+		let customTitleTmp = document.getElementById('customTitle');
+		customTitleTmp.classList.remove('mdl-dialog__title');
+		customTitleTmp.style.margin = '0';
+		customTitleTmp.style.marginTop = '16px';
+		customTitleTmp.style.fontWeight = 1000;
+		customTitleTmp.style.fontSize = '1.25em';
+		customTitleTmp.style.display = 'inline';
+
+		document.getElementById('btnCloseMobileCustom').addEventListener('click', function () {
+			closeCustomDialog();
+		});
+
+		document.getElementById('spanSave').appendChild(document.getElementById('btnSave'));
+
+		document.getElementById('footerCustom').style.display = 'none';
+		document.getElementById('btnCloseCustom').style.display = 'none';
+
+		//About
+		let aboutDialogAD = document.getElementById('aboutDialog');
+		let divTitleContainerAD = document.createElement("div");
+		divTitleContainerAD.className = "titleContainer";
+
+		let divTitleInnerContainerAD = document.createElement("div");
+		divTitleInnerContainerAD.className = "titleInnerContainer";
+
+		let spanCloseMobileAD = document.createElement("span");
+		spanCloseMobileAD.className = "closeMobile";
+		spanCloseMobileAD.id = 'btnCloseMobileAbout';
+
+		let spanCloseIconAD = document.createElement("span");
+		spanCloseIconAD.className = "mdi mdi-close";
+
+		let spanTitleAD = document.createElement("span");
+		spanTitleAD.id = 'spanTitleAbout';
+
+		spanCloseMobileAD.appendChild(spanCloseIconAD);
+
+		divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
+		divTitleInnerContainerAD.appendChild(spanTitleAD);
+
+		divTitleContainerAD.appendChild(divTitleInnerContainerAD);
+
+		aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
+
+		document.getElementById('btnCloseMobileAbout').addEventListener('click', function () {
+			dialogAbout.close();
+		});
+
+		let titleAboutAD = document.getElementById('titleAbout');
+		titleAboutAD.classList.remove('mdl-dialog__title');
+		titleAboutAD.style.margin = '0';
+		titleAboutAD.style.marginTop = '16px';
+		titleAboutAD.style.fontWeight = 1000;
+		titleAboutAD.style.fontSize = '1.25em';
+		titleAboutAD.style.display = 'inline';
+
+		document.getElementById('spanTitleAbout').append(titleAboutAD);
+
+		document.getElementById('divCloseAbout').style.display = 'none';
     }
 	let exit = 0;
 	do {
@@ -973,7 +1054,7 @@ if (isFirstRun) {
 
 checkMode();
 
-$(function() {
+(function() {
     $("#tickAll").change(function() {
         $(".mdl-js-checkbox").not("#lblTickAll").each(function() {
             let _this = this;
@@ -987,49 +1068,46 @@ $(function() {
         refreshControls();
     });
     
-    if (os !== "iOS") {
-        btnShare.style.visibility = 'hidden';
-        btnEmail.style.visibility = 'hidden';
-    }
-    else
-        $('#btnShare,#btnEmail').hide();
+	btnShare.style.display = 'none';
+	btnEmail.style.display = 'none';
+
     isFirstTime = true;
 
     if (deviceDetector.device === 'desktop') {
-        $('#timeTable').addClass('centeredDialog');
-        $('#timeTable').addClass('fullscreen-dialog-tablet');
-        $('#aboutDialog').addClass('fullscreen-dialog-desktop');
+        dialogTimeTable.classList.add('centeredDialog');
+        dialogTimeTable.classList.add('fullscreen-dialog-tablet');
+        dialogAbout.classList.add('centeredDialog');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;        
     }
     else if (deviceDetector.device === 'tablet') {
-        $('#timeTable').addClass('centeredDialog');
-        $('#timeTable').addClass('fullscreen-dialog-tablet');
-        $('#aboutDialog').addClass('fullscreen-dialog-tablet');
+        dialogTimeTable.classList.add('centeredDialog-tablet');
+        dialogTimeTable.classList.add('fullscreen-dialog-tablet');
+        dialogAbout.classList.add('centeredDialog');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     } else {
-        $('#bodyCustomTimes').addClass('customBodyMobile');
+		dialogCustomTimes.classList.add('customBodyMobile');
         if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
             document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
         else
             document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.75}px`;
 
-        $('#timeTable').addClass('fullscreen-dialog');
-        $('#customTimes').addClass('fullscreen-dialog');
-        $('#aboutDialog').addClass('fullscreen-dialog');
+        dialogTimeTable.classList.add('fullscreen-dialog');
+        dialogCustomTimes.classList.add('fullscreen-dialog');
+        dialogAbout.classList.add('fullscreen-dialog');
     }
 
     if (typeof HTMLDialogElement !== 'function') {
-        $("#welcomeDialog").removeClass("centeredDialog");
-        $("#welcomeDialog").addClass("centeredDialogNoSupport");
-        $("#setTimeDialog").removeClass("centeredDialog");
-        $("#setTimeDialog").addClass("centeredDialogNoSupport");
+		dialogWelcome.classList.remove('centeredDialog');
+        dialogWelcome.classList.add('centeredDialogNoSupport');
+		dialogSetTime.classList.remove('centeredDialog');
+		dialogSetTime.classList.add('centeredDialogNoSupport');
     }
 
-    $('body').focus(function() {
-        if ($(".mdl-menu__outline").eq(0).css('z-index') !== "-1")
+	document.body.addEventListener("focus", function () {
+        if (document.querySelector('.mdl-menu__outline')[0].style.zIndex !== "-1")
             resizeSelect();
     });
-});
+})();
 
 resizeScreen();
 

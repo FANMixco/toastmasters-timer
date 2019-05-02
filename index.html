@@ -46,10 +46,10 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <link rel="stylesheet" href="css/getmdl-select.min.css" defer />
     <link rel="stylesheet" href="browserSpecific/css/dialog-polyfill.css" />
     <link rel='manifest' href='manifest.json' />
-    <script defer src="js/material.min.js"></script>
-    <script src="js/translate.min.js"></script>
-    <script src="js/devicedetector-min.js"></script>
-    <script src="js/getmdl-select.min.js"></script>
+    <script src="js/lib/material.min.js" defer></script>
+    <script src="js/lib/translate.min.js"></script>
+    <script src="js/lib/devicedetector-min.js"></script>
+    <script src="js/components/getmdl-select.min.js"></script>
 </head>
 <body>
     <div id="superContainer">
@@ -61,16 +61,16 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                 <li class="mdl-menu__item" data-val="0" data-tag="opt1"></li>
                 <li class="mdl-menu__item" data-val="1" data-tag="opt2"></li>
                 <li class="mdl-menu__item" data-val="2" data-tag="opt3"></li>
-                <li class="mdl-menu__item" data-val="12" data-tag="opt13"></li>
+                <li class="mdl-menu__item" data-val="3" data-tag="opt13"></li>
                 <li class="mdl-menu__item" data-val="4" data-tag="opt5"></li>
                 <li class="mdl-menu__item" data-val="5" data-tag="opt6"></li>
                 <li class="mdl-menu__item" data-val="6" data-tag="opt7"></li>
                 <li class="mdl-menu__item" data-val="7" data-tag="opt8"></li>
-                <li class="mdl-menu__item" data-val="3" data-tag="opt4"></li>
-                <li class="mdl-menu__item" data-val="8" data-tag="opt9"></li>
-                <li class="mdl-menu__item" data-val="9" data-tag="opt10"></li>
-                <li class="mdl-menu__item" data-val="10" data-tag="opt11"></li>
-                <li class="mdl-menu__item" data-val="11" data-tag="opt12"></li>
+                <li class="mdl-menu__item" data-val="8" data-tag="opt4"></li>
+                <li class="mdl-menu__item" data-val="9" data-tag="opt9"></li>
+                <li class="mdl-menu__item" data-val="10" data-tag="opt10"></li>
+                <li class="mdl-menu__item" data-val="11" data-tag="opt11"></li>
+                <li class="mdl-menu__item" data-val="99" data-tag="opt12"></li>
             </ul>
         </div>
         <div id="options">
@@ -172,12 +172,12 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         <h4 id="titleAbout" class="mdl-dialog__title" data-tag="about"></h4>
         <div id="bodyAbout" class="mdl-dialog__content">
             <p data-tag="about1"></p>
-            <p><img src="img/favicon.png" style="width: 64px"></p>
+            <p><img src="img/favicon.png" class='favIcon'></p>
             <p data-tag="about2"></p>
             <p>Federico Navarrete <a href="mailto:fanmixco@gmail.com?Subject=TMTimer%20PWA" target="_top">fanmixco@gmail.com</a></p>
             <p data-tag="about4"></p>
             <p><a rel="noreferrer" href="https://www.supernovaic.tk" target="_blank">www.supernovaic.tk</a></p>
-            <p><img src="img/supernova.png" style="width: 96px"></p>
+            <p><img src="img/supernova.png" class='superNova'></p>
             <p data-tag="about3"></p>
         </div>
         <div id="divCloseAbout" class="mdl-dialog__actions">
@@ -307,7 +307,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     <h4 class="hCustom" data-tag="timeMinimum"></h4>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
-                    <label class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtMin">
+                    <label id='lblMin' class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtMin">
                        <span class="mdi mdi-av-timer"></span>
                     </label>
                     <input class="mdl-textfield__input" type="text" id="txtMin" readonly value="00:00:00">
@@ -319,7 +319,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     <h4 class="hCustom" data-tag="timeHalfway"></h4>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
-                    <label class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtAvg">
+                    <label id='lblAvg' class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtAvg">
                        <span class="mdi mdi-av-timer"></span>
                     </label>
                     <input class="mdl-textfield__input" type="text" id="txtAvg" readonly value="00:00:00">
@@ -331,7 +331,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     <h4 class="hCustom" data-tag="timeMaximum"></h4>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
-                    <label class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtMax">
+                    <label id='lblMax' class="mdl-button mdl-js-button mdl-button--icon btnClock" for="txtMax">
                        <span class="mdi mdi-av-timer"></span>
                     </label>
                     <input class="mdl-textfield__input" type="text" id="txtMax" readonly value="00:00:00">
@@ -339,7 +339,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                 </div>
             </div>
         </div>
-        <div class="mdl-dialog__actions">
+        <div class="mdl-dialog__actions" id='footerCustom'>
             <button aria-label='save' id="btnSave" type="button" class="mdl-button mdl-button--primary" data-tag="save"></button>
             <button aria-label='close' id="btnCloseCustom" type="button" class="mdl-button close" data-tag="close"></button>
         </div>
@@ -353,39 +353,17 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         <span data-tag="copyright3"></span><span>.</span>
     </footer>
     <!--Browser ONLY actions-->
-    <script src="browserSpecific/js/dialog-polyfill.js"></script>
+    <script src="browserSpecific/js/dialog-polyfill.min.js"></script>
     <script src="browserSpecific/js/jspdf.min.js" defer></script>
     <script src="browserSpecific/js/getOS.min.js"></script>
-    <script src="browserSpecific/js/actions.js"></script>
+    <script src="browserSpecific/js/actions.min.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src="js/setTimeDialog.min.js" defer></script>
-    <script src="js/moment.min.js"></script>
+    <script src="js/components/setTimeDialog.min.js" defer></script>
+    <script src="js/lib/moment.min.js"></script>
     <script src="js/db/customDBActions.min.js"></script>
     <script src="js/db/dbHandler.min.js"></script>
-    <script src="js/genericActions.min.js"></script>
+    <script src="js/functions/genericActions.min.js"></script>
     <script src="js/timer.min.js"></script>
-    <script>
-        load();
-		
-	// This is the "Offline page" service worker
-
-	// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-	// Check compatibility for the browser we're running this in
-	if ("serviceWorker" in navigator) {
-	  if (navigator.serviceWorker.controller) {
-		console.log("[PWA Builder] active service worker found, no need to register");
-	  } else {
-		// Register the service worker
-		navigator.serviceWorker
-		  .register("pwabuilder-sw.js", {
-			scope: "./"
-		  })
-		  .then(function (reg) {
-			console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-		  });
-	  }
-	}
-    </script>
+    <script src="firstScript.js"></script>
 </body>
 </html>

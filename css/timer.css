@@ -19,6 +19,14 @@ footer {
     text-align: center;
 }
 
+.favIcon {
+	width: 64px;
+}
+
+.superNova {
+	width: 96px;
+}
+
 .container {
   position: relative;
   top: 30px;
@@ -64,8 +72,8 @@ footer {
       color: black;
       padding: 0px;
     }
-    .btnClock{
-        left: 264px;
+    .btnClock {
+        left: calc(100% - 90px) !important;
     }
 }
 
@@ -76,7 +84,7 @@ footer {
       color: black;
     }
     .btnClock{
-        left: 202px;
+        left: calc(100% - 28px) !important;
     }
 }
 

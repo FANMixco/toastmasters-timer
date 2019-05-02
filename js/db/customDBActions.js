@@ -22,7 +22,7 @@ function countTimetable() {
     transaction.onsuccess = function() {
         if (transaction.result > 0) {
             btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
-            $(".tdDel,#thDel").hide();
+            hideCheckBoxes();
             printTable();
             dialogTimeTable.showModal();
         } else
@@ -30,8 +30,23 @@ function countTimetable() {
     };
 }
 
+function hideCheckBoxes() {
+    Array.from(document.getElementsByClassName("tdDel")).forEach(function (element) {
+        element.style.display = 'none';
+    });
+    document.getElementById('thDel').classList.add('hiddenObject');
+}
+
+function showCheckBoxes() {
+    Array.from(document.getElementsByClassName("tdDel")).forEach(function (element) {
+        element.style.display = 'block';
+    });
+    document.getElementById('thDel').classList.remove('hiddenObject');
+}
+
 function printTable() {
-    $("#speakers").empty();
+	let speakersBody = document.getElementById('speakers');
+    speakersBody.innerHTML = '';
     results = [];
 
     let transaction = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").openCursor();
@@ -84,7 +99,7 @@ function printTable() {
                 disqualified: cursor.value.disqualified
             });
 
-            $("#speakers").append(`<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked="checked" /></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`);
+            speakersBody.innerHTML += `<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked="checked" /></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`;
             cursor.continue();
         } else {
             refreshControls();
@@ -108,7 +123,7 @@ function deleteByIDs() {
     let transaction = db.transaction(["timeTable"], "readwrite");
     for (i = 0; i < ids.length; i++) {
         transaction.objectStore("timeTable").delete(ids[i]);
-        $(`#tr${ids[i]}`).hide();
+        document.getElementById(`tr${ids[i]}`).style.display = 'none';
     }
     refreshControls();
     let objectStoreRequest = transaction.objectStore("timeTable").count();
