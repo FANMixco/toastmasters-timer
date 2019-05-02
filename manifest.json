@@ -6,10 +6,13 @@
     "start_url" : "https://fanmixco.github.io/toastmasters-timer-material-design/",
     "short_name" : "TM Timer",
     "theme_color" : "#ffffff",
-    "description" : "Toastmasters Timer",
+    "description": "It's a simple PWA for helping Toastmasters all over the world to have an effective and productive Timer for their meetings. It was developed with JavaScript by The Leader Ship Toastmasters in Łódź, Poland.",
     "orientation" : "any",
     "background_color" : "#ffffff",
-    "related_applications" : "",
+    "related_applications" : [{
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer"
+    }],
     "prefer_related_applications" : "false",
     "generated" : "true",
     "icons": [
