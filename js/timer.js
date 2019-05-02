@@ -39,6 +39,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
     remainTime = document.getElementById('remainTime'),
     divSpeaker = document.getElementById('divSpeaker'),
     snackbarMsg = document.getElementById('snackbarMsg'),
+    tickAll = document.getElementById('tickAll'),
     length = Math.PI * 2 * 100;
 
 let titleMeeting = document.getElementById('titleMeeting');
@@ -1054,20 +1055,20 @@ if (isFirstRun) {
 
 checkMode();
 
-(function() {
-    $("#tickAll").change(function() {
-        $(".mdl-js-checkbox").not("#lblTickAll").each(function() {
-            let _this = this;
-            setTimeout(function() {
-                if ($("#lblTickAll").is('.is-checked'))
-                    _this.MaterialCheckbox.check();
-                else
-                    _this.MaterialCheckbox.uncheck();
-            }, 10);
-        });
-        refreshControls();
+tickAll.addEventListener('change', (event) => {
+    $(".mdl-js-checkbox").not("#lblTickAll").each(function() {
+        let _this = this;
+        setTimeout(function() {
+            if ($("#lblTickAll").is('.is-checked'))
+                _this.MaterialCheckbox.check();
+            else
+                _this.MaterialCheckbox.uncheck();
+        }, 10);
     });
-    
+    refreshControls();
+});
+
+(function() {    
 	btnShare.style.display = 'none';
 	btnEmail.style.display = 'none';
 
