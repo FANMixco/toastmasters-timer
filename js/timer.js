@@ -58,8 +58,6 @@ let clappingTime = 30,
     red = 0,
     timeLeft = 0;
 
-let elements = new Map();
-
 let isPaused = false,
     isStarted = false,
     isStopped = true,
