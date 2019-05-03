@@ -77,9 +77,8 @@ function addNewTime(member, role, min, opt, max, time, lastColor, disqualified) 
 
 function restoreData() {
     if (moment((new Date())).format("YYYY/MM/DD") === getLocalStorageValue("backUpDate")) {
-        $.each(JSON.parse(`[${getLocalStorageValue("backUpTT")}]`), function (i, item) {
-            addNewTime(item.member, item.role, item.min, item.opt, item.max, item.time, item.lastColor, item.disqualified);
-        });
+        for (let item in JSON.parse(`[${getLocalStorageValue("backUpTT")}]`))
+            addNewTime(item.member, item.role, item.min, item.opt, item.max, item.time, item.lastColor, item.disqualified); 
     }
 }
 
