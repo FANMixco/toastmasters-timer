@@ -2,7 +2,7 @@ let audioBeepElement, audioElementClapping;
 let os = getMobileOperatingSystem();
 
 function browserStartBeep() {
-    if (isBeepEnabled === "true" && !(os == "iOS" || os == "Android")) {
+    if (isBeepEnabled === "true" && !(os === "iOS" || os === "Android")) {
         if (green === 1 || yellow === 1 || red === 1) {
             audioBeepElement.play();
             setTimeout(function() {
@@ -31,11 +31,11 @@ function browserStartClapping() {
 }
 
 function browserStopClapping() {
-    if (!(os == "iOS" || os == "Android"))
+    if (!(os === "iOS" || os === "Android"))
         audioElementClapping.pause();
 }
 
-if (!(os == "iOS" || os == "Android")) {
+if (!(os === "iOS" || os === "Android")) {
     audioBeepElement = document.createElement('audio');
     audioBeepElement.setAttribute('src', './browserSpecific/sounds/beep.mp3');
 

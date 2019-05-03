@@ -73,7 +73,7 @@ footer {
       padding: 0px;
     }
     .btnClock {
-        left: calc(100% - 90px) !important;
+        left: calc(100% - 32px) !important;
     }
 }
 
