@@ -296,14 +296,15 @@ function resizeScreen() {
 
 function resizeSelect() {
     setTimeout(function() {
-        $($(".mdl-menu__outline")[0]).width(300);
-        $($(".mdl-menu__container")[0]).width(300);
-        $($(".mdl-menu__outline")[0]).height(310);
-        $($(".mdl-menu__container")[0]).height(310);
-        var res = $($('.mdl-menu')[0]).css('clip').split(", ");
+        document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
+        document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
+        document.getElementsByClassName('mdl-menu__outline')[0].style.height = '310px';
+        document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
+        let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
+        let res = mdlMenu.style.clip.split(", ");
         res[1] = res[1].replace("px", "");
         res[2] = res[2].replace("px", "");
-        $($('.mdl-menu')[0]).css('clip', `${res[0]}, 300px, 300px, ${res[3]}`);
+        mdlMenu.style.clip = `${res[0]}, 300px, 300px, ${res[3]}`;
     }, 50);
 }
 
@@ -814,9 +815,9 @@ txtAvg.addEventListener('click', function() {
 btnDownload.addEventListener('click', browserExport);
 
 btnMultiple.addEventListener('click', function() {
-    $(".mdl-js-checkbox").each(function() {
-        let _this = this;
-        setTimeout(function() {
+    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function (element) {
+        let _this = element;
+        setTimeout(function () {
             _this.MaterialCheckbox.check();
         }, 10);
     });
@@ -859,12 +860,12 @@ dialogWelcome.querySelector('.close').addEventListener('click', function() {
 
 txtCustom.addEventListener("keyup", function(e) {
     if (e.keyCode === 13)
-        $("#txtCustom").hideKeyboard();
+        hideKeyboard(txtCustom);
 });
 
 txtSpeaker.addEventListener("keyup", function(e) {
     if (e.keyCode === 13)
-        $("#txtSpeaker").hideKeyboard();
+        hideKeyboard(txtSpeaker);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1056,10 +1057,10 @@ if (isFirstRun) {
 checkMode();
 
 tickAll.addEventListener('change', (event) => {
-    $(".mdl-js-checkbox").not("#lblTickAll").each(function() {
-        let _this = this;
-        setTimeout(function() {
-            if ($("#lblTickAll").is('.is-checked'))
+    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function (element) {
+        let _this = element;
+        setTimeout(function () {
+            if (lblTickAll.matches('.is-checked'))
                 _this.MaterialCheckbox.check();
             else
                 _this.MaterialCheckbox.uncheck();
@@ -1112,13 +1113,13 @@ tickAll.addEventListener('change', (event) => {
 
 resizeScreen();
 
-$.fn.hideKeyboard = function() {
-    var inputs = this.filter("input").attr("readonly", "readonly"); // Force keyboard to hide on input field.
+function hideKeyboard(element) {
+    element.readOnly = true;
     setTimeout(function() {
-        inputs.blur().removeAttr("readonly"); //actually close the keyboard and remove attributes
+        element.blur();  //actually close the keyboard
+        element.readOnly = false;
     }, 100);
-    return this;
-};
+}
 
 window.addEventListener('orientationchange', doOnOrientationChange);
 

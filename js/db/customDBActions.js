@@ -10,9 +10,9 @@ function setDbConf() {
 
 function getSelectedIDs() {
     let ids = [];
-    $(".chkChoose").each(function() {
-        if ($(this).is('.is-checked'))
-            ids.push(parseInt($(this).find('input').attr("id").replace("chk", "")));
+    Array.from(document.getElementsByClassName("chkChoose")).forEach(function (element) {
+        if (element.matches('.is-checked'))
+            ids.push(parseInt(element.querySelectorAll('input')[0].id.replace("chk", "")));
     });
     return ids;
 }
@@ -109,8 +109,10 @@ function printTable() {
 }
 
 function addCheckTaps() {
-    $("[id^=chk]").change(function() {
-        document.getElementById('lblTickAll').MaterialCheckbox.uncheck();
+    Array.from(document.querySelectorAll('[id^=chk]')).forEach(function (element) {
+        element.addEventListener('change', function () {
+            document.getElementById('lblTickAll').MaterialCheckbox.uncheck();
+        });
     });
 }
 
