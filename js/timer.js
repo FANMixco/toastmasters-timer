@@ -1101,6 +1101,16 @@ tickAll.addEventListener('change', (event) => {
         dialogWelcome.classList.add('centeredDialogNoSupport');
 		dialogSetTime.classList.remove('centeredDialog');
 		dialogSetTime.classList.add('centeredDialogNoSupport');
+		dialogTimeTable.classList.remove('centeredDialog');
+		dialogTimeTable.classList.add('centeredDialogNoSupport');
+		dialogAbout.classList.remove('centeredDialog');
+		dialogAbout.classList.add('centeredDialogNoSupport');
+        if (deviceDetector.device === 'desktop')
+            dialogAbout.classList.add('fullscreen-dialog-desktop');
+        else if (deviceDetector.device === 'tablet')
+            dialogAbout.classList.add('fullscreen-dialog-tablet');
+        else
+            dialogAbout.classList.add('fullscreen-dialog');
     }
 
 	document.body.addEventListener("focus", function () {
