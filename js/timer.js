@@ -40,7 +40,8 @@ const displayOutput = document.querySelector('.display-remain-time'),
     divSpeaker = document.getElementById('divSpeaker'),
     snackbarMsg = document.getElementById('snackbarMsg'),
     tickAll = document.getElementById('tickAll'),
-    length = Math.PI * 2 * 100;
+    length = Math.PI * 2 * 100,
+    fastTransition = 0.2;
 
 let titleMeeting = document.getElementById('titleMeeting');
 
@@ -360,12 +361,12 @@ function pauseTimer() {
 }
 
 function unfadeElements() {
-    fade.to(document.getElementById('divSpeechType'), fastTransition, 1);
-    fade.to(document.getElementById('divSpeaker'), fastTransition, 1);
-    fade.to(document.getElementById('options'), fastTransition, 1);
-    fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1);
-    fade.to(document.getElementById('controls'), fastTransition, 1);
-    fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1);
+    fade.to(document.getElementById('divSpeechType'), fastTransition, 1.5);
+    fade.to(document.getElementById('divSpeaker'), fastTransition, 1.5);
+    fade.to(document.getElementById('options'), fastTransition, 1.5);
+    fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
+    fade.to(document.getElementById('controls'), fastTransition, 1.5);
+    fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
@@ -405,7 +406,7 @@ function setBasicIntervals() {
 }
 
 function changeEventHandler() {
-    let wasCustom = selected === 11;
+    let wasCustom = selected === 99;
 
     selected = parseInt(hiddenSpeechType.value);
 
@@ -414,7 +415,7 @@ function changeEventHandler() {
         wholeTime = maximum;
         setLocalStorage("wholeTime", maximum);
         updateDisplay();
-        setSpeechTime();
+        setBasicIntervals();
         isCustom = false;
     }
     else {
