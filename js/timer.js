@@ -398,11 +398,9 @@ function validateProperIntervals() {
 }
 
 function setBasicIntervals() {
-    let selectedVal = selected;
-    if (selected > 11) selectedVal--;
-    minimum = times[selectedVal][0];
-    average = times[selectedVal][1];
-    maximum = times[selectedVal][2];
+    minimum = times[selected][0];
+    average = times[selected][1];
+    maximum = times[selected][2];
 }
 
 function changeEventHandler() {
@@ -599,7 +597,7 @@ function storeTime(isTimeStored) {
     if (isTimeStored) {
         let counter = maximum - timeLeft;
         let titleSpeechType = cmbSpeechType.value;
-        if (selected === 11)
+        if (selected === 99)
             titleSpeechType = txtCustom.value;
         addNewTime(txtSpeaker.value, titleSpeechType, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, counter > maximum + clappingTime || counter < minimum - clappingTime);
     }
@@ -610,11 +608,9 @@ function storeTime(isTimeStored) {
     red = 0;
     basicReset();
 
-    if (!isCustom) {
-        let selectedVal = selected;
-        if (selected > 11) selectedVal--;
-        maximum = times[selectedVal][2];
-    } else
+    if (!isCustom)
+        maximum = times[selected][2];
+    else
         maximum = getMaxCustom();
 
     wholeTime = maximum;
