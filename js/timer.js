@@ -413,7 +413,6 @@ function changeEventHandler() {
         wholeTime = maximum;
         setLocalStorage("wholeTime", maximum);
         updateDisplay();
-        setBasicIntervals();
         isCustom = false;
     }
     else {
@@ -1074,12 +1073,14 @@ tickAll.addEventListener('change', (event) => {
         dialogTimeTable.classList.add('centeredDialog');
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
         dialogAbout.classList.add('centeredDialog');
+        dialogAbout.classList.add('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;        
     }
     else if (deviceDetector.device === 'tablet') {
         dialogTimeTable.classList.add('centeredDialog-tablet');
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
         dialogAbout.classList.add('centeredDialog');
+        dialogAbout.classList.add('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     } else {
 		dialogCustomTimes.classList.add('customBodyMobile');
@@ -1102,12 +1103,7 @@ tickAll.addEventListener('change', (event) => {
 		dialogTimeTable.classList.add('centeredDialogNoSupport');
 		dialogAbout.classList.remove('centeredDialog');
 		dialogAbout.classList.add('centeredDialogNoSupport');
-        if (deviceDetector.device === 'desktop')
-            dialogAbout.classList.add('fullscreen-dialog-desktop');
-        else if (deviceDetector.device === 'tablet')
-            dialogAbout.classList.add('fullscreen-dialog-tablet');
-        else
-            dialogAbout.classList.add('fullscreen-dialog');
+        dialogAbout.classList.add('fullscreen-dialog');
     }
 
 	document.body.addEventListener("focus", function () {
