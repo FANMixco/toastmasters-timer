@@ -59,6 +59,7 @@ self.addEventListener('install', event => {
 			"browserSpecific/js/actions.min.js",
 			"js/components/setTimeDialog.min.js",
 			"js/lib/moment.min.js",
+			"js/lib/ua-parser.min.js",
 			"js/db/customDBActions.min.js",
 			"js/db/dbHandler.min.js",
 			"js/functions/genericActions.min.js",

@@ -40,6 +40,9 @@ const displayOutput = document.querySelector('.display-remain-time'),
     divSpeaker = document.getElementById('divSpeaker'),
     snackbarMsg = document.getElementById('snackbarMsg'),
     tickAll = document.getElementById('tickAll'),
+    progressBar = document.querySelector('.e-c-progress'),
+    indicator = document.getElementById('e-indicator'),
+    pointer = document.getElementById('e-pointer'),
     length = Math.PI * 2 * 100,
     fastTransition = 0.2;
 
@@ -108,14 +111,11 @@ let times = [
     [1080, 1170, 1200]
 ];
 
-//circle start
-let progressBar = document.querySelector('.e-c-progress'),
-    indicator = document.getElementById('e-indicator'),
-    pointer = document.getElementById('e-pointer');
-
 let intervalTimer;
 
 var results = [];
+
+var browserResult = new UAParser().getResult();
 
 progressBar.style.strokeDasharray = length;
 
@@ -295,15 +295,24 @@ function resizeScreen() {
 
 function resizeSelect() {
     setTimeout(function() {
-        document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
-        document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
-        document.getElementsByClassName('mdl-menu__outline')[0].style.height = '310px';
-        document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
-        let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
-        let res = mdlMenu.style.clip.split(", ");
-        res[1] = res[1].replace("px", "");
-        res[2] = res[2].replace("px", "");
-        mdlMenu.style.clip = `${res[0]}, 300px, 300px, ${res[3]}`;
+        try {
+            document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
+            document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
+            document.getElementsByClassName('mdl-menu__outline')[0].style.height = '310px';
+            document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
+            let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
+            let res = mdlMenu.style.clip.split(", ");
+            res[1] = res[1].replace("px", "");
+            res[2] = res[2].replace("px", "");
+
+            let multiplier = 1;
+
+            if (browserResult.browser.name === 'Edge' && parseFloat(browserResult.browser.version) < 19)
+                multiplier = 2;
+
+            mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
+        }
+        catch (e) {}
     }, 50);
 }
 
