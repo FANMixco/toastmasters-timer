@@ -1106,8 +1106,8 @@ tickAll.addEventListener('change', (event) => {
         dialogAbout.classList.add('fullscreen-dialog');
     }
 
-	document.body.addEventListener("focus", function () {
-        if (document.querySelector('.mdl-menu__outline')[0].style.zIndex !== "-1")
+	window.addEventListener("focus", function () {
+        if (document.querySelector('.mdl-menu__outline').style.zIndex !== "-1")
             resizeSelect();
     });
 })();
