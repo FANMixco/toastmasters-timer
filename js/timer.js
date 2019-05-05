@@ -1119,6 +1119,9 @@ tickAll.addEventListener('change', (event) => {
         if (document.querySelector('.mdl-menu__outline').style.zIndex !== "-1")
             resizeSelect();
     });
+    
+    if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
+        alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
 })();
 
 resizeScreen();
