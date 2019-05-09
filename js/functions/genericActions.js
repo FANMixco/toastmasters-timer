@@ -19,10 +19,10 @@ function getSeconds(hms) {
     return (+a[0]) * 3600 + (+a[1]) * 60 + (+a[2]);
 }
 
-function showSnackbar(msg) {
+function showSnackbar(msg, tout = 1500) {
     var data = {
         message: msg,
-        timeout: 1500
+        timeout: tout
     };
     snackbarMsg.MaterialSnackbar.showSnackbar(data);
 }

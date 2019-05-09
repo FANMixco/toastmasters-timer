@@ -46,6 +46,14 @@ const displayOutput = document.querySelector('.display-remain-time'),
     length = Math.PI * 2 * 100,
     fastTransition = 0.2;
 
+// Detects if device is on iOS 
+const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test( userAgent );
+}
+// Detects if device is in standalone mode
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
 let titleMeeting = document.getElementById('titleMeeting');
 
 let externalContainer = null;
@@ -798,7 +806,7 @@ btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
     if (deviceDetector.device === 'phone') {
 		setTimeout(function(){
-			dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`
+			dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
 		}, 100);
 	}
 });
@@ -1072,7 +1080,8 @@ tickAll.addEventListener('change', (event) => {
     refreshControls();
 });
 
-(function() {    
+(function() {
+    
 	btnShare.style.display = 'none';
 	btnEmail.style.display = 'none';
 
@@ -1122,6 +1131,14 @@ tickAll.addEventListener('change', (event) => {
     
     if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
         alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
+    
+
+    setTimeout(function() {
+        // Checks if should display install popup notification:
+        if (isIos() && !isInStandaloneMode())
+            showSnackbar(lngObject.installiOS, 3000);
+    }, 1000);
+    
 })();
 
 resizeScreen();
