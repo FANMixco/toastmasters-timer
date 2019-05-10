@@ -6,63 +6,53 @@ Feel free to use it it anywhere at anytime.
 
 https://fanmixco.github.io/toastmasters-timer-material-design
 
+**This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
+
 ![toastmasters](http://dominicanewsonline.com/news/wp-content/uploads/2014/10/ToastmastersLogoColor-300x262.jpg)
 
 This App provides you with different options, for example:
-- Question of the Day.
-- Ice-Breaker.
-- Project 2 – 9.
-- Project 10.
-- Evaluator's introduction.
-- Evaluations.
-- General evaluation.
-- Table topics.
-- 12 minutes speech.
-- 15 minutes speech.
-- 20 minutes speech.
-- Custom speeches up to 24 hours.
+- Question of the Day (30s).
+- 4 to 6 min (Ice-Breaker).
+- 5 to 7 min (Common).
+- 1 minute.
+- 1 to 1:30 min (Evaluator's introduction).
+- 2 to 3 min (Evaluation).
+- 5 to 6 min (General evaluation).
+- 1 to 2 min (Table topics).
+- 8 to min.
+- 10 to 12 min.
+- 13 to 15 min.
+- 18 to 20 min.
+- Custom, create your own speech up to 100 hours.
 
 All speeches are recorded for sharing it with your members or guests.
 
 **Special features:**
-- **Vibrating** when a time has been reached (optional).
-- **Beeping** when a time has been reached (optional).
-- **Clapping** when the max time has been exceeded (optional).
+- **Vibrating** when a specific segment has been reached (*Mostly, iOS or Android based devices and Windows Tablets*).
+- **Beeping** when a specific segment has been reached (*Desktop ONLY*).
+- **Clapping** when the maximum time has been exceeded (*Desktop ONLY*).
 
 **Color coding:**
-- **Light Green**, speeches that didn't reach the minimum time (-30s), but still qualified in a contest (ONLY available in reports preview and exports/shares).
+- **Light Green**, speeches that didn't reach the minimum time (-30s), but still qualified in a contest (*ONLY available in reports preview and exports to PDF*).
 - **Green**, minimum time was reached.
 - **Yellow**, optimal time was reached.
-- **Read**, optimal time was reached.
-- **Black**, speeches that exceed the maximum time (+30s) and are disqualified in a contest (ONLY available in reports preview).
+- **Read**, maximum time was reached.
+- **Black**, speeches that exceed the maximum time (+30s or predefined) and are disqualified in a Toastmasters contest (*ONLY available in reports preview*).
 
 **Extra options:**
 - Export the agenda to PDF.
 - Dark Mode.
+- Easter Eggs.
 
-Also, the project is open-source and can be implemented, modified or improved freely without any constrain. Feel free to hack it and share new your ideas about it.
+**Do you want to see it your own language?** Why don't you join to our community?
+
+https://poeditor.com/join/project/hJX2GTJNPv
+
+Also, the project is fully **open-source** and can be reused, modified or improved freely without any constrain. Feel free to hack it and share new your ideas!
 
 **Previews of the App:**
 
-![timer0](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/00c6a777339261.5c99437203b27.png)
-
-![timer1](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/0d119977339261.5c994372037cb.png)
-
-![timer2](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/8d768377339261.5cac2935f1701.png)
-
-![timer3](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/64153977339261.5c99437203401.png)
-
-![timer4](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/1eb15877339261.5c8d5dab5a934.png)
-
-![timer5](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/9572d577339261.5c8d5dab5a52f.png)
-
-![timer6](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/ae9ba077339261.5c8d5dab5a18d.png)
-
-![timer7](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/f30a4277339261.5c880adaa3863.png)
-
-![timer8](https://mir-cdn.behance.net/v1/rendition/project_modules/1400/b235bd77339261.5cb0447806930.png)
-
-![timer9](https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840/48a96d77339261.5c994448ccafd.png)
+![preview](https://i.stack.imgur.com/1PRPL.gif)
 
 Furthermore, you can download the compiled versions in the official stores:
 
@@ -77,3 +67,9 @@ https://www.microsoft.com/en-us/store/p/toastmasters-timer-pro/9n9rhqms0nwg
 **Amazon:**
 
 https://amzn.to/2LV5fOW
+
+**iOS:**
+
+Please follow these steps:
+
+![iOSInstall](https://i.stack.imgur.com/Gn4ut.gif)
