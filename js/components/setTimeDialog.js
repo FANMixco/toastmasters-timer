@@ -11,26 +11,38 @@ const btnSetTime = document.getElementById('btnSetTime'),
     btnDownM = document.getElementById('btnDownH'),
     btnDownH = document.getElementById('btnDownH');
 
-let btnUpSPressed = false, btnDownSPressed = false, btnUpMPressed = false, btnDownMPressed = false, btnUpHPressed = false, btnDownHPressed = false;
+let btnUpSPressed = false,
+    btnDownSPressed = false,
+    btnUpMPressed = false,
+    btnDownMPressed = false,
+    btnUpHPressed = false,
+    btnDownHPressed = false;
+
 let chosenInputText = "";
-let i = 0, j = 0, k = 0, timeOutS = 0, timeOutM = 0, timeOutH = 0;
+
+let i = 0,
+    j = 0,
+    k = 0,
+    timeOutS = 0,
+    timeOutM = 0,
+    timeOutH = 0;
 
 if (!dialogSetTime.showModal) {
     dialogPolyfill.registerDialog(dialogSetTime);
 }
 
-btnSetTime.addEventListener('click', function () {
+btnSetTime.addEventListener('click', function() {
     document.getElementById(`${chosenInputText}`).parentElement.MaterialTextfield.change(`${txtH.value}:${txtM.value}:${txtS.value}`);
     dialogSetTime.close();
 });
 
-btnClearTime.addEventListener('click', function () {
+btnClearTime.addEventListener('click', function() {
     setTimeControls('00', '00', '00');
     clearIntervals();
     enableButtons(false);
 });
 
-dialogSetTime.querySelector('.close').addEventListener('click', function () {
+dialogSetTime.querySelector('.close').addEventListener('click', function() {
     clearIntervals();
     dialogSetTime.close();
 });
@@ -82,7 +94,7 @@ function btnUpSContinuesPress() {
     btnUpSPressed = true;
     if (parseInt(txtS.value) > 0)
         i = parseInt(txtS.value);
-    timeOutS = setInterval(function () {
+    timeOutS = setInterval(function() {
         i++;
         if (i < 60)
             txtS.value = `${i < 10 ? '0' : ''}${i}`;
@@ -141,7 +153,7 @@ function btnDownSContinuesPress() {
     enableButtons(false);
     if (parseInt(txtS.value) > 0)
         i = parseInt(txtS.value);
-    timeOutS = setInterval(function () {
+    timeOutS = setInterval(function() {
         i--;
         if (i >= 0)
             txtS.value = `${i < 10 ? '0' : ''}${i}`;
@@ -176,7 +188,7 @@ function btnUpMContinuesPress() {
     btnUpMPressed = true;
     if (parseInt(txtM.value) > 0)
         j = parseInt(txtM.value);
-    timeOutM = setInterval(function () {
+    timeOutM = setInterval(function() {
         j++;
         if (j < 60)
             txtM.value = `${j < 10 ? '0' : ''}${j}`;
@@ -223,7 +235,7 @@ function btnDownMContinuesPress() {
     enableButtons(false);
     if (parseInt(txtM.value) >= 0)
         j = parseInt(txtM.value);
-    timeOutM = setInterval(function () {
+    timeOutM = setInterval(function() {
         j--;
         if (j >= 0)
             txtM.value = `${j < 10 ? '0' : ''}${j}`;
@@ -258,7 +270,7 @@ function btnUpHContinuesPress() {
     btnUpHPressed = true;
     if (parseInt(txtH.value) > 0)
         k = parseInt(txtH.value);
-    timeOutH = setInterval(function () {
+    timeOutH = setInterval(function() {
         k++;
         if (k === 100) {
             setTimeControls('99', '59', '59');
@@ -289,7 +301,7 @@ function btnDownHContinuesPress() {
     enableButtons(false);
     if (parseInt(txtH.value) > 0)
         k = parseInt(txtH.value);
-    timeOutH = setInterval(function () {
+    timeOutH = setInterval(function() {
         k--;
         if (k >= 0)
             txtH.value = `${k < 10 ? '0' : ''}${k}`;
@@ -342,7 +354,9 @@ function setNewTime(inputText, currentTxt) {
         openSetDialog(currentTxt);
     try {
         dialogSetTime.showModal();
-    } catch (e) { console.log(e); }
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 function clearIntervals() {

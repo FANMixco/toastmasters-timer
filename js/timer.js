@@ -49,7 +49,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
 // Detects if device is on iOS 
 const isIos = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test( userAgent );
+    return /iphone|ipad|ipod/.test(userAgent);
 }
 // Detects if device is in standalone mode
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
@@ -262,7 +262,7 @@ window.onresize = function() {
 };
 
 function resizeScreen() {
-	let scaleVal = window.innerHeight / 600;
+    let scaleVal = window.innerHeight / 600;
     if (window.innerHeight < 514) {
         if (externalContainer === null) {
             let bodyTmp = document.body;
@@ -276,9 +276,9 @@ function resizeScreen() {
         externalContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(function () {
+        setTimeout(function() {
             sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(function () {
+            setTimeout(function() {
                 let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
@@ -290,11 +290,11 @@ function resizeScreen() {
         sContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(function () {
+        setTimeout(function() {
             sContainer.style.transform = `scale(${scaleVal})`;
         }, 100);
 
-        setTimeout(function () {
+        setTimeout(function() {
             if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
                 sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
         }, 100);
@@ -319,8 +319,7 @@ function resizeSelect() {
                 multiplier = 2;
 
             mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
-        }
-        catch (e) {}
+        } catch (e) {}
     }, 50);
 }
 
@@ -372,9 +371,9 @@ function pauseTimer() {
             fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
         }
     } else {
-		btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
+        btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
         unfadeElements();
-	}
+    }
 }
 
 function unfadeElements() {
@@ -398,7 +397,7 @@ function displayTimeLeft(timeLeft) { //displays time on the input
 
 function setDropDownValue(idVal, idContainer) {
     try {
-		document.getElementById(idVal).dataset.selected = "true";
+        document.getElementById(idVal).dataset.selected = "true";
         getmdlSelect.init(idContainer);
     } catch (e) {}
 }
@@ -431,16 +430,14 @@ function changeEventHandler() {
         setLocalStorage("wholeTime", maximum);
         updateDisplay();
         isCustom = false;
-    }
-    else {
+    } else {
         if (!wasCustom) {
             minimum = 0;
             maximum = 0;
             average = 0;
 
             txtCustom.parentElement.MaterialTextfield.change(lngObject.opt12);
-        }
-        else if (wasCustom && !isFirstTime) {
+        } else if (wasCustom && !isFirstTime) {
             setCustomText();
 
             let hours = Math.floor(minimum / 3600);
@@ -463,7 +460,7 @@ function changeEventHandler() {
         }
 
         if (deviceDetector.device === 'phone') {
-            setTimeout(function () {
+            setTimeout(function() {
                 let bCustomTimes = document.getElementById('bodyCustomTimes');
                 bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
             }, 100);
@@ -477,24 +474,20 @@ function changeEventHandler() {
 function startBeep() {
     if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1))
         browserStartBeep();
-    //CSharp.Beep();
 }
 
 function startVibrate() {
     if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1))
         browserStartVibrate();
-    //CSharp.Vibrate();
 }
 
 function startClapping() {
     if (isClappingEnabled)
         browserStartClapping();
-    //CSharp.StartClapping();
 }
 
 function stopClapping() {
     browserStopClapping();
-    //CSharp.StopClapping();
 }
 
 function getVibrate() {
@@ -630,7 +623,7 @@ function storeTime(isTimeStored) {
         maximum = getMaxCustom();
 
     wholeTime = maximum;
-	unfadeElements();
+    unfadeElements();
 }
 
 function getMinCustom() {
@@ -805,10 +798,10 @@ btnEmail.addEventListener('click', function() {});
 btnAbout.addEventListener('click', function() {
     dialogAbout.showModal();
     if (deviceDetector.device === 'phone') {
-		setTimeout(function(){
-			dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
-		}, 100);
-	}
+        setTimeout(function() {
+            dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
+        }, 100);
+    }
 });
 
 txtMin.addEventListener('click', function() {
@@ -826,15 +819,15 @@ txtAvg.addEventListener('click', function() {
 btnDownload.addEventListener('click', browserExport);
 
 btnMultiple.addEventListener('click', function() {
-    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function (element) {
+    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function(element) {
         let _this = element;
-        setTimeout(function () {
+        setTimeout(function() {
             _this.MaterialCheckbox.check();
         }, 10);
     });
     if (!multipleEnabled) {
         btnMultiple.innerHTML = "<span class='mdi mdi-checkbox-blank-outline'></span>";
-		showCheckBoxes();
+        showCheckBoxes();
     } else {
         btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
         hideCheckBoxes();
@@ -910,155 +903,154 @@ invertColors();
 
 setTimeout(function() {
     if (deviceDetector.device == 'phone') {
-		//Timetable Dialog
-		let timeTableTmp = document.getElementById('timeTable');
-		let divTitleContainerTmp = document.createElement("div");
-		divTitleContainerTmp.className = "titleContainer";
+        //Timetable Dialog
+        let timeTableTmp = document.getElementById('timeTable');
+        let divTitleContainerTmp = document.createElement("div");
+        divTitleContainerTmp.className = "titleContainer";
 
-		let divTitleInnerContainer = document.createElement("div");
-		divTitleInnerContainer.className = "titleInnerContainer";
+        let divTitleInnerContainer = document.createElement("div");
+        divTitleInnerContainer.className = "titleInnerContainer";
 
-		let spanCloseMobile = document.createElement("span");
-		spanCloseMobile.className = "closeMobile";
-		spanCloseMobile.id = 'btnCloseMobile';
+        let spanCloseMobile = document.createElement("span");
+        spanCloseMobile.className = "closeMobile";
+        spanCloseMobile.id = 'btnCloseMobile';
 
-		let spanCloseIcon = document.createElement("span");
-		spanCloseIcon.className = "mdi mdi-close";
+        let spanCloseIcon = document.createElement("span");
+        spanCloseIcon.className = "mdi mdi-close";
 
-		let spanTitle = document.createElement("span");
-		spanTitle.id = 'spanTitle';
+        let spanTitle = document.createElement("span");
+        spanTitle.id = 'spanTitle';
 
-		spanCloseMobile.appendChild(spanCloseIcon);
+        spanCloseMobile.appendChild(spanCloseIcon);
 
-		divTitleInnerContainer.appendChild(spanCloseMobile);
-		divTitleInnerContainer.appendChild(spanTitle);
+        divTitleInnerContainer.appendChild(spanCloseMobile);
+        divTitleInnerContainer.appendChild(spanTitle);
 
-		divTitleContainerTmp.appendChild(divTitleInnerContainer);
+        divTitleContainerTmp.appendChild(divTitleInnerContainer);
 
-		timeTableTmp.insertBefore(divTitleContainerTmp, timeTableTmp.firstChild);
+        timeTableTmp.insertBefore(divTitleContainerTmp, timeTableTmp.firstChild);
 
-		titleMeeting = document.getElementById('titleMeeting');
-		titleMeeting.classList.remove('mdl-dialog__title');
-		titleMeeting.style.margin = '0';
-		titleMeeting.style.marginTop = '16px';
-		titleMeeting.style.fontWeight = 1000;
-		titleMeeting.style.fontSize = '1.25em';
-		titleMeeting.style.display = 'inline';
+        titleMeeting = document.getElementById('titleMeeting');
+        titleMeeting.classList.remove('mdl-dialog__title');
+        titleMeeting.style.margin = '0';
+        titleMeeting.style.marginTop = '16px';
+        titleMeeting.style.fontWeight = 1000;
+        titleMeeting.style.fontSize = '1.25em';
+        titleMeeting.style.display = 'inline';
 
-		document.getElementById('spanTitle').append(titleMeeting);
+        document.getElementById('spanTitle').append(titleMeeting);
 
-		document.getElementById('btnCloseMeeting').style.display = 'none';
+        document.getElementById('btnCloseMeeting').style.display = 'none';
 
-		document.getElementById('btnCloseMobile').addEventListener('click', function () {
-			dialogTimeTable.close();
-		});
-		
-		//Custom Dialog
-		let customTimesTmp = document.getElementById('customTimes');
-		let divTitleContainerCT = document.createElement("div");
-		divTitleContainerCT.className = "titleContainer";
+        document.getElementById('btnCloseMobile').addEventListener('click', function() {
+            dialogTimeTable.close();
+        });
 
-		let divTitleInnerContainerCT = document.createElement("div");
-		divTitleInnerContainerCT.className = "titleInnerContainer";
+        //Custom Dialog
+        let customTimesTmp = document.getElementById('customTimes');
+        let divTitleContainerCT = document.createElement("div");
+        divTitleContainerCT.className = "titleContainer";
 
-		let spanCloseMobileCT = document.createElement("span");
-		spanCloseMobileCT.className = "closeMobile";
-		spanCloseMobileCT.id = 'btnCloseMobileCustom';
+        let divTitleInnerContainerCT = document.createElement("div");
+        divTitleInnerContainerCT.className = "titleInnerContainer";
 
-		let spanCloseIconCT = document.createElement("span");
-		spanCloseIconCT.className = "mdi mdi-close";
+        let spanCloseMobileCT = document.createElement("span");
+        spanCloseMobileCT.className = "closeMobile";
+        spanCloseMobileCT.id = 'btnCloseMobileCustom';
 
-		let spanTitleCT = document.createElement("span");
-		spanTitleCT.id = 'spanTitleCustom';
+        let spanCloseIconCT = document.createElement("span");
+        spanCloseIconCT.className = "mdi mdi-close";
 
-		let customTitleCT = document.createElement("h4");
-		customTitleCT.innerHTML = '&nbsp;';
-		customTitleCT.id = 'customTitle';
+        let spanTitleCT = document.createElement("span");
+        spanTitleCT.id = 'spanTitleCustom';
 
-		let spanSaveCT = document.createElement("span");
-		spanSaveCT.id = 'spanSave';
+        let customTitleCT = document.createElement("h4");
+        customTitleCT.innerHTML = '&nbsp;';
+        customTitleCT.id = 'customTitle';
 
-		spanCloseMobileCT.appendChild(spanCloseIconCT);
-		spanTitleCT.appendChild(customTitleCT);
+        let spanSaveCT = document.createElement("span");
+        spanSaveCT.id = 'spanSave';
 
-		divTitleInnerContainerCT.appendChild(spanCloseMobileCT);
-		divTitleInnerContainerCT.appendChild(spanTitleCT);
-		divTitleInnerContainerCT.appendChild(spanSaveCT);
+        spanCloseMobileCT.appendChild(spanCloseIconCT);
+        spanTitleCT.appendChild(customTitleCT);
 
-		divTitleContainerCT.appendChild(divTitleInnerContainerCT);
+        divTitleInnerContainerCT.appendChild(spanCloseMobileCT);
+        divTitleInnerContainerCT.appendChild(spanTitleCT);
+        divTitleInnerContainerCT.appendChild(spanSaveCT);
 
-		customTimesTmp.insertBefore(divTitleContainerCT, customTimesTmp.firstChild);
+        divTitleContainerCT.appendChild(divTitleInnerContainerCT);
 
-		let customTitleTmp = document.getElementById('customTitle');
-		customTitleTmp.classList.remove('mdl-dialog__title');
-		customTitleTmp.style.margin = '0';
-		customTitleTmp.style.marginTop = '16px';
-		customTitleTmp.style.fontWeight = 1000;
-		customTitleTmp.style.fontSize = '1.25em';
-		customTitleTmp.style.display = 'inline';
+        customTimesTmp.insertBefore(divTitleContainerCT, customTimesTmp.firstChild);
 
-		document.getElementById('btnCloseMobileCustom').addEventListener('click', function () {
-			closeCustomDialog();
-		});
+        let customTitleTmp = document.getElementById('customTitle');
+        customTitleTmp.classList.remove('mdl-dialog__title');
+        customTitleTmp.style.margin = '0';
+        customTitleTmp.style.marginTop = '16px';
+        customTitleTmp.style.fontWeight = 1000;
+        customTitleTmp.style.fontSize = '1.25em';
+        customTitleTmp.style.display = 'inline';
 
-		document.getElementById('spanSave').appendChild(document.getElementById('btnSave'));
+        document.getElementById('btnCloseMobileCustom').addEventListener('click', function() {
+            closeCustomDialog();
+        });
 
-		document.getElementById('footerCustom').style.display = 'none';
-		document.getElementById('btnCloseCustom').style.display = 'none';
+        document.getElementById('spanSave').appendChild(document.getElementById('btnSave'));
 
-		//About
-		let aboutDialogAD = document.getElementById('aboutDialog');
-		let divTitleContainerAD = document.createElement("div");
-		divTitleContainerAD.className = "titleContainer";
+        document.getElementById('footerCustom').style.display = 'none';
+        document.getElementById('btnCloseCustom').style.display = 'none';
 
-		let divTitleInnerContainerAD = document.createElement("div");
-		divTitleInnerContainerAD.className = "titleInnerContainer";
+        //About
+        let aboutDialogAD = document.getElementById('aboutDialog');
+        let divTitleContainerAD = document.createElement("div");
+        divTitleContainerAD.className = "titleContainer";
 
-		let spanCloseMobileAD = document.createElement("span");
-		spanCloseMobileAD.className = "closeMobile";
-		spanCloseMobileAD.id = 'btnCloseMobileAbout';
+        let divTitleInnerContainerAD = document.createElement("div");
+        divTitleInnerContainerAD.className = "titleInnerContainer";
 
-		let spanCloseIconAD = document.createElement("span");
-		spanCloseIconAD.className = "mdi mdi-close";
+        let spanCloseMobileAD = document.createElement("span");
+        spanCloseMobileAD.className = "closeMobile";
+        spanCloseMobileAD.id = 'btnCloseMobileAbout';
 
-		let spanTitleAD = document.createElement("span");
-		spanTitleAD.id = 'spanTitleAbout';
+        let spanCloseIconAD = document.createElement("span");
+        spanCloseIconAD.className = "mdi mdi-close";
 
-		spanCloseMobileAD.appendChild(spanCloseIconAD);
+        let spanTitleAD = document.createElement("span");
+        spanTitleAD.id = 'spanTitleAbout';
 
-		divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
-		divTitleInnerContainerAD.appendChild(spanTitleAD);
+        spanCloseMobileAD.appendChild(spanCloseIconAD);
 
-		divTitleContainerAD.appendChild(divTitleInnerContainerAD);
+        divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
+        divTitleInnerContainerAD.appendChild(spanTitleAD);
 
-		aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
+        divTitleContainerAD.appendChild(divTitleInnerContainerAD);
 
-		document.getElementById('btnCloseMobileAbout').addEventListener('click', function () {
-			dialogAbout.close();
-		});
+        aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
 
-		let titleAboutAD = document.getElementById('titleAbout');
-		titleAboutAD.classList.remove('mdl-dialog__title');
-		titleAboutAD.style.margin = '0';
-		titleAboutAD.style.marginTop = '16px';
-		titleAboutAD.style.fontWeight = 1000;
-		titleAboutAD.style.fontSize = '1.25em';
-		titleAboutAD.style.display = 'inline';
+        document.getElementById('btnCloseMobileAbout').addEventListener('click', function() {
+            dialogAbout.close();
+        });
 
-		document.getElementById('spanTitleAbout').append(titleAboutAD);
+        let titleAboutAD = document.getElementById('titleAbout');
+        titleAboutAD.classList.remove('mdl-dialog__title');
+        titleAboutAD.style.margin = '0';
+        titleAboutAD.style.marginTop = '16px';
+        titleAboutAD.style.fontWeight = 1000;
+        titleAboutAD.style.fontSize = '1.25em';
+        titleAboutAD.style.display = 'inline';
 
-		document.getElementById('divCloseAbout').style.display = 'none';
+        document.getElementById('spanTitleAbout').append(titleAboutAD);
+
+        document.getElementById('divCloseAbout').style.display = 'none';
     }
-	let exit = 0;
-	do {
-		setTimeout(function() {
+    let exit = 0;
+    do {
+        setTimeout(function() {
             try {
                 titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
-            }
-            catch (e) {}
-		}, 1000);
-		exit++;
-	} while (lngObject === undefined && exit < 5);
+            } catch (e) {}
+        }, 1000);
+        exit++;
+    } while (lngObject === undefined && exit < 5);
 }, 100);
 
 if (isFirstRun) {
@@ -1068,9 +1060,9 @@ if (isFirstRun) {
 checkMode();
 
 tickAll.addEventListener('change', (event) => {
-    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function (element) {
+    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function(element) {
         let _this = element;
-        setTimeout(function () {
+        setTimeout(function() {
             if (lblTickAll.matches('.is-checked'))
                 _this.MaterialCheckbox.check();
             else
@@ -1081,9 +1073,9 @@ tickAll.addEventListener('change', (event) => {
 });
 
 (function() {
-    
-	btnShare.style.display = 'none';
-	btnEmail.style.display = 'none';
+
+    btnShare.style.display = 'none';
+    btnEmail.style.display = 'none';
 
     isFirstTime = true;
 
@@ -1092,16 +1084,15 @@ tickAll.addEventListener('change', (event) => {
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
         dialogAbout.classList.add('centeredDialog');
         dialogAbout.classList.add('fullscreen-dialog-tablet');
-        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;        
-    }
-    else if (deviceDetector.device === 'tablet') {
+        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+    } else if (deviceDetector.device === 'tablet') {
         dialogTimeTable.classList.add('centeredDialog-tablet');
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
         dialogAbout.classList.add('centeredDialog');
         dialogAbout.classList.add('fullscreen-dialog-tablet');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     } else {
-		dialogCustomTimes.classList.add('customBodyMobile');
+        dialogCustomTimes.classList.add('customBodyMobile');
         if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
             document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
         else
@@ -1113,32 +1104,32 @@ tickAll.addEventListener('change', (event) => {
     }
 
     if (typeof HTMLDialogElement !== 'function') {
-		dialogWelcome.classList.remove('centeredDialog');
+        dialogWelcome.classList.remove('centeredDialog');
         dialogWelcome.classList.add('centeredDialogNoSupport');
-		dialogSetTime.classList.remove('centeredDialog');
-		dialogSetTime.classList.add('centeredDialogNoSupport');
-		dialogTimeTable.classList.remove('centeredDialog');
-		dialogTimeTable.classList.add('centeredDialogNoSupport');
-		dialogAbout.classList.remove('centeredDialog');
-		dialogAbout.classList.add('centeredDialogNoSupport');
+        dialogSetTime.classList.remove('centeredDialog');
+        dialogSetTime.classList.add('centeredDialogNoSupport');
+        dialogTimeTable.classList.remove('centeredDialog');
+        dialogTimeTable.classList.add('centeredDialogNoSupport');
+        dialogAbout.classList.remove('centeredDialog');
+        dialogAbout.classList.add('centeredDialogNoSupport');
         dialogAbout.classList.add('fullscreen-dialog');
     }
 
-	window.addEventListener("focus", function () {
+    window.addEventListener("focus", function() {
         if (document.querySelector('.mdl-menu__outline').style.zIndex !== "-1")
             resizeSelect();
     });
-    
+
     if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
         alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
-    
+
 
     setTimeout(function() {
         // Checks if should display install popup notification:
         if (isIos() && !isInStandaloneMode())
             showSnackbar(lngObject.installiOS, 3000);
     }, 1000);
-    
+
 })();
 
 resizeScreen();
@@ -1146,7 +1137,7 @@ resizeScreen();
 function hideKeyboard(element) {
     element.readOnly = true;
     setTimeout(function() {
-        element.blur();  //actually close the keyboard
+        element.blur(); //actually close the keyboard
         element.readOnly = false;
     }, 100);
 }

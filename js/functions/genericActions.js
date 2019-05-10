@@ -28,7 +28,7 @@ function showSnackbar(msg, tout = 1500) {
 }
 
 function refreshControls() {
-    setTimeout(function () {
+    setTimeout(function() {
         componentHandler.upgradeAllRegistered();
     }, 10);
 }

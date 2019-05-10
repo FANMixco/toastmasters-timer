@@ -1,8 +1,9 @@
 let audioBeepElement, audioElementClapping;
 let os = getMobileOperatingSystem();
+let nMobile = (os === "iOS" || os === "Android");
 
 function browserStartBeep() {
-    if (isBeepEnabled === "true" && !(os === "iOS" || os === "Android")) {
+    if (!nMobile) {
         if (green === 1 || yellow === 1 || red === 1) {
             audioBeepElement.play();
             setTimeout(function() {
@@ -15,14 +16,13 @@ function browserStartBeep() {
 }
 
 function browserStartVibrate() {
-    if (isVibrateEnabled === "true")
-        if (green === 1 || yellow === 1 || red === 1)
-            if (hasVibrator)
-                navigator.vibrate(1000);
+    if (green === 1 || yellow === 1 || red === 1)
+        if (hasVibrator)
+            navigator.vibrate(1000);
 }
 
 function browserStartClapping() {
-    if (isClappingEnabled === "true" && !(os == "iOS" || os == "Android")) {
+    if (!nMobile) {
         audioElementClapping.play();
         setTimeout(function() {
             audioElementClapping.pause();
@@ -31,33 +31,19 @@ function browserStartClapping() {
 }
 
 function browserStopClapping() {
-    if (!(os === "iOS" || os === "Android"))
+    if (!nMobile)
         audioElementClapping.pause();
 }
 
-if (!(os === "iOS" || os === "Android")) {
+if (!nMobile) {
     audioBeepElement = document.createElement('audio');
-    audioBeepElement.setAttribute('src', './browserSpecific/sounds/beep.mp3');
-
-    audioBeepElement.addEventListener('ended', function() {
-        this.play();
-    }, false);
-
-    audioBeepElement.addEventListener("canplay", function() {});
-
-    audioBeepElement.addEventListener("timeupdate", function() {});
+    audioBeepElement.src = './browserSpecific/sounds/beep.mp3';
+    audioBeepElement.load();
 
     audioElementClapping = document.createElement('audio');
-    audioElementClapping.setAttribute('src', './browserSpecific/sounds/clapping.mp3');
+    audioElementClapping.src = './browserSpecific/sounds/clapping.mp3';
+    audioElementClapping.load();
 
-    audioElementClapping.addEventListener('ended', function() {
-        this.play();
-    }, false);
-
-    audioElementClapping.addEventListener("canplay", function() {});
-
-    audioElementClapping.addEventListener("timeupdate", function() {});
-    
     btnVibrate.style.display = 'none';
     btnShare.style.display = 'none';
     btnEmail.style.display = 'none';

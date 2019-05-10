@@ -10,7 +10,7 @@ function setDbConf() {
 
 function getSelectedIDs() {
     let ids = [];
-    Array.from(document.getElementsByClassName("chkChoose")).forEach(function (element) {
+    Array.from(document.getElementsByClassName("chkChoose")).forEach(function(element) {
         if (element.matches('.is-checked'))
             ids.push(parseInt(element.querySelectorAll('input')[0].id.replace("chk", "")));
     });
@@ -31,21 +31,21 @@ function countTimetable() {
 }
 
 function hideCheckBoxes() {
-    Array.from(document.getElementsByClassName("tdDel")).forEach(function (element) {
+    Array.from(document.getElementsByClassName("tdDel")).forEach(function(element) {
         element.style.display = 'none';
     });
     document.getElementById('thDel').classList.add('hiddenObject');
 }
 
 function showCheckBoxes() {
-    Array.from(document.getElementsByClassName("tdDel")).forEach(function (element) {
+    Array.from(document.getElementsByClassName("tdDel")).forEach(function(element) {
         element.style.display = 'block';
     });
     document.getElementById('thDel').classList.remove('hiddenObject');
 }
 
 function printTable() {
-	let speakersBody = document.getElementById('speakers');
+    let speakersBody = document.getElementById('speakers');
     speakersBody.innerHTML = '';
     results = [];
 
@@ -109,8 +109,8 @@ function printTable() {
 }
 
 function addCheckTaps() {
-    Array.from(document.querySelectorAll('[id^=chk]')).forEach(function (element) {
-        element.addEventListener('change', function () {
+    Array.from(document.querySelectorAll('[id^=chk]')).forEach(function(element) {
+        element.addEventListener('change', function() {
             document.getElementById('lblTickAll').MaterialCheckbox.uncheck();
         });
     });

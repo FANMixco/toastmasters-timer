@@ -1,22 +1,22 @@
 @import url('../css/roboto.font.css');
-
 html {
-    overflow-y: hidden;
-    overflow-x: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
-body, #superContainer {
-    text-align: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
+body,
+#superContainer {
+	text-align: center;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
 
 .favIcon {
@@ -28,70 +28,67 @@ footer {
 }
 
 .container {
-  position: relative;
-  top: 30px;
-  width: 300px;
-  margin: 0 auto;
+	position: relative;
+	top: 30px;
+	width: 300px;
+	margin: 0 auto;
 }
 
 .minutes-set {
-  float: left;
-  margin-right: 28px;
+	float: left;
+	margin-right: 28px;
 }
 
-.seconds-set { float: right; }
-
-#controls {
-  position: absolute;
-  left: 32px;
-  top: 105px;
-  text-align: center;
+.seconds-set {
+	float: right;
 }
 
 .display-remain-time {
-  font-family: 'Roboto';
-  font-weight: 100;
-  font-size: 65px;
-  color: black;
+	font-family: 'Roboto';
+	font-weight: 100;
+	font-size: 65px;
+	color: black;
 }
 
-#pause, .btnAction, .btnPopUp {
-  outline: none;
-  background: transparent;
-  border: none;
-  margin-top: 10px;
-  width: 50px;
-  height: 50px;
-  position: relative;
+#pause,
+.btnAction,
+.btnPopUp {
+	outline: none;
+	background: transparent;
+	border: none;
+	margin-top: 10px;
+	width: 50px;
+	height: 50px;
+	position: relative;
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
-    .btnAction {
-      font-size: xx-large;
-      text-align: center;
-      color: black;
-      padding: 0px;
-    }
-    .btnClock {
-        left: calc(100% - 32px) !important;
-    }
+	.btnAction {
+		font-size: xx-large;
+		text-align: center;
+		color: black;
+		padding: 0px;
+	}
+	.btnClock {
+		left: calc(100% - 32px) !important;
+	}
 }
 
 @supports not (-webkit-overflow-scrolling: touch) {
-    .btnAction {
-      font-size: xx-large;
-      text-align: center;
-      color: black;
-    }
-    .btnClock{
-        left: calc(100% - 28px) !important;
-    }
+	.btnAction {
+		font-size: xx-large;
+		text-align: center;
+		color: black;
+	}
+	.btnClock {
+		left: calc(100% - 28px) !important;
+	}
 }
 
 .btnPopUp {
-  font-size: x-large;
-  text-align: center;
-  color: black;
+	font-size: x-large;
+	text-align: center;
+	color: black;
 }
 
 .centeredText {
@@ -99,125 +96,93 @@ footer {
 }
 
 .play::before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 22px solid black;
+	display: block;
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 16px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 22px solid black;
 }
 
 .pause::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 12px;
-  width: 15px;
-  height: 30px;
-  background-color: transparent;
-  border-radius: 1px;
-  border: 5px solid black;
-  border-top: none;
-  border-bottom: none;
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 12px;
+	width: 15px;
+	height: 30px;
+	background-color: transparent;
+	border-radius: 1px;
+	border: 5px solid black;
+	border-top: none;
+	border-bottom: none;
 }
 
 /*background-color: #E8E8E8; border-radius: 50%; */
 
-.pause:hover { opacity: 0.8; }
-
-.play:hover { opacity: 0.8; }
-
-.btnAction:hover { opacity: 0.8; }
-
-.btnPopUp:hover { opacity: 0.8; }
-
-.e-c-base {
-  fill: none;
-  stroke: #B6B6B6;
-  stroke-width: 4px
+.pause:hover {
+	opacity: 0.8;
 }
 
-.e-c-progress {
-  fill: none;
-  stroke: black;
-  stroke-width: 4px;
-  transition: stroke-dashoffset 0.7s;
+.play:hover {
+	opacity: 0.8;
 }
 
-.e-c-progress-white {
-  fill: none;
-  stroke: white;
-  stroke-width: 4px;
-  transition: stroke-dashoffset 0.7s;
+.btnAction:hover {
+	opacity: 0.8;
 }
 
-.e-c-pointer {
-  fill: #FFF;
-  stroke: black;
-  stroke-width: 2px;
+.btnPopUp:hover {
+	opacity: 0.8;
 }
-
-.e-c-pointer-white {
-  fill: #FFF;
-  stroke: white;
-  stroke-width: 2px;
-}
-
-#e-pointer { transition: transform 0.7s; }
 
 .closeMobile {
-    font-size: 1.5em;
-    margin-right: 32px;
+	font-size: 1.5em;
+	margin-right: 32px;
 }
 
 .titleContainer {
-    height: 56px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    margin-top: -14px;
-    margin-left: -14px;
-    margin-right: -14px;
-    text-align: left;
+	height: 56px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+	margin-top: -14px;
+	margin-left: -14px;
+	margin-right: -14px;
+	text-align: left;
 }
 
 .titleInnerContainer {
-    padding-top: 16px;
-    padding-left: 16px
-}
-
-#spanSave {
-    float: right;
-    margin-right: 16px;
-    margin-top: -6px;
+	padding-top: 16px;
+	padding-left: 16px
 }
 
 .column {
-  float: left;
-  width: 33.33%;
+	float: left;
+	width: 33.33%;
 }
 
 .columnClap {
-  float: left;
-  width: 50%;
+	float: left;
+	width: 50%;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .rowFull:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .contestMode {
 	transform: scale(2);
-    transform-origin: 25% 25% 0px;
+	transform-origin: 25% 25% 0px;
 }
 
 .hideTime {
@@ -226,7 +191,7 @@ footer {
 
 .contestModeOff {
 	transform: scale(1);
-    transform-origin: 0% 0% 0px;
+	transform-origin: 0% 0% 0px;
 }
 
 .showTime {
@@ -234,131 +199,182 @@ footer {
 }
 
 .mdl-data-table {
-    table-layout:fixed;
-    width:100%; 
+	table-layout: fixed;
+	width: 100%;
 }
 
-td, th, .mdl-data-table__cell--non-numeric {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
+td,
+th,
+.mdl-data-table__cell--non-numeric {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
 }
-    
-#remainTime{
-    margin-top: 35px;
-    margin-bottom: 20px;
-}
-    
+
 .row {
-    width: 80%;
-    margin: auto;
+	width: 80%;
+	margin: auto;
 }
 
 .rowFull {
-    padding-left: 5px;
-    margin: auto;
+	padding-left: 5px;
+	margin: auto;
 }
 
 .hiddenObject {
-    display: none;
+	display: none;
 }
 
 .minSizeCol {
-    width: 1px;
+	width: 1px;
 }
 
-.chkOpt{
-    padding-left: 0px!important;
+.chkOpt {
+	padding-left: 0px!important;
 }
 
 .hCustom {
-    margin: 24px 0 5px;
-    padding-top: 5px;
+	margin: 24px 0 5px;
+	padding-top: 5px;
 }
 
 .centeredDialog {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .customSections {
-    margin-top: -22px;
+	margin-top: -22px;
 }
 
 .centeredDialogNoSupport {
-    top: 50%;
-    transform: translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .fullscreen-dialog {
-    height: calc(100% - 28px) !important;
-    width: calc(100% - 28px) !important;
-    overflow-x: hidden;
-    overflow-y: hidden;
+	height: calc(100% - 28px) !important;
+	width: calc(100% - 28px) !important;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .fullscreen-dialog-tablet {
-    width: calc(85% - 28px) !important;
+	width: calc(85% - 28px) !important;
 }
 
 .fullscreen-dialog-desktop {
-    width: calc(50% - 28px) !important;
+	width: calc(50% - 28px) !important;
 }
 
-.customBodyMobile{
-    height: 90%;
-    overflow-y: auto;
+.customBodyMobile {
+	height: 90%;
+	overflow-y: auto;
 }
 
 .fakeTxt {
-    width: 0px;
-    height: 0px;
-    outline: none;
-    border: transparent;
+	width: 0px;
+	height: 0px;
+	outline: none;
+	border: transparent;
 }
 
 .fakeTxt:focus {
-    outline: none; 
+	outline: none;
 }
 
-#options button{
-    font-size: 3em;
+.e-c-base {
+	fill: none;
+	stroke: #B6B6B6;
+	stroke-width: 4px
+}
+
+.e-c-progress {
+	fill: none;
+	stroke: black;
+	stroke-width: 4px;
+	transition: stroke-dashoffset 0.7s;
+}
+
+.e-c-progress-white {
+	fill: none;
+	stroke: white;
+	stroke-width: 4px;
+	transition: stroke-dashoffset 0.7s;
+}
+
+.e-c-pointer {
+	fill: #FFF;
+	stroke: black;
+	stroke-width: 2px;
+}
+
+.e-c-pointer-white {
+	fill: #FFF;
+	stroke: white;
+	stroke-width: 2px;
+}
+
+#e-pointer {
+	transition: transform 0.7s;
 }
 
 #egTitle {
-   color: #ff80ab;
-   font-size: 4em!important;
+	color: #ff80ab;
+	font-size: 4em!important;
 }
 
-#imgClap{
-    margin-top: -8px;
-    width: 36px;
+#options button {
+	font-size: 3em;
 }
 
-#divSpeakers{
-    overflow-y: auto;
+#imgClap {
+	margin-top: -8px;
+	width: 36px;
+}
+
+#divSpeakers {
+	overflow-y: auto;
 }
 
 #fakeContainer {
-    position: absolute;
+	position: absolute;
 }
 
 #customMin {
-    background: #60ad5e;
+	background: #60ad5e;
 }
 
 #customAvg {
-    background: #ffeb3b;
+	background: #ffeb3b;
 }
 
 #customMax {
-    background: #e53935;
+	background: #e53935;
 }
 
 #bodyAbout {
 	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+#remainTime {
+	margin-top: 35px;
+	margin-bottom: 20px;
+}
+
+#controls {
+	position: absolute;
+	left: 32px;
+	top: 105px;
+	text-align: center;
+}
+
+#spanSave {
+	float: right;
+	margin-right: 16px;
+	margin-top: -6px;
 }
