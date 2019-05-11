@@ -46,11 +46,6 @@ const displayOutput = document.querySelector('.display-remain-time'),
     length = Math.PI * 2 * 100,
     fastTransition = 0.2;
 
-// Detects if device is on iOS 
-const isIos = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test(userAgent);
-}
 // Detects if device is in standalone mode
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
@@ -1126,7 +1121,7 @@ tickAll.addEventListener('change', (event) => {
 
     setTimeout(function() {
         // Checks if should display install popup notification:
-        if (isIos() && !isInStandaloneMode())
+        if (os === "iOS" && !isInStandaloneMode())
             showSnackbar(lngObject.installiOS, 3000);
     }, 1000);
 
