@@ -336,16 +336,19 @@ function pauseTimer() {
     cmbSpeechType.disabled = true;
 
     if (!isStarted || timeLeft === undefined) {
+        playVideo();
         timer(wholeTime);
         isStarted = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
     } else if (isPaused) {
+        playVideo();
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
         timer(timeLeft);
         isPaused = isPaused ? false : true;
     } else {
+        stopVideo();
         btnPause.classList.remove('pause');
         btnPause.classList.add('play');
         clearInterval(intervalTimer);
@@ -596,6 +599,7 @@ function invertColors() {
 
 function storeTime(isTimeStored) {
     if (minimum === 0 && maximum === 0 && average === 0) return;
+    stopVideo();
     stopClapping();
 
     if (isTimeStored) {
@@ -1068,7 +1072,6 @@ tickAll.addEventListener('change', (event) => {
 });
 
 (function() {
-
     btnShare.style.display = 'none';
     btnEmail.style.display = 'none';
 

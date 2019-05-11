@@ -1,4 +1,4 @@
-let audioBeepElement, audioElementClapping;
+let audioBeepElement, audioElementClapping, videoWakeUp;
 let os = getMobileOperatingSystem();
 let nMobile = (os === "iOS" || os === "Android");
 
@@ -35,6 +35,14 @@ function browserStopClapping() {
         audioElementClapping.pause();
 }
 
+function playVideo() {
+    videoWakeUp.play();
+}
+
+function stopVideo() {
+    videoWakeUp.pause();
+}
+
 if (!nMobile) {
     audioBeepElement = document.createElement('audio');
     audioBeepElement.src = './browserSpecific/sounds/beep.mp3';
@@ -43,7 +51,7 @@ if (!nMobile) {
     audioElementClapping = document.createElement('audio');
     audioElementClapping.src = './browserSpecific/sounds/clapping.mp3';
     audioElementClapping.load();
-
+    
     btnVibrate.style.display = 'none';
     btnShare.style.display = 'none';
     btnEmail.style.display = 'none';
@@ -54,6 +62,18 @@ if (!nMobile) {
     btnClap.style.display = 'none';
     btnBeep.style.display = 'none';
 }
+
+videoWakeUp = document.createElement('video');
+videoWakeUp.src = './browserSpecific/videos/wakeup.mp4';
+videoWakeUp.style.height = '0px';
+videoWakeUp.style.width = '0px';
+videoWakeUp.style.zIndex = "9999";
+videoWakeUp.style.position = "absolute";
+videoWakeUp.muted = true;
+videoWakeUp.loop = true;
+videoWakeUp.autoplay = false;
+videoWakeUp.load();
+document.body.insertBefore(videoWakeUp, document.querySelector("footer"));
 
 function browserExport() {
     showSnackbar(lngObject.lblExportMsg);
