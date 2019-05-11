@@ -19,7 +19,7 @@ This App provides you with different options, for example:
 - 2 to 3 min (Evaluation).
 - 5 to 6 min (General evaluation).
 - 1 to 2 min (Table topics).
-- 8 to min.
+- 8 to 10 min.
 - 10 to 12 min.
 - 13 to 15 min.
 - 18 to 20 min.
