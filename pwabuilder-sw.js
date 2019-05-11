@@ -57,6 +57,7 @@ self.addEventListener('install', event => {
 			"browserSpecific/js/jspdf.min.js",
 			"browserSpecific/js/getOS.min.js",
 			"browserSpecific/js/actions.min.js",
+			"browserSpecific/videos/wakeup.mp4",
 			"js/components/setTimeDialog.min.js",
 			"js/lib/moment.min.js",
 			"js/lib/ua-parser.min.js",
