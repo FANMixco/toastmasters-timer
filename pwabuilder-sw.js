@@ -67,6 +67,7 @@ self.addEventListener('install', event => {
 			"js/timer.min.js",
 			"js/lang/en.json",
 			"js/lang/es.json",
+			"js/lang/pl.json",
 			"img/supernova.png",
 			"img/clapping-hands.svg",
 			"img/clapping-off.svg"
