@@ -2,7 +2,7 @@
   "about": "About us",
   "about1": "Toastmasters Timer is an application developed by Supernova IC to facilitate your meetings with all the essential options.",
   "about2": "Any question you can contact the main developer:",
-  "about3": "&copy; All Rights Reserved Supernova IC, 2013 - 2018.",
+  "about3": "&copy; All Rights Reserved Supernova IC, 2013 - 2019.",
   "about4": "If you are interested in more innovative and unique projects, you can check our website:",
   "cancelBtn": "Cancel",
   "cancel": "No",
@@ -57,5 +57,6 @@
   "timeMinimum": "Minimum",
   "title": "Toastmasters Timer",
   "installiOS": "Install the Toastmasters Timer on your iPhone or iPad: tap Share and then Add to Home Screen.",
+  "translators": "Translators",    
   "underConstruction": "Under construction"
 }

@@ -2,7 +2,7 @@
   "about": "Acerca de",
   "about1": "Toastmasters Crónometro es una aplicación desarrollada por Supernova IC para facilitar sus reuniones con todas las opciones esenciales.",
   "about2": "Cualquier pregunta puede contactar con el desarrollador principal:",
-  "about3": "&copy; Todos los Derechos Reservados Supernova IC, 2013 — 2018.",
+  "about3": "&copy; Todos los Derechos Reservados Supernova IC, 2013 — 2019.",
   "about4": "Si se encuentra interesado en más proyectos innovadores y únicos, puede consultar nuestra página web:",
   "cancelBtn": "Cancelar",
   "cancel": "No",
@@ -57,5 +57,6 @@
   "timeMinimum": "Mínimo",
   "title": "Toastmasters Cronómetro",
   "installiOS": "Instale el Cronónometro de Toastmasters en su iPhone o iPad: toque Compartir y luego Agregar a la pantalla de inicio.",
+  "translators": "Traductores",
   "underConstruction": "En construcción"
 }
