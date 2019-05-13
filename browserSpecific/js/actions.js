@@ -36,11 +36,11 @@ function browserStopClapping() {
 }
 
 function playVideo() {
-    videoWakeUp.play();
+    videoWakeUp.click();
 }
 
 function stopVideo() {
-    videoWakeUp.pause();
+    videoWakeUp.click();
 }
 
 if (!nMobile) {
@@ -73,6 +73,23 @@ videoWakeUp.muted = true;
 videoWakeUp.loop = true;
 videoWakeUp.autoplay = false;
 videoWakeUp.load();
+videoWakeUp.addEventListener(
+    'play', 
+    function() { 
+        videoWakeUp.play();
+    }, 
+    false);
+
+videoWakeUp.onclick = function() {
+    if (videoWakeUp.paused) {
+        videoWakeUp.play();
+    } else {
+        videoWakeUp.pause();
+    }
+
+    return false;
+};
+
 document.body.insertBefore(videoWakeUp, document.querySelector("footer"));
 
 function browserExport() {
