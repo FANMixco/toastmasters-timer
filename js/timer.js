@@ -1016,7 +1016,12 @@ setTimeout(function() {
         let spanTitleAD = document.createElement("span");
         spanTitleAD.id = 'spanTitleAbout';
 
+        let customTitleAD = document.createElement("h4");
+        customTitleAD.innerHTML = '&nbsp;';
+        customTitleAD.id = 'customTitle';
+
         spanCloseMobileAD.appendChild(spanCloseIconAD);
+        spanCloseMobileAD.appendChild(customTitleAD);
 
         divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
         divTitleInnerContainerAD.appendChild(spanTitleAD);
@@ -1030,6 +1035,14 @@ setTimeout(function() {
         });
 
         document.getElementById('divCloseAbout').style.display = 'none';
+        
+        let bodyAbout = document.getElementById('bodyAbout');
+        
+        bodyAbout.style.height = `${document.body.offsetHeight * 0.79}px`;
+        
+        let bodyTranslators = document.getElementById('bodyTranslators');
+        
+        bodyTranslators.style.height = `${document.body.offsetHeight * 0.79}px`;
     }
     let exit = 0;
     do {
