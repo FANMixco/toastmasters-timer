@@ -1016,12 +1016,17 @@ setTimeout(function() {
         let spanTitleAD = document.createElement("span");
         spanTitleAD.id = 'spanTitleAbout';
 
-        let customTitleAD = document.createElement("h4");
-        customTitleAD.innerHTML = '&nbsp;';
-        customTitleAD.id = 'customTitle';
+        let aboutTitleAD = document.createElement("h4");
+        aboutTitleAD.innerHTML = '&nbsp;';
+        aboutTitleAD.id = 'aboutTitle';
+        aboutTitleAD.style.margin = '0';
+        aboutTitleAD.style.marginTop = '16px';
+        aboutTitleAD.style.fontWeight = 1000;
+        aboutTitleAD.style.fontSize = '1.25em';
+        aboutTitleAD.style.display = 'inline';
 
         spanCloseMobileAD.appendChild(spanCloseIconAD);
-        spanCloseMobileAD.appendChild(customTitleAD);
+        spanTitleAD.appendChild(aboutTitleAD);
 
         divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
         divTitleInnerContainerAD.appendChild(spanTitleAD);
