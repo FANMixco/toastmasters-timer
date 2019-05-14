@@ -1029,16 +1029,6 @@ setTimeout(function() {
             dialogAbout.close();
         });
 
-        let titleAboutAD = document.getElementById('titleAbout');
-        titleAboutAD.classList.remove('mdl-dialog__title');
-        titleAboutAD.style.margin = '0';
-        titleAboutAD.style.marginTop = '16px';
-        titleAboutAD.style.fontWeight = 1000;
-        titleAboutAD.style.fontSize = '1.25em';
-        titleAboutAD.style.display = 'inline';
-
-        document.getElementById('spanTitleAbout').append(titleAboutAD);
-
         document.getElementById('divCloseAbout').style.display = 'none';
     }
     let exit = 0;
@@ -1126,6 +1116,10 @@ tickAll.addEventListener('change', (event) => {
         // Checks if should display install popup notification:
         if (os === "iOS" && !isInStandaloneMode())
             showSnackbar(lngObject.installiOS, 3000);
+        
+        let spanCopyright3 = document.getElementById('spanCopyright3');
+        if (spanCopyright3.innerHTML !== null || spanCopyright3.innerHTML !== '')
+            spanCopyright3.innerHTML = '.' + spanCopyright3.innerHTML;
     }, 1000);
 
 })();
