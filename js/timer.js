@@ -1071,7 +1071,7 @@ tickAll.addEventListener('change', (event) => {
         dialogTimeTable.classList.add('centeredDialog');
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
         dialogAbout.classList.add('centeredDialog');
-        dialogAbout.classList.add('fullscreen-dialog-tablet');
+        dialogAbout.classList.add('fullscreen-dialog-desktop');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     } else if (deviceDetector.device === 'tablet') {
         dialogTimeTable.classList.add('centeredDialog-tablet');
