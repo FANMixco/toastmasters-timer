@@ -36,11 +36,13 @@ function browserStopClapping() {
 }
 
 function playVideo() {
-    videoWakeUp.click();
+    if (!nMobile)
+        videoWakeUp.click();
 }
 
 function stopVideo() {
-    videoWakeUp.click();
+    if (!nMobile)
+        videoWakeUp.click();
 }
 
 if (!nMobile) {
@@ -58,39 +60,40 @@ if (!nMobile) {
 
     document.body.insertBefore(audioBeepElement, document.getElementById("snackbarMsg"));
     document.body.insertBefore(audioElementClapping, document.getElementById("snackbarMsg"));
+
+
+    videoWakeUp = document.createElement('video');
+    videoWakeUp.src = './browserSpecific/videos/wakeup.mp4';
+    videoWakeUp.style.height = '0px';
+    videoWakeUp.style.width = '0px';
+    videoWakeUp.style.zIndex = "9999";
+    videoWakeUp.style.position = "absolute";
+    videoWakeUp.muted = true;
+    videoWakeUp.loop = true;
+    videoWakeUp.autoplay = false;
+    videoWakeUp.load();
+    videoWakeUp.addEventListener(
+        'play', 
+        function() { 
+            videoWakeUp.play();
+        }, 
+        false);
+
+    videoWakeUp.onclick = function() {
+        if (videoWakeUp.paused) {
+            videoWakeUp.play();
+        } else {
+            videoWakeUp.pause();
+        }
+
+        return false;
+    };
+
+    document.body.insertBefore(videoWakeUp, document.querySelector("footer"));
 } else {
     btnClap.style.display = 'none';
     btnBeep.style.display = 'none';
 }
-
-videoWakeUp = document.createElement('video');
-videoWakeUp.src = './browserSpecific/videos/wakeup.mp4';
-videoWakeUp.style.height = '0px';
-videoWakeUp.style.width = '0px';
-videoWakeUp.style.zIndex = "9999";
-videoWakeUp.style.position = "absolute";
-videoWakeUp.muted = true;
-videoWakeUp.loop = true;
-videoWakeUp.autoplay = false;
-videoWakeUp.load();
-videoWakeUp.addEventListener(
-    'play', 
-    function() { 
-        videoWakeUp.play();
-    }, 
-    false);
-
-videoWakeUp.onclick = function() {
-    if (videoWakeUp.paused) {
-        videoWakeUp.play();
-    } else {
-        videoWakeUp.pause();
-    }
-
-    return false;
-};
-
-document.body.insertBefore(videoWakeUp, document.querySelector("footer"));
 
 function browserExport() {
     showSnackbar(lngObject.lblExportMsg);
