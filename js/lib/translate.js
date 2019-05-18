@@ -1,4 +1,4 @@
-let langs = ["en", "es", "pl"];
+let langs = ["en", "es", "pl", "cz"];
 let lngObject;
 
 function load() {
