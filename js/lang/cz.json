@@ -1,6 +1,6 @@
 {
   "about": "O nás",
-  "about1": "Toastmasters Timer je aplikace vyvinutá společností Supernova IC, která usnadňuje vaše schůzky se všemi podstatnými možnostmi.",
+  "about1": "Časoměříč Toastmasters je aplikace vyvinutá společností Supernova IC, která usnadňuje vaše schůzky se všemi podstatnými možnostmi.",
   "about2": "Máte otázky? Kontajtuje hlavního vývojáře",
   "about3": "&copy; Všechna práva vyhrazena Supernova IC, 2013 - 2019.",
   "about4": "Máte zájem o další innovační projekty? Navštivte naši webovou stránku.",
@@ -54,7 +54,7 @@
   "time": "Čas",
   "timeHalfway": "Optimální čas",
   "timeMaximum": "Minimální čas",
-  "timeMinimum": "Minimální čas",
+  "timeMinimum": "Maximální čas",
   "title": "Časoměříč Toastmasters",
   "installiOS": "Nainstalujte si Toastmasters Timer na váš iPhone nebo iPad: klepněte na Sdílet a pak na Přidat na domovskou obrazovku.",
   "translators": "Překladatelé",
