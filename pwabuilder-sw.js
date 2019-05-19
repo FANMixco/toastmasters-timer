@@ -43,7 +43,7 @@ self.addEventListener('install', event => {
     fetch(createCacheBustedRequest(OFFLINE_URL)).then(function(response) {
       return caches.open(CURRENT_CACHES.offline).then(function(cache) {
 		  return cache.addAll([
-			'index.html',
+			"index.html",
 			"css/materialdesignicons.min.css",
 			"css/timer.css",
 			"css/material.indigo-pink.min.css",
@@ -68,6 +68,9 @@ self.addEventListener('install', event => {
 			"js/lang/en.json",
 			"js/lang/es.json",
 			"js/lang/pl.json",
+			"js/lang/it.json",
+			"js/lang/cs.json",
+			"js/lang/ru.json",
 			"img/supernova.png",
 			"img/clapping-hands.svg",
 			"img/clapping-off.svg"

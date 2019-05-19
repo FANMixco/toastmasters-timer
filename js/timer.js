@@ -1135,9 +1135,8 @@ tickAll.addEventListener('change', (event) => {
         if (os === "iOS" && !isInStandaloneMode())
             showSnackbar(lngObject.installiOS, 3000);
         
-        let spanCopyright3 = document.getElementById('spanCopyright3');
-        if (lngObject.copyright3 !== null || lngObject.copyright3 !== '')
-            spanCopyright3.innerHTML = '.' + spanCopyright3.innerHTML;
+        if (lngObject.copyright3)
+            document.getElementById('spanCopyright3').innerHTML = `.${lngObject.copyright3}`;
     }, 1000);
 
 })();
