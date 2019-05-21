@@ -85,7 +85,7 @@ function isNewMeeting() {
 }
 
 function addNewTime(member, role, min, opt, max, time, lastColor, disqualified) {
-    if (time !== 'Invalid date' && (lastColor === "white" && max === time)) {
+    if (time !== 'Invalid date' && !(lastColor === "white" && max === time)) {
         let objectStoreRequest = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").add({
             member: member,
             role: role,

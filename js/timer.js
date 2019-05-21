@@ -1136,7 +1136,7 @@ tickAll.addEventListener('change', (event) => {
             showSnackbar(lngObject.installiOS, 3000);
         
         if (lngObject.copyright3)
-            document.getElementById('spanCopyright3').innerHTML = `.${lngObject.copyright3}`;
+            document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
     }, 1000);
 
 })();
