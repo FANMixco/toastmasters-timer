@@ -8,7 +8,7 @@ const btnSetTime = document.getElementById('btnSetTime'),
     btnUpM = document.getElementById('btnUpM'),
     btnUpH = document.getElementById('btnUpH'),
     btnDownS = document.getElementById('btnDownS'),
-    btnDownM = document.getElementById('btnDownH'),
+    btnDownM = document.getElementById('btnDownM'),
     btnDownH = document.getElementById('btnDownH');
 
 let btnUpSPressed = false,
@@ -70,21 +70,21 @@ btnUpH.addEventListener('click', btnUpHClick);
 
 btnDownS.addEventListener('mousedown', btnDownSContinuesPress);
 btnDownS.addEventListener('touchstart', btnDownSContinuesPress);
-btnDownS.addEventListener('mouseDown', btnSReleased);
+btnDownS.addEventListener('mouseup', btnSReleased);
 btnDownS.addEventListener('mouseleave', btnSReleased);
 btnDownS.addEventListener('touchend', btnSReleased);
 btnDownS.addEventListener('click', btnDownSClick);
 
 btnDownM.addEventListener('mousedown', btnDownMContinuesPress);
 btnDownM.addEventListener('touchstart', btnDownMContinuesPress);
-btnDownM.addEventListener('mouseDown', btnMReleased);
+btnDownM.addEventListener('mouseup', btnMReleased);
 btnDownM.addEventListener('mouseleave', btnMReleased);
 btnDownM.addEventListener('touchend', btnMReleased);
 btnDownM.addEventListener('click', btnDownMClick);
 
 btnDownH.addEventListener('mousedown', btnDownHContinuesPress);
 btnDownH.addEventListener('touchstart', btnDownHContinuesPress);
-btnDownH.addEventListener('mouseDown', btnHReleased);
+btnDownH.addEventListener('mouseup', btnHReleased);
 btnDownH.addEventListener('mouseleave', btnHReleased);
 btnDownH.addEventListener('touchend', btnHReleased);
 btnDownH.addEventListener('click', btnDownHClick);
@@ -148,6 +148,7 @@ function btnUpSClick() {
 }
 
 function btnDownSContinuesPress() {
+    console.log('continues');
     if (btnDownSPressed) return;
     btnDownSPressed = true;
     enableButtons(false);
@@ -163,6 +164,7 @@ function btnDownSContinuesPress() {
 }
 
 function btnDownSClick() {
+    console.log('click');
     if (btnDownSPressed) return;
     btnDownSPressed = true;
     enableButtons(false);
