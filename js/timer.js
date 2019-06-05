@@ -1138,7 +1138,6 @@ tickAll.addEventListener('change', (event) => {
         if (lngObject.copyright3)
             document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
     }, 1000);
-
 })();
 
 resizeScreen();
