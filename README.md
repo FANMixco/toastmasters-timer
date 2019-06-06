@@ -4,7 +4,7 @@ http://theleadership.pl
 
 Feel free to use it it anywhere at anytime.
 
-https://fanmixco.github.io/toastmasters-timer-material-design
+http://toastmasterstimer.tk
 
 **This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
 
@@ -28,7 +28,7 @@ This App provides you with different options, for example:
 All speeches are recorded for sharing it with your members or guests.
 
 **Special features:**
-- **Vibrating** when a specific segment has been reached (*Mostly, iOS or Android based devices and Windows Tablets*).
+- **Vibrating** when a specific segment has been reached (*ONLY available in iOS, Android based devices or Windows Tablets*).
 - **Beeping** when a specific segment has been reached (*Desktop ONLY*).
 - **Clapping** when the maximum time has been exceeded (*Desktop ONLY*).
 
