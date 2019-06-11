@@ -67,6 +67,7 @@ self.addEventListener('install', event => {
 			"js/timer.min.js",
 			"js/lang/en.json",
 			"js/lang/es.json",
+			"js/lang/de.json",
 			"js/lang/pl.json",
 			"js/lang/it.json",
 			"js/lang/cs.json",
