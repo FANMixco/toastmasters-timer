@@ -85,7 +85,7 @@ let dateFormat = "DD/MM/YYYY",
     lastColor = "white";
 
 let countries = ["US", "FM", "MH", "PH"],
-    bgColors = ["white", "black"];
+    bgColors = ["white", "#121212"];
 
 let times = [
     //QA (30s)
