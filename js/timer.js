@@ -85,7 +85,7 @@ let dateFormat = "DD/MM/YYYY",
     lastColor = "white";
 
 let countries = ["US", "FM", "MH", "PH"],
-    bgColors = ["white", "#121212"];
+    bgColors = ["white", "#121212", "#EDEDED"];
 
 let times = [
     //QA (30s)
@@ -594,10 +594,43 @@ function setClappingImg() {
 }
 
 function invertColors() {
-    if (selectedColor === 1)
+    let speakers = document.getElementById('speakers');
+    if (selectedColor === 1){
+        dialogTimeTable.style.filter = "invert(100%)";
+        dialogWelcome.style.filter = "invert(100%)";
+        dialogConfirm.style.filter = "invert(100%)";
+        dialogChanges.style.filter = "invert(100%)";
+        dialogCustomTimes.style.filter = "invert(100%)";
+        dialogAbout.style.filter = "invert(100%)";
+        dialogClapping.style.filter = "invert(100%)";
+        speakers.style.filter = "invert(100%)";
         document.body.style.filter = "invert(100%)";
-    else
+        dialogWelcome.style.background = bgColors[2];
+        dialogConfirm.style.background = bgColors[2];
+        dialogAbout.style.background = bgColors[2];
+        dialogChanges.style.background = bgColors[2];
+        dialogCustomTimes.style.background = bgColors[2];
+        dialogTimeTable.style.background = bgColors[2];
+        dialogClapping.style.background = bgColors[2];
+    }
+    else {
+        dialogTimeTable.style.filter = "invert(0%)";
+        dialogWelcome.style.filter = "invert(0%)";
+        dialogConfirm.style.filter = "invert(0%)";
+        dialogChanges.style.filter = "invert(0%)";
+        dialogCustomTimes.style.filter = "invert(0%)";
+        dialogAbout.style.filter = "invert(0%)";
+        dialogClapping.style.filter = "invert(0%)";
         document.body.style.filter = "invert(0%)";
+        speakers.style.filter = "invert(0%)";
+        dialogWelcome.style.background = bgColors[0];
+        dialogConfirm.style.background = bgColors[0];
+        dialogAbout.style.background = bgColors[0];
+        dialogChanges.style.background = bgColors[0];
+        dialogCustomTimes.style.background = bgColors[0];
+        dialogTimeTable.style.background = bgColors[0];
+        dialogClapping.style.background = bgColors[0];
+    }
     document.body.style.background = lastColor;
 }
 
