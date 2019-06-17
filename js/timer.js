@@ -1,4 +1,4 @@
-//circle ends
+//Controls
 const displayOutput = document.querySelector('.display-remain-time'),
     btnPause = document.getElementById('pause'),
     btnRestart = document.getElementById('btnRestart'),
@@ -59,7 +59,7 @@ let clappingTime = 30,
     minimum = 0,
     average = 0,
     maximum = 0,
-    selectedColor = 0,
+    selectedColor = isDarkModeEnabled(),
     green = 0,
     yellow = 0,
     red = 0,
@@ -134,6 +134,10 @@ update(wholeTime, wholeTime); //refreshes progress bar
 displayTimeLeft(wholeTime);
 
 checkMode();
+
+function isDarkModeEnabled() {
+	return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0;
+}
 
 function setDateFormat() {
     if (countries.includes(navigator.language.split('-')[1]))
