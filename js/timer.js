@@ -43,6 +43,12 @@ const displayOutput = document.querySelector('.display-remain-time'),
     progressBar = document.querySelector('.e-c-progress'),
     indicator = document.getElementById('e-indicator'),
     pointer = document.getElementById('e-pointer'),
+    speakers = document.getElementById('speakers'),
+	customMin = document.getElementById('customMin'),
+	customAvg = document.getElementById('customAvg'),
+	customMax = document.getElementById('customMax'),
+	invert100 = "invert(100%)",
+	invert0 = "invert(0%)",
     length = Math.PI * 2 * 100,
     fastTransition = 0.2;
 
@@ -84,8 +90,7 @@ let dateFormat = "DD/MM/YYYY",
     currentDB = "1.0",
     lastColor = "white";
 
-let countries = ["US", "FM", "MH", "PH"],
-    bgColors = ["white", "#121212", "#EDEDED"];
+let countries = ["US", "FM", "MH", "PH"];
 
 let times = [
     //QA (30s)
@@ -134,10 +139,6 @@ update(wholeTime, wholeTime); //refreshes progress bar
 displayTimeLeft(wholeTime);
 
 checkMode();
-
-function isDarkModeEnabled() {
-	return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0;
-}
 
 function setDateFormat() {
     if (countries.includes(navigator.language.split('-')[1]))
@@ -594,44 +595,49 @@ function setClappingImg() {
 }
 
 function invertColors() {
-    let speakers = document.getElementById('speakers');
     if (selectedColor === 1){
-        dialogTimeTable.style.filter = "invert(100%)";
-        dialogWelcome.style.filter = "invert(100%)";
-        dialogConfirm.style.filter = "invert(100%)";
-        dialogChanges.style.filter = "invert(100%)";
-        dialogCustomTimes.style.filter = "invert(100%)";
-        dialogAbout.style.filter = "invert(100%)";
-        dialogClapping.style.filter = "invert(100%)";
-        speakers.style.filter = "invert(100%)";
-        document.body.style.filter = "invert(100%)";
-        dialogWelcome.style.background = bgColors[2];
-        dialogConfirm.style.background = bgColors[2];
-        dialogAbout.style.background = bgColors[2];
-        dialogChanges.style.background = bgColors[2];
-        dialogCustomTimes.style.background = bgColors[2];
-        dialogTimeTable.style.background = bgColors[2];
-        dialogClapping.style.background = bgColors[2];
+		setInvFilter(dialogTimeTable, invert100);
+		setInvFilter(dialogWelcome, invert100);
+		setInvFilter(dialogConfirm, invert100);
+		setInvFilter(dialogChanges, invert100);
+		setInvFilter(dialogCustomTimes, invert100);
+		setInvFilter(dialogClapping, invert100);
+		setInvFilter(customMin, invert100);
+		setInvFilter(customAvg, invert100);
+		setInvFilter(customMax, invert100);
+		setInvFilter(customMax, invert100);
+		setInvFilter(speakers, invert100);
+		setInvFilter(dialogAbout, invert100);
+		setInvFilter(document.body, invert100);
+		setBgd(dialogWelcome, bgColors[2]);
+		setBgd(dialogConfirm, bgColors[2]);
+		setBgd(dialogChanges, bgColors[2]);
+		setBgd(dialogCustomTimes, bgColors[2]);
+		setBgd(dialogTimeTable, bgColors[2]);
+		setBgd(dialogClapping, bgColors[2]);
     }
     else {
-        dialogTimeTable.style.filter = "invert(0%)";
-        dialogWelcome.style.filter = "invert(0%)";
-        dialogConfirm.style.filter = "invert(0%)";
-        dialogChanges.style.filter = "invert(0%)";
-        dialogCustomTimes.style.filter = "invert(0%)";
-        dialogAbout.style.filter = "invert(0%)";
-        dialogClapping.style.filter = "invert(0%)";
-        document.body.style.filter = "invert(0%)";
-        speakers.style.filter = "invert(0%)";
-        dialogWelcome.style.background = bgColors[0];
-        dialogConfirm.style.background = bgColors[0];
-        dialogAbout.style.background = bgColors[0];
-        dialogChanges.style.background = bgColors[0];
-        dialogCustomTimes.style.background = bgColors[0];
-        dialogTimeTable.style.background = bgColors[0];
-        dialogClapping.style.background = bgColors[0];
+		setInvFilter(dialogTimeTable, invert0);
+		setInvFilter(dialogWelcome, invert0);
+		setInvFilter(dialogConfirm, invert0);
+		setInvFilter(dialogChanges, invert0);
+		setInvFilter(dialogCustomTimes, invert0);
+		setInvFilter(dialogClapping, invert0);
+		setInvFilter(customMin, invert0);
+		setInvFilter(customAvg, invert0);
+		setInvFilter(customMax, invert0);
+		setInvFilter(customMax, invert0);
+		setInvFilter(speakers, invert0);
+		setInvFilter(dialogAbout, invert0);
+		setInvFilter(document.body, invert0);
+		setBgd(dialogWelcome, bgColors[0]);
+		setBgd(dialogConfirm, bgColors[0]);
+		setBgd(dialogChanges, bgColors[0]);
+		setBgd(dialogCustomTimes, bgColors[0]);
+		setBgd(dialogTimeTable, bgColors[0]);
+		setBgd(dialogClapping, bgColors[0]);
     }
-    document.body.style.background = lastColor;
+	setBgd(document.body, lastColor);
 }
 
 function storeTime(isTimeStored) {
@@ -820,6 +826,7 @@ btnInvert.addEventListener('click', function() {
     lastColor = bgColors[selectedColor];
     setSelectedColor();
     invertColors();
+    timeDialogInvert(selectedColor);
 });
 
 btnYesChanges.addEventListener('click', function() {
@@ -1174,6 +1181,8 @@ tickAll.addEventListener('change', (event) => {
         
         if (lngObject.copyright3)
             document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
+        
+        timeDialogInvert(selectedColor);
     }, 1000);
 })();
 

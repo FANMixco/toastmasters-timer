@@ -89,6 +89,16 @@ btnDownH.addEventListener('mouseleave', btnHReleased);
 btnDownH.addEventListener('touchend', btnHReleased);
 btnDownH.addEventListener('click', btnDownHClick);
 
+function timeDialogInvert(opt) {
+    if (opt === 1) {
+		setInvFilter(dialogSetTime, invert100);
+		setBgd(dialogSetTime, bgColors[2]);
+	} else {
+		setInvFilter(dialogSetTime, invert0);
+		setBgd(dialogSetTime, bgColors[0]);
+	}
+}
+
 function btnUpSContinuesPress() {
     if (btnUpSPressed) return;
     btnUpSPressed = true;

@@ -51,6 +51,7 @@ self.addEventListener('install', event => {
 			"browserSpecific/css/dialog-polyfill.css",
 			"js/lib/material.min.js",
 			"js/lib/translate.min.js",
+			"js/lib/darkModeHandler.min.js",
 			"js/lib/devicedetector-min.js",
 			"js/components/getmdl-select.min.js",
 			"browserSpecific/js/dialog-polyfill.js",
