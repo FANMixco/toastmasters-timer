@@ -341,19 +341,19 @@ function pauseTimer() {
     cmbSpeechType.disabled = true;
 
     if (!isStarted || timeLeft === undefined) {
-        playVideo();
+        activateWakeLock();
         timer(wholeTime);
         isStarted = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
     } else if (isPaused) {
-        playVideo();
+        activateWakeLock();
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
         timer(timeLeft);
         isPaused = isPaused ? false : true;
     } else {
-        stopVideo();
+        deactivateWakeLock();
         btnPause.classList.remove('pause');
         btnPause.classList.add('play');
         clearInterval(intervalTimer);
@@ -494,49 +494,49 @@ function stopClapping() {
 }
 
 function getVibrate() {
-    if (getLocalStorageValue("isVibrateEnabled") !== null)
+    if (getLocalStorageValue("isVibrateEnabled"))
         isVibrateEnabled = getLocalStorageValue("isVibrateEnabled") === 'true';
     else
         setVibrate();
 }
 
 function getClapping() {
-    if (getLocalStorageValue("isClappingEnabled") !== null)
+    if (getLocalStorageValue("isClappingEnabled"))
         isClappingEnabled = getLocalStorageValue("isClappingEnabled") === 'true';
     else
         setClapping();
 }
 
 function getBeep() {
-    if (getLocalStorageValue("isBeepEnabled") !== null)
+    if (getLocalStorageValue("isBeepEnabled"))
         isBeepEnabled = getLocalStorageValue("isBeepEnabled") === 'true';
     else
         setBeep();
 }
 
 function getContestMode() {
-    if (getLocalStorageValue("isContestMode") !== null)
+    if (getLocalStorageValue("isContestMode"))
         isContestMode = getLocalStorageValue("isContestMode") === 'true';
     else
         setContestMode();
 }
 
 function getFirstRun() {
-    if (getLocalStorageValue("isFirstRun") !== null)
+    if (getLocalStorageValue("isFirstRun"))
         isFirstRun = getLocalStorageValue("isFirstRun") === 'true';
     else
         setFirstRun();
 }
 
 function getNinjaMode() {
-    if (getLocalStorageValue("isNinjaMode") !== null)
+    if (getLocalStorageValue("isNinjaMode"))
         isNinjaMode = getLocalStorageValue("isNinjaMode") === 'true';
     else
         setLocalStorage("isNinjaMode", false);
 }
 
 function getSelectedColor() {
-    if (getLocalStorageValue("selectedColor") !== null)
+    if (getLocalStorageValue("selectedColor"))
         selectedColor = parseInt(getLocalStorageValue("selectedColor"));
     else
         setSelectedColor();
@@ -642,7 +642,7 @@ function invertColors() {
 
 function storeTime(isTimeStored) {
     if (minimum === 0 && maximum === 0 && average === 0) return;
-    stopVideo();
+    deactivateWakeLock();
     stopClapping();
 
     if (isTimeStored) {
@@ -1166,8 +1166,10 @@ tickAll.addEventListener('change', (event) => {
     }
 
     window.addEventListener("focus", function() {
-        if (document.querySelector('.mdl-menu__outline').style.zIndex !== "-1")
-            resizeSelect();
+		try {
+			if (document.querySelector('.mdl-menu__outline').style.zIndex !== "-1")
+				resizeSelect();
+		} catch (e) {}
     });
 
     if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')

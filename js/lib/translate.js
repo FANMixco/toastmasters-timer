@@ -1,9 +1,10 @@
 let langs = ["en", "es", "pl", "cs", "ru", "it", "de"];
+let lang = "en";
 let lngObject;
 
 function load() {
     let translate = new Translate();
-    let lang = navigator.language || navigator.userLanguage;
+    lang = navigator.language || navigator.userLanguage;
     if (!langs.includes(lang))
         lang = "en";
     translate.init(lang);
@@ -20,7 +21,7 @@ function Translate() {
     //translate 
     this.process = function() {
         _self = this;
-        fetch("./js/lang/" + this.lng + ".json")
+        fetch(`./js/lang/${this.lng}.json`)
             .then((response) => {
                 response.json().then((data) => {
                     lngObject = data;
@@ -29,10 +30,8 @@ function Translate() {
                         let elem = allDom[i];
                         let key = elem.getAttribute(_self.attribute);
 
-                        if (key != null) {
-                            //console.log(key);
+                        if (key != null)
                             elem.innerHTML = lngObject[key];
-                        }
                     }
                 });
             })

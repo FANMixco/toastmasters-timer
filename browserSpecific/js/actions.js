@@ -1,6 +1,7 @@
-let audioBeepElement, audioElementClapping, videoWakeUp;
+let audioBeepElement, audioElementClapping;
 let os = getMobileOperatingSystem();
 let nMobile = (os === "iOS" || os === "Android");
+let requestWakeLock;
 
 function browserStartBeep() {
     if (!nMobile) {
@@ -35,14 +36,21 @@ function browserStopClapping() {
         audioElementClapping.pause();
 }
 
-function playVideo() {
-    if (!nMobile)
-        videoWakeUp.click();
+function activateWakeLock() {
+	try {
+		navigator.getWakeLock("screen").then(function(wakeLock) {
+			request = wakeLock.createRequest();
+		});
+	}
+	catch (e) {	}
 }
 
-function stopVideo() {
-    if (!nMobile)
-        videoWakeUp.click();
+function deactivateWakeLock() {
+	try {
+		if (request)
+			request.cancel();
+	}
+	catch (e) {	}
 }
 
 if (!nMobile) {
@@ -60,36 +68,6 @@ if (!nMobile) {
 
     document.body.insertBefore(audioBeepElement, document.getElementById("snackbarMsg"));
     document.body.insertBefore(audioElementClapping, document.getElementById("snackbarMsg"));
-
-
-    videoWakeUp = document.createElement('video');
-    videoWakeUp.src = './browserSpecific/videos/wakeup.mp4';
-    videoWakeUp.style.height = '0px';
-    videoWakeUp.style.width = '0px';
-    videoWakeUp.style.zIndex = "9999";
-    videoWakeUp.style.position = "absolute";
-    videoWakeUp.muted = true;
-    videoWakeUp.loop = true;
-    videoWakeUp.autoplay = false;
-    videoWakeUp.load();
-    videoWakeUp.addEventListener(
-        'play', 
-        function() { 
-            videoWakeUp.play();
-        }, 
-        false);
-
-    videoWakeUp.onclick = function() {
-        if (videoWakeUp.paused) {
-            videoWakeUp.play();
-        } else {
-            videoWakeUp.pause();
-        }
-
-        return false;
-    };
-
-    document.body.insertBefore(videoWakeUp, document.querySelector("footer"));
 } else {
     btnClap.style.display = 'none';
     btnBeep.style.display = 'none';
