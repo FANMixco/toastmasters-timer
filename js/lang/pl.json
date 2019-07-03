@@ -17,7 +17,7 @@
   "confirmTitle": "Potwierdzać",
   "copyright1": "Utworzona z ♥ przez ",
   "copyright2": " z ",
-  "copyright3": "Przetłumaczone przez imię, <a href='mailto:radekdabrowski78@gmail.com'>Radosław Dąbrowski</a>",
+  "copyright3": "Przetłumaczone przez imię, <a class='externalLinks' href='mailto:radekdabrowski78@gmail.com'>Radosław Dąbrowski</a>",
   "deleteConfirmation": "Czy chcesz usunąć wybrane elementy?",
   "emptyCustom": "Niestandardowe czasy są ustawione na 0. Proszę zmienić lub wybrać inną opcję.",
   "ninjaDisabled": "Tryb Ninja wyłączony",

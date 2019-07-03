@@ -17,7 +17,7 @@
   "confirmTitle": "Подтвердить",
   "copyright1": "Создано с любовью ",
   "copyright2": " от ",
-  "copyright3": "Переведено: <a href='andreitimofeev1@gmail.com'>Andrei Timofeev</a>",
+  "copyright3": "Переведено: <a class='externalLinks' href='andreitimofeev1@gmail.com'>Andrei Timofeev</a>",
   "deleteConfirmation": "Вы хотите удалить выбранные элементы?",
   "emptyCustom": "Выбранное время равно 0. Пожалуйста, измените его или выберите другой вариант.",
   "ninjaDisabled": "Режим ниндзя отключен",
