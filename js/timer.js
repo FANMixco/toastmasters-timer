@@ -1,5 +1,6 @@
 //Controls
 const displayOutput = document.querySelector('.display-remain-time'),
+	externalLinks = document.getElementsByClassName('externalLinks'),
     btnPause = document.getElementById('pause'),
     btnRestart = document.getElementById('btnRestart'),
     btnStop = document.getElementById('btnStop'),
@@ -145,6 +146,15 @@ function setDateFormat() {
         dateFormat = "MM/DD/YYYY";
 }
 
+function disableLinks(isLinkDisabled) {
+	Array.from(externalLinks).forEach(function(entry){
+		if (isLinkDisabled)
+			entry.setAttribute("disabled", "disabled");
+		else
+			entry.removeAttribute("disabled");
+	});
+}
+
 function getTimeStamp(seconds) {
     return moment.utc(seconds * 1000).format('HH:mm:ss');
 }
@@ -215,6 +225,7 @@ function resetState() {
     btnInvert.disabled = false;
     btnRestart.disabled = false;
     cmbSpeechType.disabled = false;
+	disableLinks(false);
     isStopped = true;
     isPaused = false;
     btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
@@ -339,6 +350,7 @@ function pauseTimer() {
 
     btnInvert.disabled = true;
     cmbSpeechType.disabled = true;
+	disableLinks(true);
 
     if (!isStarted || timeLeft === undefined) {
         activateWakeLock();

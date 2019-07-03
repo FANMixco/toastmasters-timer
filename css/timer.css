@@ -12,6 +12,10 @@ body,
 	transition: background .5s;
 }
 
+a[disabled] {
+	pointer-events: none;
+}
+
 footer {
 	position: fixed;
 	left: 0;
