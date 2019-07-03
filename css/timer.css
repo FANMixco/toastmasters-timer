@@ -9,6 +9,7 @@ body,
 	text-align: center;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	transition: background .5s;
 }
 
 footer {
