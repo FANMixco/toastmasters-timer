@@ -1,7 +1,11 @@
-@import url('../css/roboto.font.css');
+@import url('../css/roboto.font.min.css');
 html {
 	overflow-y: hidden;
 	overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body,

@@ -42,6 +42,14 @@ self.addEventListener('install', event => {
     // the actual URL we end up requesting might include a cache-busting parameter.
     fetch(createCacheBustedRequest(OFFLINE_URL)).then(function(response) {
       return caches.open(CURRENT_CACHES.offline).then(function(cache) {
+          var tmpLng;
+          try {
+              if (!lang)
+                  tmpLng = "en";
+          }
+          catch(e){
+              tmpLng = "en";
+          }
 		  return cache.addAll([
 			"index.html",
 			"css/materialdesignicons.min.css",
@@ -65,7 +73,7 @@ self.addEventListener('install', event => {
 			"js/db/dbHandler.min.js",
 			"js/functions/genericActions.min.js",
 			"js/timer.min.js",
-			`js/lang/${lang}.json`,
+			`js/lang/${tmpLng}.json`,
 			"img/supernova.png",
 			"img/clapping-hands.svg",
 			"img/clapping-off.svg"
