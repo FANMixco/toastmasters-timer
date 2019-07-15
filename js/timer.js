@@ -407,6 +407,8 @@ function displayTimeLeft(timeLeft) { //displays time on the input
     let seconds = fixedTime % 60;
     let displayString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     displayOutput.textContent = displayString;
+    if (!isContestMode)
+        browserChangeTitle(displayString);
     update(timeLeft, wholeTime);
 }
 
@@ -677,6 +679,7 @@ function storeTime(isTimeStored) {
         maximum = getMaxCustom();
 
     wholeTime = maximum;
+    browserChangeTitle('');
     unfadeElements();
 }
 

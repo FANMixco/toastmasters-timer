@@ -3,6 +3,13 @@ let os = getMobileOperatingSystem();
 let nMobile = (os === "iOS" || os === "Android");
 let requestWakeLock;
 
+function browserChangeTitle(currentTime) {
+    if (currentTime !== '')
+        document.title = `${currentTime} - Toastmasters Timer`;
+    else
+        document.title = `Toastmasters Timer`;
+}
+
 function browserStartBeep() {
     if (!nMobile) {
         if (green === 1 || yellow === 1 || red === 1) {
