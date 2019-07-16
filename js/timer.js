@@ -231,6 +231,8 @@ function resetState() {
     btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
     timeLeft = 0;
     currentState = 1;
+    browserChangeFavIcon('');
+    browserChangeTitle('');
 }
 
 function timer(seconds) { //counts time, takes seconds
@@ -246,18 +248,21 @@ function timer(seconds) { //counts time, takes seconds
             startBeep();
             startVibrate();
             lastColor = "green";
+            browserChangeFavIcon('min');
         } else if (counter >= average && counter < maximum) {
             yellow++;
             document.body.style.background = "#ffeb3b";
             startBeep();
             startVibrate();
             lastColor = "yellow";
+            browserChangeFavIcon('opt');
         } else if (counter >= maximum) {
             red++;
             document.body.style.background = "#e53935";
             startBeep();
             startVibrate();
             lastColor = "red";
+            browserChangeFavIcon('max');
         }
         if (counter >= maximum + clappingTime) {
             if (!clappingStarted)
@@ -407,7 +412,7 @@ function displayTimeLeft(timeLeft) { //displays time on the input
     let seconds = fixedTime % 60;
     let displayString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     displayOutput.textContent = displayString;
-    if (!isContestMode)
+    if (!isContestMode && isStarted)
         browserChangeTitle(displayString);
     update(timeLeft, wholeTime);
 }
@@ -750,6 +755,10 @@ btnChampion.addEventListener('click', function(event) {
         setLocalStorage("isNinjaMode", isNinjaMode);
     } else {
         isContestMode = !isContestMode;
+        if (isContestMode)
+            browserChangeTitle('');
+        else
+            browserChangeTitle(displayOutput.textContent);
         setContestImg();
         checkMode();
         setContestMode();
