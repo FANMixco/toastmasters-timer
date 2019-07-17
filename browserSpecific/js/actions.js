@@ -3,6 +3,14 @@ let os = getMobileOperatingSystem();
 let nMobile = (os === "iOS" || os === "Android");
 let requestWakeLock;
 
+function browserChangeTitle(currentTime) {
+    document.title = currentTime !== '' ? `${currentTime} - Toastmasters Timer` : `Toastmasters Timer`;
+}
+
+function browserChangeFavIcon(fav){
+    document.querySelector("link[rel*='icon']").href = fav === '' ? `img/favicon-32x32.png` : `img/${fav}.png`;
+}
+
 function browserStartBeep() {
     if (!nMobile) {
         if (green === 1 || yellow === 1 || red === 1) {
@@ -17,9 +25,8 @@ function browserStartBeep() {
 }
 
 function browserStartVibrate() {
-    if (green === 1 || yellow === 1 || red === 1)
-        if (hasVibrator)
-            navigator.vibrate(1000);
+    if ((green === 1 || yellow === 1 || red === 1) && hasVibrator)
+        navigator.vibrate(1000);
 }
 
 function browserStartClapping() {
