@@ -350,22 +350,24 @@ function pauseTimer() {
 
     btnInvert.disabled = true;
     cmbSpeechType.disabled = true;
-	disableLinks(true);
 
     if (!isStarted || timeLeft === undefined) {
         activateWakeLock();
+        disableLinks(true);
         timer(wholeTime);
         isStarted = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
     } else if (isPaused) {
         activateWakeLock();
+        disableLinks(true);
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
         timer(timeLeft);
         isPaused = isPaused ? false : true;
     } else {
         deactivateWakeLock();
+        disableLinks(false);
         btnPause.classList.remove('pause');
         btnPause.classList.add('play');
         clearInterval(intervalTimer);
@@ -481,6 +483,7 @@ function changeEventHandler() {
             }, 100);
         }
 
+        hasCustomChange = false;
         isCustom = true;
         dialogCustomTimes.showModal();
     }
@@ -696,7 +699,7 @@ function getMaxCustom() {
 }
 
 function closeCustomDialog() {
-    if (getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0)
+    if ((getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0) && hasCustomChange)
         dialogChanges.showModal();
     else
         dialogCustomTimes.close();

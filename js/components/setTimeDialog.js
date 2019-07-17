@@ -16,7 +16,8 @@ let btnUpSPressed = false,
     btnUpMPressed = false,
     btnDownMPressed = false,
     btnUpHPressed = false,
-    btnDownHPressed = false;
+    btnDownHPressed = false,
+    hasCustomChange = false;
 
 let chosenInputText = "";
 
@@ -33,6 +34,7 @@ if (!dialogSetTime.showModal) {
 
 btnSetTime.addEventListener('click', function() {
     document.getElementById(`${chosenInputText}`).parentElement.MaterialTextfield.change(`${txtH.value}:${txtM.value}:${txtS.value}`);
+    hasCustomChange = true;
     dialogSetTime.close();
 });
 
