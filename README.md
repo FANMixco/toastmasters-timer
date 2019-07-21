@@ -8,7 +8,7 @@ http://toastmasterstimer.tk
 
 **This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
 
-![toastmasters](http://dominicanewsonline.com/news/wp-content/uploads/2014/10/ToastmastersLogoColor-300x262.jpg)
+![toastmasters](https://i.stack.imgur.com/TFTH7.jpg)
 
 This App provides you with different options, for example:
 - Question of the Day (30s).
