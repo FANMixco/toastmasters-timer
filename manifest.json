@@ -4,7 +4,7 @@
     "name" : "Toastmasters Timer",
     "scope" : "/toastmasters-timer-material-design/",
     "display" : "fullscreen",
-    "start_url" : "https://fanmixco.github.io/toastmasters-timer-material-design/",
+    "start_url" : "https://toastmasterstimer.tk",
     "short_name" : "TM Timer",
     "theme_color" : "#ffffff",
     "description": "It's a simple PWA for helping Toastmasters all over the world to have an effective and productive Timer for their meetings. It was developed with JavaScript by The Leader Ship Toastmasters in Łódź, Poland.",
