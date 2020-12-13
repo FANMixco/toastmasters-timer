@@ -2,7 +2,7 @@ The best Toastmasters Timer for your meetings, it's simple, fast and accurate. I
 
 http://theleadership.pl
 
-Feel free to use it it anywhere at anytime.
+Feel free to use it anywhere at any time.
 
 http://toastmasterstimer.tk
 
