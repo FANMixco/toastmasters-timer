@@ -18,6 +18,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnYesChallenge = document.getElementById('btnYesChallenge'),
     btnYesConfirm = document.getElementById('btnYesConfirm'),
     btnYesChanges = document.getElementById('btnYesChanges'),
+    btnSponsor2Us = document.getElementById('btnSponsor2Us'),
     btnSave = document.getElementById('btnSave'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
@@ -861,6 +862,10 @@ btnYesChanges.addEventListener('click', function() {
     dialogChanges.close();
 });
 
+btnSponsor2Us.addEventListener('click', function() {
+    window.open("https://github.com/sponsors/FANMixco");
+});
+
 btnShare.addEventListener('click', function() {});
 
 btnEmail.addEventListener('click', function() {});
@@ -1157,9 +1162,21 @@ tickAll.addEventListener('change', (event) => {
     isFirstTime = true;
 
     if (deviceDetector.device === 'desktop') {
-        dialogTimeTable.classList.add('centeredDialog');
+        try {
+            var isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
+
+            // Safari 3.0+ "[object HTMLElementConstructor]" 
+            var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    
+            if (isFirefox || isSafari)
+            {
+                dialogTimeTable.classList.add('centeredDialog');
+                dialogAbout.classList.add('centeredDialog');
+            }
+        }
+        catch {
+        }
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
-        dialogAbout.classList.add('centeredDialog');
         dialogAbout.classList.add('fullscreen-dialog-desktop');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
     } else if (deviceDetector.device === 'tablet') {
