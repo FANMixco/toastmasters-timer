@@ -1,4 +1,4 @@
-let langs = ["en", "es", "pl", "cs", "ru", "it", "de"];
+let langs = ["en", "es", "pl", "cs", "ru", "it", "de", "nl"];
 let lang = "en";
 let lngObject;
 
