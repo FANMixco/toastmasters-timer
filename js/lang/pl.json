@@ -59,5 +59,17 @@
   "installiOS": "Aby zainstalować Timer Toastmasters na iPhonie lub iPadzie, dotknij Udostępnij, a następnie Dodaj do ekranu głównego.",
   "translators": "Tłumacze",
   "specialThanks": "Specjalne podziękowania dla wszystkich tłumaczy i recenzentów.",
-  "sponsorUs": "Kup nam ☕"
+  "sponsorUs": "Kup nam ☕",
+  "help": "pomocy",
+  "bringIn": "Przynieś to w swoim języku!",
+  "fHeader1": "Funkcja",
+  "fHeader2": "Opis",
+  "feature1": "Uruchamianie lub wstrzymywanie",
+  "feature2": "Zatrzymaj i zapisz",
+  "feature3": "Uruchom ponownie",
+  "feature4": "Minimalny zatwierdzony czas (-30s)",
+  "feature5": "Minimalny czas",
+  "feature6": "Optymalny czas",
+  "feature7": "Maksymalny czas",
+  "feature8": "Poniżej/powyżej minimalnego/maksymalnego czasu (zwykle +/- 31s)"
 }

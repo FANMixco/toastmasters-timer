@@ -236,6 +236,14 @@ th,
 	display: none;
 }
 
+.storeLinks {
+	text-decoration: none;
+}
+
+.storeIcon {
+	width: 100px;
+}
+
 .minSizeCol {
 	width: 1px;
 }
