@@ -50,42 +50,42 @@ dialogSetTime.querySelector('.close').addEventListener('click', function() {
 });
 
 btnUpS.addEventListener('mousedown', btnUpSContinuesPress);
-btnUpS.addEventListener('touchstart', btnUpSContinuesPress);
+btnUpS.addEventListener('touchstart', btnUpSContinuesPress, {passive: true});
 btnUpS.addEventListener('mouseup', btnSReleased);
 btnUpS.addEventListener('mouseleave', btnSReleased);
 btnUpS.addEventListener('touchend', btnSReleased);
 btnUpS.addEventListener('click', btnUpSClick);
 
 btnUpM.addEventListener('mousedown', btnUpMContinuesPress);
-btnUpM.addEventListener('touchstart', btnUpMContinuesPress);
+btnUpM.addEventListener('touchstart', btnUpMContinuesPress, {passive: true});
 btnUpM.addEventListener('mouseup', btnMReleased);
 btnUpM.addEventListener('mouseleave', btnMReleased);
 btnUpM.addEventListener('touchend', btnMReleased);
 btnUpM.addEventListener('click', btnUpMClick);
 
 btnUpH.addEventListener('mousedown', btnUpHContinuesPress);
-btnUpH.addEventListener('touchstart', btnUpHContinuesPress);
+btnUpH.addEventListener('touchstart', btnUpHContinuesPress, {passive: true});
 btnUpH.addEventListener('mouseup', btnHReleased);
 btnUpH.addEventListener('mouseleave', btnHReleased);
 btnUpH.addEventListener('touchend', btnHReleased);
 btnUpH.addEventListener('click', btnUpHClick);
 
 btnDownS.addEventListener('mousedown', btnDownSContinuesPress);
-btnDownS.addEventListener('touchstart', btnDownSContinuesPress);
+btnDownS.addEventListener('touchstart', btnDownSContinuesPress, {passive: true});
 btnDownS.addEventListener('mouseup', btnSReleased);
 btnDownS.addEventListener('mouseleave', btnSReleased);
 btnDownS.addEventListener('touchend', btnSReleased);
 btnDownS.addEventListener('click', btnDownSClick);
 
 btnDownM.addEventListener('mousedown', btnDownMContinuesPress);
-btnDownM.addEventListener('touchstart', btnDownMContinuesPress);
+btnDownM.addEventListener('touchstart', btnDownMContinuesPress, {passive: true});
 btnDownM.addEventListener('mouseup', btnMReleased);
 btnDownM.addEventListener('mouseleave', btnMReleased);
 btnDownM.addEventListener('touchend', btnMReleased);
 btnDownM.addEventListener('click', btnDownMClick);
 
 btnDownH.addEventListener('mousedown', btnDownHContinuesPress);
-btnDownH.addEventListener('touchstart', btnDownHContinuesPress);
+btnDownH.addEventListener('touchstart', btnDownHContinuesPress, {passive: true});
 btnDownH.addEventListener('mouseup', btnHReleased);
 btnDownH.addEventListener('mouseleave', btnHReleased);
 btnDownH.addEventListener('touchend', btnHReleased);
