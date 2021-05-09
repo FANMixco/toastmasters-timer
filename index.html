@@ -43,7 +43,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <title>Toastmasters Timer</title>
     <link rel="icon" type="image/png" href="img/favicon-32x32.png" />
     <link rel="stylesheet" href="css/materialdesignicons.min.css" defer />
-    <link rel="stylesheet" href="css/timer.css" defer />
+    <link rel="stylesheet" href="css/timer.min.css" defer />
     <link rel="stylesheet" href="css/material.indigo-pink.min.css" defer />
     <link rel="stylesheet" href="css/getmdl-select.min.css" defer />
     <link rel="stylesheet" href="browserSpecific/css/dialog-polyfill.css" />
@@ -204,6 +204,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                 <div class = "mdl-tabs__tab-bar">
                     <a href = "#tab1-panel" class = "mdl-tabs__tab is-active" data-tag="about"></a>
                     <a href = "#tab2-panel" class = "mdl-tabs__tab" data-tag="translators"></a>
+                    <a href = "#tab3-panel" class = "mdl-tabs__tab" data-tag="help"></a>
                 </div>
             
                 <div class = "mdl-tabs__panel is-active" id = "tab1-panel">
@@ -213,9 +214,20 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                         <p data-tag="about2"></p>
                         <p>Federico Navarrete <a href="mailto:fanmixco@gmail.com?Subject=TMTimer%20PWA" target="_top">fanmixco@gmail.com</a></p>
                         <p data-tag="about4"></p>
-                        <p><a rel="noreferrer" href="https://www.supernovaic.tk" target="_blank">www.supernovaic.tk</a></p>
+                        <p><a rel="noreferrer" href="https://www.supernovaic.com" target="_blank">www.supernovaic.com</a></p>
                         <p><img src="img/supernova.png" class='superNova'></p>
                         <p data-tag="about3"></p>
+                        <p>
+                            <a href="https://bit.ly/3bcm6uL" rel="noreferrer" target="_blank" class="storeLinks">
+                                <img src="img/playStore.png" class="storeIcon" alt="play store" />
+                            </a>
+                            <a href="https://bit.ly/3exIjFw" rel="noreferrer" target="_blank" class="storeLinks">
+                                <img src="img/microsoft.png" class="storeIcon" alt="microsoft store" />
+                            </a>
+                            <a href="https://amzn.to/2LV5fOW" rel="noreferrer" target="_blank" class="storeLinks">
+                                <img src="img/amazon.png" class="storeIcon" alt="amazon app store" />
+                            </a>                                
+                        </p>
                     </div>
                 </div>
             
@@ -232,9 +244,58 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                            <li class="mdl-list__item"><b>Polski</b>: Radosław Dąbrowski</li>
                            <li class="mdl-list__item"><b>Ру́сский</b>: Andrei Timofeev</li>
                        </ul>
+                       <a href="https://poeditor.com/join/project/hJX2GTJNPv" rel='noreferrer' class="externalLinks" target="_blank" data-tag="bringIn"></a>
                    </div>
                </div>
-            </div>
+
+               <div class = "mdl-tabs__panel" id = "tab3-panel">
+                    <div class="mdl-dialog__content">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                            <thead>
+                              <tr>
+                                <th style="text-align: center" data-tag="fHeader1"></th>
+                                <th style="text-align: center" data-tag="fHeader2"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center">ctrl + p<br /><span class="mdi mdi-play"></span><span class="mdi mdi-pause"></span></td>
+                                    <td style="text-align: center" data-tag="feature1"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">ctrl + s<br /><span class="mdi mdi-stop"></span></td>
+                                    <td style="text-align: center" data-tag="feature2"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">ctrl + r<br /><span class="mdi mdi-restart"></span></td>
+                                    <td style="text-align: center" data-tag="feature3"></td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #CCFFCC"></td>
+                                    <td style="text-align: center" data-tag="feature4"></td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #60ad5e"></td>
+                                    <td style="text-align: center" data-tag="feature5"></td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #ffeb3b"></td>
+                                    <td style="text-align: center" data-tag="feature6"></td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #e53935;"></td>
+                                    <td style="text-align: center" data-tag="feature7"></td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: black"></td>
+                                    <td style="text-align: center" data-tag="feature8"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+             </div>
          </main>
         <div id="divCloseAbout" class="mdl-dialog__actions">
             <button class="mdl-button close" data-tag="close"></button>
@@ -406,7 +467,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         <button aria-label='close' class="mdl-snackbar__action" type="button"></button>
     </div>
     <footer>
-        <span data-tag="copyright1"></span><a rel='noreferrer' class="externalLinks" href="http://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a rel='noreferrer' class="externalLinks" href="http://theleadership.pl">The Leader Ship Toastmasters</a><span id='spanCopyright3' data-tag="copyright3"></span>. <a rel='noreferrer' class="externalLinks" href="https://github.com/sponsors/FANMixco"><span id='sponsorUs' data-tag="sponsorUs"></span></a>.
+        <span data-tag="copyright1"></span><a rel='noreferrer' class="externalLinks" href="http://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a rel='noreferrer' class="externalLinks" href="http://theleadership.pl">The Leader Ship Toastmasters</a><span id='spanCopyright3' data-tag="copyright3"></span>. <a rel='noreferrer' class="externalLinks" href="https://github.com/sponsors/FANMixco" target="_blank"><span id='sponsorUs' data-tag="sponsorUs"></span></a>.
     </footer>
     <!--Browser ONLY actions-->
     <script src="browserSpecific/js/dialog-polyfill.min.js"></script>

@@ -59,5 +59,17 @@
     "installiOS": "Om de Toastmasters Timer op uw iPhone of iPad te installeren, tikt u op Delen en vervolgens op Toevoegen aan startscherm.",
     "translators": "Vertalers",
     "specialThanks": "Met dank aan alle vertalers en recensenten.",
-    "sponsorUs": "Koop ons een ☕"
+    "sponsorUs": "Koop ons een ☕",
+    "help": "help",
+    "bringIn": "Breng het in uw taal!",
+    "fHeader1": "Functie",
+    "fHeader2": "Beschrijving",
+    "feature1": "Start / Pauze",
+    "feature2": "Stoppen en opslaan",
+    "feature3": "Herstart",
+    "feature4": "Minimum goedgekeurde tijd (-30s)",
+    "feature5": "Minimum tijd",
+    "feature6": "Optimale tijd",
+    "feature7": "Maximale tijd",
+    "feature8": "Onder/boven minimum/maximum tijd (+/- 31 sec. gewoonlijk)"
 }

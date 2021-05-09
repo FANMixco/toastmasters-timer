@@ -59,5 +59,17 @@
   "installiOS": "Um den Toastmasters Timer auf Ihrem iPhone oder iPad zu installieren, tippen Sie auf Teilen und dann auf Zum Startbildschirm hinzufügen.",
   "translators": "Übersetzer",
   "specialThanks": "Besonderer Dank an alle Übersetzer und Rezensenten.",
-  "sponsorUs": "Kaufen Sie uns ein ☕"
+  "sponsorUs": "Kaufen Sie uns ein ☕",
+  "help": "Hilfe",
+  "bringIn": "Bringen Sie es in Ihre Sprache!",
+  "fHeader1": "Feature",
+  "fHeader2": "Beschreibung",
+  "feature1": "Start oder Pause",
+  "feature2": "Anhalten und speichern",
+  "feature3": "Neustart",
+  "feature4": "Zulässige Mindestzeit (-30s)",
+   "feature5": "Mindestzeit",
+   "feature6": "Optimale Zeit",
+   "feature7": "Maximale Zeit",
+   "feature8": "Unter/über der minimalen/maximalen Zeit (normalerweise +/- 31s)"
 }

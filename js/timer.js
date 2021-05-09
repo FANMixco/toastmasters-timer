@@ -1247,3 +1247,21 @@ window.addEventListener('orientationchange', doOnOrientationChange);
 function doOnOrientationChange() {
     location.reload();
 }
+
+document.addEventListener ("keydown", function (zEvent) {
+    if (zEvent.ctrlKey && (zEvent.key === "p" || zEvent.key === "P")) {
+        pauseTimer();
+    }
+});
+
+document.addEventListener ("keydown", function (zEvent) {
+    if (zEvent.ctrlKey  && (zEvent.key === "s" || zEvent.key === "S")) {
+        btnStop.click();
+    }
+});
+
+document.addEventListener ("keydown", function (zEvent) {
+    if (zEvent.ctrlKey && (zEvent.key === "r" || zEvent.key === "R")) {
+        btnRestart.click();
+    }
+});

@@ -59,5 +59,17 @@
   "installiOS": "Instale el Cronónometro de Toastmasters en su iPhone o iPad: toque Compartir y luego Agregar a la pantalla de inicio.",
   "translators": "Traductores",
   "specialThanks": "Agradecimientos especiales a todos los traductores y verificadores.",
-  "sponsorUs": "Cómpranos un ☕"
+  "sponsorUs": "Cómpranos un ☕",
+  "help": "ayuda",
+  "bringIn": "¡Tráelo en tu idioma!",
+  "fHeader1": "Característica",
+  "fHeader2": "Descripción",
+  "feature1": "Inicio/Pausa",
+  "feature2": "Detener y guardar",
+  "feature3": "Reiniciar",
+  "feature4": "Tiempo mínimo aprobado (-30 s)",
+  "feature5": "Tiempo mínimo",
+  "feature6": "Tiempo óptimo",
+  "feature7": "Tiempo máximo",
+  "feature8": "Por debajo o por encima del tiempo mínimo o máximo (+/- 31s comúnmente)"
 }

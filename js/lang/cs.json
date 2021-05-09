@@ -17,7 +17,7 @@
   "confirmTitle": "Potvrdit",
   "copyright1": "Vytvořeno s láskou ♥ ",
   "copyright2": " od ",
-  "copyright3": "Přeloženo <a class='externalLinks' href='http://supernovaic.tk/'>Edgar Regalado</a>",
+  "copyright3": "Přeloženo <a class='externalLinks' href='https://supernovaic.com/'>Edgar Regalado</a>",
   "deleteConfirmation": "Chcete odstranit vybrané položky?",
   "emptyCustom": "Zvolené časy jsou 0. Změňte jej nebo zvolte jinou možnost.",
   "ninjaDisabled": "Režim ninjů vypnuto",
@@ -59,5 +59,17 @@
   "installiOS": "Chcete-li nainstalovat časovač Toastmasters na svůj iPhone nebo iPad, klepněte na Sdílet a poté Přidat na domovskou obrazovku.",
   "translators": "Překladatelé",
   "specialThanks": "Zvláštní poděkování všem překladatelům a recenzentům.",
-  "sponsorUs": "Kupte nám ☕"
+  "sponsorUs": "Kupte nám ☕",
+  "help": "pomoc",
+  "bringIn": "Přineste to ve svém jazyce!",
+  "fHeader1": "Funkce",
+  "fHeader2": "Popis",
+  "feature1": "Spustit/Pozastavit",
+  "feature2": "Zastavit a uložit",
+  "feature3": "Restartovat",
+  "feature4": "Minimální schválený čas (-30s)",
+  "feature5": "Minimum time",
+  "feature6": "Optimální čas",
+  "feature7": "Maximum time",
+  "feature8": "Pod/nad minimální/maximální čas (obvykle +/- 31s)"
 }
