@@ -1,4 +1,4 @@
-The best [Toastmasters Timer][3] for your meetings, it's simple, fast and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Lodz, Poland.
+The best [Toastmasters Timer][3] for your meetings, it's simple, fast, and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Lodz, Poland.
 
 Feel free to level up your meetings using it anywhere at any time in all your meetings!
 
@@ -23,10 +23,10 @@ This App provides you with different options, for example:
 - 18 to 20 min.
 - Custom, create your own speech up to 100 hours.
 
-All speeches are recorded for sharing it with your members or guests.
+All speeches are recorded for sharing with your members or guests.
 
 **Special features:**
-- **Vibrating** when a specific segment has been reached (*ONLY available in iOS, Android based devices or Windows Tablets*).
+- **Vibrating** when a specific segment has been reached (*ONLY available in iOS, Android-based devices, or Windows Tablets*).
 - **Beeping** when a specific segment has been reached (*Desktop ONLY*).
 - **Clapping** when the maximum time has been exceeded (*Desktop ONLY*).
 
@@ -42,11 +42,9 @@ All speeches are recorded for sharing it with your members or guests.
 - Dark Mode.
 - Easter Eggs.
 
-**Do you want to see it your own language?** Why don't you join to our community?
+**Do you want to see it your own language?** Why don't you join to our [Community][6]?
 
-https://poeditor.com/join/project/hJX2GTJNPv
-
-Also, the project is fully **open-source** and can be reused, modified or improved freely without any constrain. Feel free to hack it and share new your ideas!
+This project is fully **open-source** and can be reused, modified, or improved freely without any constrain. Feel free to hack it and share your new ideas!
 
 ### App previews
 
@@ -83,3 +81,4 @@ Please follow these steps:
   [3]: https://fanmixco.github.io/toastmasters-timer-material-design
   [4]: https://prezi.com/video
   [5]: https://bit.ly/3bf877f
+  [6]: https://poeditor.com/join/project/hJX2GTJNPv
