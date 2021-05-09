@@ -1,10 +1,8 @@
-The best Toastmasters Timer for your meetings, it's simple, fast and accurate. It was developed by Federico Navarrete of **The Leader Ship Toastmasters** in Lodz, Poland.
+The best [Toastmasters Timer][3] for your meetings, it's simple, fast and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Lodz, Poland.
 
-https://www.facebook.com/TheLeaderShipToastmasters
+Feel free to level up your meetings using it anywhere at any time in all your meetings!
 
-Feel free to use it anywhere at any time.
-
-https://fanmixco.github.io/toastmasters-timer-material-design
+Do you need some extra ideas on how to use it with [Prezi Video][4]? Check my [YouTube Channel Series][5] and empower your meetings to a New Level ⏫! 
 
 **This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
 
@@ -79,3 +77,9 @@ Furthermore, you can download the compiled versions in the official stores:
 Please follow these steps:
 
 ![iOSInstall](https://i.stack.imgur.com/Gn4ut.gif)
+
+  [1]: https://federiconavarrete.com
+  [2]: https://www.facebook.com/TheLeaderShipToastmasters
+  [3]: https://fanmixco.github.io/toastmasters-timer-material-design
+  [4]: https://prezi.com/video
+  [5]: https://bit.ly/3bf877f
