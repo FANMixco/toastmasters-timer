@@ -1,10 +1,10 @@
 The best Toastmasters Timer for your meetings, it's simple, fast and accurate. It was developed by Federico Navarrete of **The Leader Ship Toastmasters** in Lodz, Poland.
 
-http://theleadership.pl
+https://www.facebook.com/TheLeaderShipToastmasters
 
 Feel free to use it anywhere at any time.
 
-http://toastmasterstimer.tk
+https://fanmixco.github.io/toastmasters-timer-material-design
 
 **This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
 
@@ -50,25 +50,31 @@ https://poeditor.com/join/project/hJX2GTJNPv
 
 Also, the project is fully **open-source** and can be reused, modified or improved freely without any constrain. Feel free to hack it and share new your ideas!
 
-**Previews of the App:**
+### App previews
 
 ![preview](https://i.stack.imgur.com/1PRPL.gif)
 
 Furthermore, you can download the compiled versions in the official stores:
 
-**Android:**
+### Android
 
-https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer
+<a href="https://bit.ly/3bcm6uL" target="_blank">
+    <img src="https://raw.githubusercontent.com/FANMixco/toastmasters-timer-material-design/master/img/playStore.png" alt="play store" />
+</a>
 
-**Windows 10:**
+### Windows 10
 
-https://www.microsoft.com/en-us/store/p/toastmasters-timer-pro/9n9rhqms0nwg
+<a href="https://raw.githubusercontent.com/FANMixco/toastmasters-timer-material-design/master/img/microsoft.png" target="_blank">
+    <img src="img/microsoft.png" alt="microsoft store" />
+</a>
 
-**Amazon:**
+### Amazon
 
-https://amzn.to/2LV5fOW
+<a href="https://amzn.to/2LV5fOW" target="_blank">
+    <img src="https://raw.githubusercontent.com/FANMixco/toastmasters-timer-material-design/master/img/amazon.png" alt="amazon app store" />
+</a>
 
-**iOS:**
+### iOS
 
 Please follow these steps:
 
