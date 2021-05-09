@@ -4,7 +4,7 @@
     "name" : "Toastmasters Timer",
     "scope" : "/toastmasters-timer-material-design/",
     "display" : "fullscreen",
-    "start_url" : "https://fanmixco.github.io/toastmasters-timer-material-design",
+    "start_url" : "https://fanmixco.github.io/toastmasters-timer-material-design/",
     "short_name" : "TM Timer",
     "theme_color" : "#ffffff",
     "description": "It's a simple PWA for helping Toastmasters all over the world to have an effective and productive Timer for their meetings. It was developed with JavaScript by The Leader Ship Toastmasters in Łódź, Poland.",
@@ -303,27 +303,33 @@
 		},
 		{
 		  "src": "img/icons/android/android-launchericon-512-512.png",
-		  "sizes": "512x512"
+		  "sizes": "512x512",
+		  "purpose": "any maskable"
 		},
 		{
 		  "src": "img/icons/android/android-launchericon-192-192.png",
-		  "sizes": "192x192"
+		  "sizes": "192x192",
+		  "purpose": "any maskable"
 		},
 		{
 		  "src": "img/icons/android/android-launchericon-144-144.png",
-		  "sizes": "144x144"
+		  "sizes": "144x144",
+		  "purpose": "any maskable"
 		},
 		{
 		  "src": "img/icons/android/android-launchericon-96-96.png",
-		  "sizes": "96x96"
+		  "sizes": "96x96",
+		  "purpose": "any maskable"
 		},
 		{
 		  "src": "img/icons/android/android-launchericon-72-72.png",
-		  "sizes": "72x72"
+		  "sizes": "72x72",
+		  "purpose": "any maskable"
 		},
 		{
 		  "src": "img/icons/android/android-launchericon-48-48.png",
-		  "sizes": "48x48"
+		  "sizes": "48x48",
+		  "purpose": "any maskable"
 		},
 		{
 		  "src": "img/icons/ios/ios-appicon-1024-1024.png",
