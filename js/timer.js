@@ -1136,10 +1136,6 @@ setTimeout(function() {
     } while (lngObject === undefined && exit < 5);
 }, 100);
 
-if (isFirstRun) {
-    dialogWelcome.showModal();
-}
-
 checkMode();
 
 tickAll.addEventListener('change', (event) => {
@@ -1269,4 +1265,8 @@ document.addEventListener ("keydown", function (zEvent) {
 window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('loading-container').style.display = "none";
     document.getElementById('superContainer').style.display = "block";
+
+    if (isFirstRun) {
+        dialogWelcome.showModal();
+    }
 });
