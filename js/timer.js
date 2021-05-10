@@ -938,12 +938,12 @@ dialogWelcome.querySelector('.close').addEventListener('click', function() {
 });
 
 txtCustom.addEventListener("keyup", function(e) {
-    if (e.keyCode === 13)
+    if (e.key === 13)
         hideKeyboard(txtCustom);
 });
 
 txtSpeaker.addEventListener("keyup", function(e) {
-    if (e.keyCode === 13)
+    if (e.key === 13)
         hideKeyboard(txtSpeaker);
 });
 
@@ -1264,4 +1264,9 @@ document.addEventListener ("keydown", function (zEvent) {
     if (zEvent.ctrlKey && (zEvent.key === "r" || zEvent.key === "R")) {
         btnRestart.click();
     }
+});
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('loading-container').style.display = "none";
+    document.getElementById('superContainer').style.display = "block";
 });
