@@ -440,7 +440,7 @@
 		  "sizes": "16x16"
 		}
 	],
-	"categories": ["timer", "tools", "alarms"],
+	"categories": ["timer", "tools", "alarms", "productivity", "utilities"],
 	"screenshots" : [
 		{
 		  "src": "img/previews/preview1.webp",
