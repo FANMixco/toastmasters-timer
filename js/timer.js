@@ -1130,11 +1130,20 @@ setTimeout(function() {
         bodyHelp.style.height = `${document.body.offsetHeight * 0.79}px`;
     }
     else {
-        bodyAbout.style.height = `${document.body.offsetHeight * 0.4}px`;
+        let bodyApp = document.body;
+        if (typeof HTMLDialogElement !== 'function') { 
+            bodyAbout.style.height = `${bodyApp.offsetHeight * 0.8}px`;
         
-        bodyTranslators.style.height = `${document.body.offsetHeight * 0.4}px`;
-        
-        bodyHelp.style.height = `${document.body.offsetHeight * 0.4}px`;
+            bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.8}px`;
+            
+            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.8}px`;    
+        } else {
+            bodyAbout.style.height = `${bodyApp.offsetHeight * 0.4}px`;
+            
+            bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.4}px`;
+            
+            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.4}px`;    
+        }
     }
 
     let exit = 0;
