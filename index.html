@@ -47,17 +47,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <link rel="stylesheet" href="css/timer.css" rel="preload" as="style" />
     <link rel="stylesheet" href="css/material.indigo-pink.min.css" defer />
     <link rel="stylesheet" href="css/getmdl-select.min.css" defer />
-
-    <script>
-        if (typeof HTMLDialogElement !== 'function') {
-            document.querySelector('head').innerHTML += '<link rel="stylesheet" type="text/css" href="browserSpecific/css/dialog-polyfill.min.css" />';
-		
-	    let sc = document.createElement("script");
-	    sc.setAttribute("src", "browserSpecific/js/dialog-polyfill.min.js");
-	    sc.setAttribute("type", "text/javascript");
-	    document.head.appendChild(sc);
-	}
-    </script>
+    <link rel="stylesheet" type="text/css" href="browserSpecific/css/dialog-polyfill.min.css" />
 
     <link rel="manifest" href="manifest.json" />
     <script src="js/lib/material.min.js" defer></script>
@@ -487,6 +477,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     </footer>
 
     <!--Browser ONLY actions-->
+    <script src="browserSpecific/js/dialog-polyfill.min.js"></script>
     <script src="browserSpecific/js/getOS.min.js"></script>
     <script src="browserSpecific/js/jspdf.min.js" defer></script>
     <script src="browserSpecific/js/actions.min.js"></script>
