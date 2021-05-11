@@ -130,7 +130,7 @@ var browserResult = new UAParser().getResult();
 progressBar.style.strokeDasharray = length;
 
 function update(value, timePercent) {
-    var offset = -length - length * value / (timePercent);
+    let offset = -length - length * value / (timePercent);
     if (value >= 0) {
         progressBar.style.strokeDashoffset = -offset;
         pointer.style.transform = `rotate(${360 * value / (-timePercent)}deg)`;
@@ -977,6 +977,12 @@ lastColor = bgColors[selectedColor];
 invertColors();
 
 setTimeout(function() {
+    let bodyAbout = document.getElementById('bodyAbout');
+        
+    let bodyTranslators = document.getElementById('bodyTranslators');
+    
+    let bodyHelp = document.getElementById('bodyHelp');
+
     if (deviceDetector.device == 'phone') {
         //Timetable Dialog
         let timeTableTmp = document.getElementById('timeTable');
@@ -1117,14 +1123,20 @@ setTimeout(function() {
 
         document.getElementById('divCloseAbout').style.display = 'none';
         
-        let bodyAbout = document.getElementById('bodyAbout');
-        
         bodyAbout.style.height = `${document.body.offsetHeight * 0.79}px`;
         
-        let bodyTranslators = document.getElementById('bodyTranslators');
-        
         bodyTranslators.style.height = `${document.body.offsetHeight * 0.79}px`;
+        
+        bodyHelp.style.height = `${document.body.offsetHeight * 0.79}px`;
     }
+    else {
+        bodyAbout.style.height = `${document.body.offsetHeight * 0.4}px`;
+        
+        bodyTranslators.style.height = `${document.body.offsetHeight * 0.4}px`;
+        
+        bodyHelp.style.height = `${document.body.offsetHeight * 0.4}px`;
+    }
+
     let exit = 0;
     do {
         setTimeout(function() {
@@ -1163,19 +1175,17 @@ tickAll.addEventListener('change', (event) => {
 
     if (deviceDetector.device === 'desktop') {
         try {
-            var isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
+            let isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
 
             // Safari 3.0+ "[object HTMLElementConstructor]" 
-            var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+            let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
     
-            if (isFirefox || isSafari)
-            {
+            if (isFirefox || isSafari) {
                 dialogTimeTable.classList.add('centeredDialog');
                 dialogAbout.classList.add('centeredDialog');
             }
         }
-        catch {
-        }
+        catch { }
         dialogTimeTable.classList.add('fullscreen-dialog-tablet');
         dialogAbout.classList.add('fullscreen-dialog-desktop');
         document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
