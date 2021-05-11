@@ -485,7 +485,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <!--Browser ONLY actions-->
     <script>
         if (typeof HTMLDialogElement !== 'function')
-            document.querySelector('head').innerHTML += "browserSpecific/js/dialog-polyfill.min.js";
+            document.querySelector('head').innerHTML += `<script src='browserSpecific/js/dialog-polyfill.min.js'></script>`;
     </script>
 
     <script src="browserSpecific/js/jspdf.min.js" defer></script>
