@@ -83,8 +83,8 @@ if (!nMobile) {
 function browserExport() {
     showSnackbar(lngObject.lblExportMsg);
     setTimeout(function() {
-        var doc = new jsPDF('l', 'pt', 'a4');
-        var res = doc.autoTableHtmlToJson(document.getElementById("tblResults"));
+        let doc = new jsPDF('l', 'pt', 'a4');
+        let res = doc.autoTableHtmlToJson(document.getElementById("tblResults"));
         doc.autoTable(res.columns, res.data, {
             startY: 60
         });

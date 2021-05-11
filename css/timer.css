@@ -283,8 +283,22 @@ th,
 	width: calc(85% - 28px) !important;
 }
 
-.fullscreen-dialog-desktop {
-	width: calc(50% - 28px) !important;
+@media (min-width: 751px) and (orientation:landscape) {
+	.fullscreen-dialog-desktop {
+		width: calc(50% - 28px) !important;
+	}
+}
+
+@media (max-width: 750px) and (orientation:landscape) {
+	.fullscreen-dialog-desktop {
+		width: calc(75% - 28px) !important;
+	}
+}
+
+@media (max-width: 600px) and (orientation:landscape) {
+	.fullscreen-dialog-desktop {
+		width: calc(85% - 28px) !important;
+	}
 }
 
 .customBodyMobile {
@@ -373,7 +387,7 @@ th,
 	background: #e53935;
 }
 
-#bodyAbout {
+#bodyAbout, #bodyTranslators, #bodyHelp {
 	overflow-y: auto;
 	overflow-x: hidden;
 }

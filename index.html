@@ -47,7 +47,14 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <link rel="stylesheet" href="css/timer.css" rel="preload" as="style" />
     <link rel="stylesheet" href="css/material.indigo-pink.min.css" defer />
     <link rel="stylesheet" href="css/getmdl-select.min.css" defer />
-    <link rel="stylesheet" href="browserSpecific/css/dialog-polyfill.css" />
+
+    <script src="browserSpecific/js/getOS.min.js"></script>
+
+    <script>
+        if (typeof HTMLDialogElement !== 'function')
+            document.querySelector('head').innerHTML += '<link rel="stylesheet" type="text/css" href="browserSpecific/css/dialog-polyfill.min.css" />';
+    </script>
+
     <link rel="manifest" href="manifest.json" />
     <script src="js/lib/material.min.js" defer></script>
     <script src="js/lib/translate.min.js"></script>
@@ -213,7 +220,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     <a href = "#tab3-panel" class = "mdl-tabs__tab" data-tag="help"></a>
                 </div>
             
-                <div class = "mdl-tabs__panel is-active" id = "tab1-panel">
+                <div class="mdl-tabs__panel is-active" id="tab1-panel">
                     <div id="bodyAbout" class="mdl-dialog__content">
                         <p data-tag="about1"></p>
                         <p><img loading="lazy" src="img/favicon.png" class='favIcon noInvert'></p>
@@ -237,7 +244,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     </div>
                 </div>
             
-               <div class = "mdl-tabs__panel" id = "tab2-panel">
+               <div class="mdl-tabs__panel" id="tab2-panel">
                    <div id='bodyTranslators' class="mdl-dialog__content">
                        <p data-tag="specialThanks"></p>
                        <ul class="mdl-list">
@@ -254,8 +261,8 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                    </div>
                </div>
 
-               <div class = "mdl-tabs__panel" id = "tab3-panel">
-                    <div class="mdl-dialog__content">
+               <div class= "mdl-tabs__panel" id = "tab3-panel">
+                    <div id='bodyHelp' class="mdl-dialog__content">
                         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                             <thead>
                               <tr>
@@ -299,13 +306,12 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                             </tbody>
                         </table>
                     </div>
-                    </div>
                 </div>
-             </div>
-         </main>
+            </div>
+        </main>
         <div id="divCloseAbout" class="mdl-dialog__actions">
             <button class="mdl-button close" data-tag="close"></button>
-            <button id="btnSponsor2Us" type="button" class="mdl-button close" class="mdl-button mdl-button--primary" data-tag="sponsorUs"></button>
+            <button id="btnSponsor2Us" type="button" class="mdl-button mdl-button--primary" data-tag="sponsorUs"></button>
         </div>
     </dialog>
     <dialog class="mdl-dialog" id="changesDialog">
@@ -473,12 +479,16 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         <button aria-label='close' class="mdl-snackbar__action" tabindex="-1" type="button"></button>
     </div>
     <footer>
-        <span data-tag="copyright1"></span><a rel='noreferrer' class="externalLinks" href="http://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a rel='noreferrer' class="externalLinks" href="https://bit.ly/3uK4lKI">The Leader Ship Toastmasters</a><span id='spanCopyright3' data-tag="copyright3"></span>. <a rel='noreferrer' class="externalLinks" href="https://github.com/sponsors/FANMixco" target="_blank"><span id='sponsorUs' data-tag="sponsorUs"></span></a>.
+        <span data-tag="copyright1"></span><a rel='noreferrer' class="externalLinks" href="https://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a rel='noreferrer' class="externalLinks" href="https://bit.ly/3uK4lKI">The Leader Ship Toastmasters</a><span id='spanCopyright3' data-tag="copyright3"></span>. <a rel='noreferrer' class="externalLinks" href="https://github.com/sponsors/FANMixco" target="_blank"><span id='sponsorUs' data-tag="sponsorUs"></span></a>.
     </footer>
+
     <!--Browser ONLY actions-->
-    <script src="browserSpecific/js/dialog-polyfill.min.js"></script>
+    <script>
+        if (typeof HTMLDialogElement !== 'function')
+            document.querySelector('head').innerHTML += "browserSpecific/js/dialog-polyfill.min.js";
+    </script>
+
     <script src="browserSpecific/js/jspdf.min.js" defer></script>
-    <script src="browserSpecific/js/getOS.min.js"></script>
     <script src="browserSpecific/js/actions.min.js"></script>
     <script src="js/effects/fadeTo.min.js" defer></script>
     
