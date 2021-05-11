@@ -51,7 +51,11 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <script>
         if (typeof HTMLDialogElement !== 'function') {
             document.querySelector('head').innerHTML += '<link rel="stylesheet" type="text/css" href="browserSpecific/css/dialog-polyfill.min.css" />';
-            document.querySelector('head').innerHTML += `<script src='browserSpecific/js/dialog-polyfill.min.js'></script>`;
+		
+	    let sc = document.createElement("script");
+	    sc.setAttribute("src", "browserSpecific/js/dialog-polyfill.min.js");
+	    sc.setAttribute("type", "text/javascript");
+	    document.head.appendChild(sc);
 	}
     </script>
 
