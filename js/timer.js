@@ -1155,6 +1155,10 @@ tickAll.addEventListener('change', (event) => {
     btnShare.style.display = 'none';
     btnEmail.style.display = 'none';
 
+    if (os === "iOS") {
+        btnVibrate.style.display = "none";
+    }
+
     isFirstTime = true;
 
     if (deviceDetector.device === 'desktop') {
