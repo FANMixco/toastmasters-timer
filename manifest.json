@@ -15,10 +15,6 @@
       "platform": "play",
       "url": "https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer",
       "id": "tk.supernova.tmtimer.tk.supernova.tmtimer"
-    },
-    {
-      "platform": "windows",
-      "url": "https://www.microsoft.com/en-us/p/toastmasters-timer-pro/9n9rhqms0nwg"
     }
   ],
   "prefer_related_applications": true,
