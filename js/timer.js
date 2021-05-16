@@ -1292,4 +1292,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (isFirstRun) {
         dialogWelcome.showModal();
     }
+
+    if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
+        document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
+    }
 });

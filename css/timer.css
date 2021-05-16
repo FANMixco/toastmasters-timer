@@ -349,6 +349,14 @@ th,
 	stroke-width: 2px;
 }
 
+.longPhonePortrait {
+	margin: 0;
+	position: absolute;
+	top: 27%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
 #e-pointer {
 	transition: transform 0.7s;
 }
