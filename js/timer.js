@@ -85,6 +85,7 @@ let isPaused = false,
     clappingStarted = false,
     multipleEnabled = false,
     isNinjaMode = false,
+    isTextPreviewMode = false,
     isFirstTime = false;
 
 let dateFormat = "DD/MM/YYYY",
@@ -247,6 +248,7 @@ function timer(seconds) { //counts time, takes seconds
             green++;
             document.body.style.background = "#60ad5e";
             startBeep();
+            startAlert();
             startVibrate();
             lastColor = "green";
             browserChangeFavIcon('min');
@@ -254,6 +256,7 @@ function timer(seconds) { //counts time, takes seconds
             yellow++;
             document.body.style.background = "#ffeb3b";
             startBeep();
+            startAlert();
             startVibrate();
             lastColor = "yellow";
             browserChangeFavIcon('opt');
@@ -261,6 +264,7 @@ function timer(seconds) { //counts time, takes seconds
             red++;
             document.body.style.background = "#e53935";
             startBeep();
+            startAlert();
             startVibrate();
             lastColor = "red";
             browserChangeFavIcon('max');
@@ -502,6 +506,21 @@ function startBeep() {
         browserStartBeep();
 }
 
+function startAlert() {
+    if (isTextPreviewMode && (green === 1 || yellow === 1 || red === 1)) {
+        switch (lastColor) {
+            case "green":
+                showSnackbar(lngObject.color2, 3500);
+                break;
+            case "yellow":
+                showSnackbar(lngObject.color3, 3500);
+                break;
+            default:
+                showSnackbar(lngObject.color1, 3500);
+        }
+    }
+}
+
 function startVibrate() {
     if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1))
         browserStartVibrate();
@@ -556,6 +575,13 @@ function getNinjaMode() {
         isNinjaMode = getLocalStorageValue("isNinjaMode") === 'true';
     else
         setLocalStorage("isNinjaMode", false);
+}
+
+function getTextPreviewMode() {
+    if (getLocalStorageValue("isTextPreviewMode"))
+        isTextPreviewMode = getLocalStorageValue("isTextPreviewMode") === 'true';
+    else
+        setLocalStorage("isTextPreviewMode", false);
 }
 
 function getSelectedColor() {
@@ -775,7 +801,17 @@ btnVibrate.addEventListener('click', () => {
     setVibrate();
 });
 
-btnBeep.addEventListener('click', () => {
+btnBeep.addEventListener('click', function(event) {
+    if (event.detail === 3) {
+        isTextPreviewMode = !isTextPreviewMode;
+
+        if (isTextPreviewMode)
+            showSnackbar(lngObject.colorMsg, 1500);
+        else
+            showSnackbar(lngObject.colorMsgDis, 1500);
+
+        setLocalStorage("isTextPreviewMode", isTextPreviewMode);
+    }
     isBeepEnabled = !isBeepEnabled;
     setBeepImg();
     setBeep();
@@ -962,6 +998,7 @@ getClapping();
 getContestMode();
 getSelectedColor();
 getNinjaMode();
+getTextPreviewMode();
 getFirstRun();
 
 setContestImg();

@@ -71,5 +71,10 @@
   "feature5": "Minimum time",
   "feature6": "Optimální čas",
   "feature7": "Maximum time",
-  "feature8": "Pod/nad minimální/maximální čas (obvykle +/- 31s)"
+  "feature8": "Pod/nad minimální/maximální čas (obvykle +/- 31s)",
+  "color1": "Zelená",
+  "color2": "Žlutá",
+  "color3": "Červená",
+  "colorMsg": "Náhled textu povolen",
+  "colorMsgDis": "Náhled textu zakázán"
 }
