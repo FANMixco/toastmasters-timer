@@ -60,7 +60,7 @@ Furthermore, you can download the compiled versions in the official stores:
 
 ### Windows 10
 
-<a href="https://partner.microsoft.com/en-us/dashboard/products/9N9RHQMS0NWG" target="_blank">
+<a href="https://www.microsoft.com/en-us/p/toastmasters-timer-pro/9n9rhqms0nwg" target="_blank">
     <img src="https://raw.githubusercontent.com/FANMixco/toastmasters-timer-material-design/master/img/microsoft.png" alt="microsoft store" />
 </a>
 
