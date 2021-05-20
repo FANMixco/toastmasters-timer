@@ -71,5 +71,10 @@
    "feature5": "Mindestzeit",
    "feature6": "Optimale Zeit",
    "feature7": "Maximale Zeit",
-   "feature8": "Unter/über der minimalen/maximalen Zeit (normalerweise +/- 31s)"
+   "feature8": "Unter/über der minimalen/maximalen Zeit (normalerweise +/- 31s)",
+   "color1": "Grün",
+   "color2": "Gelb",
+   "color3": "Rot",
+   "colorMsg": "Textvorschau aktiviert",
+   "colorMsgDis": "Textvorschau deaktiviert"
 }

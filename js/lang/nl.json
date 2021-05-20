@@ -71,5 +71,10 @@
     "feature5": "Minimum tijd",
     "feature6": "Optimale tijd",
     "feature7": "Maximale tijd",
-    "feature8": "Onder/boven minimum/maximum tijd (+/- 31 sec. gewoonlijk)"
+    "feature8": "Onder/boven minimum/maximum tijd (+/- 31 sec. gewoonlijk)",
+    "color1": "Groen",
+    "color2": "Geel",
+    "color3": "Rood",
+    "colorMsg": "Tekstvoorbeeld ingeschakeld",
+    "colorMsgDis": "Tekstvoorbeeld uitgeschakeld"
 }

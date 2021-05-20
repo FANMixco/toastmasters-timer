@@ -71,5 +71,10 @@
   "feature5": "Tempo minimo",
   "feature6": "Tempo ottimale",
   "feature7": "Tempo massimo",
-  "feature8": "Tempo inferiore / superiore minimo / massimo (+/- 31s comunemente)"
+  "feature8": "Tempo inferiore / superiore minimo / massimo (+/- 31s comunemente)",
+  "color1": "Verde",
+  "color2": "Giallo",
+  "color3": "Rosso",
+  "colorMsg": "Anteprima testo abilitata",
+  "colorMsgDis": "Anteprima del testo disabilitata"
 }
