@@ -76,5 +76,7 @@
   "color2": "Yellow",
   "color3": "Red",
   "colorMsg": "Text preview enabled",
-  "colorMsgDis": "Text preview disabled"
+  "colorMsgDis": "Text preview disabled",
+  "cbEnabled": "Color blindness enabled",
+  "cbDisabled": "Color blindness disabled"
 }

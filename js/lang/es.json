@@ -76,5 +76,7 @@
   "color2": "Amarillo",
   "color3": "Rojo",
   "colorMsg": "Vista previa de texto habilitada",
-  "colorMsgDis": "Vista previa del texto deshabilitada"
+  "colorMsgDis": "Vista previa del texto deshabilitada",
+  "cbEnabled": "Daltonismo habilitado",
+  "cbDisabled": "Daltonismo desactivado"
 }

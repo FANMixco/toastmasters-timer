@@ -76,5 +76,7 @@
   "color2": "Giallo",
   "color3": "Rosso",
   "colorMsg": "Anteprima testo abilitata",
-  "colorMsgDis": "Anteprima del testo disabilitata"
+  "colorMsgDis": "Anteprima del testo disabilitata",
+  "cbEnabled": "Daltonismo abilitato",
+  "cbDisabled": "Daltonismo disabilitato"
 }
