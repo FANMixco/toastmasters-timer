@@ -591,7 +591,7 @@ function getNinjaMode() {
 
 function getColorBlindnessMode() {
     if (getLocalStorageValue("isColorBlindnessEnabled"))
-        isNinjaMode = getLocalStorageValue("isColorBlindnessEnabled") === 'true';
+        isColorBlindnessEnabled = getLocalStorageValue("isColorBlindnessEnabled") === 'true';
     else
         setLocalStorage("isColorBlindnessEnabled", false);
 }
