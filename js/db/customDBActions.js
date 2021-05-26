@@ -65,13 +65,13 @@ function printTable() {
 
             switch (tempColor) {
                 case "green":
-                    tempColor = "#60ad5e";
+                    tempColor = greenBgnCss;
                     break;
                 case "yellow":
-                    tempColor = "#ffeb3b";
+                    tempColor = defYellowBgn;
                     break;
                 case "red":
-                    tempColor = "#e53935";
+                    tempColor = defRedBgn;
                     break;
             }
 

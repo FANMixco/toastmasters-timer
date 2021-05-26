@@ -54,6 +54,17 @@ const displayOutput = document.querySelector('.display-remain-time'),
     length = Math.PI * 2 * 100,
     fastTransition = 0.2;
 
+const defGreenBgn = "#60ad5e",
+    defYellowBgn = "#ffeb3b",
+    defRedBgn = "#e53935",
+    defGreenCBBgn = "#2196f3",
+    defYellowCBBgn = "#ffeb3b",
+    defRedCBBgn = "#ad1457";
+
+let greenBgnCss = defGreenBgn,
+    yellowBgnCss = defYellowBgn,
+    redBgnCss = defRedBgn;
+
 // Detects if device is in standalone mode
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
@@ -86,7 +97,8 @@ let isPaused = false,
     multipleEnabled = false,
     isNinjaMode = false,
     isTextPreviewMode = false,
-    isFirstTime = false;
+    isFirstTime = false,
+    isColorBlindnessEnabled = false;
 
 let dateFormat = "DD/MM/YYYY",
     latestDB = "1.0",
@@ -246,7 +258,7 @@ function timer(seconds) { //counts time, takes seconds
         let counter = maximum - timeLeft;
         if (counter >= minimum && counter < average) {
             green++;
-            document.body.style.background = "#60ad5e";
+            document.body.style.background = greenBgnCss;
             startBeep();
             startAlert();
             startVibrate();
@@ -254,7 +266,7 @@ function timer(seconds) { //counts time, takes seconds
             browserChangeFavIcon('min');
         } else if (counter >= average && counter < maximum) {
             yellow++;
-            document.body.style.background = "#ffeb3b";
+            document.body.style.background = yellowBgnCss;
             startBeep();
             startAlert();
             startVibrate();
@@ -262,7 +274,7 @@ function timer(seconds) { //counts time, takes seconds
             browserChangeFavIcon('opt');
         } else if (counter >= maximum) {
             red++;
-            document.body.style.background = "#e53935";
+            document.body.style.background = redBgnCss;
             startBeep();
             startAlert();
             startVibrate();
@@ -577,6 +589,25 @@ function getNinjaMode() {
         setLocalStorage("isNinjaMode", false);
 }
 
+function getColorBlindnessMode() {
+    if (getLocalStorageValue("isColorBlindnessEnabled"))
+        isNinjaMode = getLocalStorageValue("isColorBlindnessEnabled") === 'true';
+    else
+        setLocalStorage("isColorBlindnessEnabled", false);
+}
+
+function switchBgnColors() {
+    greenBgnCss = (isColorBlindnessEnabled) ? defGreenCBBgn : defGreenBgn;
+    yellowBgnCss = (isColorBlindnessEnabled) ? defYellowCBBgn : defYellowBgn;
+    redBgnCss = (isColorBlindnessEnabled) ? defRedCBBgn : defRedBgn;
+}
+
+function setRowColors() {
+    document.getElementById('bgnGreen').style.backgroundColor = greenBgnCss;
+    document.getElementById('bgnYellow').style.backgroundColor = yellowBgnCss;
+    document.getElementById('bgnRed').style.backgroundColor = redBgnCss;
+}
+
 function getTextPreviewMode() {
     if (getLocalStorageValue("isTextPreviewMode"))
         isTextPreviewMode = getLocalStorageValue("isTextPreviewMode") === 'true';
@@ -644,7 +675,9 @@ function setClappingImg() {
 }
 
 function invertColors() {
-    if (selectedColor === 1){
+    let currentInv = "";
+    if (selectedColor === 1) {
+        currentInv = invert100;
 		setInvFilter(dialogTimeTable, invert100);
 		setInvFilter(dialogWelcome, invert100);
 		setInvFilter(dialogConfirm, invert100);
@@ -666,6 +699,7 @@ function invertColors() {
 		setBgd(dialogClapping, bgColors[2]);
     }
     else {
+        currentInv = invert0;
 		setInvFilter(dialogTimeTable, invert0);
 		setInvFilter(dialogWelcome, invert0);
 		setInvFilter(dialogConfirm, invert0);
@@ -686,6 +720,11 @@ function invertColors() {
 		setBgd(dialogTimeTable, bgColors[0]);
 		setBgd(dialogClapping, bgColors[0]);
     }
+    
+    [].forEach.call(document.getElementsByClassName("noInvert"), function (el) {
+        setInvFilter(el, currentInv);
+    });
+
 	setBgd(document.body, lastColor);
 }
 
@@ -882,11 +921,21 @@ btnYesChallenge.addEventListener('click', function() {
 
 btnYesConfirm.addEventListener('click', deleteByIDs);
 
-btnInvert.addEventListener('click', function() {
-    if (selectedColor === 0)
-        selectedColor = 1;
-    else
-        selectedColor = 0;
+btnInvert.addEventListener('click', function(event) {
+    if (event.detail === 3) { 
+        isColorBlindnessEnabled = !isColorBlindnessEnabled;
+
+        if (isColorBlindnessEnabled)
+            showSnackbar(lngObject.cbEnabled, false);
+        else
+            showSnackbar(lngObject.cbDisabled, false);
+
+        setLocalStorage("isColorBlindnessEnabled", isColorBlindnessEnabled);
+        switchBgnColors();
+    }
+
+    selectedColor = (selectedColor === 0) ? selectedColor = 1 : selectedColor = 0;
+
     lastColor = bgColors[selectedColor];
     setSelectedColor();
     invertColors();
@@ -998,8 +1047,11 @@ getClapping();
 getContestMode();
 getSelectedColor();
 getNinjaMode();
+getColorBlindnessMode();
+switchBgnColors();
 getTextPreviewMode();
 getFirstRun();
+setRowColors();
 
 setContestImg();
 setVibrateImg();

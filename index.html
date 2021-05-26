@@ -284,19 +284,19 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                                     <td style="text-align: center" data-tag="feature4"></td>
                                 </tr>
                                 <tr>
-                                    <td class="noInvert" style="background-color: #60ad5e"></td>
+                                    <td id="bgnGreen" class="noInvert"></td>
                                     <td style="text-align: center" data-tag="feature5"></td>
                                 </tr>
                                 <tr>
-                                    <td class="noInvert" style="background-color: #ffeb3b"></td>
+                                    <td id="bgnYellow" class="noInvert"></td>
                                     <td style="text-align: center" data-tag="feature6"></td>
                                 </tr>
                                 <tr>
-                                    <td class="noInvert" style="background-color: #e53935;"></td>
+                                    <td id="bgnRed" class="noInvert"></td>
                                     <td style="text-align: center" data-tag="feature7"></td>
                                 </tr>
                                 <tr>
-                                    <td style="background-color: black"></td>
+                                    <td class="noInvert" style="background-color: black"></td>
                                     <td style="text-align: center" data-tag="feature8"></td>
                                 </tr>
                             </tbody>
@@ -492,7 +492,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <script src="js/db/dbHandler.min.js"></script>
     <script src="js/functions/genericActions.min.js"></script>
     <script src="js/lib/ua-parser.min.js"></script>
-    <script src="js/timer.min.js"></script>
+    <script src="js/timer.js"></script>
 
     <script>
         //Translator
@@ -500,10 +500,10 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
 
         //Analytics
         window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-	gtag('config', 'UA-139701351-1');
+        gtag('config', 'UA-139701351-1');
     </script>
 
     <script type="module">

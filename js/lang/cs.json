@@ -76,5 +76,7 @@
   "color2": "Žlutá",
   "color3": "Červená",
   "colorMsg": "Náhled textu povolen",
-  "colorMsgDis": "Náhled textu zakázán"
+  "colorMsgDis": "Náhled textu zakázán",
+  "cbEnabled": "Barevná slepota povolena",
+  "cbDisabled": "Barevná slepota zakázána"
 }

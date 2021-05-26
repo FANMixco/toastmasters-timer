@@ -76,5 +76,7 @@
     "color2": "Geel",
     "color3": "Rood",
     "colorMsg": "Tekstvoorbeeld ingeschakeld",
-    "colorMsgDis": "Tekstvoorbeeld uitgeschakeld"
+    "colorMsgDis": "Tekstvoorbeeld uitgeschakeld",
+    "cbEnabled": "Kleurenblindheid ingeschakeld",
+    "cbDisabled": "Kleurenblindheid uitgeschakeld"
 }

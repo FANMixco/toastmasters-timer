@@ -76,5 +76,7 @@
    "color2": "Gelb",
    "color3": "Rot",
    "colorMsg": "Textvorschau aktiviert",
-   "colorMsgDis": "Textvorschau deaktiviert"
+   "colorMsgDis": "Textvorschau deaktiviert",
+   "cbEnabled": "Farbblindheit aktiviert",
+   "cbDisabled": "Farbblindheit deaktiviert"
 }
