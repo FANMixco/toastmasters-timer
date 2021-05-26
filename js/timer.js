@@ -602,6 +602,12 @@ function switchBgnColors() {
     redBgnCss = (isColorBlindnessEnabled) ? defRedCBBgn : defRedBgn;
 }
 
+function setRowColors() {
+    document.getElementById('bgnGreen').style.backgroundColor = greenBgnCss;
+    document.getElementById('bgnYellow').style.backgroundColor = yellowBgnCss;
+    document.getElementById('bgnRed').style.backgroundColor = redBgnCss;
+}
+
 function getTextPreviewMode() {
     if (getLocalStorageValue("isTextPreviewMode"))
         isTextPreviewMode = getLocalStorageValue("isTextPreviewMode") === 'true';
@@ -669,7 +675,9 @@ function setClappingImg() {
 }
 
 function invertColors() {
+    let currentInv = "";
     if (selectedColor === 1) {
+        currentInv = invert100;
 		setInvFilter(dialogTimeTable, invert100);
 		setInvFilter(dialogWelcome, invert100);
 		setInvFilter(dialogConfirm, invert100);
@@ -691,6 +699,7 @@ function invertColors() {
 		setBgd(dialogClapping, bgColors[2]);
     }
     else {
+        currentInv = invert0;
 		setInvFilter(dialogTimeTable, invert0);
 		setInvFilter(dialogWelcome, invert0);
 		setInvFilter(dialogConfirm, invert0);
@@ -711,6 +720,11 @@ function invertColors() {
 		setBgd(dialogTimeTable, bgColors[0]);
 		setBgd(dialogClapping, bgColors[0]);
     }
+    
+    [].forEach.call(document.getElementsByClassName("noInvert"), function (el) {
+        setInvFilter(el, currentInv);
+    });
+
 	setBgd(document.body, lastColor);
 }
 
@@ -1037,6 +1051,7 @@ getColorBlindnessMode();
 switchBgnColors();
 getTextPreviewMode();
 getFirstRun();
+setRowColors();
 
 setContestImg();
 setVibrateImg();
