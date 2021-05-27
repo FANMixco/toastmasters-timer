@@ -23,42 +23,22 @@ function dbConn() {
 
     //Create tables
     request.onupgradeneeded = function(evt) {
-        let objectStore = evt.currentTarget.result.createObjectStore("timeTable", {
-            keyPath: "id",
-            autoIncrement: true
-        });
-        objectStore.createIndex("member", "member", {
-            unique: false
-        });
-        objectStore.createIndex("role", "role", {
-            unique: false
-        });
-        objectStore.createIndex("min", "min", {
-            unique: false
-        });
-        objectStore.createIndex("opt", "opt", {
-            unique: false
-        });
-        objectStore.createIndex("max", "max", {
-            unique: false
-        });
-        objectStore.createIndex("time", "time", {
-            unique: false
-        });
-        objectStore.createIndex("lastColor", "lastColor", {
-            unique: false
-        });
-        objectStore.createIndex("disqualified", "disqualified", {
-            unique: false
-        });
+        let objectStore = evt.currentTarget.result.createObjectStore("timeTable", { keyPath: "id", autoIncrement: true });
+        objectStore.createIndex("member", "member", { unique: false });
+        objectStore.createIndex("role", "role", { unique: false });
+        objectStore.createIndex("min", "min", { unique: false });
+        objectStore.createIndex("opt", "opt", { unique: false });
+        objectStore.createIndex("max", "max", { unique: false });
+        objectStore.createIndex("time", "time", { unique: false });
+        objectStore.createIndex("lastColor", "lastColor", { unique: false });
+        objectStore.createIndex("disqualified", "disqualified", { unique: false });
     };
 }
 
 function initializeDB(currentVersion, latestVersion) {
     if (latestVersion !== currentVersion) {
-        try {
-            window.indexedDB.deleteDatabase("tmTimerDB");
-        } catch (e) {}
+        try { window.indexedDB.deleteDatabase("tmTimerDB"); }
+        catch (e) { }
     }
     dbConn();
 }

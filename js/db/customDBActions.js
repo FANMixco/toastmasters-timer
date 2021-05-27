@@ -54,7 +54,6 @@ function printTable() {
     transaction.onsuccess = function(evt) {
         let cursor = evt.target.result;
         if (cursor) {
-            //console.log(cursor.value.time);
             let defaultColor = "white";
             if (cursor.value.lastColor === "yellow" || cursor.value.lastColor === "black" || cursor.value.lastColor === "white")
                 defaultColor = "black";

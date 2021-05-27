@@ -20,13 +20,7 @@ let btnUpSPressed = false,
     hasCustomChange = false;
 
 let chosenInputText = "";
-
-let i = 0,
-    j = 0,
-    k = 0,
-    timeOutS = 0,
-    timeOutM = 0,
-    timeOutH = 0;
+let i = 0, j = 0, k = 0, timeOutS = 0, timeOutM = 0, timeOutH = 0;
 
 if (!dialogSetTime.showModal) {
     dialogPolyfill.registerDialog(dialogSetTime);
@@ -160,7 +154,6 @@ function btnUpSClick() {
 }
 
 function btnDownSContinuesPress() {
-    console.log('continues');
     if (btnDownSPressed) return;
     btnDownSPressed = true;
     enableButtons(false);
@@ -176,7 +169,6 @@ function btnDownSContinuesPress() {
 }
 
 function btnDownSClick() {
-    console.log('click');
     if (btnDownSPressed) return;
     btnDownSPressed = true;
     enableButtons(false);
@@ -368,9 +360,7 @@ function setNewTime(inputText, currentTxt) {
         openSetDialog(currentTxt);
     try {
         dialogSetTime.showModal();
-    } catch (e) {
-        console.log(e);
-    }
+    } catch (e) { console.log(e); }
 }
 
 function clearIntervals() {
