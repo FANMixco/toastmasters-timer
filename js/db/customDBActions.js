@@ -21,7 +21,7 @@ function countTimetable() {
     let transaction = db.transaction(["timeTable"], "readonly").objectStore("timeTable").count();
     transaction.onsuccess = function() {
         if (transaction.result > 0) {
-            btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
+            imgMultiple.src = "img/icons-svg/checkbox-outline.svg";
             hideCheckBoxes();
             printTable();
             dialogTimeTable.showModal();
@@ -54,7 +54,6 @@ function printTable() {
     transaction.onsuccess = function(evt) {
         let cursor = evt.target.result;
         if (cursor) {
-            //console.log(cursor.value.time);
             let defaultColor = "white";
             if (cursor.value.lastColor === "yellow" || cursor.value.lastColor === "black" || cursor.value.lastColor === "white")
                 defaultColor = "black";

@@ -23,6 +23,12 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
     imgClap = document.getElementById('imgClap'),
+    imgRestart = document.getElementById('imgRestart'),
+    imgTrophy = document.getElementById('imgTrophy'),
+    imgBeep = document.getElementById('imgBeep'),
+    imgCheckBox = document.getElementById('imgCheckBox'),
+    imgMultiple = document.getElementById('imgMultiple'),
+    imgVibrate = document.getElementById('imgVibrate'),
     dialogTimeTable = document.getElementById('timeTable'),
     dialogWelcome = document.getElementById('welcomeDialog'),
     dialogConfirm = document.getElementById('confirmDialog'),
@@ -242,7 +248,7 @@ function resetState() {
 	disableLinks(false);
     isStopped = true;
     isPaused = false;
-    btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
+    imgRestart.src = "img/icons-svg/restart.svg";
     timeLeft = 0;
     currentState = 1;
     browserChangeFavIcon('');
@@ -399,7 +405,7 @@ function pauseTimer() {
     btnRestart.disabled = !isPaused;
 
     if (btnRestart.disabled) {
-        btnRestart.innerHTML = "<span class='mdi mdi-restart-off'></span>";
+        imgRestart.src = "img/icons-svg/restart-off.svg";
         fade.to(document.getElementById('divSpeechType'), fastTransition, 0.1);
         fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
         fade.to(document.getElementById('options'), fastTransition, 0.1);
@@ -410,7 +416,7 @@ function pauseTimer() {
             fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
         }
     } else {
-        btnRestart.innerHTML = "<span class='mdi mdi-restart'></span>";
+        imgRestart.src = "img/icons-svg/restart.svg";
         unfadeElements();
     }
 }
@@ -648,30 +654,30 @@ function setFirstRun() {
 
 function setContestImg() {
     if (!isContestMode)
-        btnChampion.innerHTML = "<span class='mdi mdi-trophy-broken'></span>";
+        imgTrophy.src = "img/icons-svg/trophy-broken.svg";
     else
-        btnChampion.innerHTML = "<span class='mdi mdi-trophy'></span>";
+        imgTrophy.src = "img/icons-svg/trophy.svg";
 }
 
 function setVibrateImg() {
     if (!isVibrateEnabled)
-        btnVibrate.innerHTML = "<span class='mdi mdi-vibrate-off'></span>";
+        imgVibrate.src = "img/icons-svg/vibrate-off.svg";
     else
-        btnVibrate.innerHTML = "<span class='mdi mdi-vibrate'></span>";
+        imgVibrate.src = "img/icons-svg/vibrate.svg";
 }
 
 function setBeepImg() {
     if (!isBeepEnabled)
-        btnBeep.innerHTML = "<span class='mdi mdi-volume-off'></span>";
+        imgBeep.src = "img/icons-svg/volume-high.svg";
     else
-        btnBeep.innerHTML = "<span class='mdi mdi-volume-high'></span>";
+        imgBeep.src = "img/icons-svg/volume-off.svg";
 }
 
 function setClappingImg() {
     if (!isClappingEnabled)
-        imgClap.src = "img/clapping-off.svg";
+        imgClap.src = "img/icons-svg/clapping-off.svg";
     else
-        imgClap.src = "img/clapping-hands.svg";
+        imgClap.src = "img/icons-svg/clapping-hands.svg";
 }
 
 function invertColors() {
@@ -986,10 +992,10 @@ btnMultiple.addEventListener('click', function() {
         }, 10);
     });
     if (!multipleEnabled) {
-        btnMultiple.innerHTML = "<span class='mdi mdi-checkbox-blank-outline'></span>";
+        imgMultiple.src = "img/icons-svg/checkbox-blank-outline.svg";
         showCheckBoxes();
     } else {
-        btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
+        imgMultiple.src = "img/icons-svg/checkbox-outline.svg";
         hideCheckBoxes();
     }
     multipleEnabled = !multipleEnabled;
@@ -1085,8 +1091,9 @@ setTimeout(function() {
         spanCloseMobile.className = "closeMobile";
         spanCloseMobile.id = 'btnCloseMobile';
 
-        let spanCloseIcon = document.createElement("span");
-        spanCloseIcon.className = "mdi mdi-close";
+        let spanCloseIcon = document.createElement("img");
+        spanCloseIcon.id = "btnCloseMobile";
+        spanCloseIcon.src = "img/icons-svg/close.svg";
 
         let spanTitle = document.createElement("span");
         spanTitle.id = 'spanTitle';
@@ -1128,8 +1135,9 @@ setTimeout(function() {
         spanCloseMobileCT.className = "closeMobile";
         spanCloseMobileCT.id = 'btnCloseMobileCustom';
 
-        let spanCloseIconCT = document.createElement("span");
-        spanCloseIconCT.className = "mdi mdi-close";
+        let spanCloseIconCT = document.createElement("img");
+        spanCloseIconCT.id = "btnCloseMobile";
+        spanCloseIconCT.src = "img/icons-svg/close.svg";
 
         let spanTitleCT = document.createElement("span");
         spanTitleCT.id = 'spanTitleCustom';
@@ -1181,8 +1189,9 @@ setTimeout(function() {
         spanCloseMobileAD.className = "closeMobile";
         spanCloseMobileAD.id = 'btnCloseMobileAbout';
 
-        let spanCloseIconAD = document.createElement("span");
-        spanCloseIconAD.className = "mdi mdi-close";
+        let spanCloseIconAD = document.createElement("img");
+        spanCloseIconAD.id = "btnCloseMobile";
+        spanCloseIconAD.src = "img/icons-svg/close.svg";
 
         let spanTitleAD = document.createElement("span");
         spanTitleAD.id = 'spanTitleAbout';
@@ -1326,7 +1335,6 @@ tickAll.addEventListener('change', (event) => {
 
     if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
         alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
-
 
     setTimeout(function() {
         // Checks if should display install popup notification:

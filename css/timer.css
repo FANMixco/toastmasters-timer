@@ -357,6 +357,61 @@ th,
 	transform: translateY(-50%);
 }
 
+.iconSVG-MD {
+	margin-top: -11px;
+	width: 42px;
+}
+
+.iconSVG {
+	margin-top: -8px;
+	width: 36px;
+}
+
+.about-icons {
+	height: 13px;
+	width: 20px;
+}
+
+.custom-icons {
+	height: 26px;
+	width: 24px;
+	margin-top: -4px;
+}
+
+.custom-icons-acts {
+	height: 26px;
+	width: 24px;
+	margin-top: -6px;
+}
+
+.timetable-icons {
+	height: 26px;
+	width: 24px;
+	margin-top: -8px;
+}
+
+#imgMultiple {
+	height: 26px;
+	width: 24px;
+	margin-top: -10px;
+}
+
+#imgRestart {
+	width: 2rem;
+	margin-top: -5px;
+}
+
+#btnCloseMobile {
+	height: 21px;
+	width: 20px;
+	margin-top: -9px;
+}
+
+#imgStop {
+	width: 2rem;
+	margin-top: -8px;
+}
+
 #e-pointer {
 	transition: transform 0.7s;
 }
@@ -368,11 +423,6 @@ th,
 
 #options button {
 	font-size: 3em;
-}
-
-#imgClap {
-	margin-top: -8px;
-	width: 36px;
 }
 
 #divSpeakers {
