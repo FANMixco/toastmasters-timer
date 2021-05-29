@@ -21,7 +21,7 @@ function countTimetable() {
     let transaction = db.transaction(["timeTable"], "readonly").objectStore("timeTable").count();
     transaction.onsuccess = function() {
         if (transaction.result > 0) {
-            btnMultiple.innerHTML = "<span class='mdi mdi-check-box-outline'></span>";
+            imgMultiple.src = "img/icons-svg/checkbox-outline.svg";
             hideCheckBoxes();
             printTable();
             dialogTimeTable.showModal();
