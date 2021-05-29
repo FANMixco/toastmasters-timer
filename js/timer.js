@@ -1094,6 +1094,7 @@ setTimeout(function() {
         let spanCloseIcon = document.createElement("img");
         spanCloseIcon.id = "btnCloseMobile";
         spanCloseIcon.src = "img/icons-svg/close.svg";
+        spanCloseIcon.alt = "close";
 
         let spanTitle = document.createElement("span");
         spanTitle.id = 'spanTitle';
@@ -1138,6 +1139,7 @@ setTimeout(function() {
         let spanCloseIconCT = document.createElement("img");
         spanCloseIconCT.id = "btnCloseMobile";
         spanCloseIconCT.src = "img/icons-svg/close.svg";
+        spanCloseIconCT.alt = "close";
 
         let spanTitleCT = document.createElement("span");
         spanTitleCT.id = 'spanTitleCustom';
@@ -1192,6 +1194,7 @@ setTimeout(function() {
         let spanCloseIconAD = document.createElement("img");
         spanCloseIconAD.id = "btnCloseMobile";
         spanCloseIconAD.src = "img/icons-svg/close.svg";
+        spanCloseIconAD.alt = "close";
 
         let spanTitleAD = document.createElement("span");
         spanTitleAD.id = 'spanTitleAbout';
