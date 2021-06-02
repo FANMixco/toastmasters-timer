@@ -296,9 +296,11 @@ function timer(seconds) { //counts time, takes seconds
     }, 1000);
 }
 
-window.onresize = function() {
-    resizeScreen();
-};
+if (os !== "Android") {
+    window.onresize = function() {
+        resizeScreen();
+    };
+}
 
 function resizeScreen() {
     let scaleVal = window.innerHeight / 600;
@@ -1033,6 +1035,17 @@ txtCustom.addEventListener("keyup", function(e) {
         hideKeyboard(txtCustom);
 });
 
+if (os === "Android") {
+    txtSpeaker.addEventListener("onfocus", function() {
+        let y = document.getElementById("playControl").getBoundingClientRect().y;
+        document.body.marginTop = `-${y}px`;
+    });
+    
+    txtSpeaker.addEventListener("onblur", function() {
+        document.body.marginTop = '0px';
+    });
+}
+
 txtSpeaker.addEventListener("keyup", function(e) {
     if (e.key === 13)
         hideKeyboard(txtSpeaker);
@@ -1351,8 +1364,6 @@ tickAll.addEventListener('change', (event) => {
     }, 1000);
 })();
 
-resizeScreen();
-
 function hideKeyboard(element) {
     element.readOnly = true;
     setTimeout(function() {
@@ -1396,4 +1407,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
         document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
     }
+
+    resizeScreen();
 });
