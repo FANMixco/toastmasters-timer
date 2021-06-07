@@ -264,28 +264,15 @@ function timer(seconds) { //counts time, takes seconds
         let counter = maximum - timeLeft;
         if (counter >= minimum && counter < average) {
             green++;
-            document.body.style.background = greenBgnCss;
-            startBeep();
-            startAlert();
-            startVibrate();
-            lastColor = "green";
-            browserChangeFavIcon('min');
+            execAction(greenBgnCss, "green", 'min');
         } else if (counter >= average && counter < maximum) {
             yellow++;
             document.body.style.background = yellowBgnCss;
-            startBeep();
-            startAlert();
-            startVibrate();
-            lastColor = "yellow";
-            browserChangeFavIcon('opt');
+            execAction(yellowBgnCss, "yellow", 'opt');
         } else if (counter >= maximum) {
             red++;
+            execAction(redBgnCss, "red", 'max');
             document.body.style.background = redBgnCss;
-            startBeep();
-            startAlert();
-            startVibrate();
-            lastColor = "red";
-            browserChangeFavIcon('max');
         }
         if (counter >= maximum + clappingTime) {
             if (!clappingStarted)
@@ -294,6 +281,15 @@ function timer(seconds) { //counts time, takes seconds
         }
         displayTimeLeft(timeLeft);
     }, 1000);
+}
+
+function execAction(bgn, color, icon) {
+    document.body.style.background = bgn;
+    startBeep();
+    startAlert();
+    startVibrate();
+    lastColor = color;
+    browserChangeFavIcon(icon);
 }
 
 if (os !== "Android") {
@@ -386,13 +382,21 @@ function pauseTimer() {
         disableLinks(true);
         timer(wholeTime);
         isStarted = true;
+        btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
+        setTimeout(function () {
+            btnPause.disabled = false;
+        }, 500);
     } else if (isPaused) {
         activateWakeLock();
         disableLinks(true);
+        btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
+        setTimeout(function () {
+            btnPause.disabled = false;
+        }, 500);
         timer(timeLeft);
         isPaused = isPaused ? false : true;
     } else {
@@ -670,9 +674,9 @@ function setVibrateImg() {
 
 function setBeepImg() {
     if (!isBeepEnabled)
-        imgBeep.src = "img/icons-svg/volume-high.svg";
-    else
         imgBeep.src = "img/icons-svg/volume-off.svg";
+    else
+        imgBeep.src = "img/icons-svg/volume-high.svg";
 }
 
 function setClappingImg() {

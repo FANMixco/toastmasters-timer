@@ -17,7 +17,7 @@ function browserStartBeep() {
             audioBeepElement.play();
             setTimeout(function() {
                 audioBeepElement.pause();
-            }, 500);
+            }, 1000);
         } else {
             audioBeepElement.pause();
         }
