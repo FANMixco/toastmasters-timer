@@ -347,6 +347,7 @@ function resizeSelect() {
             document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
             let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
             let res = mdlMenu.style.clip.split(", ");
+            if (res.length > 1) {
             res[1] = res[1].replace("px", "");
             res[2] = res[2].replace("px", "");
 
@@ -356,6 +357,7 @@ function resizeSelect() {
                 multiplier = 2;
 
             mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
+            }
         } catch (e) {}
     }, 50);
 }
@@ -1035,7 +1037,7 @@ dialogWelcome.querySelector('.close').addEventListener('click', function() {
 });
 
 txtCustom.addEventListener("keyup", function(e) {
-    if (e.key === 13)
+    if (e.key === 'Enter')
         hideKeyboard(txtCustom);
 });
 
@@ -1051,7 +1053,7 @@ if (os === "Android") {
 }
 
 txtSpeaker.addEventListener("keyup", function(e) {
-    if (e.key === 13)
+    if (e.key === 'Enter')
         hideKeyboard(txtSpeaker);
 });
 
@@ -1348,8 +1350,11 @@ tickAll.addEventListener('change', (event) => {
 
     window.addEventListener("focus", function() {
 		try {
-			if (document.querySelector('.mdl-menu__outline').style.zIndex !== "-1")
+			let menuOutline = document.querySelector('.mdl-menu__outline');
+            if (menuOutline) {
+                if (menuOutline.style.zIndex !== "-1")
 				resizeSelect();
+            }
 		} catch (e) {}
     });
 
@@ -1411,6 +1416,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
         document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
     }
+    document.body.style.minHeight = window.innerHeight + "px";
 
     resizeScreen();
 });
