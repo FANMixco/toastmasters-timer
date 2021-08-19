@@ -52,9 +52,9 @@ This project is fully **open-source** and can be reused, modified, or improved f
 
 Furthermore, you can download the compiled versions in the official stores:
 
-|  App  |Play Store|Galaxy Store|Microsoft Store|Amazon Appstore|Huawei AppGallery|
-|:----------|:------------:|:------------:|:------------:|:------------:|:------------:|
-|**Toastmasters Timer**|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/google_play_micro.png)](https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/galaxy_micro.png)](https://galaxy.store/tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/microsoft_micro.png)](https://bit.ly/36Ug2EC)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/amazon_micro.png)](https://amzn.to/3eSF23h)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/huawei_micro.png)](https://bit.ly/3rqoC7w)|### iOS
+|Play Store|Galaxy Store|Microsoft Store|Amazon Appstore|Huawei AppGallery|
+|:------------:|:------------:|:------------:|:------------:|:------------:|
+|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/google_play_micro.png)](https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/galaxy_micro.png)](https://galaxy.store/tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/microsoft_micro.png)](https://bit.ly/36Ug2EC)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/amazon_micro.png)](https://amzn.to/3eSF23h)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/huawei_micro.png)](https://bit.ly/3rqoC7w)|### iOS
 
 Please follow these steps:
 
