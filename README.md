@@ -56,7 +56,9 @@ Furthermore, you can download the compiled versions in the official stores:
 |:------------:|:------------:|:------------:|:------------:|:------------:|
 |[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/google_play_micro.png)](https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/galaxy_micro.png)](https://galaxy.store/tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/microsoft_micro.png)](https://bit.ly/36Ug2EC)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/amazon_micro.png)](https://amzn.to/3eSF23h)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/huawei_micro.png)](https://bit.ly/3rqoC7w)|### iOS
 
-Please follow these steps:
+### iOS/iPadOS
+
+You can follow these steps:
 
 ![iOSInstall](https://i.stack.imgur.com/Gn4ut.gif)
 
