@@ -70,7 +70,7 @@ function printTable() {
                     tempColor = defYellowBgn;
                     break;
                 case "red":
-                    tempColor = defRedBgn;
+                    tempColor = redBgnCss;
                     break;
             }
 
