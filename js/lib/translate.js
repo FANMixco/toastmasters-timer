@@ -5,6 +5,10 @@ let lngObject;
 function load() {
     let translate = new Translate();
     lang = navigator.language || navigator.userLanguage;
+
+    if (lang.includes('-'))
+        lang = lang.split('-')[0];
+
     if (!langs.includes(lang))
         lang = "en";
     translate.init(lang);
