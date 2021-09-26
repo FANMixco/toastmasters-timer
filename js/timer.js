@@ -300,7 +300,31 @@ if (os !== "Android") {
 
 function resizeScreen() {
     let scaleVal = window.innerHeight / 600;
-    if (window.innerHeight < 514) {
+    if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 1.333) {
+        scaleVal = window.innerWidth / 400;
+        if (externalContainer === null) {
+            let bodyTmp = document.body;
+            let divTmp = document.createElement("div");
+            divTmp.id = 'externalContainer';
+            bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
+        }
+        externalContainer = document.getElementById('externalContainer');
+        let sContainer = document.getElementById('superContainer');
+        externalContainer.append(sContainer);
+        externalContainer.style.height = `${window.innerHeight}px`;
+        sContainer.style.transformOrigin = "50% 0% 0px";
+
+        setTimeout(function() {
+            sContainer.style.transform = `scale(${scaleVal})`;
+            setTimeout(function() {
+                let cHeight = (1 + scaleVal) * window.innerHeight;
+                if (cHeight < 514)
+                    cHeight = 514;
+                sContainer.style.height = `${cHeight}px`;
+            }, 100);
+        }, 100);
+    }
+    else if (window.innerHeight < 514) {
         if (externalContainer === null) {
             let bodyTmp = document.body;
             let divTmp = document.createElement("div");
