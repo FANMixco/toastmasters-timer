@@ -300,7 +300,7 @@ if (os !== "Android") {
 
 function resizeScreen() {
     let scaleVal = window.innerHeight / 600;
-    if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 1.333) {
+    if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 2.333) {
         scaleVal = window.innerWidth / 400;
         if (externalContainer === null) {
             let bodyTmp = document.body;
