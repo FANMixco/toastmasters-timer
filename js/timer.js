@@ -442,6 +442,7 @@ function pauseTimer() {
         fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
         fade.to(document.getElementById('options'), fastTransition, 0.1);
         fade.to(document.getElementsByTagName('footer')[0], fastTransition, 0.1);
+        fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
 
         if (isNinjaMode) {
             fade.to(document.getElementById('controls'), fastTransition, 0.5);
@@ -460,6 +461,7 @@ function unfadeElements() {
     fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
     fade.to(document.getElementById('controls'), fastTransition, 1.5);
     fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
+    fade.to(document.getElementsByClassName('bmc-wbtn')[0], fastTransition, 1.5);
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
