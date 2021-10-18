@@ -1,5 +1,7 @@
 # Toastmasters Timer
 
+[![image](https://user-images.githubusercontent.com/1666156/137726663-f256744f-b299-4c30-a74a-c4205a66b56e.png)](https://buymeacoffee.com/fanmixco)
+
 The best [Toastmasters Timer][3] for your meetings, it's simple, fast, and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Lodz, Poland.
 
 Feel free to level up your meetings using it anywhere at any time in all your meetings!
