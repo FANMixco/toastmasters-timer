@@ -442,11 +442,13 @@ function pauseTimer() {
         fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
         fade.to(document.getElementById('options'), fastTransition, 0.1);
         fade.to(document.getElementsByTagName('footer')[0], fastTransition, 0.1);
-        fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
 
         if (isNinjaMode) {
             fade.to(document.getElementById('controls'), fastTransition, 0.5);
             fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
+            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0);
+        } else {
+            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
         }
     } else {
         imgRestart.src = "img/icons-svg/restart.svg";
@@ -461,7 +463,7 @@ function unfadeElements() {
     fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
     fade.to(document.getElementById('controls'), fastTransition, 1.5);
     fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
-    fade.to(document.getElementsByClassName('bmc-wbtn')[0], fastTransition, 1.5);
+    fade.to(document.getElementById('bmc-wbtn'), fastTransition, 1.5);
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
@@ -1392,8 +1394,11 @@ tickAll.addEventListener('change', (event) => {
         if (os === "iOS" && !isInStandaloneMode())
             showSnackbar(lngObject.installiOS, 3000);
         
-        if (lngObject.copyright3)
-            document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
+        try {
+            if (lngObject.copyright3)
+                document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
+        }
+        catch { }
         
         timeDialogInvert(selectedColor);
     }, 1000);
@@ -1442,7 +1447,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
         document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
     }
-    document.body.style.minHeight = window.innerHeight + "px";
+    document.body.style.minHeight = `${window.innerHeight}px`;
 
     resizeScreen();
 });
