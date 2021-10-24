@@ -450,6 +450,7 @@ function pauseTimer() {
         } else {
             fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
         }
+        document.getElementById('bmc-wbtn').style.pointerEvents = 'none';
     } else {
         imgRestart.src = "img/icons-svg/restart.svg";
         unfadeElements();
@@ -464,6 +465,7 @@ function unfadeElements() {
     fade.to(document.getElementById('controls'), fastTransition, 1.5);
     fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
     fade.to(document.getElementById('bmc-wbtn'), fastTransition, 1.5);
+    document.getElementById('bmc-wbtn').style.pointerEvents = '';
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
