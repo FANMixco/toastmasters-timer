@@ -1,3 +1,4 @@
 # These are supported funding model platforms
 
-github: fanmixco
+github: [fanmixco]
+custom: ['https://www.buymeacoffee.com/fanmixco']
