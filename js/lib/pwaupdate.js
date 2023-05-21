@@ -983,15 +983,17 @@ var et = function(t, e, s, i) {
 };
 let st = class extends tt {
     constructor() {
-          super(...arguments);
-          // Get the current URL
-          let url = window.location.href;
-          // Check if it has a subdomain
-          let hasSubdomain = url.split('.').length > 2;
-          // If it has a subdomain, get the subdomain name without the https:// part
-          let subdomain = hasSubdomain ? url.split('.')[0].replace('https://', '') : '';
-          // If it has a subdomain, add the subdomain name to the swpath value
-          this.swpath = `/${subdomain}/pwabuilder-sw.js`;
+        super(...arguments);
+        // Get the current URL
+        let url = window.location.href;
+        // Split the URL by /
+        let parts = url.split('/');
+        // Check if it has a folder name
+        let hasFolder = parts.length > 4;
+        // If it has a folder name, get the folder name
+        let folder = hasFolder ? parts[3] : '';
+        // If it has a folder name, add the folder name to the swpath value
+        this.swpath = `/${folder}/pwabuilder-sw.js`;
         this.updateevent = "SKIP_WAITING";
         this.updatemessage = "An update for this app is available";
         this.readyToAsk = !1;
