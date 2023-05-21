@@ -510,6 +510,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         if ("serviceWorker" in navigator) {
             const el = document.createElement('pwa-update');
             document.body.appendChild(el);
+            navigator.serviceWorker.register('/toastmasters-timer-material-design/pwabuilder-sw.js', {scope: '/toastmasters-timer-material-design/'});
         }
     </script>
 </body>
