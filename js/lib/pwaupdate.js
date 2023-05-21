@@ -983,7 +983,22 @@ var et = function(t, e, s, i) {
 };
 let st = class extends tt {
     constructor() {
-        super(...arguments), this.swpath = "/pwabuilder-sw.js", this.updateevent = "SKIP_WAITING", this.updatemessage = "An update for this app is available", this.readyToAsk = !1, this.showStorageEstimate = !1, this.showOfflineToast = !1, this.offlineToastDuration = 2400, this.storageUsed = null
+          super(...arguments);
+          // Get the current URL
+          let url = window.location.href;
+          // Check if it has a subdomain
+          let hasSubdomain = url.split('.').length > 2;
+          // If it has a subdomain, get the subdomain name without the https:// part
+          let subdomain = hasSubdomain ? url.split('.')[0].replace('https://', '') : '';
+          // If it has a subdomain, add the subdomain name to the swpath value
+          this.swpath = `/${subdomain}/pwabuilder-sw.js`;
+        this.updateevent = "SKIP_WAITING";
+        this.updatemessage = "An update for this app is available";
+        this.readyToAsk = !1;
+        this.showStorageEstimate = !1;
+        this.showOfflineToast = !1;
+        this.offlineToastDuration = 2400;
+        this.storageUsed = null;
     }
     static get styles() {
         return Q`:host{font-family:sans-serif;--toast-background:#3c3c3c;--button-background:#0b0b0b}#updateToast{position:fixed;bottom:16px;right:16px;background:var(--toast-background);color:#fff;padding:1em;border-radius:4px;display:flex;align-items:center;justify-content:space-between;min-width:22em;max-width:calc(100vw - 16px);font-weight:600;animation-name:fadein;animation-duration:.3s}#storageToast{position:fixed;bottom:16px;right:16px;background:var(--toast-background);color:#fff;padding:1em;border-radius:4px;display:flex;max-width:calc(100vw - 16px);flex-direction:column;align-items:flex-end;font-weight:600}#storageEstimate{font-size:10px;margin-top:8px}#updateToast button{color:#fff;border:none;background:var(--button-background);padding:8px;border-radius:24px;text-transform:lowercase;padding-left:14px;padding-right:14px;font-weight:700}@keyframes fadein{from{opacity:0}to{opacity:1}}`
@@ -991,16 +1006,7 @@ let st = class extends tt {
     async firstUpdated() {
         var t, e;
         if (this.swpath && "serviceWorker" in navigator) {
-            // Get the current URL
-			let url = window.location.href;
-			// Check if it has a subdomain
-			let hasSubdomain = url.split('.').length > 2;
-			// If it has a subdomain, get the subdomain name
-			let subdomain = hasSubdomain ? url.split('.')[0] : '';
-			// If it has a subdomain, add the scope option with the subdomain name
-			let scope = hasSubdomain ? {scope: '/' + subdomain + '/'} : {};
-			// Register the service worker with the scope option
-			const s = await navigator.serviceWorker.register(this.swpath, scope);
+			const s = await navigator.serviceWorker.register(this.swpath);
             if (s.installing && navigator.storage) {
                 const s = await navigator.storage.estimate();
                 if (s) {
