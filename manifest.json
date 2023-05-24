@@ -3,7 +3,7 @@
   "lang": "da",
   "name": "Toastmasters Timer",
   "version": "2.4.0.0",
-  "scope": "/toastmasters-timer-material-design/",
+  "scope": "https://fanmixco.github.io/toastmasters-timer-material-design/",
   "display": "fullscreen",
   "display_override": ["standalone", "minimal-ui"],
   "start_url": "https://fanmixco.github.io/toastmasters-timer-material-design/",
