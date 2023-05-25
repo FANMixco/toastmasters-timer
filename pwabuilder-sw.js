@@ -18,8 +18,17 @@ self.addEventListener("message", (event) => {
 
 self.addEventListener('install', async (event) => {
   event.waitUntil(
-    caches.open(CACHE)
-      .then((cache) => cache.add(offlineFallbackPage))
+  caches.open(CACHE)
+    .then((cache) => {
+    // Create a request for the offline page
+    const offlineRequest = new Request(offlineFallbackPage);
+    // Create a response for the offline page
+    const offlineResponse = new Response('<html><body><h1>Offline</h1></body></html>', {
+      headers: {'Content-Type': 'text/html'}
+    });
+    // Put them in the cache
+    return cache.put(offlineRequest, offlineResponse);
+    })
   );
 });
 
