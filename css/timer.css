@@ -467,3 +467,21 @@ th,
 	margin-right: 16px;
 	margin-top: -6px;
 }
+
+@media (max-width: 312px) and (orientation: portrait) {
+	body {
+	  /* Set the transform origin to the center of the element */
+	  transform-origin: 50% 50%;
+	  /* Scale down the element by a factor of 0.8 */
+	  transform: scale(0.8);
+	}
+  
+	#playControl {
+	  transform-origin: 40% 10%;
+	  transform: scale(0.8);
+	}
+  
+	.mdl-textfield__label {
+	  left: 15px;
+	}
+}
