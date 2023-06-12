@@ -2,7 +2,7 @@
 
 [![image](https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif)](https://buymeacoffee.com/fanmixco)
 
-The best [Toastmasters Timer][3] for your meetings, it's simple, fast, and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Lodz, Poland.
+The best [Toastmasters Timer][3] for your meetings, it's simple, fast, and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Łódź, Poland.
 
 Feel free to level up your meetings using it anywhere at any time in all your meetings!
 
@@ -68,7 +68,7 @@ You can follow these steps:
 
   [1]: https://federiconavarrete.com
   [2]: https://www.facebook.com/TheLeaderShipToastmasters
-  [3]: https://fanmixco.github.io/toastmasters-timer-material-design
+  [3]: https://fanmixco.github.io/toastmasters-timer
   [4]: https://prezi.com/video
   [5]: https://bit.ly/3bf877f
   [6]: https://poeditor.com/join/project/hJX2GTJNPv
@@ -78,5 +78,5 @@ You can follow these steps:
 
 |  LinkedIn  |YouTube|Amazon|Goodreads|Instagram|Cyber Prophets|Sharing Your Stories|
 |:----------|:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
-|[![LinkedIn](https://i.stack.imgur.com/idQWu.png)](https://bit.ly/3xLCmvb)|[![YouTube](https://i.stack.imgur.com/CFPMR.png)](https://youtube.com/c/FedericoNavarrete)|[![Amazon](https://i.stack.imgur.com/NFOeE.png)](https://www.amazon.com/Federico-Navarrete/e/B08NJTXQRV)|[![Goodreads](https://i.stack.imgur.com/oBk0g.jpg)](https://www.goodreads.com/author/show/21125413.Federico_Navarrete)|[![Instagram](https://i.stack.imgur.com/PIfqY.png)](https://www.instagram.com/federico_the_consultant)|[![RedCircle Podcast](https://i.stack.imgur.com/4XICF.png)](https://redcircle.com/shows/cyber-prophets)|[![RedCircle Podcast](https://i.stack.imgur.com/4XICF.png)](https://redcircle.com/shows/sharing-your-stories)|
+|[![LinkedIn](https://i.stack.imgur.com/idQWu.png)](https://www.linkedin.com/in/federiconavarrete/)|[![YouTube](https://i.stack.imgur.com/CFPMR.png)](https://youtube.com/@FedericoNavarrete)|[![Amazon](https://i.stack.imgur.com/NFOeE.png)](https://www.amazon.com/Federico-Navarrete/e/B08NJTXQRV)|[![Goodreads](https://i.stack.imgur.com/oBk0g.jpg)](https://www.goodreads.com/author/show/21125413.Federico_Navarrete)|[![Instagram](https://i.stack.imgur.com/PIfqY.png)](https://www.instagram.com/federico_the_consultant)|[![RedCircle Podcast](https://i.stack.imgur.com/4XICF.png)](https://redcircle.com/shows/cyber-prophets)|[![RedCircle Podcast](https://i.stack.imgur.com/4XICF.png)](https://redcircle.com/shows/sharing-your-stories)|
 
