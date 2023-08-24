@@ -4,8 +4,13 @@
   "name": "Toastmasters Timer",
   "version": "2.4.0.0",
   "scope": "https://fanmixco.github.io/toastmasters-timer/",
-  "display": "fullscreen",
-  "display_override": ["standalone", "minimal-ui"],
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay",
+    "fullscreen"
+  ],
   "start_url": "https://fanmixco.github.io/toastmasters-timer/",
   "short_name": "TM Timer",
   "theme_color": "#ffffff",
@@ -1019,5 +1024,10 @@
       "sizes": "1280x720",
       "type": "image/webp"
     }
-  ]
+  ],
+  "id": "tm-timer-lite",
+  "handle_links": "not-preferred",
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }
