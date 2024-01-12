@@ -20,6 +20,10 @@ const displayOutput = document.querySelector('.display-remain-time'),
 	btnYesChanges = document.getElementById('btnYesChanges'),
 	btnSponsor2Us = document.getElementById('btnSponsor2Us'),
 	btnSave = document.getElementById('btnSave'),
+	btnSave2 = document.getElementById('btnSave2'),
+	btnSave3 = document.getElementById('btnSave3'),
+	btnSave4 = document.getElementById('btnSave4'),
+	btnSave5 = document.getElementById('btnSave5'),
 	btnSaveClap = document.getElementById('btnSaveClap'),
 	btnAbout = document.getElementById('btnAbout'),
 	imgClap = document.getElementById('imgClap'),
@@ -41,6 +45,22 @@ const displayOutput = document.querySelector('.display-remain-time'),
 	txtMin = document.getElementById('txtMin'),
 	txtAvg = document.getElementById('txtAvg'),
 	txtMax = document.getElementById('txtMax'),
+	txtCustom2 = document.getElementById('txtCustom2'),
+	txtMin2 = document.getElementById('txtMin2'),
+	txtAvg2 = document.getElementById('txtAvg2'),
+	txtMax2 = document.getElementById('txtMax2'),
+	txtCustom3 = document.getElementById('txtCustom3'),
+	txtMin3 = document.getElementById('txtMin3'),
+	txtAvg3 = document.getElementById('txtAvg3'),
+	txtMax3 = document.getElementById('txtMax3'),
+	txtCustom4 = document.getElementById('txtCustom4'),
+	txtMin4 = document.getElementById('txtMin4'),
+	txtAvg4 = document.getElementById('txtAvg4'),
+	txtMax4 = document.getElementById('txtMax4'),
+	txtCustom5 = document.getElementById('txtCustom5'),
+	txtMin5 = document.getElementById('txtMin5'),
+	txtAvg5 = document.getElementById('txtAvg5'),
+	txtMax5 = document.getElementById('txtMax5'),
 	clapM = document.getElementById('clapM'),
 	clapS = document.getElementById('clapS'),
 	cmbSpeechType = document.getElementById('cmbSpeechType'),
@@ -502,11 +522,15 @@ function setBasicIntervals() {
 }
 
 function changeEventHandler() {
-	let wasCustom = selected === 99;
+	let wasCustom = selected === 95;
+	let wasCustom2 = selected === 96;
+	let wasCustom3 = selected === 97;
+	let wasCustom4 = selected === 98;
+	let wasCustom5 = selected === 99;
 
 	selected = parseInt(hiddenSpeechType.value);
 
-	if (selected !== 99) {
+	if (selected < 90) {
 		setBasicIntervals();
 		wholeTime = maximum;
 		setLocalStorage("wholeTime", maximum);
@@ -541,10 +565,130 @@ function changeEventHandler() {
 			txtMax.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
 		}
 
+		if (!wasCustom2) {
+			minimum = 0;
+			maximum = 0;
+			average = 0;
+
+			txtCustom2.parentElement.MaterialTextfield.change(lngObject.opt14);
+		} else if (wasCustom2 && !isFirstTime) {
+			setCustomText();
+
+			let hours = Math.floor(minimum / 3600);
+			let minutes = Math.floor(minimum / 60);
+			let seconds = minimum % 60;
+
+			txtMin2.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(average / 3600);
+			minutes = Math.floor(average / 60);
+			seconds = average % 60;
+
+			txtAvg2.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(maximum / 3600);
+			minutes = Math.floor(maximum / 60);
+			seconds = maximum % 60;
+
+			txtMax2.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+		}
+
+		if (!wasCustom3) {
+			minimum = 0;
+			maximum = 0;
+			average = 0;
+
+			txtCustom3.parentElement.MaterialTextfield.change(lngObject.opt15);
+		} else if (wasCustom3 && !isFirstTime) {
+			setCustomText();
+
+			let hours = Math.floor(minimum / 3600);
+			let minutes = Math.floor(minimum / 60);
+			let seconds = minimum % 60;
+
+			txtMin3.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(average / 3600);
+			minutes = Math.floor(average / 60);
+			seconds = average % 60;
+
+			txtAvg3.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(maximum / 3600);
+			minutes = Math.floor(maximum / 60);
+			seconds = maximum % 60;
+
+			txtMax3.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+		}
+
+		if (!wasCustom4) {
+			minimum = 0;
+			maximum = 0;
+			average = 0;
+
+			txtCustom4.parentElement.MaterialTextfield.change(lngObject.opt16);
+		} else if (wasCustom4 && !isFirstTime) {
+			setCustomText();
+
+			let hours = Math.floor(minimum / 3600);
+			let minutes = Math.floor(minimum / 60);
+			let seconds = minimum % 60;
+
+			txtMin4.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(average / 3600);
+			minutes = Math.floor(average / 60);
+			seconds = average % 60;
+
+			txtAvg4.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(maximum / 3600);
+			minutes = Math.floor(maximum / 60);
+			seconds = maximum % 60;
+
+			txtMax4.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+		}
+
+		if (!wasCustom5) {
+			minimum = 0;
+			maximum = 0;
+			average = 0;
+
+			txtCustom5.parentElement.MaterialTextfield.change(lngObject.opt17);
+		} else if (wasCustom5 && !isFirstTime) {
+			setCustomText();
+
+			let hours = Math.floor(minimum / 3600);
+			let minutes = Math.floor(minimum / 60);
+			let seconds = minimum % 60;
+
+			txtMin5.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(average / 3600);
+			minutes = Math.floor(average / 60);
+			seconds = average % 60;
+
+			txtAvg5.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+
+			hours = Math.floor(maximum / 3600);
+			minutes = Math.floor(maximum / 60);
+			seconds = maximum % 60;
+
+			txtMax5.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+		}
+
 		if (deviceDetector.device === 'phone') {
 			setTimeout(function() {
-				let bCustomTimes = document.getElementById('bodyCustomTimes');
+				const bCustomTimes = document.getElementById('bodyCustomTimes');
 				bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
+				const bCustomTimes2 = document.getElementById('bodyCustomTimes2');
+				bCustomTimes2.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
+				const bCustomTimes3 = document.getElementById('bodyCustomTimes3');
+				bCustomTimes3.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
+				const bCustomTimes4 = document.getElementById('bodyCustomTimes4');
+				bCustomTimes4.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
+				const bCustomTimes5 = document.getElementById('bodyCustomTimes5');
+				bCustomTimes5.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
 			}, 100);
 		}
 
@@ -911,6 +1055,10 @@ btnClap.addEventListener('click', function(event) {
 });
 
 btnSave.addEventListener('click', saveChanges);
+btnSave2.addEventListener('click', saveChanges);
+btnSave3.addEventListener('click', saveChanges);
+btnSave4.addEventListener('click', saveChanges);
+btnSave5.addEventListener('click', saveChanges);
 
 btnSaveClap.addEventListener('click', () => {
 	clappingTime = getSeconds(`00:${clapM.value}:${clapS.value}`);
@@ -1223,6 +1371,10 @@ setTimeout(function() {
 
 		document.getElementById('footerCustom').style.display = 'none';
 		document.getElementById('btnCloseCustom').style.display = 'none';
+		document.getElementById('btnCloseCustom2').style.display = 'none';
+		document.getElementById('btnCloseCustom3').style.display = 'none';
+		document.getElementById('btnCloseCustom4').style.display = 'none';
+		document.getElementById('btnCloseCustom5').style.display = 'none';
 
 		//About
 		let aboutDialogAD = document.getElementById('aboutDialog');
