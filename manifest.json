@@ -3,7 +3,7 @@
   "lang": "da",
   "name": "Toastmasters Timer",
   "version": "2.4.0.0",
-  "scope": "https://fanmixco.github.io/toastmasters-timer/",
+  "scope": "https://tmtimer.federiconavarrete.com/",
   "display": "standalone",
   "display_override": [
     "standalone",
@@ -11,7 +11,7 @@
     "window-controls-overlay",
     "fullscreen"
   ],
-  "start_url": "https://fanmixco.github.io/toastmasters-timer/",
+  "start_url": "https://tmtimer.federiconavarrete.com/",
   "short_name": "TM Timer",
   "theme_color": "#ffffff",
   "description": "It's a simple PWA empowering Toastmasters all over the world, helping them to have effective and productive Timer for their meetings. It was developed with JavaScript by Federico Navarrete from The Leader Ship Toastmasters in Łódź, Poland.",
