@@ -68,7 +68,7 @@ You can follow these steps:
 
   [1]: https://federiconavarrete.com
   [2]: https://www.facebook.com/TheLeaderShipToastmasters
-  [3]: https://fanmixco.github.io/toastmasters-timer
+  [3]: https://tmtimer.federiconavarrete.com
   [4]: https://prezi.com/video
   [5]: https://bit.ly/3bf877f
   [6]: https://poeditor.com/join/project/hJX2GTJNPv
