@@ -74,7 +74,7 @@ You can follow these steps:
   [6]: https://poeditor.com/join/project/hJX2GTJNPv
   
 
-### Follow me at:
+### Follow me on:
 
 |  LinkedIn  |YouTube|Amazon|Goodreads|Instagram|Cyber Prophets|Sharing Your Stories|
 |:----------|:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
