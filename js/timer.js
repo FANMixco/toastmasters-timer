@@ -1444,7 +1444,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
 		document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
 	}
-	document.body.style.minHeight = `${window.innerHeight}px`;
+	document.body.style.maxHeight = `${window.innerHeight}px`;
 
 	resizeScreen();
 });
