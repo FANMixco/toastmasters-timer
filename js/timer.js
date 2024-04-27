@@ -728,7 +728,7 @@ function invertColors() {
 		setInvFilter(customMin, invert100);
 		setInvFilter(customAvg, invert100);
 		setInvFilter(customMax, invert100);
-		setInvFilter(customMax, invert100);
+		//setInvFilter(customMax, invert100);
 		setInvFilter(speakers, invert100);
 		setInvFilter(dialogAbout, invert100);
 		setInvFilter(document.body, invert100);
@@ -749,7 +749,7 @@ function invertColors() {
 		setInvFilter(customMin, invert0);
 		setInvFilter(customAvg, invert0);
 		setInvFilter(customMax, invert0);
-		setInvFilter(customMax, invert0);
+		//setInvFilter(customMax, invert0);
 		setInvFilter(speakers, invert0);
 		setInvFilter(dialogAbout, invert0);
 		setInvFilter(document.body, invert0);
@@ -1137,7 +1137,7 @@ setTimeout(function() {
 		spanCloseMobile.id = 'btnCloseMobile';
 
 		let spanCloseIcon = document.createElement("img");
-		spanCloseIcon.id = "btnCloseMobile";
+		spanCloseIcon.id = "btnCloseMobileCT";
 		spanCloseIcon.src = "img/icons-svg/close.svg";
 		spanCloseIcon.alt = "close";
 
