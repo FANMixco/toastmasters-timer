@@ -1117,189 +1117,190 @@ lastColor = bgColors[selectedColor];
 invertColors();
 
 setTimeout(function() {
-	let bodyAbout = document.getElementById('bodyAbout');
+    let bodyAbout = document.getElementById('bodyAbout');
+        
+    let bodyTranslators = document.getElementById('bodyTranslators');
+    
+    let bodyHelp = document.getElementById('bodyHelp');
 
-	let bodyTranslators = document.getElementById('bodyTranslators');
+    if (deviceDetector.device == 'phone') {
+        //Timetable Dialog
+        let timeTableTmp = document.getElementById('timeTable');
+        let divTitleContainerTmp = document.createElement("div");
+        divTitleContainerTmp.className = "titleContainer";
 
-	let bodyHelp = document.getElementById('bodyHelp');
+        let divTitleInnerContainer = document.createElement("div");
+        divTitleInnerContainer.className = "titleInnerContainer";
 
-	if (deviceDetector.device == 'phone') {
-		//Timetable Dialog
-		let timeTableTmp = document.getElementById('timeTable');
-		let divTitleContainerTmp = document.createElement("div");
-		divTitleContainerTmp.className = "titleContainer";
+        let spanCloseMobile = document.createElement("span");
+        spanCloseMobile.className = "closeMobile";
+        spanCloseMobile.id = 'btnCloseMobileSpan';
 
-		let divTitleInnerContainer = document.createElement("div");
-		divTitleInnerContainer.className = "titleInnerContainer";
+        let spanCloseIcon = document.createElement("img");
+        spanCloseIcon.className = "btnCloseMobile";
+        spanCloseIcon.src = "img/icons-svg/close.svg";
+        spanCloseIcon.alt = "close";
 
-		let spanCloseMobile = document.createElement("span");
-		spanCloseMobile.className = "closeMobile";
-		spanCloseMobile.id = 'btnCloseMobile';
+        let spanTitle = document.createElement("span");
+        spanTitle.id = 'spanTitle';
 
-		let spanCloseIcon = document.createElement("img");
-		spanCloseIcon.id = "btnCloseMobileCT";
-		spanCloseIcon.src = "img/icons-svg/close.svg";
-		spanCloseIcon.alt = "close";
+        spanCloseMobile.appendChild(spanCloseIcon);
 
-		let spanTitle = document.createElement("span");
-		spanTitle.id = 'spanTitle';
+        divTitleInnerContainer.appendChild(spanCloseMobile);
+        divTitleInnerContainer.appendChild(spanTitle);
 
-		spanCloseMobile.appendChild(spanCloseIcon);
+        divTitleContainerTmp.appendChild(divTitleInnerContainer);
 
-		divTitleInnerContainer.appendChild(spanCloseMobile);
-		divTitleInnerContainer.appendChild(spanTitle);
+        timeTableTmp.insertBefore(divTitleContainerTmp, timeTableTmp.firstChild);
 
-		divTitleContainerTmp.appendChild(divTitleInnerContainer);
+        titleMeeting = document.getElementById('titleMeeting');
+        titleMeeting.classList.remove('mdl-dialog__title');
+        titleMeeting.style.margin = '0';
+        titleMeeting.style.marginTop = '16px';
+        titleMeeting.style.fontWeight = 1000;
+        titleMeeting.style.fontSize = '1.25em';
+        titleMeeting.style.display = 'inline';
 
-		timeTableTmp.insertBefore(divTitleContainerTmp, timeTableTmp.firstChild);
+        document.getElementById('spanTitle').append(titleMeeting);
 
-		titleMeeting = document.getElementById('titleMeeting');
-		titleMeeting.classList.remove('mdl-dialog__title');
-		titleMeeting.style.margin = '0';
-		titleMeeting.style.marginTop = '16px';
-		titleMeeting.style.fontWeight = 1000;
-		titleMeeting.style.fontSize = '1.25em';
-		titleMeeting.style.display = 'inline';
+        document.getElementById('btnCloseMeeting').style.display = 'none';
 
-		document.getElementById('spanTitle').append(titleMeeting);
+        document.getElementById('btnCloseMobileSpan').addEventListener('click', () => {
+            dialogTimeTable.close();
+        });
 
-		document.getElementById('btnCloseMeeting').style.display = 'none';
+        //Custom Dialog
+        let customTimesTmp = document.getElementById('customTimes');
+        let divTitleContainerCT = document.createElement("div");
+        divTitleContainerCT.className = "titleContainer";
 
-		document.getElementById('btnCloseMobile').addEventListener('click', function() {
-			dialogTimeTable.close();
-		});
+        let divTitleInnerContainerCT = document.createElement("div");
+        divTitleInnerContainerCT.className = "titleInnerContainer";
 
-		//Custom Dialog
-		let customTimesTmp = document.getElementById('customTimes');
-		let divTitleContainerCT = document.createElement("div");
-		divTitleContainerCT.className = "titleContainer";
+        let spanCloseMobileCT = document.createElement("span");
+        spanCloseMobileCT.className = "closeMobile";
+        spanCloseMobileCT.id = 'btnCloseMobileCustom';
 
-		let divTitleInnerContainerCT = document.createElement("div");
-		divTitleInnerContainerCT.className = "titleInnerContainer";
+        let spanCloseIconCT = document.createElement("img");
+        spanCloseIconCT.className = "btnCloseMobile";
+        spanCloseIconCT.src = "img/icons-svg/close.svg";
+        spanCloseIconCT.alt = "close";
 
-		let spanCloseMobileCT = document.createElement("span");
-		spanCloseMobileCT.className = "closeMobile";
-		spanCloseMobileCT.id = 'btnCloseMobileCustom';
+        let spanTitleCT = document.createElement("span");
+        spanTitleCT.id = 'spanTitleCustom';
 
-		let spanCloseIconCT = document.createElement("img");
-		spanCloseIconCT.id = "btnCloseMobile";
-		spanCloseIconCT.src = "img/icons-svg/close.svg";
-		spanCloseIconCT.alt = "close";
+        let customTitleCT = document.createElement("h4");
+        customTitleCT.innerHTML = '&nbsp;';
+        customTitleCT.id = 'customTitle';
 
-		let spanTitleCT = document.createElement("span");
-		spanTitleCT.id = 'spanTitleCustom';
+        let spanSaveCT = document.createElement("span");
+        spanSaveCT.id = 'spanSave';
 
-		let customTitleCT = document.createElement("h4");
-		customTitleCT.innerHTML = '&nbsp;';
-		customTitleCT.id = 'customTitle';
+        spanCloseMobileCT.appendChild(spanCloseIconCT);
+        spanTitleCT.appendChild(customTitleCT);
 
-		let spanSaveCT = document.createElement("span");
-		spanSaveCT.id = 'spanSave';
+        divTitleInnerContainerCT.appendChild(spanCloseMobileCT);
+        divTitleInnerContainerCT.appendChild(spanTitleCT);
+        divTitleInnerContainerCT.appendChild(spanSaveCT);
 
-		spanCloseMobileCT.appendChild(spanCloseIconCT);
-		spanTitleCT.appendChild(customTitleCT);
+        divTitleContainerCT.appendChild(divTitleInnerContainerCT);
 
-		divTitleInnerContainerCT.appendChild(spanCloseMobileCT);
-		divTitleInnerContainerCT.appendChild(spanTitleCT);
-		divTitleInnerContainerCT.appendChild(spanSaveCT);
+        customTimesTmp.insertBefore(divTitleContainerCT, customTimesTmp.firstChild);
 
-		divTitleContainerCT.appendChild(divTitleInnerContainerCT);
+        let customTitleTmp = document.getElementById('customTitle');
+        customTitleTmp.classList.remove('mdl-dialog__title');
+        customTitleTmp.style.margin = '0';
+        customTitleTmp.style.marginTop = '16px';
+        customTitleTmp.style.fontWeight = 1000;
+        customTitleTmp.style.fontSize = '1.25em';
+        customTitleTmp.style.display = 'inline';
 
-		customTimesTmp.insertBefore(divTitleContainerCT, customTimesTmp.firstChild);
+        document.getElementById('btnCloseMobileCustom').addEventListener('click', function() {
+            closeCustomDialog();
+        });
 
-		let customTitleTmp = document.getElementById('customTitle');
-		customTitleTmp.classList.remove('mdl-dialog__title');
-		customTitleTmp.style.margin = '0';
-		customTitleTmp.style.marginTop = '16px';
-		customTitleTmp.style.fontWeight = 1000;
-		customTitleTmp.style.fontSize = '1.25em';
-		customTitleTmp.style.display = 'inline';
+        document.getElementById('spanSave').appendChild(document.getElementById('btnSave'));
 
-		document.getElementById('btnCloseMobileCustom').addEventListener('click', function() {
-			closeCustomDialog();
-		});
+        document.getElementById('footerCustom').style.display = 'none';
+        document.getElementById('btnCloseCustom').style.display = 'none';
 
-		document.getElementById('spanSave').appendChild(document.getElementById('btnSave'));
+        //About
+        let aboutDialogAD = document.getElementById('aboutDialog');
+        let divTitleContainerAD = document.createElement("div");
+        divTitleContainerAD.className = "titleContainer";
 
-		document.getElementById('footerCustom').style.display = 'none';
-		document.getElementById('btnCloseCustom').style.display = 'none';
+        let divTitleInnerContainerAD = document.createElement("div");
+        divTitleInnerContainerAD.className = "titleInnerContainer";
 
-		//About
-		let aboutDialogAD = document.getElementById('aboutDialog');
-		let divTitleContainerAD = document.createElement("div");
-		divTitleContainerAD.className = "titleContainer";
+        let spanCloseMobileAD = document.createElement("span");
+        spanCloseMobileAD.className = "closeMobile";
+        spanCloseMobileAD.id = 'btnCloseMobileAbout';
 
-		let divTitleInnerContainerAD = document.createElement("div");
-		divTitleInnerContainerAD.className = "titleInnerContainer";
+        let spanCloseIconAD = document.createElement("img");
+        spanCloseIconAD.className = "btnCloseMobile";
+        spanCloseIconAD.src = "img/icons-svg/close.svg";
+        spanCloseIconAD.alt = "close";
 
-		let spanCloseMobileAD = document.createElement("span");
-		spanCloseMobileAD.className = "closeMobile";
-		spanCloseMobileAD.id = 'btnCloseMobileAbout';
+        let spanTitleAD = document.createElement("span");
+        spanTitleAD.id = 'spanTitleAbout';
 
-		let spanCloseIconAD = document.createElement("img");
-		spanCloseIconAD.id = "btnCloseMobile";
-		spanCloseIconAD.src = "img/icons-svg/close.svg";
-		spanCloseIconAD.alt = "close";
+        let aboutTitleAD = document.createElement("h4");
+        aboutTitleAD.innerHTML = '&nbsp;';
+        aboutTitleAD.id = 'aboutTitle';
+        aboutTitleAD.style.margin = '0';
+        aboutTitleAD.style.marginTop = '16px';
+        aboutTitleAD.style.fontWeight = 1000;
+        aboutTitleAD.style.fontSize = '1.25em';
+        aboutTitleAD.style.display = 'inline';
 
-		let spanTitleAD = document.createElement("span");
-		spanTitleAD.id = 'spanTitleAbout';
+        spanCloseMobileAD.appendChild(spanCloseIconAD);
+        spanTitleAD.appendChild(aboutTitleAD);
 
-		let aboutTitleAD = document.createElement("h4");
-		aboutTitleAD.innerHTML = '&nbsp;';
-		aboutTitleAD.id = 'aboutTitle';
-		aboutTitleAD.style.margin = '0';
-		aboutTitleAD.style.marginTop = '16px';
-		aboutTitleAD.style.fontWeight = 1000;
-		aboutTitleAD.style.fontSize = '1.25em';
-		aboutTitleAD.style.display = 'inline';
+        divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
+        divTitleInnerContainerAD.appendChild(spanTitleAD);
 
-		spanCloseMobileAD.appendChild(spanCloseIconAD);
-		spanTitleAD.appendChild(aboutTitleAD);
+        divTitleContainerAD.appendChild(divTitleInnerContainerAD);
 
-		divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
-		divTitleInnerContainerAD.appendChild(spanTitleAD);
+        aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
 
-		divTitleContainerAD.appendChild(divTitleInnerContainerAD);
+        document.getElementById('btnCloseMobileAbout').addEventListener('click', function() {
+            dialogAbout.close();
+        });
 
-		aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
+        document.getElementById('divCloseAbout').style.display = 'none';
+        
+        bodyAbout.style.height = `${document.body.offsetHeight * 0.79}px`;
+        
+        bodyTranslators.style.height = `${document.body.offsetHeight * 0.79}px`;
+        
+        bodyHelp.style.height = `${document.body.offsetHeight * 0.79}px`;
+    }
+    else {
+        let bodyApp = document.body;
+        if (typeof HTMLDialogElement !== 'function') { 
+            bodyAbout.style.height = `${bodyApp.offsetHeight * 0.8}px`;
+        
+            bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.8}px`;
+            
+            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.8}px`;    
+        } else {
+            bodyAbout.style.height = `${bodyApp.offsetHeight * 0.4}px`;
+            
+            bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.4}px`;
+            
+            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.4}px`;    
+        }
+    }
 
-		document.getElementById('btnCloseMobileAbout').addEventListener('click', function() {
-			dialogAbout.close();
-		});
-
-		document.getElementById('divCloseAbout').style.display = 'none';
-
-		bodyAbout.style.height = `${document.body.offsetHeight * 0.79}px`;
-
-		bodyTranslators.style.height = `${document.body.offsetHeight * 0.79}px`;
-
-		bodyHelp.style.height = `${document.body.offsetHeight * 0.79}px`;
-	} else {
-		let bodyApp = document.body;
-		if (typeof HTMLDialogElement !== 'function') {
-			bodyAbout.style.height = `${bodyApp.offsetHeight * 0.8}px`;
-
-			bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.8}px`;
-
-			bodyHelp.style.height = `${bodyApp.offsetHeight * 0.8}px`;
-		} else {
-			bodyAbout.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-
-			bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-
-			bodyHelp.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-		}
-	}
-
-	let exit = 0;
-	do {
-		setTimeout(function() {
-			try {
-				titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
-			} catch (e) {}
-		}, 1000);
-		exit++;
-	} while (lngObject === undefined && exit < 5);
+    let exit = 0;
+    do {
+        setTimeout(function() {
+            try {
+                titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
+            } catch (e) {}
+        }, 1000);
+        exit++;
+    } while (lngObject === undefined && exit < 5);
 }, 100);
 
 checkMode();
