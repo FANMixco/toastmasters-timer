@@ -457,7 +457,14 @@ th,
 
 #controls {
 	position: absolute;
-	left: 32px;
+	left:calc(20.5% - 32px);
+	top: 105px;
+	text-align: center;
+}
+
+#controls-rtl {
+	position: absolute;
+	left:calc(26% - 32px);
 	top: 105px;
 	text-align: center;
 }
