@@ -35,10 +35,10 @@ All speeches are recorded for sharing with your members or guests.
 - **Clapping** when the maximum time has been exceeded (*Desktop ONLY*).
 
 **Color coding:**
-- **Light Green**, speeches that didn't reach the minimum time (-30s), but still qualified in a contest (*ONLY available in reports preview and exports to PDF*).
-- **Green**, minimum time was reached.
-- **Yellow**, optimal time was reached.
-- **Red**, maximum time was reached.
+- **Light Green** for speeches that didn't reach the minimum time (-30s), but still qualified in a contest (*ONLY available in reports preview and exports to PDF*).
+- **Green**: The minimum time was reached.
+- **Yellow**: The optimal time was reached.
+- **Red**: The maximum time was reached.
 - **Black** for speeches that exceed the maximum time (+30s or predefined) and are disqualified in a Toastmasters contest (*ONLY available in reports preview*).
 
 **Extra options:**
