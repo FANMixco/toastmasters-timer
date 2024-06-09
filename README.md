@@ -10,7 +10,7 @@ Do you need some extra ideas on how to use it with [Prezi Video][4]? Check my [Y
 
 **This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
 
-![toastmasters](https://i.stack.imgur.com/TFTH7.jpg)
+![toastmasters](https://i.sstatic.net/TFTH7.jpg)
 
 This App provides you with different options, for example:
 - Question of the Day (30s).
@@ -46,13 +46,13 @@ All speeches are recorded for sharing with your members or guests.
 - Dark Mode.
 - Easter Eggs.
 
-**Do you want to see it your own language?** Why don't you join to our [Community][6]?
+**Do you want to see it your own language?** Why don't you join to our **[Community][6]**?
 
 This project is fully **open-source** and can be reused, modified, or improved freely without any constrain. Feel free to hack it and share your new ideas!
 
 ### App previews
 
-![preview](https://i.stack.imgur.com/1PRPL.gif)
+![preview](https://i.sstatic.net/1PRPL.gif)
 
 Furthermore, you can download the compiled versions in the official stores:
 
@@ -64,7 +64,7 @@ Furthermore, you can download the compiled versions in the official stores:
 
 You can follow these steps:
 
-![iOSInstall](https://i.stack.imgur.com/Gn4ut.gif)
+![iOSInstall](https://i.sstatic.net/Gn4ut.gif)
 
   [1]: https://federiconavarrete.com
   [2]: https://www.facebook.com/TheLeaderShipToastmasters
@@ -78,5 +78,5 @@ You can follow these steps:
 
 |  LinkedIn  |YouTube|Amazon|Goodreads|Instagram|Cyber Prophets|Sharing Your Stories|
 |:----------|:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
-|[![LinkedIn](https://i.stack.imgur.com/idQWu.png)](https://www.linkedin.com/in/federiconavarrete/)|[![YouTube](https://i.stack.imgur.com/CFPMR.png)](https://youtube.com/@FedericoNavarrete)|[![Amazon](https://i.stack.imgur.com/NFOeE.png)](https://www.amazon.com/Federico-Navarrete/e/B08NJTXQRV)|[![Goodreads](https://i.stack.imgur.com/oBk0g.jpg)](https://www.goodreads.com/author/show/21125413.Federico_Navarrete)|[![Instagram](https://i.stack.imgur.com/PIfqY.png)](https://www.instagram.com/federico_the_consultant)|[![RedCircle Podcast](https://i.stack.imgur.com/4XICF.png)](https://redcircle.com/shows/cyber-prophets)|[![RedCircle Podcast](https://i.stack.imgur.com/4XICF.png)](https://redcircle.com/shows/sharing-your-stories)|
+|[![LinkedIn](https://i.sstatic.net/idQWu.png)](https://www.linkedin.com/in/federiconavarrete/)|[![YouTube](https://i.sstatic.net/CFPMR.png)](https://youtube.com/@FedericoNavarrete)|[![Amazon](https://i.sstatic.net/NFOeE.png)](https://www.amazon.com/Federico-Navarrete/e/B08NJTXQRV)|[![Goodreads](https://i.sstatic.net/oBk0g.jpg)](https://www.goodreads.com/author/show/21125413.Federico_Navarrete)|[![Instagram](https://i.sstatic.net/PIfqY.png)](https://www.instagram.com/federico_the_consultant)|[![RedCircle Podcast](https://i.sstatic.net/4XICF.png)](https://redcircle.com/shows/cyber-prophets)|[![RedCircle Podcast](https://i.sstatic.net/4XICF.png)](https://redcircle.com/shows/sharing-your-stories)|
 
