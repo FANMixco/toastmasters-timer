@@ -1,75 +1,75 @@
 //Controls
 const displayOutput = document.querySelector('.display-remain-time'),
-	externalLinks = document.getElementsByClassName('externalLinks'),
-	btnPause = document.getElementById('pause'),
-	btnRestart = document.getElementById('btnRestart'),
-	btnStop = document.getElementById('btnStop'),
-	btnTimeTable = document.getElementById('btnTimetable'),
-	btnChampion = document.getElementById('btnChampion'),
-	btnBeep = document.getElementById('btnBeep'),
-	btnVibrate = document.getElementById('btnVibrate'),
-	btnClap = document.getElementById('btnClap'),
-	btnDelete = document.getElementById('btnDelete'),
-	btnInvert = document.getElementById('btnInvert'),
-	btnMultiple = document.getElementById('btnMultiple'),
-	btnEmail = document.getElementById('btnEmail'),
-	btnShare = document.getElementById('btnShare'),
-	btnDownload = document.getElementById('btnDownload'),
-	btnYesChallenge = document.getElementById('btnYesChallenge'),
-	btnYesConfirm = document.getElementById('btnYesConfirm'),
-	btnYesChanges = document.getElementById('btnYesChanges'),
-	btnSponsor2Us = document.getElementById('btnSponsor2Us'),
-	btnSave = document.getElementById('btnSave'),
-	btnSaveClap = document.getElementById('btnSaveClap'),
-	btnAbout = document.getElementById('btnAbout'),
-	imgClap = document.getElementById('imgClap'),
-	imgRestart = document.getElementById('imgRestart'),
-	imgTrophy = document.getElementById('imgTrophy'),
-	imgBeep = document.getElementById('imgBeep'),
-	imgCheckBox = document.getElementById('imgCheckBox'),
-	imgMultiple = document.getElementById('imgMultiple'),
-	imgVibrate = document.getElementById('imgVibrate'),
-	dialogTimeTable = document.getElementById('timeTable'),
-	dialogWelcome = document.getElementById('welcomeDialog'),
-	dialogConfirm = document.getElementById('confirmDialog'),
-	dialogChanges = document.getElementById('changesDialog'),
-	dialogCustomTimes = document.getElementById('customTimes'),
-	dialogAbout = document.getElementById('aboutDialog'),
-	dialogClapping = document.getElementById('clappingDialog'),
-	txtSpeaker = document.getElementById('txtSpeaker'),
-	txtCustom = document.getElementById('txtCustom'),
-	txtMin = document.getElementById('txtMin'),
-	txtAvg = document.getElementById('txtAvg'),
-	txtMax = document.getElementById('txtMax'),
-	clapM = document.getElementById('clapM'),
-	clapS = document.getElementById('clapS'),
-	cmbSpeechType = document.getElementById('cmbSpeechType'),
-	remainTime = document.getElementById('remainTime'),
-	divSpeaker = document.getElementById('divSpeaker'),
-	snackbarMsg = document.getElementById('snackbarMsg'),
-	tickAll = document.getElementById('tickAll'),
-	progressBar = document.querySelector('.e-c-progress'),
-	indicator = document.getElementById('e-indicator'),
-	pointer = document.getElementById('e-pointer'),
-	speakers = document.getElementById('speakers'),
-	customMin = document.getElementById('customMin'),
-	customAvg = document.getElementById('customAvg'),
-	customMax = document.getElementById('customMax'),
-	invert100 = "invert(100%)",
-	invert0 = "invert(0%)",
-	length = Math.PI * 2 * 100,
-	fastTransition = 0.2;
+    externalLinks = document.getElementsByClassName('externalLinks'),
+    btnPause = document.getElementById('pause'),
+    btnRestart = document.getElementById('btnRestart'),
+    btnStop = document.getElementById('btnStop'),
+    btnTimeTable = document.getElementById('btnTimetable'),
+    btnChampion = document.getElementById('btnChampion'),
+    btnBeep = document.getElementById('btnBeep'),
+    btnVibrate = document.getElementById('btnVibrate'),
+    btnClap = document.getElementById('btnClap'),
+    btnDelete = document.getElementById('btnDelete'),
+    btnInvert = document.getElementById('btnInvert'),
+    btnMultiple = document.getElementById('btnMultiple'),
+    btnEmail = document.getElementById('btnEmail'),
+    btnShare = document.getElementById('btnShare'),
+    btnDownload = document.getElementById('btnDownload'),
+    btnYesChallenge = document.getElementById('btnYesChallenge'),
+    btnYesConfirm = document.getElementById('btnYesConfirm'),
+    btnYesChanges = document.getElementById('btnYesChanges'),
+    btnSponsor2Us = document.getElementById('btnSponsor2Us'),
+    btnSave = document.getElementById('btnSave'),
+    btnSaveClap = document.getElementById('btnSaveClap'),
+    btnAbout = document.getElementById('btnAbout'),
+    imgClap = document.getElementById('imgClap'),
+    imgRestart = document.getElementById('imgRestart'),
+    imgTrophy = document.getElementById('imgTrophy'),
+    imgBeep = document.getElementById('imgBeep'),
+    imgCheckBox = document.getElementById('imgCheckBox'),
+    imgMultiple = document.getElementById('imgMultiple'),
+    imgVibrate = document.getElementById('imgVibrate'),
+    dialogTimeTable = document.getElementById('timeTable'),
+    dialogWelcome = document.getElementById('welcomeDialog'),
+    dialogConfirm = document.getElementById('confirmDialog'),
+    dialogChanges = document.getElementById('changesDialog'),
+    dialogCustomTimes = document.getElementById('customTimes'),
+    dialogAbout = document.getElementById('aboutDialog'),
+    dialogClapping = document.getElementById('clappingDialog'),
+    txtSpeaker = document.getElementById('txtSpeaker'),
+    txtCustom = document.getElementById('txtCustom'),
+    txtMin = document.getElementById('txtMin'),
+    txtAvg = document.getElementById('txtAvg'),
+    txtMax = document.getElementById('txtMax'),
+    clapM = document.getElementById('clapM'),
+    clapS = document.getElementById('clapS'),
+    cmbSpeechType = document.getElementById('cmbSpeechType'),
+    remainTime = document.getElementById('remainTime'),
+    divSpeaker = document.getElementById('divSpeaker'),
+    snackbarMsg = document.getElementById('snackbarMsg'),
+    tickAll = document.getElementById('tickAll'),
+    progressBar = document.querySelector('.e-c-progress'),
+    indicator = document.getElementById('e-indicator'),
+    pointer = document.getElementById('e-pointer'),
+    speakers = document.getElementById('speakers'),
+    customMin = document.getElementById('customMin'),
+    customAvg = document.getElementById('customAvg'),
+    customMax = document.getElementById('customMax'),
+    invert100 = "invert(100%)",
+    invert0 = "invert(0%)",
+    length = Math.PI * 2 * 100,
+    fastTransition = 0.2;
 
 const defGreenBgn = "#60ad5e",
-	defYellowBgn = "#ffeb3b",
-	defRedBgn = "#e53935",
-	defGreenCBBgn = "#2196f3",
-	defYellowCBBgn = "#ffeb3b",
-	defRedCBBgn = "#ad1457";
+    defYellowBgn = "#ffeb3b",
+    defRedBgn = "#e53935",
+    defGreenCBBgn = "#2196f3",
+    defYellowCBBgn = "#ffeb3b",
+    defRedCBBgn = "#ad1457";
 
 let greenBgnCss = defGreenBgn,
-	yellowBgnCss = defYellowBgn,
-	redBgnCss = defRedBgn;
+    yellowBgnCss = defYellowBgn,
+    redBgnCss = defRedBgn;
 
 // Detects if device is in standalone mode
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
@@ -79,65 +79,65 @@ let titleMeeting = document.getElementById('titleMeeting');
 let externalContainer = null;
 
 let clappingTime = 30,
-	wholeTime = 30,
-	selected = -1,
-	minimum = 0,
-	average = 0,
-	maximum = 0,
-	selectedColor = isDarkModeEnabled(),
-	green = 0,
-	yellow = 0,
-	red = 0,
-	timeLeft = 0;
+    wholeTime = 30,
+    selected = -1,
+    minimum = 0,
+    average = 0,
+    maximum = 0,
+    selectedColor = isDarkModeEnabled(),
+    green = 0,
+    yellow = 0,
+    red = 0,
+    timeLeft = 0;
 
 let isPaused = false,
-	isStarted = false,
-	isStopped = true,
-	isBeepEnabled = false,
-	isVibrateEnabled = false,
-	isClappingEnabled = false,
-	isContestMode = false,
-	isCustom = false,
-	isFirstRun = true,
-	clappingStarted = false,
-	multipleEnabled = false,
-	isNinjaMode = false,
-	isTextPreviewMode = false,
-	isFirstTime = false,
-	isColorBlindnessEnabled = false;
+    isStarted = false,
+    isStopped = true,
+    isBeepEnabled = false,
+    isVibrateEnabled = false,
+    isClappingEnabled = false,
+    isContestMode = false,
+    isCustom = false,
+    isFirstRun = true,
+    clappingStarted = false,
+    multipleEnabled = false,
+    isNinjaMode = false,
+    isTextPreviewMode = false,
+    isFirstTime = false,
+    isColorBlindnessEnabled = false;
 
 let dateFormat = "DD/MM/YYYY",
-	latestDB = "1.0",
-	currentDB = "1.0",
-	lastColor = "white";
+    latestDB = "1.0",
+    currentDB = "1.0",
+    lastColor = "white";
 
 let countries = ["US", "FM", "MH", "PH"];
 
 let times = [
-	//QA (30s)
-	[10, 20, 30],
-	//Ice-breaker
-	[240, 300, 360],
-	//1-9 (5 to 7)
-	[300, 360, 420],
-	//1m
-	[30, 45, 60],
-	//Evaluator intro
-	[60, 75, 90],
-	//Evaluator
-	[120, 150, 180],
-	//General Evaluator
-	[300, 330, 360],
-	//TT
-	[60, 90, 120],
-	//10 (8 to 10)
-	[480, 540, 600],
-	//12m
-	[600, 660, 720],
-	//15m
-	[780, 840, 900],
-	//20m
-	[1080, 1170, 1200]
+    //QA (30s)
+    [10, 20, 30],
+    //Ice-breaker
+    [240, 300, 360],
+    //1-9 (5 to 7)
+    [300, 360, 420],
+    //1m
+    [30, 45, 60],
+    //Evaluator intro
+    [60, 75, 90],
+    //Evaluator
+    [120, 150, 180],
+    //General Evaluator
+    [300, 330, 360],
+    //TT
+    [60, 90, 120],
+    //10 (8 to 10)
+    [480, 540, 600],
+    //12m
+    [600, 660, 720],
+    //15m
+    [780, 840, 900],
+    //20m
+    [1080, 1170, 1200]
 ];
 
 let intervalTimer;
@@ -149,11 +149,11 @@ var browserResult = new UAParser().getResult();
 progressBar.style.strokeDasharray = length;
 
 function update(value, timePercent) {
-	let offset = -length - length * value / (timePercent);
-	if (value >= 0) {
-		progressBar.style.strokeDashoffset = -offset;
-		pointer.style.transform = `rotate(${360 * value / (-timePercent)}deg)`;
-	}
+    let offset = -length - length * value / (timePercent);
+    if (value >= 0) {
+        progressBar.style.strokeDashoffset = -offset;
+        pointer.style.transform = `rotate(${360 * value / (-timePercent)}deg)`;
+    }
 }
 
 update(wholeTime, wholeTime); //refreshes progress bar
@@ -162,929 +162,952 @@ displayTimeLeft(wholeTime);
 checkMode();
 
 function setDateFormat() {
-	if (countries.includes(navigator.language.split('-')[1]))
-		dateFormat = "MM/DD/YYYY";
+    if (countries.includes(navigator.language.split('-')[1]))
+        dateFormat = "MM/DD/YYYY";
 }
 
 function disableLinks(isLinkDisabled) {
-	Array.from(externalLinks).forEach(function(entry) {
-		if (isLinkDisabled)
-			entry.setAttribute("disabled", "disabled");
-		else
-			entry.removeAttribute("disabled");
-	});
+    Array.from(externalLinks).forEach(function (entry) {
+        if (isLinkDisabled)
+            entry.setAttribute("disabled", "disabled");
+        else
+            entry.removeAttribute("disabled");
+    });
 }
 
 function getTimeStamp(seconds) {
-	return moment.utc(seconds * 1000).format('HH:mm:ss');
+    return moment.utc(seconds * 1000).format('HH:mm:ss');
 }
 
 function getTime() {
-	return remainTime.innerHTML;
+    return remainTime.innerHTML;
 }
 
 function checkMode() {
-	if (isContestMode) {
-		document.getElementById('remainTime').classList.remove('showTime');
-		document.getElementById('controls').classList.remove('contestModeOff');
-		document.getElementById('remainTime').classList.add('hideTime');
-		document.getElementById('controls').classList.add('contestMode');
-	} else {
-		document.getElementById('remainTime').classList.remove('contestMode');
-		document.getElementById('controls').classList.remove('hideTime');
-		document.getElementById('remainTime').classList.add('showTime');
-		document.getElementById('controls').classList.add('contestModeOff');
-	}
+    if (isContestMode) {
+        document.getElementById('remainTime').classList.remove('showTime');
+        document.getElementById('controls').classList.remove('contestModeOff');
+        document.getElementById('remainTime').classList.add('hideTime');
+        document.getElementById('controls').classList.add('contestMode');
+    } else {
+        document.getElementById('remainTime').classList.remove('contestMode');
+        document.getElementById('controls').classList.remove('hideTime');
+        document.getElementById('remainTime').classList.add('showTime');
+        document.getElementById('controls').classList.add('contestModeOff');
+    }
 }
 
 function changeWholeTime(seconds) {
-	if (wholeTime + seconds > 0) {
-		wholeTime += seconds;
-		update(wholeTime, wholeTime);
-	}
+    if (wholeTime + seconds > 0) {
+        wholeTime += seconds;
+        update(wholeTime, wholeTime);
+    }
 }
 
 setInitialValues();
 
 function setInitialValues() {
-	maximum = 30;
-	wholeTime = 30;
+    maximum = 30;
+    wholeTime = 30;
 
-	isPaused = false;
-	isStarted = false;
-	update(wholeTime, wholeTime); //refreshes progress bar
-	displayTimeLeft(wholeTime);
+    isPaused = false;
+    isStarted = false;
+    update(wholeTime, wholeTime); //refreshes progress bar
+    displayTimeLeft(wholeTime);
 }
 
 function updateDisplay() {
-	update(wholeTime, wholeTime); //refreshes progress bar
-	displayTimeLeft(wholeTime);
+    update(wholeTime, wholeTime); //refreshes progress bar
+    displayTimeLeft(wholeTime);
 }
 
 function basicReset() {
-	resetState();
-	wholeTime = 30; // manage this to set the whole time    
-	updateDisplay();
+    resetState();
+    wholeTime = 30; // manage this to set the whole time    
+    updateDisplay();
 }
 
 function resetState() {
-	isStarted = false;
-	btnPause.classList.remove('pause');
-	btnPause.classList.add('play');
-	clearInterval(intervalTimer);
-	wholeTime = -1;
-	displayTimeLeft(wholeTime);
-	wholeTime = 0;
-	displayTimeLeft(wholeTime);
-	lastColor = bgColors[selectedColor];
-	document.body.style.background = lastColor;
-	clappingStarted = false;
-	setInitialValues();
-	txtSpeaker.value = "";
-	divSpeaker.className = 'mdl-textfield mdl-js-textfield';
-	btnInvert.disabled = false;
-	btnRestart.disabled = false;
-	cmbSpeechType.disabled = false;
-	disableLinks(false);
-	isStopped = true;
-	isPaused = false;
-	imgRestart.src = "img/icons-svg/restart.svg";
-	timeLeft = 0;
-	currentState = 1;
-	browserChangeFavIcon('');
-	browserChangeTitle('');
+    isStarted = false;
+    btnPause.classList.remove('pause');
+    btnPause.classList.add('play');
+    clearInterval(intervalTimer);
+    wholeTime = -1;
+    displayTimeLeft(wholeTime);
+    wholeTime = 0;
+    displayTimeLeft(wholeTime);
+    lastColor = bgColors[selectedColor];
+    document.body.style.background = lastColor;
+    clappingStarted = false;
+    setInitialValues();
+    txtSpeaker.value = "";
+    divSpeaker.className = 'mdl-textfield mdl-js-textfield';
+    btnInvert.disabled = false;
+    btnRestart.disabled = false;
+    cmbSpeechType.disabled = false;
+    disableLinks(false);
+    isStopped = true;
+    isPaused = false;
+    imgRestart.src = "img/icons-svg/restart.svg";
+    timeLeft = 0;
+    currentState = 1;
+    browserChangeFavIcon('');
+    browserChangeTitle('');
 }
 
 function timer(seconds) { //counts time, takes seconds
-	let remainTime = Date.now() + seconds * 1000;
-	displayTimeLeft(seconds);
+    let remainTime = Date.now() + seconds * 1000;
+    displayTimeLeft(seconds);
 
-	intervalTimer = setInterval(function() {
-		timeLeft = Math.round((remainTime - Date.now()) / 1000);
-		let counter = maximum - timeLeft;
-		if (counter >= minimum && counter < average) {
-			green++;
-			execAction(greenBgnCss, "green", 'min');
-		} else if (counter >= average && counter < maximum) {
-			yellow++;
-			execAction(yellowBgnCss, "yellow", 'opt');
-		} else if (counter >= maximum) {
-			red++;
-			execAction(redBgnCss, "red", 'max');
-		}
-		if (counter >= maximum + clappingTime) {
-			if (!clappingStarted)
-				startClapping();
-			clappingStarted = true;
-		}
-		displayTimeLeft(timeLeft);
-	}, 1000);
+    intervalTimer = setInterval(function () {
+        timeLeft = Math.round((remainTime - Date.now()) / 1000);
+        let counter = maximum - timeLeft;
+        if (counter >= minimum && counter < average) {
+            green++;
+            execAction(greenBgnCss, "green", 'min');
+        } else if (counter >= average && counter < maximum) {
+            yellow++;
+            document.body.style.background = yellowBgnCss;
+            execAction(yellowBgnCss, "yellow", 'opt');
+        } else if (counter >= maximum) {
+            red++;
+            execAction(redBgnCss, "red", 'max');
+            document.body.style.background = redBgnCss;
+        }
+        if (counter >= maximum + clappingTime) {
+            if (!clappingStarted)
+                startClapping();
+            clappingStarted = true;
+        }
+        displayTimeLeft(timeLeft);
+    }, 1000);
 }
 
 function execAction(bgn, color, icon) {
-	document.body.style.background = bgn;
-	startBeep();
-	startAlert();
-	startVibrate();
-	lastColor = color;
-	browserChangeFavIcon(icon);
+    document.body.style.background = bgn;
+    startBeep();
+    startAlert();
+    startVibrate();
+    lastColor = color;
+    browserChangeFavIcon(icon);
 }
-
-if (os !== "Android") {
-	window.onresize = function() {
-		resizeScreen();
-	};
+if (os !== "Android" || navigator.userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)) {
+    window.onresize = function () {
+        resizeScreen();
+    };
 }
 
 function resizeScreen() {
-	let scaleVal = window.innerHeight / 600;
-	if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 2.333) {
-		scaleVal = window.innerWidth / 400;
-		if (externalContainer === null) {
-			let bodyTmp = document.body;
-			let divTmp = document.createElement("div");
-			divTmp.id = 'externalContainer';
-			bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
-		}
-		externalContainer = document.getElementById('externalContainer');
-		let sContainer = document.getElementById('superContainer');
-		externalContainer.append(sContainer);
-		externalContainer.style.height = `${window.innerHeight}px`;
-		sContainer.style.transformOrigin = "50% 0% 0px";
+    const isPhabletPort = window.innerHeight > window.innerWidth * 1.9 && window.innerHeight > 900;
+    let scaleVal = window.innerHeight / 600;
+    if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 2.333) {
+        scaleVal = window.innerWidth / 400;
+        if (externalContainer === null) {
+            let bodyTmp = document.body;
+            let divTmp = document.createElement("div");
+            divTmp.id = 'externalContainer';
+            bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
+        }
+        externalContainer = document.getElementById('externalContainer');
+        let sContainer = document.getElementById('superContainer');
+        externalContainer.append(sContainer);
+        externalContainer.style.height = `${window.innerHeight}px`;
+        sContainer.style.transformOrigin = "50% 0% 0px";
 
-		setTimeout(function() {
-			sContainer.style.transform = `scale(${scaleVal})`;
-			setTimeout(function() {
-				let cHeight = (1 + scaleVal) * window.innerHeight;
-				if (cHeight < 514)
-					cHeight = 514;
-				sContainer.style.height = `${cHeight}px`;
-			}, 100);
-		}, 100);
-	} else if (window.innerHeight < 514) {
-		if (externalContainer === null) {
-			let bodyTmp = document.body;
-			let divTmp = document.createElement("div");
-			divTmp.id = 'externalContainer';
-			bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
-		}
-		externalContainer = document.getElementById('externalContainer');
-		let sContainer = document.getElementById('superContainer');
-		externalContainer.append(sContainer);
-		externalContainer.style.height = `${window.innerHeight}px`;
-		sContainer.style.transformOrigin = "50% 0% 0px";
+        setTimeout(function () {
+            sContainer.style.transform = `scale(${scaleVal})`;
+            setTimeout(function () {
+                let cHeight = (1 + scaleVal) * window.innerHeight;
+                if (cHeight < 514)
+                    cHeight = 514;
+                sContainer.style.height = `${cHeight}px`;
+            }, 100);
+        }, 100);
+    } else if (isPhabletPort) {
+        scaleVal = window.innerWidth / 325;
+        const sContainer = document.getElementById('superContainer');
 
-		setTimeout(function() {
-			sContainer.style.transform = `scale(${scaleVal})`;
-			setTimeout(function() {
-				let cHeight = (1 + scaleVal) * window.innerHeight;
-				if (cHeight < 514)
-					cHeight = 514;
-				sContainer.style.height = `${cHeight}px`;
-			}, 100);
-		}, 100);
-	} else {
-		let sContainer = document.getElementById('superContainer');
-		sContainer.style.height = `${window.innerHeight}px`;
-		sContainer.style.transformOrigin = "50% 0% 0px";
+        setTimeout(() => {
+            sContainer.style.height = `${window.innerHeight}px`;
+            sContainer.style.transformOrigin = "50% 0% 0px";
+            sContainer.style.transform = `scale(${scaleVal})`;
+        }, 100);
 
-		setTimeout(function() {
-			sContainer.style.transform = `scale(${scaleVal})`;
-		}, 100);
+        setTimeout(() => {
+            const tmpDiv = document.getElementById('divSpeaker');
+            if (tmpDiv.getBoundingClientRect().width > window.outerWidth) {
+                sContainer.style.transform = `scale(${scaleVal - (scaleVal - tmpDiv.getBoundingClientRect().width / window.outerWidth)})`;
+            }
 
-		setTimeout(function() {
-			if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
-				sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
-		}, 100);
-	}
+            document.getElementById('innerPlayContainer').style.setProperty('top', '27%', 'important');
+            document.querySelector('#playControl').style.top = '-30px';
+        }, 100);
+    } else if (window.innerHeight < 514) {
+        if (externalContainer === null) {
+            let bodyTmp = document.body;
+            let divTmp = document.createElement("div");
+            divTmp.id = 'externalContainer';
+            bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
+        }
+        externalContainer = document.getElementById('externalContainer');
+        let sContainer = document.getElementById('superContainer');
+        externalContainer.append(sContainer);
+        externalContainer.style.height = `${window.innerHeight}px`;
+        sContainer.style.transformOrigin = "50% 0% 0px";
+
+        setTimeout(function () {
+            sContainer.style.transform = `scale(${scaleVal})`;
+            setTimeout(function () {
+                let cHeight = (1 + scaleVal) * window.innerHeight;
+                if (cHeight < 514)
+                    cHeight = 514;
+                sContainer.style.height = `${cHeight}px`;
+            }, 100);
+        }, 100);
+    } else {
+        let sContainer = document.getElementById('superContainer');
+        sContainer.style.height = `${window.innerHeight}px`;
+        sContainer.style.transformOrigin = "50% 0% 0px";
+
+        setTimeout(function () {
+            sContainer.style.transform = `scale(${scaleVal})`;
+        }, 100);
+
+        setTimeout(function () {
+            if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
+                sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
+        }, 100);
+    }
 }
 
 function resizeSelect() {
-	setTimeout(function() {
-		try {
-			document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
-			document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
-			document.getElementsByClassName('mdl-menu__outline')[0].style.height = '310px';
-			document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
-			let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
-			let res = mdlMenu.style.clip.split(", ");
-			if (res.length > 1) {
-				res[1] = res[1].replace("px", "");
-				res[2] = res[2].replace("px", "");
+    setTimeout(function () {
+        try {
+            document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
+            document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
+            document.getElementsByClassName('mdl-menu__outline')[0].style.height = '310px';
+            document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
+            let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
+            let res = mdlMenu.style.clip.split(", ");
+            if (res.length > 1) {
+                res[1] = res[1].replace("px", "");
+                res[2] = res[2].replace("px", "");
 
-				let multiplier = 1;
+                let multiplier = 1;
 
-				if (browserResult.browser.name === 'Edge' && parseFloat(browserResult.browser.version) < 19)
-					multiplier = 2;
+                if (browserResult.browser.name === 'Edge' && parseFloat(browserResult.browser.version) < 19)
+                    multiplier = 2;
 
-				mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
-			}
-		} catch (e) {}
-	}, 50);
+                mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
+            }
+        } catch (e) { }
+    }, 50);
 }
 
 function pauseTimer() {
-	if (minimum === 0 && maximum === 0 && average === 0 || selected === -1) {
-		if (isCustom)
-			showSnackbar(lngObject.notSaved);
-		else
-			showSnackbar(lngObject.chooseTime);
-		return;
-	}
-	validateProperIntervals();
+    if (minimum === 0 && maximum === 0 && average === 0 || selected === -1) {
+        if (isCustom)
+            showSnackbar(lngObject.notSaved);
+        else
+            showSnackbar(lngObject.chooseTime);
+        return;
+    }
+    validateProperIntervals();
 
-	browserStopClapping();
+    browserStopClapping();
 
-	isStopped = false;
+    isStopped = false;
 
-	btnInvert.disabled = true;
-	cmbSpeechType.disabled = true;
+    btnInvert.disabled = true;
+    cmbSpeechType.disabled = true;
 
-	if (!isStarted || timeLeft === undefined) {
-		activateWakeLock();
-		disableLinks(true);
-		timer(wholeTime);
-		isStarted = true;
-		btnPause.disabled = true;
-		btnPause.classList.remove('play');
-		btnPause.classList.add('pause');
-		setTimeout(function() {
-			btnPause.disabled = false;
-		}, 500);
-	} else if (isPaused) {
-		activateWakeLock();
-		disableLinks(true);
-		btnPause.disabled = true;
-		btnPause.classList.remove('play');
-		btnPause.classList.add('pause');
-		setTimeout(function() {
-			btnPause.disabled = false;
-		}, 500);
-		timer(timeLeft);
-		isPaused = isPaused ? false : true;
-	} else {
-		deactivateWakeLock();
-		disableLinks(false);
-		btnPause.classList.remove('pause');
-		btnPause.classList.add('play');
-		clearInterval(intervalTimer);
-		isPaused = isPaused ? false : true;
-	}
+    if (!isStarted || timeLeft === undefined) {
+        activateWakeLock();
+        disableLinks(true);
+        timer(wholeTime);
+        isStarted = true;
+        btnPause.disabled = true;
+        btnPause.classList.remove('play');
+        btnPause.classList.add('pause');
+        setTimeout(function () {
+            btnPause.disabled = false;
+        }, 500);
+    } else if (isPaused) {
+        activateWakeLock();
+        disableLinks(true);
+        btnPause.disabled = true;
+        btnPause.classList.remove('play');
+        btnPause.classList.add('pause');
+        setTimeout(function () {
+            btnPause.disabled = false;
+        }, 500);
+        timer(timeLeft);
+        isPaused = isPaused ? false : true;
+    } else {
+        deactivateWakeLock();
+        disableLinks(false);
+        btnPause.classList.remove('pause');
+        btnPause.classList.add('play');
+        clearInterval(intervalTimer);
+        isPaused = isPaused ? false : true;
+    }
 
-	btnRestart.disabled = !isPaused;
+    btnRestart.disabled = !isPaused;
 
-	if (btnRestart.disabled) {
-		imgRestart.src = "img/icons-svg/restart-off.svg";
-		fade.to(document.getElementById('divSpeechType'), fastTransition, 0.1);
-		fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
-		fade.to(document.getElementById('options'), fastTransition, 0.1);
-		fade.to(document.getElementsByTagName('footer')[0], fastTransition, 0.1);
+    if (btnRestart.disabled) {
+        imgRestart.src = "img/icons-svg/restart-off.svg";
+        fade.to(document.getElementById('divSpeechType'), fastTransition, 0.1);
+        fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
+        fade.to(document.getElementById('options'), fastTransition, 0.1);
+        fade.to(document.getElementsByTagName('footer')[0], fastTransition, 0.1);
 
-		if (isNinjaMode) {
-			fade.to(document.getElementById('controls'), fastTransition, 0.5);
-			fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
-			fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0);
-		} else {
-			fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
-		}
-		document.getElementById('bmc-wbtn').style.pointerEvents = 'none';
-	} else {
-		imgRestart.src = "img/icons-svg/restart.svg";
-		unfadeElements();
-	}
+        if (isNinjaMode) {
+            fade.to(document.getElementById('controls'), fastTransition, 0.5);
+            fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
+            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0);
+        }
+        else {
+            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
+        }
+        document.getElementById('bmc-wbtn').style.pointerEvents = 'none';
+    } else {
+        imgRestart.src = "img/icons-svg/restart.svg";
+        unfadeElements();
+    }
 }
 
 function unfadeElements() {
-	fade.to(document.getElementById('divSpeechType'), fastTransition, 1.5);
-	fade.to(document.getElementById('divSpeaker'), fastTransition, 1.5);
-	fade.to(document.getElementById('options'), fastTransition, 1.5);
-	fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
-	fade.to(document.getElementById('controls'), fastTransition, 1.5);
-	fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
-	fade.to(document.getElementById('bmc-wbtn'), fastTransition, 1.5);
-	document.getElementById('bmc-wbtn').style.pointerEvents = '';
+    fade.to(document.getElementById('divSpeechType'), fastTransition, 1.5);
+    fade.to(document.getElementById('divSpeaker'), fastTransition, 1.5);
+    fade.to(document.getElementById('options'), fastTransition, 1.5);
+    fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
+    fade.to(document.getElementById('controls'), fastTransition, 1.5);
+    fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
+    fade.to(document.getElementById('bmc-wbtn'), fastTransition, 1.5);
+    document.getElementById('bmc-wbtn').style.pointerEvents = '';
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
-	let fixedTime = maximum - timeLeft;
-	let hours = Math.floor(fixedTime / 3600);
-	let minutes = Math.floor(fixedTime / 60);
-	let seconds = fixedTime % 60;
-	let displayString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-	displayOutput.textContent = displayString;
-	if (!isContestMode && isStarted)
-		browserChangeTitle(displayString);
-	update(timeLeft, wholeTime);
+    let fixedTime = maximum - timeLeft;
+    let hours = Math.floor(fixedTime / 3600);
+    let minutes = Math.floor(fixedTime / 60);
+    let seconds = fixedTime % 60;
+    let displayString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    displayOutput.textContent = displayString;
+    if (!isContestMode && isStarted)
+        browserChangeTitle(displayString);
+    update(timeLeft, wholeTime);
 }
 
 function setDropDownValue(idVal, idContainer) {
-	try {
-		document.getElementById(idVal).dataset.selected = "true";
-		getmdlSelect.init(idContainer);
-	} catch (e) {}
+    try {
+        document.getElementById(idVal).dataset.selected = "true";
+        getmdlSelect.init(idContainer);
+    } catch (e) { }
 }
 
 function validateProperIntervals() {
-	if (isCustom) {
-		minimum = getMinCustom();
-		average = getAvgCustom();
-		maximum = getMaxCustom();
-	} else
-		setBasicIntervals();
-	if (timeLeft === 0)
-		wholeTime = maximum;
+    if (isCustom) {
+        minimum = getMinCustom();
+        average = getAvgCustom();
+        maximum = getMaxCustom();
+    } else
+        setBasicIntervals();
+    if (timeLeft === 0)
+        wholeTime = maximum;
 }
 
 function setBasicIntervals() {
-	minimum = times[selected][0];
-	average = times[selected][1];
-	maximum = times[selected][2];
+    minimum = times[selected][0];
+    average = times[selected][1];
+    maximum = times[selected][2];
 }
 
 function changeEventHandler() {
-	let wasCustom = selected === 99;
+    let wasCustom = selected === 99;
 
-	selected = parseInt(hiddenSpeechType.value);
+    selected = parseInt(hiddenSpeechType.value);
 
-	if (selected !== 99) {
-		setBasicIntervals();
-		wholeTime = maximum;
-		setLocalStorage("wholeTime", maximum);
-		updateDisplay();
-		isCustom = false;
-	} else {
-		if (!wasCustom) {
-			minimum = 0;
-			maximum = 0;
-			average = 0;
+    if (selected !== 99) {
+        setBasicIntervals();
+        wholeTime = maximum;
+        setLocalStorage("wholeTime", maximum);
+        updateDisplay();
+        isCustom = false;
+    } else {
+        if (!wasCustom) {
+            minimum = 0;
+            maximum = 0;
+            average = 0;
 
-			txtCustom.parentElement.MaterialTextfield.change(lngObject.opt12);
-		} else if (wasCustom && !isFirstTime) {
-			setCustomText();
+            txtCustom.parentElement.MaterialTextfield.change(lngObject.opt12);
+        } else if (wasCustom && !isFirstTime) {
+            setCustomText();
 
-			let hours = Math.floor(minimum / 3600);
-			let minutes = Math.floor(minimum / 60);
-			let seconds = minimum % 60;
+            let hours = Math.floor(minimum / 3600);
+            let minutes = Math.floor(minimum / 60);
+            let seconds = minimum % 60;
 
-			txtMin.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+            txtMin.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
 
-			hours = Math.floor(average / 3600);
-			minutes = Math.floor(average / 60);
-			seconds = average % 60;
+            hours = Math.floor(average / 3600);
+            minutes = Math.floor(average / 60);
+            seconds = average % 60;
 
-			txtAvg.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+            txtAvg.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
 
-			hours = Math.floor(maximum / 3600);
-			minutes = Math.floor(maximum / 60);
-			seconds = maximum % 60;
+            hours = Math.floor(maximum / 3600);
+            minutes = Math.floor(maximum / 60);
+            seconds = maximum % 60;
 
-			txtMax.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
-		}
+            txtMax.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
+        }
 
-		if (deviceDetector.device === 'phone') {
-			setTimeout(function() {
-				let bCustomTimes = document.getElementById('bodyCustomTimes');
-				bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
-			}, 100);
-		}
+        if (deviceDetector.device === 'phone') {
+            setTimeout(function () {
+                let bCustomTimes = document.getElementById('bodyCustomTimes');
+                bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
+            }, 100);
+        }
 
-		hasCustomChange = false;
-		isCustom = true;
-		dialogCustomTimes.showModal();
-	}
+        hasCustomChange = false;
+        isCustom = true;
+        dialogCustomTimes.showModal();
+    }
 }
 
 function startBeep() {
-	if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1))
-		browserStartBeep();
+    if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1))
+        browserStartBeep();
 }
 
 function startAlert() {
-	if (isTextPreviewMode && (green === 1 || yellow === 1 || red === 1)) {
-		switch (lastColor) {
-			case "green":
-				showSnackbar(lngObject.color2, 3500);
-				break;
-			case "yellow":
-				showSnackbar(lngObject.color3, 3500);
-				break;
-			default:
-				showSnackbar(lngObject.color1, 3500);
-		}
-	}
+    if (isTextPreviewMode && (green === 1 || yellow === 1 || red === 1)) {
+        switch (lastColor) {
+            case "green":
+                showSnackbar(lngObject.color2, 3500);
+                break;
+            case "yellow":
+                showSnackbar(lngObject.color3, 3500);
+                break;
+            default:
+                showSnackbar(lngObject.color1, 3500);
+        }
+    }
 }
 
 function startVibrate() {
-	if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1))
-		browserStartVibrate();
+    if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1))
+        browserStartVibrate();
 }
 
 function startClapping() {
-	if (isClappingEnabled)
-		browserStartClapping();
+    if (isClappingEnabled)
+        browserStartClapping();
 }
 
 function stopClapping() {
-	browserStopClapping();
+    browserStopClapping();
 }
 
 function getVibrate() {
-	if (getLocalStorageValue("isVibrateEnabled"))
-		isVibrateEnabled = getLocalStorageValue("isVibrateEnabled") === 'true';
-	else
-		setVibrate();
+    if (getLocalStorageValue("isVibrateEnabled"))
+        isVibrateEnabled = getLocalStorageValue("isVibrateEnabled") === 'true';
+    else
+        setVibrate();
 }
 
 function getClapping() {
-	if (getLocalStorageValue("isClappingEnabled"))
-		isClappingEnabled = getLocalStorageValue("isClappingEnabled") === 'true';
-	else
-		setClapping();
+    if (getLocalStorageValue("isClappingEnabled"))
+        isClappingEnabled = getLocalStorageValue("isClappingEnabled") === 'true';
+    else
+        setClapping();
 }
 
 function getBeep() {
-	if (getLocalStorageValue("isBeepEnabled"))
-		isBeepEnabled = getLocalStorageValue("isBeepEnabled") === 'true';
-	else
-		setBeep();
+    if (getLocalStorageValue("isBeepEnabled"))
+        isBeepEnabled = getLocalStorageValue("isBeepEnabled") === 'true';
+    else
+        setBeep();
 }
 
 function getContestMode() {
-	if (getLocalStorageValue("isContestMode"))
-		isContestMode = getLocalStorageValue("isContestMode") === 'true';
-	else
-		setContestMode();
+    if (getLocalStorageValue("isContestMode"))
+        isContestMode = getLocalStorageValue("isContestMode") === 'true';
+    else
+        setContestMode();
 }
 
 function getFirstRun() {
-	if (getLocalStorageValue("isFirstRun"))
-		isFirstRun = getLocalStorageValue("isFirstRun") === 'true';
-	else
-		setFirstRun();
+    if (getLocalStorageValue("isFirstRun"))
+        isFirstRun = getLocalStorageValue("isFirstRun") === 'true';
+    else
+        setFirstRun();
 }
 
 function getNinjaMode() {
-	if (getLocalStorageValue("isNinjaMode"))
-		isNinjaMode = getLocalStorageValue("isNinjaMode") === 'true';
-	else
-		setLocalStorage("isNinjaMode", false);
+    if (getLocalStorageValue("isNinjaMode"))
+        isNinjaMode = getLocalStorageValue("isNinjaMode") === 'true';
+    else
+        setLocalStorage("isNinjaMode", false);
 }
 
 function getColorBlindnessMode() {
-	if (getLocalStorageValue("isColorBlindnessEnabled"))
-		isColorBlindnessEnabled = getLocalStorageValue("isColorBlindnessEnabled") === 'true';
-	else
-		setLocalStorage("isColorBlindnessEnabled", false);
+    if (getLocalStorageValue("isColorBlindnessEnabled"))
+        isColorBlindnessEnabled = getLocalStorageValue("isColorBlindnessEnabled") === 'true';
+    else
+        setLocalStorage("isColorBlindnessEnabled", false);
 }
 
 function switchBgnColors() {
-	greenBgnCss = (isColorBlindnessEnabled) ? defGreenCBBgn : defGreenBgn;
-	yellowBgnCss = (isColorBlindnessEnabled) ? defYellowCBBgn : defYellowBgn;
-	redBgnCss = (isColorBlindnessEnabled) ? defRedCBBgn : defRedBgn;
+    greenBgnCss = (isColorBlindnessEnabled) ? defGreenCBBgn : defGreenBgn;
+    yellowBgnCss = (isColorBlindnessEnabled) ? defYellowCBBgn : defYellowBgn;
+    redBgnCss = (isColorBlindnessEnabled) ? defRedCBBgn : defRedBgn;
 }
 
 function setRowColors() {
-	document.getElementById('bgnGreen').style.backgroundColor = greenBgnCss;
-	document.getElementById('bgnYellow').style.backgroundColor = yellowBgnCss;
-	document.getElementById('bgnRed').style.backgroundColor = redBgnCss;
+    document.getElementById('bgnGreen').style.backgroundColor = greenBgnCss;
+    document.getElementById('bgnYellow').style.backgroundColor = yellowBgnCss;
+    document.getElementById('bgnRed').style.backgroundColor = redBgnCss;
 }
 
 function getTextPreviewMode() {
-	if (getLocalStorageValue("isTextPreviewMode"))
-		isTextPreviewMode = getLocalStorageValue("isTextPreviewMode") === 'true';
-	else
-		setLocalStorage("isTextPreviewMode", false);
+    if (getLocalStorageValue("isTextPreviewMode"))
+        isTextPreviewMode = getLocalStorageValue("isTextPreviewMode") === 'true';
+    else
+        setLocalStorage("isTextPreviewMode", false);
 }
 
 function getSelectedColor() {
-	if (getLocalStorageValue("selectedColor"))
-		selectedColor = parseInt(getLocalStorageValue("selectedColor"));
-	else
-		setSelectedColor();
+    if (getLocalStorageValue("selectedColor"))
+        selectedColor = parseInt(getLocalStorageValue("selectedColor"));
+    else
+        setSelectedColor();
 }
 
 function setBeep() {
-	setLocalStorage("isBeepEnabled", isBeepEnabled);
+    setLocalStorage("isBeepEnabled", isBeepEnabled);
 }
 
 function setVibrate() {
-	setLocalStorage("isVibrateEnabled", isVibrateEnabled);
+    setLocalStorage("isVibrateEnabled", isVibrateEnabled);
 }
 
 function setClapping() {
-	setLocalStorage("isClappingEnabled", isClappingEnabled);
+    setLocalStorage("isClappingEnabled", isClappingEnabled);
 }
 
 function setContestMode() {
-	setLocalStorage("isContestMode", isContestMode);
+    setLocalStorage("isContestMode", isContestMode);
 }
 
 function setSelectedColor() {
-	setLocalStorage("selectedColor", selectedColor);
+    setLocalStorage("selectedColor", selectedColor);
 }
 
 function setFirstRun() {
-	setLocalStorage("isFirstRun", isFirstRun);
+    setLocalStorage("isFirstRun", isFirstRun);
 }
 
 function setContestImg() {
-	if (!isContestMode)
-		imgTrophy.src = "img/icons-svg/trophy-broken.svg";
-	else
-		imgTrophy.src = "img/icons-svg/trophy.svg";
+    if (!isContestMode)
+        imgTrophy.src = "img/icons-svg/trophy-broken.svg";
+    else
+        imgTrophy.src = "img/icons-svg/trophy.svg";
 }
 
 function setVibrateImg() {
-	if (!isVibrateEnabled)
-		imgVibrate.src = "img/icons-svg/vibrate-off.svg";
-	else
-		imgVibrate.src = "img/icons-svg/vibrate.svg";
+    if (!isVibrateEnabled)
+        imgVibrate.src = "img/icons-svg/vibrate-off.svg";
+    else
+        imgVibrate.src = "img/icons-svg/vibrate.svg";
 }
 
 function setBeepImg() {
-	if (!isBeepEnabled)
-		imgBeep.src = "img/icons-svg/volume-off.svg";
-	else
-		imgBeep.src = "img/icons-svg/volume-high.svg";
+    if (!isBeepEnabled)
+        imgBeep.src = "img/icons-svg/volume-off.svg";
+    else
+        imgBeep.src = "img/icons-svg/volume-high.svg";
 }
 
 function setClappingImg() {
-	if (!isClappingEnabled)
-		imgClap.src = "img/icons-svg/clapping-off.svg";
-	else
-		imgClap.src = "img/icons-svg/clapping-hands.svg";
+    if (!isClappingEnabled)
+        imgClap.src = "img/icons-svg/clapping-off.svg";
+    else
+        imgClap.src = "img/icons-svg/clapping-hands.svg";
 }
 
 function invertColors() {
-	let currentInv = "";
-	if (selectedColor === 1) {
-		currentInv = invert100;
-		setInvFilter(dialogTimeTable, invert100);
-		setInvFilter(dialogWelcome, invert100);
-		setInvFilter(dialogConfirm, invert100);
-		setInvFilter(dialogChanges, invert100);
-		setInvFilter(dialogCustomTimes, invert100);
-		setInvFilter(dialogClapping, invert100);
-		setInvFilter(customMin, invert100);
-		setInvFilter(customAvg, invert100);
-		setInvFilter(customMax, invert100);
-		//setInvFilter(customMax, invert100);
-		setInvFilter(speakers, invert100);
-		setInvFilter(dialogAbout, invert100);
-		setInvFilter(document.body, invert100);
-		setBgd(dialogWelcome, bgColors[2]);
-		setBgd(dialogConfirm, bgColors[2]);
-		setBgd(dialogChanges, bgColors[2]);
-		setBgd(dialogCustomTimes, bgColors[2]);
-		setBgd(dialogTimeTable, bgColors[2]);
-		setBgd(dialogClapping, bgColors[2]);
-	} else {
-		currentInv = invert0;
-		setInvFilter(dialogTimeTable, invert0);
-		setInvFilter(dialogWelcome, invert0);
-		setInvFilter(dialogConfirm, invert0);
-		setInvFilter(dialogChanges, invert0);
-		setInvFilter(dialogCustomTimes, invert0);
-		setInvFilter(dialogClapping, invert0);
-		setInvFilter(customMin, invert0);
-		setInvFilter(customAvg, invert0);
-		setInvFilter(customMax, invert0);
-		//setInvFilter(customMax, invert0);
-		setInvFilter(speakers, invert0);
-		setInvFilter(dialogAbout, invert0);
-		setInvFilter(document.body, invert0);
-		setBgd(dialogWelcome, bgColors[0]);
-		setBgd(dialogConfirm, bgColors[0]);
-		setBgd(dialogChanges, bgColors[0]);
-		setBgd(dialogCustomTimes, bgColors[0]);
-		setBgd(dialogTimeTable, bgColors[0]);
-		setBgd(dialogClapping, bgColors[0]);
-	}
+    let currentInv = "";
+    if (selectedColor === 1) {
+        currentInv = invert100;
+        setInvFilter(dialogTimeTable, invert100);
+        setInvFilter(dialogWelcome, invert100);
+        setInvFilter(dialogConfirm, invert100);
+        setInvFilter(dialogChanges, invert100);
+        setInvFilter(dialogCustomTimes, invert100);
+        setInvFilter(dialogClapping, invert100);
+        setInvFilter(customMin, invert100);
+        setInvFilter(customAvg, invert100);
+        setInvFilter(customMax, invert100);
+        //setInvFilter(customMax, invert100);
+        setInvFilter(speakers, invert100);
+        setInvFilter(dialogAbout, invert100);
+        setInvFilter(document.body, invert100);
+        setBgd(dialogWelcome, bgColors[2]);
+        setBgd(dialogConfirm, bgColors[2]);
+        setBgd(dialogChanges, bgColors[2]);
+        setBgd(dialogCustomTimes, bgColors[2]);
+        setBgd(dialogTimeTable, bgColors[2]);
+        setBgd(dialogClapping, bgColors[2]);
+    }
+    else {
+        currentInv = invert0;
+        setInvFilter(dialogTimeTable, invert0);
+        setInvFilter(dialogWelcome, invert0);
+        setInvFilter(dialogConfirm, invert0);
+        setInvFilter(dialogChanges, invert0);
+        setInvFilter(dialogCustomTimes, invert0);
+        setInvFilter(dialogClapping, invert0);
+        setInvFilter(customMin, invert0);
+        setInvFilter(customAvg, invert0);
+        setInvFilter(customMax, invert0);
+        //setInvFilter(customMax, invert0);
+        setInvFilter(speakers, invert0);
+        setInvFilter(dialogAbout, invert0);
+        setInvFilter(document.body, invert0);
+        setBgd(dialogWelcome, bgColors[0]);
+        setBgd(dialogConfirm, bgColors[0]);
+        setBgd(dialogChanges, bgColors[0]);
+        setBgd(dialogCustomTimes, bgColors[0]);
+        setBgd(dialogTimeTable, bgColors[0]);
+        setBgd(dialogClapping, bgColors[0]);
+    }
 
-	[].forEach.call(document.getElementsByClassName("noInvert"), function(el) {
-		setInvFilter(el, currentInv);
-	});
+    [].forEach.call(document.getElementsByClassName("noInvert"), function (el) {
+        setInvFilter(el, currentInv);
+    });
 
-	setBgd(document.body, lastColor);
+    setBgd(document.body, lastColor);
 }
 
 function storeTime(isTimeStored) {
-	if (minimum === 0 && maximum === 0 && average === 0) return;
-	deactivateWakeLock();
-	stopClapping();
+    if (minimum === 0 && maximum === 0 && average === 0) return;
+    deactivateWakeLock();
+    stopClapping();
 
-	if (isTimeStored) {
-		let counter = maximum - timeLeft;
-		let titleSpeechType = cmbSpeechType.value;
-		if (selected === 99)
-			titleSpeechType = txtCustom.value;
-		addNewTime(txtSpeaker.value, titleSpeechType, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, counter > maximum + clappingTime || counter < minimum - clappingTime);
-	}
+    if (isTimeStored) {
+        let counter = maximum - timeLeft;
+        let titleSpeechType = cmbSpeechType.value;
+        if (selected === 99)
+            titleSpeechType = txtCustom.value;
+        addNewTime(txtSpeaker.value, titleSpeechType, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, counter > maximum + clappingTime || counter < minimum - clappingTime);
+    }
 
-	//Perform the reset before selecting the maximum
-	green = 0;
-	yellow = 0;
-	red = 0;
-	basicReset();
+    //Perform the reset before selecting the maximum
+    green = 0;
+    yellow = 0;
+    red = 0;
+    basicReset();
 
-	if (!isCustom)
-		maximum = times[selected][2];
-	else
-		maximum = getMaxCustom();
+    if (!isCustom)
+        maximum = times[selected][2];
+    else
+        maximum = getMaxCustom();
 
-	wholeTime = maximum;
-	browserChangeTitle('');
-	unfadeElements();
+    wholeTime = maximum;
+    browserChangeTitle('');
+    unfadeElements();
 }
 
 function getMinCustom() {
-	let unit = txtMin.value.split(":");
-	return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
+    let unit = txtMin.value.split(":");
+    return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function getAvgCustom() {
-	let unit = txtAvg.value.split(":");
-	return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
+    let unit = txtAvg.value.split(":");
+    return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function getMaxCustom() {
-	let unit = txtMax.value.split(":");
-	return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
+    let unit = txtMax.value.split(":");
+    return parseInt(unit[0]) * 3600 + parseInt(unit[1]) * 60 + parseInt(unit[2]);
 }
 
 function closeCustomDialog() {
-	if ((getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0) && hasCustomChange)
-		dialogChanges.showModal();
-	else
-		dialogCustomTimes.close();
+    if ((getMinCustom() > 0 || getAvgCustom() > 0 || getMaxCustom() > 0) && hasCustomChange)
+        dialogChanges.showModal();
+    else
+        dialogCustomTimes.close();
 }
 
 function saveChanges() {
-	let minTime = getMinCustom(),
-		avgTime = getAvgCustom(),
-		maxTime = getMaxCustom();
+    let minTime = getMinCustom(),
+        avgTime = getAvgCustom(),
+        maxTime = getMaxCustom();
 
-	if (minTime >= avgTime)
-		showSnackbar(lngObject.errorMin);
-	else if (minTime >= maxTime)
-		showSnackbar(lngObject.errorHalf);
-	else if (avgTime >= maxTime)
-		showSnackbar(lngObject.errorMax);
-	else {
-		minimum = minTime;
-		average = avgTime;
-		maximum = maxTime;
-		wholeTime = maximum;
-		updateDisplay();
-		dialogCustomTimes.close();
-	}
+    if (minTime >= avgTime)
+        showSnackbar(lngObject.errorMin);
+    else if (minTime >= maxTime)
+        showSnackbar(lngObject.errorHalf);
+    else if (avgTime >= maxTime)
+        showSnackbar(lngObject.errorMax);
+    else {
+        minimum = minTime;
+        average = avgTime;
+        maximum = maxTime;
+        wholeTime = maximum;
+        updateDisplay();
+        dialogCustomTimes.close();
+    }
 }
 
-btnPause.addEventListener('click', function(event) {
-	if (event.detail === 1)
-		pauseTimer();
+btnPause.addEventListener('click', function (event) {
+    if (event.detail === 1)
+        pauseTimer();
 });
 
 btnRestart.addEventListener('click', () => {
-	storeTime(false);
+    storeTime(false);
 });
 
 btnStop.addEventListener('click', () => {
-	storeTime(true);
+    storeTime(true);
 });
 
-btnChampion.addEventListener('click', function(event) {
-	if (event.detail === 3) {
-		isNinjaMode = !isNinjaMode;
+btnChampion.addEventListener('click', function (event) {
+    if (event.detail === 3) {
+        isNinjaMode = !isNinjaMode;
 
-		if (isNinjaMode)
-			showSnackbar(lngObject.ninjaEnabled, false);
-		else
-			showSnackbar(lngObject.ninjaDisabled, false);
-		setLocalStorage("isNinjaMode", isNinjaMode);
-	} else {
-		isContestMode = !isContestMode;
-		if (isContestMode)
-			browserChangeTitle('');
-		else
-			browserChangeTitle(displayOutput.textContent);
-		setContestImg();
-		checkMode();
-		setContestMode();
-	}
+        if (isNinjaMode)
+            showSnackbar(lngObject.ninjaEnabled, false);
+        else
+            showSnackbar(lngObject.ninjaDisabled, false);
+        setLocalStorage("isNinjaMode", isNinjaMode);
+    } else {
+        isContestMode = !isContestMode;
+        if (isContestMode)
+            browserChangeTitle('');
+        else
+            browserChangeTitle(displayOutput.textContent);
+        setContestImg();
+        checkMode();
+        setContestMode();
+    }
 });
 
 btnVibrate.addEventListener('click', () => {
-	isVibrateEnabled = !isVibrateEnabled;
-	setVibrateImg();
-	setVibrate();
+    isVibrateEnabled = !isVibrateEnabled;
+    setVibrateImg();
+    setVibrate();
 });
 
-btnBeep.addEventListener('click', function(event) {
-	if (event.detail === 3) {
-		isTextPreviewMode = !isTextPreviewMode;
+btnBeep.addEventListener('click', function (event) {
+    if (event.detail === 3) {
+        isTextPreviewMode = !isTextPreviewMode;
 
-		if (isTextPreviewMode)
-			showSnackbar(lngObject.colorMsg, 1500);
-		else
-			showSnackbar(lngObject.colorMsgDis, 1500);
+        if (isTextPreviewMode)
+            showSnackbar(lngObject.colorMsg, 1500);
+        else
+            showSnackbar(lngObject.colorMsgDis, 1500);
 
-		setLocalStorage("isTextPreviewMode", isTextPreviewMode);
-	}
-	isBeepEnabled = !isBeepEnabled;
-	setBeepImg();
-	setBeep();
+        setLocalStorage("isTextPreviewMode", isTextPreviewMode);
+    }
+    isBeepEnabled = !isBeepEnabled;
+    setBeepImg();
+    setBeep();
 });
 
-btnClap.addEventListener('click', function(event) {
-	if (event.detail === 3) {
-		dialogClapping.showModal();
-		if (clappingTime === 30) {
-			setDropDownValue("clapM0", "#divClapM");
-			setDropDownValue("clapS30", "#divClapS");
-		}
-	} else {
-		isClappingEnabled = !isClappingEnabled;
-		setClappingImg();
-		setClapping();
-	}
+btnClap.addEventListener('click', function (event) {
+    if (event.detail === 3) {
+        dialogClapping.showModal();
+        if (clappingTime === 30) {
+            setDropDownValue("clapM0", "#divClapM");
+            setDropDownValue("clapS30", "#divClapS");
+        }
+    } else {
+        isClappingEnabled = !isClappingEnabled;
+        setClappingImg();
+        setClapping();
+    }
 });
 
 btnSave.addEventListener('click', saveChanges);
 
 btnSaveClap.addEventListener('click', () => {
-	clappingTime = getSeconds(`00:${clapM.value}:${clapS.value}`);
-	dialogClapping.close();
+    clappingTime = getSeconds(`00:${clapM.value}:${clapS.value}`);
+    dialogClapping.close();
 });
 
 if (!dialogTimeTable.showModal) {
-	dialogPolyfill.registerDialog(dialogTimeTable);
+    dialogPolyfill.registerDialog(dialogTimeTable);
 }
 
 if (!dialogChanges.showModal) {
-	dialogPolyfill.registerDialog(dialogChanges);
+    dialogPolyfill.registerDialog(dialogChanges);
 }
 
 if (!dialogAbout.showModal) {
-	dialogPolyfill.registerDialog(dialogAbout);
+    dialogPolyfill.registerDialog(dialogAbout);
 }
 
 if (!dialogClapping.showModal) {
-	dialogPolyfill.registerDialog(dialogClapping);
+    dialogPolyfill.registerDialog(dialogClapping);
 }
 
 if (!dialogCustomTimes.showModal) {
-	dialogPolyfill.registerDialog(dialogCustomTimes);
+    dialogPolyfill.registerDialog(dialogCustomTimes);
 }
 
 if (!dialogWelcome.showModal) {
-	dialogPolyfill.registerDialog(dialogWelcome);
+    dialogPolyfill.registerDialog(dialogWelcome);
 }
 
 if (!dialogConfirm.showModal) {
-	dialogPolyfill.registerDialog(dialogConfirm);
+    dialogPolyfill.registerDialog(dialogConfirm);
 }
 
 btnTimeTable.addEventListener('click', countTimetable);
 
 btnDelete.addEventListener('click', deleteTimetable);
 
-btnYesChallenge.addEventListener('click', function() {
-	isContestMode = true;
-	setContestImg();
-	checkMode();
-	setContestMode();
-	dialogWelcome.close();
-	isFirstRun = false;
-	setFirstRun();
+btnYesChallenge.addEventListener('click', function () {
+    isContestMode = true;
+    setContestImg();
+    checkMode();
+    setContestMode();
+    dialogWelcome.close();
+    isFirstRun = false;
+    setFirstRun();
 });
 
 btnYesConfirm.addEventListener('click', deleteByIDs);
 
-btnInvert.addEventListener('click', function(event) {
-	if (event.detail === 3) {
-		isColorBlindnessEnabled = !isColorBlindnessEnabled;
+btnInvert.addEventListener('click', function (event) {
+    if (event.detail === 3) {
+        isColorBlindnessEnabled = !isColorBlindnessEnabled;
 
-		if (isColorBlindnessEnabled)
-			showSnackbar(lngObject.cbEnabled, false);
-		else
-			showSnackbar(lngObject.cbDisabled, false);
+        if (isColorBlindnessEnabled)
+            showSnackbar(lngObject.cbEnabled, false);
+        else
+            showSnackbar(lngObject.cbDisabled, false);
 
-		setLocalStorage("isColorBlindnessEnabled", isColorBlindnessEnabled);
-		switchBgnColors();
-	}
+        setLocalStorage("isColorBlindnessEnabled", isColorBlindnessEnabled);
+        switchBgnColors();
+    }
 
-	selectedColor = (selectedColor === 0) ? selectedColor = 1 : selectedColor = 0;
+    selectedColor = (selectedColor === 0) ? selectedColor = 1 : selectedColor = 0;
 
-	lastColor = bgColors[selectedColor];
-	setSelectedColor();
-	invertColors();
-	timeDialogInvert(selectedColor);
+    lastColor = bgColors[selectedColor];
+    setSelectedColor();
+    invertColors();
+    timeDialogInvert(selectedColor);
 });
 
-btnYesChanges.addEventListener('click', function() {
-	saveChanges();
-	dialogChanges.close();
+btnYesChanges.addEventListener('click', function () {
+    saveChanges();
+    dialogChanges.close();
 });
 
-btnSponsor2Us.addEventListener('click', function() {
-	window.open("https://github.com/sponsors/FANMixco");
+btnSponsor2Us.addEventListener('click', function () {
+    window.open("https://github.com/sponsors/FANMixco");
 });
 
-btnShare.addEventListener('click', function() {});
+btnShare.addEventListener('click', function () { });
 
-btnEmail.addEventListener('click', function() {});
+btnEmail.addEventListener('click', function () { });
 
-btnAbout.addEventListener('click', function() {
-	dialogAbout.showModal();
-	if (deviceDetector.device === 'phone') {
-		setTimeout(function() {
-			dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
-		}, 100);
-	}
+btnAbout.addEventListener('click', function () {
+    dialogAbout.showModal();
+    if (deviceDetector.device === 'phone') {
+        setTimeout(function () {
+            dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
+        }, 100);
+    }
 });
 
-txtMin.addEventListener('click', function() {
-	setNewTime('txtMin', txtMin.value);
+txtMin.addEventListener('click', function () {
+    setNewTime('txtMin', txtMin.value);
 });
 
-txtMax.addEventListener('click', function() {
-	setNewTime('txtMax', txtMax.value);
+txtMax.addEventListener('click', function () {
+    setNewTime('txtMax', txtMax.value);
 });
 
-txtAvg.addEventListener('click', function() {
-	setNewTime('txtAvg', txtAvg.value);
+txtAvg.addEventListener('click', function () {
+    setNewTime('txtAvg', txtAvg.value);
 });
 
 btnDownload.addEventListener('click', browserExport);
 
-btnMultiple.addEventListener('click', function() {
-	Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function(element) {
-		let _this = element;
-		setTimeout(function() {
-			_this.MaterialCheckbox.check();
-		}, 10);
-	});
-	if (!multipleEnabled) {
-		imgMultiple.src = "img/icons-svg/checkbox-blank-outline.svg";
-		showCheckBoxes();
-	} else {
-		imgMultiple.src = "img/icons-svg/checkbox-outline.svg";
-		hideCheckBoxes();
-	}
-	multipleEnabled = !multipleEnabled;
-	refreshControls();
+btnMultiple.addEventListener('click', function () {
+    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function (element) {
+        let _this = element;
+        setTimeout(function () {
+            _this.MaterialCheckbox.check();
+        }, 10);
+    });
+    if (!multipleEnabled) {
+        imgMultiple.src = "img/icons-svg/checkbox-blank-outline.svg";
+        showCheckBoxes();
+    } else {
+        imgMultiple.src = "img/icons-svg/checkbox-outline.svg";
+        hideCheckBoxes();
+    }
+    multipleEnabled = !multipleEnabled;
+    refreshControls();
 });
 
-dialogTimeTable.querySelector('.close').addEventListener('click', function() {
-	dialogTimeTable.close();
+dialogTimeTable.querySelector('.close').addEventListener('click', function () {
+    dialogTimeTable.close();
 });
 
 dialogCustomTimes.querySelector('.close').addEventListener('click', closeCustomDialog);
 
-dialogConfirm.querySelector('.close').addEventListener('click', function() {
-	dialogConfirm.close();
+dialogConfirm.querySelector('.close').addEventListener('click', function () {
+    dialogConfirm.close();
 });
 
-dialogAbout.querySelector('.close').addEventListener('click', function() {
-	dialogAbout.close();
+dialogAbout.querySelector('.close').addEventListener('click', function () {
+    dialogAbout.close();
 });
 
-dialogChanges.querySelector('.close').addEventListener('click', function() {
-	dialogChanges.close();
-	dialogCustomTimes.close();
+dialogChanges.querySelector('.close').addEventListener('click', function () {
+    dialogChanges.close();
+    dialogCustomTimes.close();
 });
 
-dialogWelcome.querySelector('.close').addEventListener('click', function() {
-	dialogWelcome.close();
-	isFirstRun = false;
-	setFirstRun();
-	showSnackbar(lngObject.noHints);
+dialogWelcome.querySelector('.close').addEventListener('click', function () {
+    dialogWelcome.close();
+    isFirstRun = false;
+    setFirstRun();
+    showSnackbar(lngObject.noHints);
 });
 
-txtCustom.addEventListener("keyup", function(e) {
-	if (e.key === 'Enter')
-		hideKeyboard(txtCustom);
+txtCustom.addEventListener("keyup", function (e) {
+    if (e.key === 'Enter')
+        hideKeyboard(txtCustom);
 });
 
 if (os === "Android") {
-	txtSpeaker.addEventListener("onfocus", function() {
-		let y = document.getElementById("playControl").getBoundingClientRect().y;
-		document.body.marginTop = `-${y}px`;
-	});
+    txtSpeaker.addEventListener("onfocus", function () {
+        let y = document.getElementById("playControl").getBoundingClientRect().y;
+        document.body.marginTop = `-${y}px`;
+    });
 
-	txtSpeaker.addEventListener("onblur", function() {
-		document.body.marginTop = '0px';
-	});
+    txtSpeaker.addEventListener("onblur", function () {
+        document.body.marginTop = '0px';
+    });
 }
 
-txtSpeaker.addEventListener("keyup", function(e) {
-	if (e.key === 'Enter')
-		hideKeyboard(txtSpeaker);
+txtSpeaker.addEventListener("keyup", function (e) {
+    if (e.key === 'Enter')
+        hideKeyboard(txtSpeaker);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-	cmbSpeechType.onchange = changeEventHandler;
+document.addEventListener('DOMContentLoaded', function () {
+    cmbSpeechType.onchange = changeEventHandler;
 }, false);
 
 cmbSpeechType.addEventListener('click', resizeSelect);
@@ -1116,11 +1139,11 @@ initializeDB(currentDB, latestDB);
 lastColor = bgColors[selectedColor];
 invertColors();
 
-setTimeout(function() {
+setTimeout(function () {
     let bodyAbout = document.getElementById('bodyAbout');
-        
+
     let bodyTranslators = document.getElementById('bodyTranslators');
-    
+
     let bodyHelp = document.getElementById('bodyHelp');
 
     if (deviceDetector.device == 'phone') {
@@ -1215,7 +1238,7 @@ setTimeout(function() {
         customTitleTmp.style.fontSize = '1.25em';
         customTitleTmp.style.display = 'inline';
 
-        document.getElementById('btnCloseMobileCustom').addEventListener('click', function() {
+        document.getElementById('btnCloseMobileCustom').addEventListener('click', function () {
             closeCustomDialog();
         });
 
@@ -1263,41 +1286,41 @@ setTimeout(function() {
 
         aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
 
-        document.getElementById('btnCloseMobileAbout').addEventListener('click', function() {
+        document.getElementById('btnCloseMobileAbout').addEventListener('click', function () {
             dialogAbout.close();
         });
 
         document.getElementById('divCloseAbout').style.display = 'none';
-        
+
         bodyAbout.style.height = `${document.body.offsetHeight * 0.79}px`;
-        
+
         bodyTranslators.style.height = `${document.body.offsetHeight * 0.79}px`;
-        
+
         bodyHelp.style.height = `${document.body.offsetHeight * 0.79}px`;
     }
     else {
         let bodyApp = document.body;
-        if (typeof HTMLDialogElement !== 'function') { 
+        if (typeof HTMLDialogElement !== 'function') {
             bodyAbout.style.height = `${bodyApp.offsetHeight * 0.8}px`;
-        
+
             bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.8}px`;
-            
-            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.8}px`;    
+
+            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.8}px`;
         } else {
             bodyAbout.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-            
+
             bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-            
-            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.4}px`;    
+
+            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.4}px`;
         }
     }
 
     let exit = 0;
     do {
-        setTimeout(function() {
+        setTimeout(function () {
             try {
                 titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
-            } catch (e) {}
+            } catch (e) { }
         }, 1000);
         exit++;
     } while (lngObject === undefined && exit < 5);
@@ -1306,146 +1329,147 @@ setTimeout(function() {
 checkMode();
 
 tickAll.addEventListener('change', (event) => {
-	Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function(element) {
-		let _this = element;
-		setTimeout(function() {
-			if (lblTickAll.matches('.is-checked'))
-				_this.MaterialCheckbox.check();
-			else
-				_this.MaterialCheckbox.uncheck();
-		}, 10);
-	});
-	refreshControls();
+    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function (element) {
+        let _this = element;
+        setTimeout(function () {
+            if (lblTickAll.matches('.is-checked'))
+                _this.MaterialCheckbox.check();
+            else
+                _this.MaterialCheckbox.uncheck();
+        }, 10);
+    });
+    refreshControls();
 });
 
-(function() {
-	btnShare.style.display = 'none';
-	btnEmail.style.display = 'none';
+(function () {
+    btnShare.style.display = 'none';
+    btnEmail.style.display = 'none';
+    btnDownload.style.display = 'none';
 
-	if (os === "iOS") {
-		btnVibrate.style.display = "none";
-	}
+    if (os === "iOS") {
+        btnVibrate.style.display = "none";
+    }
 
-	isFirstTime = true;
+    isFirstTime = true;
 
-	if (deviceDetector.device === 'desktop') {
-		try {
-			let isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
+    if (deviceDetector.device === 'desktop') {
+        try {
+            let isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
 
-			// Safari 3.0+ "[object HTMLElementConstructor]" 
-			let isSafari = /constructor/i.test(window.HTMLElement) || (function(p) {
-				return p.toString() === "[object SafariRemoteNotification]";
-			})(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+            // Safari 3.0+ "[object HTMLElementConstructor]" 
+            let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
 
-			if (isFirefox || isSafari) {
-				dialogTimeTable.classList.add('centeredDialog');
-				dialogAbout.classList.add('centeredDialog');
-			}
-		} catch {}
-		dialogTimeTable.classList.add('fullscreen-dialog-tablet');
-		dialogAbout.classList.add('fullscreen-dialog-desktop');
-		document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-	} else if (deviceDetector.device === 'tablet') {
-		dialogTimeTable.classList.add('centeredDialog-tablet');
-		dialogTimeTable.classList.add('fullscreen-dialog-tablet');
-		dialogAbout.classList.add('centeredDialog');
-		dialogAbout.classList.add('fullscreen-dialog-tablet');
-		document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-	} else {
-		dialogCustomTimes.classList.add('customBodyMobile');
-		if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
-			document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
-		else
-			document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.75}px`;
+            if (isFirefox || isSafari) {
+                dialogTimeTable.classList.add('centeredDialog');
+                dialogAbout.classList.add('centeredDialog');
+            }
+        }
+        catch { }
+        dialogTimeTable.classList.add('fullscreen-dialog-tablet');
+        dialogAbout.classList.add('fullscreen-dialog-desktop');
+        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+    } else if (deviceDetector.device === 'tablet') {
+        dialogTimeTable.classList.add('centeredDialog-tablet');
+        dialogTimeTable.classList.add('fullscreen-dialog-tablet');
+        dialogAbout.classList.add('centeredDialog');
+        dialogAbout.classList.add('fullscreen-dialog-tablet');
+        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
+    } else {
+        dialogCustomTimes.classList.add('customBodyMobile');
+        if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
+            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
+        else
+            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.75}px`;
 
-		dialogTimeTable.classList.add('fullscreen-dialog');
-		dialogCustomTimes.classList.add('fullscreen-dialog');
-		dialogAbout.classList.add('fullscreen-dialog');
-	}
+        dialogTimeTable.classList.add('fullscreen-dialog');
+        dialogCustomTimes.classList.add('fullscreen-dialog');
+        dialogAbout.classList.add('fullscreen-dialog');
+    }
 
-	if (typeof HTMLDialogElement !== 'function') {
-		dialogWelcome.classList.remove('centeredDialog');
-		dialogWelcome.classList.add('centeredDialogNoSupport');
-		dialogSetTime.classList.remove('centeredDialog');
-		dialogSetTime.classList.add('centeredDialogNoSupport');
-		dialogTimeTable.classList.remove('centeredDialog');
-		dialogTimeTable.classList.add('centeredDialogNoSupport');
-		dialogAbout.classList.remove('centeredDialog');
-		dialogAbout.classList.add('centeredDialogNoSupport');
-		dialogAbout.classList.add('fullscreen-dialog');
-	}
+    if (typeof HTMLDialogElement !== 'function') {
+        dialogWelcome.classList.remove('centeredDialog');
+        dialogWelcome.classList.add('centeredDialogNoSupport');
+        dialogSetTime.classList.remove('centeredDialog');
+        dialogSetTime.classList.add('centeredDialogNoSupport');
+        dialogTimeTable.classList.remove('centeredDialog');
+        dialogTimeTable.classList.add('centeredDialogNoSupport');
+        dialogAbout.classList.remove('centeredDialog');
+        dialogAbout.classList.add('centeredDialogNoSupport');
+        dialogAbout.classList.add('fullscreen-dialog');
+    }
 
-	window.addEventListener("focus", function() {
-		try {
-			let menuOutline = document.querySelector('.mdl-menu__outline');
-			if (menuOutline) {
-				if (menuOutline.style.zIndex !== "-1")
-					resizeSelect();
-			}
-		} catch (e) {}
-	});
+    window.addEventListener("focus", function () {
+        try {
+            let menuOutline = document.querySelector('.mdl-menu__outline');
+            if (menuOutline) {
+                if (menuOutline.style.zIndex !== "-1")
+                    resizeSelect();
+            }
+        } catch (e) { }
+    });
 
-	if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
-		alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
+    if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
+        alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
 
-	setTimeout(function() {
-		// Checks if should display install popup notification:
-		if (os === "iOS" && !isInStandaloneMode())
-			showSnackbar(lngObject.installiOS, 3000);
+    setTimeout(function () {
+        // Checks if should display install popup notification:
+        if (os === "iOS" && !isInStandaloneMode())
+            showSnackbar(lngObject.installiOS, 3000);
 
-		try {
-			if (lngObject.copyright3)
-				document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
-		} catch {}
+        try {
+            if (lngObject.copyright3)
+                document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
+        } catch { }
 
-		timeDialogInvert(selectedColor);
-	}, 1000);
+        timeDialogInvert(selectedColor);
+    }, 1000);
 })();
 
 function hideKeyboard(element) {
-	element.readOnly = true;
-	setTimeout(function() {
-		element.blur(); //actually close the keyboard
-		element.readOnly = false;
-	}, 100);
+    element.readOnly = true;
+    setTimeout(function () {
+        element.blur(); //actually close the keyboard
+        element.readOnly = false;
+    }, 100);
 }
 
 window.addEventListener('orientationchange', doOnOrientationChange);
 
 function doOnOrientationChange() {
-	location.reload();
+    location.reload();
 }
 
-document.addEventListener("keydown", function(zEvent) {
-	if (zEvent.ctrlKey && (zEvent.key === "p" || zEvent.key === "P")) {
-		pauseTimer();
-	}
+document.addEventListener("keydown", function (zEvent) {
+    if (zEvent.ctrlKey && (zEvent.key === "p" || zEvent.key === "P")) {
+        pauseTimer();
+    }
 });
 
-document.addEventListener("keydown", function(zEvent) {
-	if (zEvent.ctrlKey && (zEvent.key === "s" || zEvent.key === "S")) {
-		btnStop.click();
-	}
+document.addEventListener("keydown", function (zEvent) {
+    if (zEvent.ctrlKey && (zEvent.key === "s" || zEvent.key === "S")) {
+        btnStop.click();
+    }
 });
 
-document.addEventListener("keydown", function(zEvent) {
-	if (zEvent.ctrlKey && (zEvent.key === "r" || zEvent.key === "R")) {
-		btnRestart.click();
-	}
+document.addEventListener("keydown", function (zEvent) {
+    if (zEvent.ctrlKey && (zEvent.key === "r" || zEvent.key === "R")) {
+        btnRestart.click();
+    }
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
-	document.getElementById('loading-container').style.display = "none";
-	document.getElementById('superContainer').style.display = "block";
+    document.getElementById('loading-container').style.display = "none";
+    document.getElementById('superContainer').style.display = "block";
 
-	if (isFirstRun) {
-		dialogWelcome.showModal();
-	}
+    if (isFirstRun) {
+        dialogWelcome.showModal();
+    }
 
-	if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
-		document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
-	}
-	document.body.style.maxHeight = `${window.innerHeight}px`;
+    if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
+        document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
+    }
 
-	resizeScreen();
+    document.body.style.maxHeight = `${window.innerHeight}px`;
+
+    resizeScreen();
 });
