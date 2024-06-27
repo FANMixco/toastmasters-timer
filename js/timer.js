@@ -1014,14 +1014,14 @@ btnSponsor2Us.addEventListener('click', () => {
 });
 
 btnShare.addEventListener('click', async () => {
-    const tableHtml = document.getElementById('tblResults').outerHTML;
+    const tableHtml = document.getElementById('titleMeeting').outerHTML + document.getElementById('tblResults').outerHTML + `<p>Exported by Toastmasters Timer. Created by <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete.</a></p>`;
 
     try {
         await navigator.share({
             title: document.getElementById('titleMeeting').innerHTML,
             text: 'Check out the meeting timing results. Exported by Toastmasters Timer. Created by Federico Navarrete, https://federiconavarrete.com',
             files: [
-                new File([tableHtml], 'table.html', { type: 'text/html' })
+                new File([tableHtml], `${document.getElementById('titleMeeting').innerHTML.replace(/ /g, '_').replace(/\//g, '_')}.html`, { type: 'text/html' })
             ]
         });
     } catch (error) {

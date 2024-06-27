@@ -132,6 +132,6 @@ function browserExport() {
         });
 
         // Save the PDF
-        doc.save(`${dText.replace(/ /g, '_')}.pdf`);
+        doc.save(`${dText.replace(/ /g, '_').replace(/\//g, '_')}.pdf`);
     }, 250);
 }
