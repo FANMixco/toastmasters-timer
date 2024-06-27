@@ -2,7 +2,7 @@
     "about": "Over ons",
     "about1": "Toastmasters-tijdklok is een app, ontwikkeld door Supernova IC, om uw vergaderingen met alle essentiële functies te vergemakkelijken.",
     "about2": "Als u vragen heeft, kunt u contact opnemen met de hoofdontwikkelaar:",
-    "about3": "© Alle rechten voorbehouden Supernova IC, 2013 — 2024.",
+    "about3": "© Alle rechten voorbehouden Supernova IC, 2013 — {0}.",
     "about4": "Als u geïnteresseerd bent in meer innovatieve en unieke projecten, kunt u onze website bekijken:",
     "about5": "Je kunt ook een boek kopen en dit project steunen, zodat mensen ontdekken dat El Salvador ongelooflijk is 🏄‍♂️:",
     "bringIn": "Breng het in uw taal!",
@@ -79,5 +79,7 @@
     "timeHalfway": "Optimale tijd",
     "timeMaximum": "Maximale tijd",
     "timeMinimum": "Minimale tijd",
-    "translators": "Vertalers"
+    "translators": "Vertalers",
+    "options": "Opties",
+    "rWarning": "Als u de taal wilt wijzigen, moet u de app opnieuw laden. Wilt u doorgaan?"
 }

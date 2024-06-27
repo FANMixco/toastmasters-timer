@@ -2,7 +2,7 @@
   "about": "Über uns",
   "about1": "Toastmasters Timer ist eine App, die von Supernova IC entwickelt wurde, um Ihre Treffen mit allen wichtigen Optionen zu vereinfachen.",
   "about2": "Wenn Sie noch Fragen haben, können Sie sich an den Hauptentwickler wenden:",
-  "about3": "&copy; Alle Rechte vorbehalten. Supernova IC, 2013 — 2024",
+  "about3": "&copy; Alle Rechte vorbehalten. Supernova IC, 2013 — {0}",
   "about4": "Wenn Sie noch Fragen haben, können Sie sich an den Hauptentwickler wenden:",
   "about5": "Sie können auch ein Buch kaufen und dieses Projekt unterstützen, das den Menschen hilft, zu entdecken, dass El Salvador unglaublich ist 🏄‍♂️:",
   "bringIn": "Bringen Sie es in Ihre Sprache!",
@@ -79,5 +79,8 @@
   "timeMaximum": "Maximale Zeit",
   "timeMinimum": "Mindestzeit",
   "title": "Toastmasters Timer",
-  "translators": "Übersetzer"
+  "translators": "Übersetzer",
+  "chooseLang": "Wählen Sie Ihre Sprache",
+  "options": "Optionen",
+  "rWarning": "Zum Ändern der Sprachen muss die App neu geladen werden. Möchten Sie fortfahren?"
 }

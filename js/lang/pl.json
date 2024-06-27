@@ -2,7 +2,7 @@
   "about": "O nas",
   "about1": "Toastmasters Chronometrażysta to aplikacja opracowana przez Supernova IC, aby ułatwić pracę Chronometrażysty na spotkaniach.",
   "about2": "W przypadku pytań, skontaktuj się z głównym deweloperem:",
-  "about3": "&copy; Wszystkie prawa zastrzeżone Supernova IC, 2013 — 2024.",
+  "about3": "&copy; Wszystkie prawa zastrzeżone Supernova IC, 2013 — {0}.",
   "about4": "Jeśli jesteś zainteresowany bardziej innowacyjnymi i unikalnymi projektami, odwiedź naszą stronę internetową:",
   "about5": "Możesz także kupić książkę i wesprzeć ten projekt, pomagając ludziom odkryć, że Salwador jest niesamowity 🏄‍♂️:",
   "bringIn": "Przynieś to w swoim języku!",
@@ -79,5 +79,8 @@
   "timeMaximum": "Maksymalny czas",
   "timeMinimum": "Minimalny czas",
   "title": "Toastmasters Chronometrażysta",
-  "translators": "Tłumacze"
+  "translators": "Tłumacze",
+  "chooseLang": "Wybierz swój język",
+  "options": "Opcje",
+  "rWarning": "Zmiana języka wymaga ponownego załadowania aplikacji. Czy chcesz kontynuować?"
 }

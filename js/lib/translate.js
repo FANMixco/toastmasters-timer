@@ -3,14 +3,24 @@ let lang = "en";
 let lngObject;
 
 function load() {
+    const cLang = localStorage.getItem('currentLang');
     let translate = new Translate();
-    lang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
 
-    if (lang.includes('-'))
-        lang = lang.split('-')[0];
-
-    if (!langs.includes(lang))
-        lang = "en";
+    if (!cLang) {
+        lang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+    
+        if (lang.includes('-')) {
+            lang = lang.split('-')[0];
+        }
+    
+        if (!langs.includes(lang)) {
+            lang = "en";
+        }
+        localStorage.setItem('currentLang', lang);
+    }
+    else {
+        lang = cLang;
+    }
     translate.init(lang);
     translate.process();
 }

@@ -210,12 +210,12 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         </div>
     </dialog>
     <dialog class="mdl-dialog" id="aboutDialog">
-        <main class = "mdl-layout__content">    
-            <div class = "mdl-tabs mdl-js-tabs">
-                <div class = "mdl-tabs__tab-bar">
-                    <a href = "#tab1-panel" class = "mdl-tabs__tab is-active" data-tag="about"></a>
-                    <a href = "#tab2-panel" class = "mdl-tabs__tab" data-tag="translators"></a>
-                    <a href = "#tab3-panel" class = "mdl-tabs__tab" data-tag="help"></a>
+        <main class="mdl-layout__content">    
+            <div class="mdl-tabs mdl-js-tabs">
+                <div class="mdl-tabs__tab-bar">
+                    <a href="#tab1-panel" class="mdl-tabs__tab is-active" data-tag="about"></a>
+                    <a href="#tab2-panel" class="mdl-tabs__tab" data-tag="translators"></a>
+                    <a href="#tab3-panel" class="mdl-tabs__tab" data-tag="help"></a>
                 </div>
             
                 <div class="mdl-tabs__panel is-active" id="tab1-panel">
@@ -228,7 +228,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                         <p><span data-tag="about4"></span>
                         <a rel="noreferrer" href="https://supernovaic.com" target="_blank">Supernova IC</a></p>
                         <p><a rel="noreferrer" href="https://supernovaic.com" target="_blank"><img src="img/supernova.png" alt="Supernova IC logo" class='superNova noInvert' loading="lazy"></a></p>
-                        <p data-tag="about3"></p>
+                        <p data-tag="about3" id="about3"></p>
                         <p>
                             <a href="https://bit.ly/3bcm6uL" rel="noreferrer" target="_blank" class="storeLinks">
                                 <img loading="lazy" src="img/playStore.png" class="storeIcon noInvert" alt="play store" />
@@ -260,6 +260,24 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
 
                <div class= "mdl-tabs__panel" id = "tab3-panel">
                     <div id='bodyHelp' class="mdl-dialog__content">
+                        <div style="width: 100%; margin-top: 5px; margin-bottom: 5px;">
+                            <p data-tag="chooseLang"></p>
+                            <select style="width: 100%;" id="ddLang">
+                                <option value="cs">Čeština</option>
+                                <option value="de">Deutsch</option>
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                                <option value="fil">Filipino</option>
+                                <option value="fr">Français</option>
+                                <option value="it">Italiano</option>
+                                <option value="nl">Nederlands</option>
+                                <option value="pl">Polski</option>
+                                <option value="pt">Português</option>
+                                <option value="ru">Русский</option>
+                                <option value="zh">官话</option>
+                            </select>
+                        </div>
+                        <p data-tag="options"></p>
                         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                             <thead>
                               <tr>
@@ -484,7 +502,8 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <!--Browser ONLY actions-->
     <script src="browserSpecific/js/dialog-polyfill.min.js"></script>
     <script src="browserSpecific/js/getOS.min.js"></script>
-    <script src="browserSpecific/js/jspdf.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js" defer></script>
     <script src="browserSpecific/js/actions.min.js"></script>
     <script src="js/effects/fadeTo.min.js" defer></script>
     

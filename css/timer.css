@@ -462,7 +462,7 @@ th,
 	text-align: center;
 }
 
-#spanSave {
+.btnRight {
 	float: right;
 	margin-right: 16px;
 	margin-top: -6px;

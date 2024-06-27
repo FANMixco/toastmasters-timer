@@ -7,7 +7,7 @@ function browserChangeTitle(currentTime) {
     document.title = currentTime !== '' ? `${currentTime} - Toastmasters Timer` : `Toastmasters Timer`;
 }
 
-function browserChangeFavIcon(fav){
+function browserChangeFavIcon(fav) {
     document.querySelector("link[rel*='icon']").href = fav === '' ? `img/favicon-32x32.png` : `img/${fav}.png`;
 }
 
@@ -15,7 +15,7 @@ function browserStartBeep() {
     if (!nMobile) {
         if (green === 1 || yellow === 1 || red === 1) {
             audioBeepElement.play();
-            setTimeout(function() {
+            setTimeout(() => {
                 audioBeepElement.pause();
             }, 1000);
         } else {
@@ -25,39 +25,42 @@ function browserStartBeep() {
 }
 
 function browserStartVibrate() {
-    if ((green === 1 || yellow === 1 || red === 1) && hasVibrator)
+    if ((green === 1 || yellow === 1 || red === 1) && hasVibrator) {
         navigator.vibrate(1000);
+    }
 }
 
 function browserStartClapping() {
     if (!nMobile) {
         audioElementClapping.play();
-        setTimeout(function() {
+        setTimeout(() => {
             audioElementClapping.pause();
         }, 1500);
     }
 }
 
 function browserStopClapping() {
-    if (!nMobile)
+    if (!nMobile) {
         audioElementClapping.pause();
+    }
 }
 
 function activateWakeLock() {
-	try {
-		navigator.getWakeLock("screen").then(function(wakeLock) {
-			request = wakeLock.createRequest();
-		});
-	}
-	catch (e) {	}
+    try {
+        navigator.getWakeLock("screen").then((wakeLock) => {
+            request = wakeLock.createRequest();
+        });
+    }
+    catch (e) { }
 }
 
 function deactivateWakeLock() {
-	try {
-		if (request)
-			request.cancel();
-	}
-	catch (e) {	}
+    try {
+        if (request) {
+            request.cancel();
+        }
+    }
+    catch (e) { }
 }
 
 if (!nMobile) {
@@ -68,7 +71,7 @@ if (!nMobile) {
     audioElementClapping = document.createElement('audio');
     audioElementClapping.src = './browserSpecific/sounds/clapping.mp3';
     audioElementClapping.load();
-    
+
     btnVibrate.style.display = 'none';
     btnShare.style.display = 'none';
     btnEmail.style.display = 'none';
@@ -82,12 +85,54 @@ if (!nMobile) {
 
 function browserExport() {
     showSnackbar(lngObject.lblExportMsg);
-    setTimeout(function() {
-        let doc = new jsPDF('l', 'pt', 'a4');
+    setTimeout(() => {
+        const dText = document.getElementById('titleMeeting').innerHTML;
+        // Ensure jsPDF is correctly referenced
+        const { jsPDF } = window.jspdf;
+
+        let doc = new jsPDF('landscape', 'pt', 'a4');
+
+        // Define header
+        function addHeader(data) {
+            doc.setFontSize(12);
+            doc.setTextColor(40);
+            doc.text(dText, data.settings.margin.left, 30);
+        }
+
+        // Define footer
+        function addFooter(data) {
+            let pageCount = doc.internal.getNumberOfPages();
+            doc.setFontSize(8);
+            doc.setTextColor(40);
+            let str = 'Created by Federico Navarrete, federiconavarrete.com';
+            doc.textWithLink(str, data.settings.margin.left, doc.internal.pageSize.height - 30, { url: "https://federiconavarrete.com" });
+        }
+
+        // Convert HTML table to JSON
         let res = doc.autoTableHtmlToJson(document.getElementById("tblResults"));
-        doc.autoTable(res.columns, res.data, {
-            startY: 60
+
+        // Draw table with header and footer
+        doc.autoTable({
+            head: [res.columns], // Columns as an array of strings
+            body: res.data,      // Rows as an array of arrays of strings
+            startY: 60,
+            margin: { top: 50, bottom: 30 },
+            didDrawPage: function (data) {
+                // Header
+                doc.setFontSize(12);
+                doc.setTextColor(40);
+                doc.text(dText, data.settings.margin.left, 30);
+
+                // Footer
+                const pageCount = doc.internal.getNumberOfPages();
+                doc.setFontSize(8);
+                doc.setTextColor(40);
+                const str = 'Created by Federico Navarrete, federiconavarrete.com';
+                doc.textWithLink(str, data.settings.margin.left, doc.internal.pageSize.height - 30, { url: 'https://federiconavarrete.com' });
+            }
         });
-        doc.save();
+
+        // Save the PDF
+        doc.save(`${dText.replace(/ /g, '_')}.pdf`);
     }, 250);
 }

@@ -2,7 +2,7 @@
   "about": "O nás",
   "about1": "Časoměříč Toastmasters je aplikace vyvinutá společností Supernova IC, která usnadňuje vaše schůzky se všemi podstatnými možnostmi.",
   "about2": "Máte otázky? Kontajtuje hlavního vývojáře",
-  "about3": "&copy; Všechna práva vyhrazena Supernova IC, 2013 — 2024.",
+  "about3": "&copy; Všechna práva vyhrazena Supernova IC, 2013 — {0}.",
   "about4": "Máte zájem o další innovační projekty? Navštivte naši webovou stránku.",
   "about5": "Můžete si také koupit knihu a podpořit tento projekt, který pomůže lidem objevit, že Salvador je neuvěřitelný 🏄‍♂️:",
   "bringIn": "Přineste to ve svém jazyce!",
@@ -79,5 +79,8 @@
   "timeMaximum": "Maximální čas",
   "timeMinimum": "Minimální čas",
   "title": "Časoměříč Toastmasters",
-  "translators": "Překladatelé"
+  "translators": "Překladatelé",
+  "chooseLang": "Vyberte si jazyk",
+  "options": "Možnosti",
+  "rWarning": "Změna jazyka vyžaduje opětovné načtení aplikace. Chcete pokračovat?"
 }

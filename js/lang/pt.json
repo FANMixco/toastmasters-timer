@@ -2,7 +2,7 @@
     "about": "Sobre nós",
     "about1": "Cronômetro do Toastmasters é um aplicativo desenvolvido pela Supernova IC para facilitar suas reuniões com todas as opções essenciais.",
     "about2": "Para qualquer dúvida, você pode entrar em contato com o desenvolvedor principal:",
-    "about3": "&copy; Todos os direitos reservados Supernova IC, 2013 — 2024.",
+    "about3": "&copy; Todos os direitos reservados Supernova IC, 2013 — {0}.",
     "about4": "Se você está interessado em projetos mais inovadores e exclusivos, consulte nosso site:",
     "about5": "Você também pode comprar um livro e apoiar este projeto ajudando as pessoas a descobrirem que El Salvador é incrível 🏄‍♂️:",
     "bringIn": "Traga no seu idioma!",
@@ -79,5 +79,8 @@
     "timeMaximum": "Máximo",
     "timeMinimum": "Mínimo",
     "title": "Cronômetro do Toastmasters",
-    "translators": "Tradutores"
+    "translators": "Tradutores",
+    "chooseLang": "Escolha seu idioma",
+    "options": "Opções",
+    "rWarning": "Para alterar o idioma é necessário recarregar o aplicativo. Deseja continuar?"
 }

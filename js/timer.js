@@ -55,6 +55,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
     customMin = document.getElementById('customMin'),
     customAvg = document.getElementById('customAvg'),
     customMax = document.getElementById('customMax'),
+    ddLang = document.getElementById('ddLang'),
     invert100 = "invert(100%)",
     invert0 = "invert(0%)",
     length = Math.PI * 2 * 100,
@@ -259,7 +260,7 @@ function timer(seconds) { //counts time, takes seconds
     let remainTime = Date.now() + seconds * 1000;
     displayTimeLeft(seconds);
 
-    intervalTimer = setInterval(function () {
+    intervalTimer = setInterval(() => {
         timeLeft = Math.round((remainTime - Date.now()) / 1000);
         let counter = maximum - timeLeft;
         if (counter >= minimum && counter < average) {
@@ -314,9 +315,9 @@ function resizeScreen() {
         externalContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(function () {
+        setTimeout(() => {
             sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(function () {
+            setTimeout(() => {
                 let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
@@ -355,9 +356,9 @@ function resizeScreen() {
         externalContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(function () {
+        setTimeout(() => {
             sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(function () {
+            setTimeout(() => {
                 let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
@@ -369,11 +370,11 @@ function resizeScreen() {
         sContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(function () {
+        setTimeout(() => {
             sContainer.style.transform = `scale(${scaleVal})`;
         }, 100);
 
-        setTimeout(function () {
+        setTimeout(() => {
             if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
                 sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
         }, 100);
@@ -381,7 +382,7 @@ function resizeScreen() {
 }
 
 function resizeSelect() {
-    setTimeout(function () {
+    setTimeout(() => {
         try {
             document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
             document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
@@ -429,7 +430,7 @@ function pauseTimer() {
         btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
-        setTimeout(function () {
+        setTimeout(() => {
             btnPause.disabled = false;
         }, 500);
     } else if (isPaused) {
@@ -438,7 +439,7 @@ function pauseTimer() {
         btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
-        setTimeout(function () {
+        setTimeout(() => {
             btnPause.disabled = false;
         }, 500);
         timer(timeLeft);
@@ -564,7 +565,7 @@ function changeEventHandler() {
         }
 
         if (deviceDetector.device === 'phone') {
-            setTimeout(function () {
+            setTimeout(() => {
                 let bCustomTimes = document.getElementById('bodyCustomTimes');
                 bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
             }, 100);
@@ -750,7 +751,6 @@ function invertColors() {
         setInvFilter(customMin, invert100);
         setInvFilter(customAvg, invert100);
         setInvFilter(customMax, invert100);
-        //setInvFilter(customMax, invert100);
         setInvFilter(speakers, invert100);
         setInvFilter(dialogAbout, invert100);
         setInvFilter(document.body, invert100);
@@ -772,7 +772,6 @@ function invertColors() {
         setInvFilter(customMin, invert0);
         setInvFilter(customAvg, invert0);
         setInvFilter(customMax, invert0);
-        //setInvFilter(customMax, invert0);
         setInvFilter(speakers, invert0);
         setInvFilter(dialogAbout, invert0);
         setInvFilter(document.body, invert0);
@@ -972,7 +971,7 @@ btnTimeTable.addEventListener('click', countTimetable);
 
 btnDelete.addEventListener('click', deleteTimetable);
 
-btnYesChallenge.addEventListener('click', function () {
+btnYesChallenge.addEventListener('click', () => {
     isContestMode = true;
     setContestImg();
     checkMode();
@@ -1005,46 +1004,46 @@ btnInvert.addEventListener('click', function (event) {
     timeDialogInvert(selectedColor);
 });
 
-btnYesChanges.addEventListener('click', function () {
+btnYesChanges.addEventListener('click', () => {
     saveChanges();
     dialogChanges.close();
 });
 
-btnSponsor2Us.addEventListener('click', function () {
+btnSponsor2Us.addEventListener('click', () => {
     window.open("https://github.com/sponsors/FANMixco");
 });
 
-btnShare.addEventListener('click', function () { });
+btnShare.addEventListener('click', () => { });
 
-btnEmail.addEventListener('click', function () { });
+btnEmail.addEventListener('click', () => { });
 
-btnAbout.addEventListener('click', function () {
+btnAbout.addEventListener('click', () => {
     dialogAbout.showModal();
     if (deviceDetector.device === 'phone') {
-        setTimeout(function () {
+        setTimeout(() => {
             dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
         }, 100);
     }
 });
 
-txtMin.addEventListener('click', function () {
+txtMin.addEventListener('click', () => {
     setNewTime('txtMin', txtMin.value);
 });
 
-txtMax.addEventListener('click', function () {
+txtMax.addEventListener('click', () => {
     setNewTime('txtMax', txtMax.value);
 });
 
-txtAvg.addEventListener('click', function () {
+txtAvg.addEventListener('click', () => {
     setNewTime('txtAvg', txtAvg.value);
 });
 
 btnDownload.addEventListener('click', browserExport);
 
-btnMultiple.addEventListener('click', function () {
+btnMultiple.addEventListener('click', () => {
     Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function (element) {
         let _this = element;
-        setTimeout(function () {
+        setTimeout(() => {
             _this.MaterialCheckbox.check();
         }, 10);
     });
@@ -1059,26 +1058,26 @@ btnMultiple.addEventListener('click', function () {
     refreshControls();
 });
 
-dialogTimeTable.querySelector('.close').addEventListener('click', function () {
+dialogTimeTable.querySelector('.close').addEventListener('click', () => {
     dialogTimeTable.close();
 });
 
 dialogCustomTimes.querySelector('.close').addEventListener('click', closeCustomDialog);
 
-dialogConfirm.querySelector('.close').addEventListener('click', function () {
+dialogConfirm.querySelector('.close').addEventListener('click', () => {
     dialogConfirm.close();
 });
 
-dialogAbout.querySelector('.close').addEventListener('click', function () {
+dialogAbout.querySelector('.close').addEventListener('click', () => {
     dialogAbout.close();
 });
 
-dialogChanges.querySelector('.close').addEventListener('click', function () {
+dialogChanges.querySelector('.close').addEventListener('click', () => {
     dialogChanges.close();
     dialogCustomTimes.close();
 });
 
-dialogWelcome.querySelector('.close').addEventListener('click', function () {
+dialogWelcome.querySelector('.close').addEventListener('click', () => {
     dialogWelcome.close();
     isFirstRun = false;
     setFirstRun();
@@ -1091,12 +1090,12 @@ txtCustom.addEventListener("keyup", function (e) {
 });
 
 if (os === "Android") {
-    txtSpeaker.addEventListener("onfocus", function () {
+    txtSpeaker.addEventListener("onfocus", () => {
         let y = document.getElementById("playControl").getBoundingClientRect().y;
         document.body.marginTop = `-${y}px`;
     });
 
-    txtSpeaker.addEventListener("onblur", function () {
+    txtSpeaker.addEventListener("onblur", () => {
         document.body.marginTop = '0px';
     });
 }
@@ -1106,7 +1105,7 @@ txtSpeaker.addEventListener("keyup", function (e) {
         hideKeyboard(txtSpeaker);
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     cmbSpeechType.onchange = changeEventHandler;
 }, false);
 
@@ -1139,7 +1138,7 @@ initializeDB(currentDB, latestDB);
 lastColor = bgColors[selectedColor];
 invertColors();
 
-setTimeout(function () {
+setTimeout(() => {
     let bodyAbout = document.getElementById('bodyAbout');
 
     let bodyTranslators = document.getElementById('bodyTranslators');
@@ -1218,6 +1217,7 @@ setTimeout(function () {
 
         let spanSaveCT = document.createElement("span");
         spanSaveCT.id = 'spanSave';
+        spanSaveCT.className = 'btnRight';
 
         spanCloseMobileCT.appendChild(spanCloseIconCT);
         spanTitleCT.appendChild(customTitleCT);
@@ -1238,7 +1238,7 @@ setTimeout(function () {
         customTitleTmp.style.fontSize = '1.25em';
         customTitleTmp.style.display = 'inline';
 
-        document.getElementById('btnCloseMobileCustom').addEventListener('click', function () {
+        document.getElementById('btnCloseMobileCustom').addEventListener('click', () => {
             closeCustomDialog();
         });
 
@@ -1286,7 +1286,15 @@ setTimeout(function () {
 
         aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
 
-        document.getElementById('btnCloseMobileAbout').addEventListener('click', function () {
+        let spanFiveStars = document.createElement("span");
+        spanFiveStars.id = 'spanFiveStars';
+        spanFiveStars.className = 'btnRight';
+
+        divTitleInnerContainerAD.appendChild(spanFiveStars);
+
+        document.getElementById('spanFiveStars').appendChild(document.getElementById('btnSponsor2Us'));
+
+        document.getElementById('btnCloseMobileAbout').addEventListener('click', () => {
             dialogAbout.close();
         });
 
@@ -1317,7 +1325,7 @@ setTimeout(function () {
 
     let exit = 0;
     do {
-        setTimeout(function () {
+        setTimeout(() => {
             try {
                 titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
             } catch (e) { }
@@ -1331,7 +1339,7 @@ checkMode();
 tickAll.addEventListener('change', (event) => {
     Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function (element) {
         let _this = element;
-        setTimeout(function () {
+        setTimeout(() => {
             if (lblTickAll.matches('.is-checked'))
                 _this.MaterialCheckbox.check();
             else
@@ -1341,10 +1349,10 @@ tickAll.addEventListener('change', (event) => {
     refreshControls();
 });
 
-(function () {
-    btnShare.style.display = 'none';
-    btnEmail.style.display = 'none';
-    btnDownload.style.display = 'none';
+(() => {
+    //btnShare.style.display = 'none';
+    //btnEmail.style.display = 'none';
+    //btnDownload.style.display = 'none';
 
     if (os === "iOS") {
         btnVibrate.style.display = "none";
@@ -1398,7 +1406,7 @@ tickAll.addEventListener('change', (event) => {
         dialogAbout.classList.add('fullscreen-dialog');
     }
 
-    window.addEventListener("focus", function () {
+    window.addEventListener("focus", () => {
         try {
             let menuOutline = document.querySelector('.mdl-menu__outline');
             if (menuOutline) {
@@ -1411,14 +1419,15 @@ tickAll.addEventListener('change', (event) => {
     if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
         alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
 
-    setTimeout(function () {
+    setTimeout(() => {
         // Checks if should display install popup notification:
         if (os === "iOS" && !isInStandaloneMode())
             showSnackbar(lngObject.installiOS, 3000);
 
         try {
-            if (lngObject.copyright3)
+            if (lngObject.copyright3) {
                 document.getElementById('spanCopyright3').innerHTML = `. ${lngObject.copyright3}`;
+            }
         } catch { }
 
         timeDialogInvert(selectedColor);
@@ -1427,7 +1436,7 @@ tickAll.addEventListener('change', (event) => {
 
 function hideKeyboard(element) {
     element.readOnly = true;
-    setTimeout(function () {
+    setTimeout(() => {
         element.blur(); //actually close the keyboard
         element.readOnly = false;
     }, 100);
@@ -1471,5 +1480,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     document.body.style.maxHeight = `${window.innerHeight}px`;
 
+    ddLang.value = localStorage.getItem('currentLang');
+
     resizeScreen();
 });
+
+ddLang.onchange = (event) => {
+    let confirmed = confirm(lngObject.rWarning);
+    if (confirmed) {
+        localStorage.setItem('currentLang', event.target.value);
+        location.reload();
+    }
+}
