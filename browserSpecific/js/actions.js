@@ -73,7 +73,6 @@ if (!nMobile) {
     audioElementClapping.load();
 
     btnVibrate.style.display = 'none';
-    btnShare.style.display = 'none';
     btnEmail.style.display = 'none';
 
     document.body.insertBefore(audioBeepElement, document.getElementById("snackbarMsg"));

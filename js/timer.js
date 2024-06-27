@@ -1013,7 +1013,21 @@ btnSponsor2Us.addEventListener('click', () => {
     window.open("https://github.com/sponsors/FANMixco");
 });
 
-btnShare.addEventListener('click', () => { });
+btnShare.addEventListener('click', async () => {
+    const tableHtml = document.getElementById('tblResults').outerHTML;
+
+    try {
+        await navigator.share({
+            title: document.getElementById('titleMeeting').innerHTML,
+            text: 'Check out the meeting timing results. Exported by Toastmasters Timer. Created by Federico Navarrete, https://federiconavarrete.com',
+            files: [
+                new File([tableHtml], 'table.html', { type: 'text/html' })
+            ]
+        });
+    } catch (error) {
+        console.error('Error sharing:', error);
+    }
+});
 
 btnEmail.addEventListener('click', () => { });
 
@@ -1350,9 +1364,7 @@ tickAll.addEventListener('change', (event) => {
 });
 
 (() => {
-    //btnShare.style.display = 'none';
     //btnEmail.style.display = 'none';
-    //btnDownload.style.display = 'none';
 
     if (os === "iOS") {
         btnVibrate.style.display = "none";
