@@ -127,7 +127,7 @@ function browserExport() {
                 const pageCount = doc.internal.getNumberOfPages();
                 doc.setFontSize(8);
                 doc.setTextColor(40);
-                const str = 'Created by Federico Navarrete, federiconavarrete.com';
+                const str = 'Exported by Toastmasters Timer. Created by Federico Navarrete, federiconavarrete.com';
                 doc.textWithLink(str, data.settings.margin.left, doc.internal.pageSize.height - 30, { url: 'https://federiconavarrete.com' });
             }
         });
