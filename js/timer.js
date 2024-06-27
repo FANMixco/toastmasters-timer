@@ -1021,7 +1021,7 @@ btnShare.addEventListener('click', async () => {
             title: document.getElementById('titleMeeting').innerHTML,
             text: 'Check out the meeting timing results. Exported by Toastmasters Timer. Created by Federico Navarrete, https://federiconavarrete.com',
             files: [
-                new File([tableHtml], `${document.getElementById('titleMeeting').innerHTML.replace(/ /g, '_').replace(/\//g, '_')}.html`, { type: 'text/html' })
+                new File([tableHtml], `${document.getElementById('titleMeeting').innerHTML.replace(/ /g, '_').replace(/\//g, '_').replace(/filter: invert\(100%\);/g, '').replace(/filter:invert\(100%\);/g, '')}.html`, { type: 'text/html' })
             ]
         });
     } catch (error) {
