@@ -101,7 +101,7 @@ function browserExport() {
         function addFooter(data) {
             doc.setFontSize(8);
             doc.setTextColor(40);
-            let str = 'Created by Federico Navarrete, federiconavarrete.com';
+            let str = 'Exported by Toastmasters Timer. Created by Federico Navarrete, federiconavarrete.com';
             doc.textWithLink(str, data.settings.margin.left, doc.internal.pageSize.height - 30, { url: "https://federiconavarrete.com" });
         }
 
