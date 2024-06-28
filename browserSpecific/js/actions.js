@@ -86,7 +86,6 @@ function browserExport() {
     showSnackbar(lngObject.lblExportMsg);
     setTimeout(() => {
         const dText = document.getElementById('titleMeeting').innerHTML;
-        // Ensure jsPDF is correctly referenced
         const { jsPDF } = window.jspdf;
 
         let doc = new jsPDF('landscape', 'pt', 'a4');
@@ -100,15 +99,49 @@ function browserExport() {
 
         // Define footer
         function addFooter(data) {
-            let pageCount = doc.internal.getNumberOfPages();
             doc.setFontSize(8);
             doc.setTextColor(40);
             let str = 'Created by Federico Navarrete, federiconavarrete.com';
             doc.textWithLink(str, data.settings.margin.left, doc.internal.pageSize.height - 30, { url: "https://federiconavarrete.com" });
         }
 
+        // Convert hex color to RGB
+        function hexToRgb(hex) {
+            let bigint = parseInt(hex.slice(1), 16);
+            let r = (bigint >> 16) & 255;
+            let g = (bigint >> 8) & 255;
+            let b = bigint & 255;
+            return [r, g, b];
+        }
+
+        // Get the color of the row
+        function getRowColor(rowElement) {
+            let style = window.getComputedStyle(rowElement);
+            let bgColor = style.backgroundColor;
+            let color = style.color;
+
+            if (bgColor.startsWith('#')) {
+                bgColor = hexToRgb(bgColor);
+            } else if (bgColor.startsWith('rgb')) {
+                bgColor = bgColor.match(/\d+/g).map(Number);
+            }
+
+            if (color.startsWith('#')) {
+                color = hexToRgb(color);
+            } else if (color.startsWith('rgb')) {
+                color = color.match(/\d+/g).map(Number);
+            }
+
+            return {
+                fillColor: bgColor,
+                textColor: color
+            };
+        }
+
         // Convert HTML table to JSON
-        let res = doc.autoTableHtmlToJson(document.getElementById("tblResults"));
+        let table = document.getElementById("tblResults");
+        let res = doc.autoTableHtmlToJson(table);
+        //let totalCols = 0;
 
         // Draw table with header and footer
         doc.autoTable({
@@ -118,16 +151,23 @@ function browserExport() {
             margin: { top: 50, bottom: 30 },
             didDrawPage: function (data) {
                 // Header
-                doc.setFontSize(12);
-                doc.setTextColor(40);
-                doc.text(dText, data.settings.margin.left, 30);
+                addHeader(data);
 
                 // Footer
-                const pageCount = doc.internal.getNumberOfPages();
-                doc.setFontSize(8);
-                doc.setTextColor(40);
-                const str = 'Exported by Toastmasters Timer. Created by Federico Navarrete, federiconavarrete.com';
-                doc.textWithLink(str, data.settings.margin.left, doc.internal.pageSize.height - 30, { url: 'https://federiconavarrete.com' });
+                addFooter(data);
+            },
+            didParseCell: function (data) {
+                if (data.row.section === 'body') { // Process only body rows
+                    let rowIndex = data.row.index;
+                    let rowElement = table.rows[rowIndex + 1]; // Skip the header row
+
+                    // Extract colors for the current row
+                    let colors = getRowColor(rowElement);
+
+                    // Apply the extracted styles
+                    data.cell.styles.fillColor = colors.fillColor;
+                    data.cell.styles.textColor = colors.textColor;
+                }
             }
         });
 
