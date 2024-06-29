@@ -5,8 +5,13 @@ setTimeout(() => {
     buy_me_coffee.dataset.name = "BMC-Widget";
     buy_me_coffee.dataset.cfasync = "false";
     buy_me_coffee.dataset.id = "fanmixco";
-    buy_me_coffee.dataset.description = lngObject.buyMeACoffee;
-    buy_me_coffee.dataset.message = lngObject.buyMeACoffeeMsg;
+    try {
+        buy_me_coffee.dataset.description = lngObject.buyMeACoffee;
+        buy_me_coffee.dataset.message = lngObject.buyMeACoffeeMsg;    
+    } catch {
+        buy_me_coffee.dataset.description = "Support me on Buy me a coffee!";
+        buy_me_coffee.dataset.message = "Empower me to improve this incredible app! Buy me a coffee!";    
+    }
     buy_me_coffee.dataset.color = "#5F7FFF";
     buy_me_coffee.dataset.position = "Right";
     buy_me_coffee.dataset.x_margin = "18";
