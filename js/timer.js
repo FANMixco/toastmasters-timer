@@ -1014,14 +1014,16 @@ btnSponsor2Us.addEventListener('click', () => {
 });
 
 btnShare.addEventListener('click', async () => {
-    const tableHtml = document.getElementById('titleMeeting').outerHTML + document.getElementById('tblResults').outerHTML + `<p>Exported by Toastmasters Timer. Created by <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete.</a></p>`;
+    const hNone = 'style="display: none!important;"';
+    const tmpTable = '<style>table, th, td { border: 1px solid black; border-collapse: collapse; }</style>' + document.getElementById('tblResults').outerHTML.replace(/id="thDel"/g, `id="thDel" ${hNone}`).replace(/class="tdDel/g, `${hNone} class="tdDel`).replace(/filter: invert\(100%\);/g, '').replace(/filter:invert\(100%\);/g, '');
+    const tableHtml = document.getElementById('titleMeeting').outerHTML + tmpTable + `<p><i>Exported by Toastmasters Timer. Created by <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a></i>.</p>`;
 
     try {
         await navigator.share({
             title: document.getElementById('titleMeeting').innerHTML,
             text: 'Check out the meeting timing results. Exported by Toastmasters Timer. Created by Federico Navarrete, https://federiconavarrete.com',
             files: [
-                new File([tableHtml], `${document.getElementById('titleMeeting').innerHTML.replace(/ /g, '_').replace(/\//g, '_').replace(/filter: invert\(100%\);/g, '').replace(/filter:invert\(100%\);/g, '')}.html`, { type: 'text/html' })
+                new File([tableHtml], `${document.getElementById('titleMeeting').innerHTML.replace(/ /g, '_').replace(/\//g, '_')}.html`, { type: 'text/html' })
             ]
         });
     } catch (error) {
