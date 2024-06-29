@@ -82,5 +82,7 @@
   "translators": "Tłumacze",
   "chooseLang": "Wybierz swój język",
   "options": "Opcje",
-  "rWarning": "Zmiana języka wymaga ponownego załadowania aplikacji. Czy chcesz kontynuować?"
+  "rWarning": "Zmiana języka wymaga ponownego załadowania aplikacji. Czy chcesz kontynuować?",
+  "buyMeACoffee": "Wesprzyj mnie na Kup mi kawę!",
+  "buyMeACoffeeMsg": "Daj mi możliwość ulepszenia tej niesamowitej aplikacji! Kup mi kawę!"
 }

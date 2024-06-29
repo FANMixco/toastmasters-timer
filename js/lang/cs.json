@@ -82,5 +82,7 @@
   "translators": "Překladatelé",
   "chooseLang": "Vyberte si jazyk",
   "options": "Možnosti",
-  "rWarning": "Změna jazyka vyžaduje opětovné načtení aplikace. Chcete pokračovat?"
+  "rWarning": "Změna jazyka vyžaduje opětovné načtení aplikace. Chcete pokračovat?",
+  "buyMeACoffee": "Podpořte mě na Kupte mi kávu!",
+  "buyMeACoffeeMsg": "Zmocněte mě k vylepšení této neuvěřitelné aplikace! Kup mi kávu!"
 }

@@ -82,5 +82,7 @@
   "translators": "Translators",
   "chooseLang": "Choose your language",
   "options": "Options",
-  "rWarning": "Changing languages requires to reload the app. Do you want to proceed?"
+  "rWarning": "Changing languages requires to reload the app. Do you want to proceed?",
+  "buyMeACoffee": "Support me on Buy me a coffee!",
+  "buyMeACoffeeMsg": "Empower me to improve this incredible app! Buy me a coffee!"
 }

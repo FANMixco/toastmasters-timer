@@ -82,5 +82,7 @@
   "translators": "Traducteurs",
   "chooseLang": "Choisissez votre langue",
   "options": "Options",
-  "rWarning": "Changer de langue nécessite de recharger l'application. Voulez-vous continuer ?"
+  "rWarning": "Changer de langue nécessite de recharger l'application. Voulez-vous continuer ?",
+  "buyMeACoffee": "Soutenez-moi pour Achetez-moi un café !",
+  "buyMeACoffeeMsg": "Donnez-moi les moyens d'améliorer cette incroyable application ! Achetez-moi un café !"
 }

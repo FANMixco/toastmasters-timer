@@ -82,5 +82,7 @@
     "translators": "翻译人员",
     "chooseLang": "选择您的语言",
     "options": "选项",
-    "rWarning": "更改语言需要重新加载应用程序。您要继续吗？"
+    "rWarning": "更改语言需要重新加载应用程序。您要继续吗？",
+    "buyMeACoffee": "支持我给我买杯咖啡！",
+    "buyMeACoffeeMsg": "使我能够改进这个令人难以置信的应用程序！ 给我买杯咖啡！"
 }
