@@ -1,5 +1,5 @@
 setTimeout(() => {
-    const buy_me_coffee = document.createElement('script');
+    let buy_me_coffee = document.createElement('script');
 
     buy_me_coffee.setAttribute('src', 'https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js');
     buy_me_coffee.dataset.name = "BMC-Widget";
