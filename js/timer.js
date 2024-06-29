@@ -168,7 +168,7 @@ function setDateFormat() {
 }
 
 function disableLinks(isLinkDisabled) {
-    Array.from(externalLinks).forEach(function (entry) {
+    Array.from(externalLinks).forEach((entry) => {
         if (isLinkDisabled)
             entry.setAttribute("disabled", "disabled");
         else
@@ -293,7 +293,7 @@ function execAction(bgn, color, icon) {
     browserChangeFavIcon(icon);
 }
 if (os !== "Android" || navigator.userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)) {
-    window.onresize = function () {
+    window.onresize = () => {
         resizeScreen();
     };
 }
@@ -783,7 +783,7 @@ function invertColors() {
         setBgd(dialogClapping, bgColors[0]);
     }
 
-    [].forEach.call(document.getElementsByClassName("noInvert"), function (el) {
+    [].forEach.call(document.getElementsByClassName("noInvert"), (el) => {
         setInvFilter(el, currentInv);
     });
 
@@ -862,7 +862,7 @@ function saveChanges() {
     }
 }
 
-btnPause.addEventListener('click', function (event) {
+btnPause.addEventListener('click', (event) => {
     if (event.detail === 1)
         pauseTimer();
 });
@@ -875,7 +875,7 @@ btnStop.addEventListener('click', () => {
     storeTime(true);
 });
 
-btnChampion.addEventListener('click', function (event) {
+btnChampion.addEventListener('click', (event) => {
     if (event.detail === 3) {
         isNinjaMode = !isNinjaMode;
 
@@ -902,7 +902,7 @@ btnVibrate.addEventListener('click', () => {
     setVibrate();
 });
 
-btnBeep.addEventListener('click', function (event) {
+btnBeep.addEventListener('click', (event) => {
     if (event.detail === 3) {
         isTextPreviewMode = !isTextPreviewMode;
 
@@ -918,7 +918,7 @@ btnBeep.addEventListener('click', function (event) {
     setBeep();
 });
 
-btnClap.addEventListener('click', function (event) {
+btnClap.addEventListener('click', (event) => {
     if (event.detail === 3) {
         dialogClapping.showModal();
         if (clappingTime === 30) {
@@ -983,7 +983,7 @@ btnYesChallenge.addEventListener('click', () => {
 
 btnYesConfirm.addEventListener('click', deleteByIDs);
 
-btnInvert.addEventListener('click', function (event) {
+btnInvert.addEventListener('click', (event) => {
     if (event.detail === 3) {
         isColorBlindnessEnabled = !isColorBlindnessEnabled;
 
@@ -1026,10 +1026,24 @@ btnShare.addEventListener('click', async () => {
                 new File([tableHtml], `${document.getElementById('titleMeeting').innerHTML.replace(/ /g, '_').replace(/\//g, '_')}.html`, { type: 'text/html' })
             ]
         });
+        insertIAd();
     } catch (error) {
         console.error('Error sharing:', error);
     }
 });
+
+function insertIAd() {
+    // Create a new script element
+    const script = document.createElement('script');
+
+    // Set the attributes for the script element
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = '//thubanoa.com/1?z=7667293';
+
+    // Append the script to the head or body
+    document.body.appendChild(script);
+}
 
 btnEmail.addEventListener('click', () => { });
 
@@ -1057,7 +1071,7 @@ txtAvg.addEventListener('click', () => {
 btnDownload.addEventListener('click', browserExport);
 
 btnMultiple.addEventListener('click', () => {
-    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach(function (element) {
+    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach((element) => {
         let _this = element;
         setTimeout(() => {
             _this.MaterialCheckbox.check();
@@ -1100,7 +1114,7 @@ dialogWelcome.querySelector('.close').addEventListener('click', () => {
     showSnackbar(lngObject.noHints);
 });
 
-txtCustom.addEventListener("keyup", function (e) {
+txtCustom.addEventListener("keyup", (e) => {
     if (e.key === 'Enter')
         hideKeyboard(txtCustom);
 });
@@ -1116,7 +1130,7 @@ if (os === "Android") {
     });
 }
 
-txtSpeaker.addEventListener("keyup", function (e) {
+txtSpeaker.addEventListener("keyup", (e) => {
     if (e.key === 'Enter')
         hideKeyboard(txtSpeaker);
 });
@@ -1352,8 +1366,8 @@ setTimeout(() => {
 
 checkMode();
 
-tickAll.addEventListener('change', (event) => {
-    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach(function (element) {
+tickAll.addEventListener('change', () => {
+    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach((element) => {
         let _this = element;
         setTimeout(() => {
             if (lblTickAll.matches('.is-checked'))
@@ -1366,7 +1380,7 @@ tickAll.addEventListener('change', (event) => {
 });
 
 (() => {
-    //btnEmail.style.display = 'none';
+    btnEmail.style.display = 'none';
 
     if (os === "iOS") {
         btnVibrate.style.display = "none";
@@ -1379,7 +1393,7 @@ tickAll.addEventListener('change', (event) => {
             let isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
 
             // Safari 3.0+ "[object HTMLElementConstructor]" 
-            let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+            let isSafari = /constructor/i.test(window.HTMLElement) || ((p) => p.toString() === "[object SafariRemoteNotification]")(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
 
             if (isFirefox || isSafari) {
                 dialogTimeTable.classList.add('centeredDialog');
@@ -1462,25 +1476,25 @@ function doOnOrientationChange() {
     location.reload();
 }
 
-document.addEventListener("keydown", function (zEvent) {
+document.addEventListener("keydown", (zEvent) => {
     if (zEvent.ctrlKey && (zEvent.key === "p" || zEvent.key === "P")) {
         pauseTimer();
     }
 });
 
-document.addEventListener("keydown", function (zEvent) {
+document.addEventListener("keydown", (zEvent) => {
     if (zEvent.ctrlKey && (zEvent.key === "s" || zEvent.key === "S")) {
         btnStop.click();
     }
 });
 
-document.addEventListener("keydown", function (zEvent) {
+document.addEventListener("keydown", (zEvent) => {
     if (zEvent.ctrlKey && (zEvent.key === "r" || zEvent.key === "R")) {
         btnRestart.click();
     }
 });
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loading-container').style.display = "none";
     document.getElementById('superContainer').style.display = "block";
 
@@ -1494,7 +1508,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     document.body.style.maxHeight = `${window.innerHeight}px`;
 
-    ddLang.value = localStorage.getItem('currentLang');
+    ddLang.value = getLocalStorageValue('currentLang');
 
     resizeScreen();
 });
@@ -1502,7 +1516,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 ddLang.onchange = (event) => {
     let confirmed = confirm(lngObject.rWarning);
     if (confirmed) {
-        localStorage.setItem('currentLang', event.target.value);
+        setLocalStorage('currentLang', event.target.value);
         location.reload();
     }
 }

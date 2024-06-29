@@ -2,7 +2,7 @@
   "dir": "ltr",
   "lang": "da",
   "name": "Toastmasters Timer",
-  "version": "2.4.1.8",
+  "version": "2.4.1.11",
   "scope": "https://tmtimer.federiconavarrete.com/",
   "display": "standalone",
   "display_override": [
@@ -837,6 +837,36 @@
       "src": "img/icons/android/maskable_icon_x48.png",
       "sizes": "48x48",
       "purpose": "maskable"
+    },
+    {
+      "src": "img/icons/android/monochrome-icon-512.png",
+      "sizes": "512x512",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "img/icons/android/monochrome-icon-192.png",
+      "sizes": "192x192",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "img/icons/android/monochrome-icon-144.png",
+      "sizes": "144x144",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "img/icons/android/monochrome-icon-96.png",
+      "sizes": "96x96",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "img/icons/android/monochrome-icon-72.png",
+      "sizes": "72x72",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "img/icons/android/monochrome-icon-48.png",
+      "sizes": "48x48",
+      "purpose": "monochrome"
     },
     {
       "src": "img/icons/ios/16.png",
