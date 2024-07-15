@@ -89,7 +89,8 @@ let clappingTime = 30,
     green = 0,
     yellow = 0,
     red = 0,
-    timeLeft = 0;
+    timeLeft = 0,
+    totalCount = 0;
 
 let isPaused = false,
     isStarted = false,
@@ -280,6 +281,7 @@ function timer(seconds) { //counts time, takes seconds
                 startClapping();
             clappingStarted = true;
         }
+        totalCount++;
         displayTimeLeft(timeLeft);
     }, 1000);
 }
@@ -791,7 +793,7 @@ function invertColors() {
 }
 
 function storeTime(isTimeStored) {
-    if ((minimum === 0 && maximum === 0 && average === 0) || (green === 0 && yellow === 0 && red === 0)) return;
+    if ((minimum === 0 && maximum === 0 && average === 0) || (gtotalCount === 0)) return;
     deactivateWakeLock();
     stopClapping();
 
@@ -807,6 +809,7 @@ function storeTime(isTimeStored) {
     green = 0;
     yellow = 0;
     red = 0;
+    totalCount = 0;
     basicReset();
 
     if (!isCustom)
