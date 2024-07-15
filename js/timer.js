@@ -791,7 +791,7 @@ function invertColors() {
 }
 
 function storeTime(isTimeStored) {
-    if (minimum === 0 && maximum === 0 && average === 0) return;
+    if ((minimum === 0 && maximum === 0 && average === 0) || (green === 0 && yellow === 0 && red === 0)) return;
     deactivateWakeLock();
     stopClapping();
 
