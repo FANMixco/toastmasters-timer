@@ -55,6 +55,23 @@
         "What's the most valuable lesson you've learned from a mentor in your career?",
         "Who has been a mentor or influential figure in your professional life?"
     ],
+    "Celebrities": [
+        "If you could spend a day with any celebrity, who would it be and what would you do together?",
+        "Imagine you are a celebrity for a day. What would you do and how would you handle the fame?",
+        "If you could form a band with any celebrities, who would you choose and what kind of music would you play?",
+        "Describe a movie plot that stars your favorite celebrities. What genre would it be and what roles would they play?",
+        "If you could have a celebrity chef cook you a meal, who would it be and what would you hope they make?",
+        "Imagine you are interviewing your favorite celebrity. What three questions would you ask them and why?",
+        "If you could have any celebrity as your mentor, who would you choose and what advice would you seek?",
+        "Describe a reality TV show that features a mix of your favorite celebrities. What would the show be about?",
+        "If you could switch lives with any celebrity for a week, who would it be and what would you do during that week?",
+        "Imagine you are hosting a talk show. Which three celebrities would you invite as guests and what topics would you discuss?",
+        "If you could cast any celebrity in the role of your life story, who would it be and why?",
+        "Describe an adventure or travel documentary featuring a celebrity. Where would they go and what would they explore?",
+        "If you could have a celebrity join you for a road trip, who would it be and what would you talk about?",
+        "Imagine a charity event where celebrities participate in unique challenges. What would some of those challenges be?",
+        "If you could create a fashion line with any celebrity, who would you partner with and what would be the theme of your collection?"
+    ],
     "Clothes": [
         "👗 You find an elegant evening gown hidden in the attic. Describe its history and the events it witnessed.",
         "👔 A vintage suit jacket catches your eye at a flea market. Share the adventures of its previous owner.",
@@ -98,6 +115,23 @@
         "What's a conspiracy theory that involves the internet or social media manipulation? How concerned are you about its implications?",
         "What's a conspiracy theory that you used to believe in but have since changed your mind about?",
         "What's the most bizarre conspiracy theory you've heard, and why do you find it intriguing?"
+    ],
+    "Debate": [
+        "Should social media platforms be responsible for regulating misinformation?",
+        "Is remote work more effective than traditional office work?",
+        "Should college education be free for all students?",
+        "Is it better to travel solo or with a group?",
+        "Should governments implement universal basic income?",
+        "Is technology making us more connected or more isolated?",
+        "Should animals be kept in zoos?",
+        "Is it more important to invest in space exploration or ocean exploration?",
+        "Should electric cars replace all gasoline-powered vehicles?",
+        "Is it better to read the book or watch the movie adaptation?",
+        "Should schools enforce uniforms for all students?",
+        "Is the influence of celebrities on social issues beneficial or harmful?",
+        "Should voting be mandatory in all elections?",
+        "Is climate change the most pressing issue facing humanity today?",
+        "Should people limit their screen time to improve mental health?"
     ],
     "Environment": [
         "Describe a conservation project or initiative in your community that you support or would like to support.",
@@ -207,7 +241,22 @@
         "How do you think future societies will deal with overpopulation?",
         "If you could dictate one change in future education systems, what radical change would you implement?",
         "What are your thoughts on the potential of space colonization? Should humanity pursue it aggressively?",
-        "If you had to choose between a future with advanced technology but no nature, or a future with nature but no advanced technology, which would you choose and why?"
+        "If you had to choose between a future with advanced technology but no nature, or a future with nature but no advanced technology, which would you choose and why?",
+        "Imagine a future where humans can seamlessly merge with AI. How would this hybrid intelligence shape the world?",
+        "What if space travel became as common as air travel? Describe your first trip to another planet.",
+        "Envision a society where all diseases have been eradicated. How would this affect global population and lifestyles?",
+        "What if everyone had the ability to control the weather? How would this power be regulated?",
+        "Describe a future where humans have developed telekinesis. How would this ability be used in everyday life?",
+        "Imagine a world where genetic engineering allows people to design their own physical and mental traits. What ethical dilemmas might arise?",
+        "What if humanity discovered a way to communicate with animals? How would this change our relationship with nature?",
+        "Envision a future where cities are built underwater. What are the advantages and challenges of living in such a city?",
+        "Describe a world where virtual currencies have completely replaced traditional money. How would this impact global economies?",
+        "What if we could upload and relive our memories in high-definition? How would this technology change our perception of the past?",
+        "Imagine a future where people can instantly learn new skills by downloading them into their brains. How would education and employment evolve?",
+        "What if humans could hibernate like bears? How would this ability impact our lifestyles and work schedules?",
+        "Envision a society where everyone has a personal drone assistant. What tasks would you assign to your drone?",
+        "Describe a world where interstellar communication is possible. How would this affect our understanding of the universe and our place in it?",
+        "What if you could experience any historical event through immersive virtual reality? Which event would you choose and why?"
     ],
     "Health": [
         "Describe a fitness or wellness challenge you've overcome and what you learned from it.",
