@@ -21,6 +21,28 @@
         "Qual é o seu maior medo e como você lida com ele?",
         "Que conselho você daria para o seu eu mais jovem?"
     ],
+    "Futuro": [
+        "Descreva como você imagina o mundo daqui a 50 anos.",
+        "Descreva uma tecnologia futura que você gostaria de ver e como ela mudaria sua vida.",
+        "Descreva como você vê a evolução do trabalho e do emprego no futuro.",
+        "Descreva um avanço médico que você espera ver nas próximas décadas e seu impacto na vida humana.",
+        "Descreva como você imagina o futuro da educação e quais benefícios isso poderia trazer.",
+        "Descreva uma mudança nas cidades que você gostaria de ver no futuro e como isso melhoraria sua qualidade de vida.",
+        "Descreva um cenário futuro possível para o meio ambiente e as medidas que você acha que deveriam ser tomadas para protegê-lo.",
+        "Descreva como você imagina os relacionamentos interpessoais no futuro com o avanço da tecnologia.",
+        "Descreva um progresso no transporte que você espera ver no futuro e como ele afetaria seu dia a dia.",
+        "Descreva como você imagina a evolução dos meios de comunicação e do entretenimento no futuro e quais poderiam ser as consequências.",
+        "Descreva como você vê o papel da inteligência artificial no futuro e como ela afetaria nossa vida cotidiana.",
+        "Descreva como você imagina o futuro da alimentação e da agricultura.",
+        "Descreva um futuro onde as viagens espaciais são comuns e como isso mudaria nossa perspectiva sobre o universo.",
+        "Descreva como você imagina as casas e edifícios no futuro e quais inovações eles poderiam ter.",
+        "Descreva um futuro em que as energias renováveis são a norma e como isso influenciaria sua vida cotidiana.",
+        "Descreva como você vê o desenvolvimento futuro das normas sociais e políticas para se adaptar às mudanças globais.",
+        "Descreva um cenário futuro possível para a saúde mental e como a sociedade poderia abordar esse tema.",
+        "Descreva como você imagina o papel das redes sociais no futuro e seu impacto na comunicação.",
+        "Descreva um futuro onde a realidade virtual e aumentada são partes integrais da vida cotidiana e como isso mudaria sua percepção do mundo.",
+        "Descreva como você vê a dinâmica familiar e a educação no futuro."
+    ],
     "Opiniões": [
         "A arte deve ser financiada com fundos públicos?",
         "A inteligência artificial traz mais benefícios ou mais problemas?",

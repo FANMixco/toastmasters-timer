@@ -21,6 +21,28 @@
         "Qu’est-ce qui te passionne faire pendant ton temps libre?",
         "Qu’est-ce qui te rend reconnaissant(e)?"
     ],
+    "Futur": [
+        "Décris comment tu imagines le monde dans 50 ans.",
+        "Décris une technologie future que tu aimerais voir et comment elle changerait ta vie.",
+        "Décris comment tu vois l'évolution du travail et de l'emploi dans le futur.",
+        "Décris un progrès médical que tu espères voir dans les prochaines décennies et son impact sur la vie humaine.",
+        "Décris comment tu imagines l'avenir de l'éducation et quels avantages cela pourrait apporter.",
+        "Décris un changement dans les villes que tu aimerais voir dans le futur et comment cela améliorerait ta qualité de vie.",
+        "Décris un scénario futur possible pour l'environnement et les mesures que tu penses qu'il faudrait prendre pour le protéger.",
+        "Décris comment tu imagines les relations interpersonnelles dans le futur avec les avancées technologiques.",
+        "Décris un progrès dans le domaine des transports que tu attends pour le futur et comment il affecterait ton quotidien.",
+        "Décris comment tu vois l'évolution des médias et du divertissement dans le futur et quelles pourraient être les conséquences.",
+        "Décris comment tu imagines le rôle futur de l'intelligence artificielle et son impact sur notre vie quotidienne.",
+        "Décris comment tu vois l'avenir de l'alimentation et de l'agriculture.",
+        "Décris un futur où les voyages spatiaux sont courants et comment cela changerait notre perspective sur l'univers.",
+        "Décris comment tu imagines les maisons et les bâtiments dans le futur et quelles innovations pourraient les caractériser.",
+        "Décris un futur où les énergies renouvelables sont la norme et comment cela influencerait ta vie quotidienne.",
+        "Décris comment tu vois le développement futur des normes sociales et des politiques pour s'adapter aux changements globaux.",
+        "Décris un scénario futur possible pour la santé mentale et comment la société pourrait aborder ce sujet.",
+        "Décris comment tu imagines le rôle des réseaux sociaux dans le futur et leur impact sur la communication.",
+        "Décris un futur où la réalité virtuelle et augmentée sont des parties intégrantes de la vie quotidienne et comment cela changerait ta perception du monde.",
+        "Décris comment tu vois la dynamique familiale et l'éducation dans le futur."
+    ],
     "Opinions": [
         "Es-tu d’accord avec la censure dans les médias?",
         "Es-tu pour la légalisation du cannabis?",

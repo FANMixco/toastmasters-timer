@@ -43,6 +43,28 @@
         "Racconta di una situazione in cui hai aiutato qualcuno.",
         "Se potessi dare un consiglio al tuo io più giovane, cosa diresti?"
     ],
+    "Futuro": [
+        "Descrivi come immagini il mondo fra 50 anni.",
+        "Descrivi una tecnologia futura che ti piacerebbe vedere e come cambierebbe la tua vita.",
+        "Descrivi come vedi l'evoluzione del lavoro e dell'occupazione nel futuro.",
+        "Descrivi un progresso medico che speri di vedere nei prossimi decenni e il suo impatto sulla vita umana.",
+        "Descrivi come immagini il futuro dell'istruzione e quali benefici potrebbe portare.",
+        "Descrivi un cambiamento nelle città che ti piacerebbe vedere in futuro e come migliorerebbe la tua qualità della vita.",
+        "Descrivi uno scenario futuro possibile per l'ambiente e le misure che pensi dovrebbero essere adottate per proteggerlo.",
+        "Descrivi come immagini le relazioni interpersonali nel futuro con il progresso tecnologico.",
+        "Descrivi un progresso nel campo dei trasporti che ti aspetti nel futuro e come influenzerebbe la tua vita quotidiana.",
+        "Descrivi come immagini l'evoluzione dei media e dell'intrattenimento nel futuro e quali potrebbero essere le conseguenze.",
+        "Descrivi come immagini il ruolo dell'intelligenza artificiale nel futuro e come influenzerebbe la nostra vita quotidiana.",
+        "Descrivi come immagini il futuro dell'alimentazione e dell'agricoltura.",
+        "Descrivi un futuro in cui i viaggi spaziali sono comuni e come questo cambierebbe la nostra prospettiva sull'universo.",
+        "Descrivi come immagini le case e gli edifici del futuro e quali innovazioni potrebbero includere.",
+        "Descrivi un futuro in cui le energie rinnovabili sono la norma e come questo influenzerebbe la tua vita quotidiana.",
+        "Descrivi come immagini lo sviluppo futuro delle norme sociali e delle politiche per adattarsi ai cambiamenti globali.",
+        "Descrivi uno scenario futuro possibile per la salute mentale e come la società potrebbe affrontare questo tema.",
+        "Descrivi come immagini il ruolo dei social media nel futuro e il loro impatto sulla comunicazione.",
+        "Descrivi un futuro in cui la realtà virtuale e aumentata sono parti integranti della vita quotidiana e come questo cambierebbe la tua percezione del mondo.",
+        "Descrivi come immagini la dinamica familiare e l'educazione nel futuro."
+    ],
     "Lavoro e Carriera": [
         "Come bilanci il lavoro e la vita personale?",
         "Come definisci il successo professionale?",
