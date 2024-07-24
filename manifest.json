@@ -17,6 +17,10 @@
   "description": "It's a simple PWA empowering Toastmasters all over the world, helping them to have effective and productive Timer for their meetings. It was developed with JavaScript by Federico Navarrete from The Leader Ship Toastmasters in Łódź, Poland.",
   "orientation": "any",
   "background_color": "#ffffff",
+  "developer": {
+    "name": "Federico Navarrete",
+    "url": "https://federiconavarrete.com"
+  },
   "related_applications": [
     {
       "platform": "play",
