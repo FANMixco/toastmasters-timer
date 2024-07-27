@@ -12,7 +12,7 @@
     "fullscreen"
   ],
   "start_url": "https://tmtimer.federiconavarrete.com/",
-  "short_name": "TM Timer Lite",
+  "short_name": "TM Timer",
   "theme_color": "#ffffff",
   "description": "It's a simple PWA empowering Toastmasters all over the world, helping them to have effective and productive Timer for their meetings. It was developed with JavaScript by Federico Navarrete from The Leader Ship Toastmasters in Łódź, Poland.",
   "orientation": "any",
