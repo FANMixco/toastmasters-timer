@@ -1036,27 +1036,37 @@
     {
       "src": "img/previews/preview1.webp",
       "sizes": "1280x720",
-      "type": "image/webp"
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Preview 1"
     },
     {
       "src": "img/previews/preview2.webp",
       "sizes": "1280x720",
-      "type": "image/webp"
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Preview 2"
     },
     {
       "src": "img/previews/preview3.webp",
       "sizes": "1280x720",
-      "type": "image/webp"
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Preview 3"
     },
     {
       "src": "img/previews/preview4.webp",
       "sizes": "1280x720",
-      "type": "image/webp"
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Preview 4"
     },
     {
       "src": "img/previews/preview5.webp",
       "sizes": "1280x720",
-      "type": "image/webp"
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Preview 5"
     }
   ],
   "id": "tm-timer-lite",
