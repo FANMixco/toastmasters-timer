@@ -1503,7 +1503,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (isFirstRun) {
         if ((deviceDetector.device === 'phone' && isTouchDevice()) || deviceDetector.device !== 'phone') {
-            dialogWelcome.showModal();
+            if (window.innerWidth > 320) {
+                dialogWelcome.showModal();
+            } else {
+                setFirstRun();
+            }
+        } else {
+            setFirstRun();
         }
     }
 
