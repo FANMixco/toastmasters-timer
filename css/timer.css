@@ -481,13 +481,43 @@ th,
 	  /* Scale down the element by a factor of 0.8 */
 	  transform: scale(0.8);
 	}
-  
+
+	.btnAction {
+		width: 24px;
+	}
+
+	.iconSVG-MD {
+		width: 20px;
+	}
+
+	.bmc-wbtn {
+		width: 25px;
+		height: 25px;
+	}
+	
+	.bmc-wbtn img {
+		height: 20px!important;
+		width: 20px!important;
+	}
+ 
 	#playControl {
-	  transform-origin: 40% 10%;
+		margin: auto;
+	}
+
+	#innerPlayContainer {
+	  transform-origin: left center;
 	  transform: scale(0.8);
 	}
   
 	.mdl-textfield__label {
 	  left: 15px;
+	}
+
+	.row {
+		width: 100%;
+	}
+
+	#controls {
+		left: 59px;
 	}
 }
