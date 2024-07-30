@@ -2,7 +2,7 @@
   "dir": "ltr",
   "lang": "da",
   "name": "Toastmasters Timer Lite",
-  "version": "2.4.1.19",
+  "version": "2.4.1.20",
   "scope": "https://tmtimer.federiconavarrete.com/",
   "display": "standalone",
   "display_override": [

@@ -1502,7 +1502,15 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('superContainer').style.display = "block";
 
     if (isFirstRun) {
-        dialogWelcome.showModal();
+        if ((deviceDetector.device === 'phone' && isTouchDevice()) || deviceDetector.device !== 'phone') {
+            dialogWelcome.showModal();
+        }
+    }
+
+    function isTouchDevice() {
+        return (('ontouchstart' in window) ||
+           (navigator.maxTouchPoints > 0) ||
+           (navigator.msMaxTouchPoints > 0));
     }
 
     if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
