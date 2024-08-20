@@ -58,6 +58,9 @@
     "opt7": "5-6 perc (Általános értékelő)",
     "opt8": "1-2 perc (Improvizációk)",
     "opt9": "10-12 perc",
+    "opt18": "10-15 perc",
+    "opt19": "18-22 perc (Kulcshangulat)",
+    "opt20": "20-40 perc",
     "pMember": "Szónok",
     "pin": "Kitűzni",
     "recorded": "Rögzített idő",
@@ -92,6 +95,6 @@
     "actions": "Akciók",
     "preAgenda": "Napirend",
     "confirmEnd": "Biztosan törli a naptárt? Minden adat törlődik. A folytatás előtt töltsön le egy biztonsági másolatot, ha szükséges.",
-    "addSpeaker":"Szónok hozzáadása",
+    "addSpeaker": "Szónok hozzáadása",
     "updateSpeaker": "Szónok frissítése"
 }

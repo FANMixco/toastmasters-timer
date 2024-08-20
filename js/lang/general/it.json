@@ -58,6 +58,9 @@
     "opt7": "Da 5 a 6 minuti (Valutatore/trice generale)",
     "opt8": "Da 1 a 2 minuti (Discorsi improvvisati)",
     "opt9": "Da 10 a 12 minuti",
+    "opt18": "Da 10 a 15 minuti",
+    "opt19": "Da 18 a 22 minuti (Discorso di apertura)",
+    "opt20": "Da 20 a 40 minuti",
     "pin": "Fissare",
     "pMember": "Oratore/trice",
     "recorded": "Tempo registrato",
@@ -92,6 +95,6 @@
     "actions": "Azioni",
     "preAgenda": "Ordine del giorno",
     "confirmEnd": "Vuoi davvero eliminare il calendario? Tutti i dati saranno eliminati. Scarica un backup se necessario prima di continuare.",
-    "addSpeaker":"Aggiungi oratore/trice",
+    "addSpeaker": "Aggiungi oratore/trice",
     "updateSpeaker": "Aggiorna oratore/trice"
 }
