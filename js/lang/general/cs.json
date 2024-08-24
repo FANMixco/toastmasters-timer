@@ -18,6 +18,8 @@
     "close": "Zavřít",
     "confirm": "Ano",
     "copyright": "Vytvořeno pomocí ♥ od {0} z {1}",
+    "copyright1": "Vytvořeno s láskou ♥ ",
+    "copyright2": " z ",
     "copyright3": "Přeloženo <a class='externalLinks' href='https://supernovaic.com'>Edgar Regalado</a>",
     "deleteConfirmation": "Chcete odstranit vybrané položky?",
     "emptyCustom": "Zvolené časy jsou 0. Změňte jej nebo zvolte jinou možnost.",

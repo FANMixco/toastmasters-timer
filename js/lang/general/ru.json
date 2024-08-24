@@ -18,6 +18,8 @@
     "close": "Закрыть",
     "confirm": "Да",
     "copyright": "Создано с ♥ пользователем {0} из {1}",
+    "copyright1": "Создано с ♥ пользователем ",
+    "copyright2": " из ",
     "copyright3": "Переведено: <a class='externalLinks' href='andreitimofeev1@gmail.com'>Andrei Timofeev</a>",
     "deleteConfirmation": "Вы хотите удалить выбранные элементы?",
     "emptyCustom": "Выбранное время равно 0. Пожалуйста, измените его или выберите другой вариант.",

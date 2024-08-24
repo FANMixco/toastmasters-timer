@@ -18,6 +18,8 @@
     "close": "Kapat",
     "confirm": "Evet",
     "copyright": "{1}'dan {0} tarafından ♥ ile oluşturuldu",
+    "copyright1": "♥ ile oluşturuldu, ",
+    "copyright2": " tarafından ",
     "copyright3": "",
     "deleteConfirmation": "Seçilen öğeleri silmek istiyor musunuz?",
     "emptyCustom": "Özel zamanlar 0'a eşittir. Lütfen bunları değiştirin veya başka bir seçenek seçin.",

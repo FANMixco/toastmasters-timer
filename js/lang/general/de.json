@@ -18,6 +18,8 @@
     "close": "Beenden",
     "confirm": "Ja",
     "copyright": "Erstellt mit ♥ von {0} von {1}",
+    "copyright1": "Erstellt mit ♥ von ",
+    "copyright2": " von ",
     "copyright3": "Übersetzt von <a class='externalLinks' href='https://www.linkedin.com/in/k-wojdalska'>Kasia Wojdalska</a>",
     "deleteConfirmation": "Möchten Sie die ausgewählten Elemente löschen?",
     "emptyCustom": "Die benutzerdefinierten Zeiten betragen 0. Bitte ändern Sie sie oder wählen Sie eine andere Option.",

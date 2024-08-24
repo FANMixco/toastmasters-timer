@@ -18,6 +18,8 @@
     "close": "Stäng",
     "confirm": "Ja",
     "copyright": "Skapad med ♥ av {0} från {1}",
+    "copyright1": "Skapat med ♥ av ",
+    "copyright2": " från ",
     "copyright3": "",
     "deleteConfirmation": "Vill du radera de markerade objekten?",
     "emptyCustom": "Anpassade tider är lika med 0. Ändra dem eller välj ett annat alternativ.",

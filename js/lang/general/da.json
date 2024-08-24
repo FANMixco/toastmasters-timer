@@ -18,6 +18,8 @@
     "close": "Luk",
     "confirm": "Ja",
     "copyright": "Skabt med ♥ af {0} fra {1}",
+    "copyright1": "Skabt med ♥ af ",
+    "copyright2": "fra",
     "copyright3": "",
     "deleteConfirmation": "Vil du slette de valgte elementer?",
     "emptyCustom": "Tilpassede tider er lig med 0. Rediger dem, eller vælg en anden mulighed.",

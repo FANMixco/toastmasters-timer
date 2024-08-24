@@ -18,6 +18,8 @@
     "close": "Sluiten",
     "confirm": "Ja",
     "copyright": "Gemaakt met ♥ door {0} van {1}",
+    "copyright1": "Gemaakt met ♥ door ",
+    "copyright2": " van ",
     "copyright3": "Vertaald door <a class='externalLinks' href='mailto:vistausss@outlook.com'>Heimen Stoffels</a>",
     "deleteConfirmation": "Wilt u de geselecteerde items verwijderen?",
     "emptyCustom": "De aangepaste tijden zijn 0. Wijzig dit of kies een andere optie.",

@@ -18,6 +18,8 @@
     "close": "Fermer",
     "confirm": "Oui",
     "copyright": "Créé avec ♥ par {0} de {1}",
+    "copyright1": "Créé avec ♥ par ",
+    "copyright2": " de ",
     "copyright3": "",
     "deleteConfirmation": "Voulez-vous supprimer les éléments sélectionnés ?",
     "emptyCustom": "Les temps personnalisés sont égaux à 0. Veuillez les modifier ou choisir une autre option.",

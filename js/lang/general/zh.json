@@ -18,6 +18,8 @@
     "close": "关闭",
     "confirm": "是的",
     "copyright": "由{0} 的 {1} 用♥ 创建",
+    "copyright1": "创建方式♥ 通过 ",
+    "copyright2": " 的 ",
     "copyright3": "",
     "deleteConfirmation": "是否要删除所选项目？",
     "emptyCustom": "自定义时间为0。请更改它或选择其他选项。",

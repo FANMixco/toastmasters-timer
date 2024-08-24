@@ -18,6 +18,8 @@
     "close": "Zavrieť",
     "confirm": "Áno",
     "copyright": "Vytvorené pomocou ♥ od {0} z {1}",
+    "copyright1": "Vytvorené pomocou ♥ od ",
+    "copyright2": " z ",
     "copyright3": "",
     "deleteConfirmation": "Chcete odstrániť vybraté položky?",
     "emptyCustom": "Vlastné časy sú rovné 0. Zmeňte ich alebo vyberte inú možnosť.",

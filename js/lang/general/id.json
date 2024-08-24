@@ -18,6 +18,8 @@
     "close": "Tutup",
     "confirm": "Ya",
     "copyright": "Dibuat dengan ♥ oleh {0} dari {1}",
+    "copyright1": "Dibuat dengan ♥ oleh ",
+    "copyright2": " dari ",
     "copyright3": "",
     "deleteConfirmation": "Apakah Anda ingin menghapus item yang dipilih?",
     "emptyCustom": "Waktu khusus sama dengan 0. Silakan ubah atau pilih opsi lain.",

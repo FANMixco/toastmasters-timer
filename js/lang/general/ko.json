@@ -18,6 +18,8 @@
     "close": "닫기",
     "confirm": "예",
     "copyright": "{1}의 {0}가 ♥로 만들었습니다.",
+    "copyright1": "에 의해 ♥로 생성됨 ",
+    "copyright2": " 에서 ",
     "copyright3": "",
     "deleteConfirmation": "선택한 항목을 삭제하시겠습니까?",
     "emptyCustom": "사용자 지정 시간은 0입니다. 변경하거나 다른 옵션을 선택하세요.",

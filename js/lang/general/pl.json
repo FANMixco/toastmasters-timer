@@ -18,6 +18,8 @@
     "close": "Zamknąć",
     "confirm": "Tak",
     "copyright": "Utworzona z ♥ przez {0} z {1}",
+    "copyright1": "Utworzona z ♥ przez ",
+    "copyright2": " z ",
     "copyright3": "Przetłumaczone przez imię, <a href='https://www.linkedin.com/in/radoslaw-dabrowski-dtm-2a59085'>Radosław Dąbrowski</a>",
     "deleteConfirmation": "Czy chcesz usunąć wybrane elementy?",
     "emptyCustom": "Niestandardowe czasy są ustawione na 0. Proszę zmienić lub wybrać inną opcję.",

@@ -18,6 +18,8 @@
     "close": "Bezárás",
     "confirm": "Igen",
     "copyright": "♥-vel készítette: {0}, {1}",
+    "copyright1": "♥-vel készítette:",
+    "copyright2": ", ",
     "copyright3": "",
     "deleteConfirmation": "Törölni szeretné a kiválasztott elemeket?",
     "emptyCustom": "Az egyéni idők egyenlőek 0-val. Kérjük, módosítsa őket, vagy válasszon másik lehetőséget.",

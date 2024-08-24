@@ -18,6 +18,8 @@
     "close": "Cerrar",
     "confirm": "Sí",
     "copyright": "Creado con ♥ por {0} de {1}",
+    "copyright1": "Creado con ♥ por ",
+    "copyright2": " de ",
     "copyright3": "",
     "deleteConfirmation": "¿Está seguro que desea eliminar los ítem seleccionados?",
     "emptyCustom": "Las opciones personalizadas son 0. Por favor elija otra opción o editelas.",

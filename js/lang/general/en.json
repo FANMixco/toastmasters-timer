@@ -18,6 +18,8 @@
     "close": "Close",
     "confirm": "Yes",
     "copyright": "Created with ♥ by {0} from {1}",
+    "copyright1": "Created with ♥ by ",
+    "copyright2": " from ",
     "copyright3": "",
     "deleteConfirmation": "Do you want to delete the selected items?",
     "emptyCustom": "Custom times are equal to 0. Please change them or choose another option.",

@@ -18,6 +18,8 @@
     "close": "Închideți",
     "confirm": "Da",
     "copyright": "Creat cu ♥ de {0} de la {1}",
+    "copyright1": "Creat cu ♥ de ",
+    "copyright2": " de la ",
     "copyright3": "",
     "deleteConfirmation": "Doriți să ștergeți elementele selectate?",
     "emptyCustom": "Timpurile personalizate sunt egale cu 0. Vă rugăm să le schimbați sau să alegeți o altă opțiune.",
