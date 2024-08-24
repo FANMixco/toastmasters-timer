@@ -89,11 +89,10 @@
     "any-topic": "Qualquer tópico",
     "auto-new": "Novo tópico automaticamente",
     "auto-stop": "Parada automática",
-    "add": "Adicionar",
     "end": "Fim",
     "actions": "Ações",
     "preAgenda": "Agenda",
     "confirmEnd": "Tem certeza de que deseja excluir o calendário? Todos os dados serão excluídos. Baixe um backup, se necessário, antes de continuar.",
     "addSpeaker": "Adicionar palestrante",
-    "updateSpeaker": "Atualizar Palestrante"
+    "updateSpeaker": "Atualizar palestrante"
 }

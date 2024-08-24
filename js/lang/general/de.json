@@ -89,11 +89,10 @@
     "any-topic": "Jedes Thema",
     "auto-new": "Automatisch neues Thema",
     "auto-stop": "Auto-Stopp",
-    "add": "Hinzufügen",
     "end": "Ende",
     "actions": "Aktionen",
     "preAgenda": "Tagesordnung",
     "confirmEnd": "Möchten Sie den Kalender wirklich löschen? Alle Daten werden gelöscht. Laden Sie bei Bedarf eine Sicherungskopie herunter, bevor Sie fortfahren.",
-    "addSpeaker": "Redner hinzufügen",
-    "updateSpeaker": "Redner aktualisieren"
+    "addSpeaker": "Redner/in hinzufügen",
+    "updateSpeaker": "Redner/in aktualisieren"
 }

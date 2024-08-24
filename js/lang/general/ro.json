@@ -89,11 +89,10 @@
     "any-topic": "Orice subiect",
     "auto-new": "Subiect nou automat",
     "auto-stop": "Oprire automată",
-    "add": "Adaugă",
     "end": "Sfârșit",
     "actions": "Acțiuni",
     "preAgenda": "Agendă",
     "confirmEnd": "Sigur doriți să ștergeți calendarul? Toate datele vor fi șterse. Descărcați o copie de rezervă dacă este necesar înainte de a continua.",
     "addSpeaker": "Adăugați orator",
-    "updateSpeaker": "Actualizează Orator"
+    "updateSpeaker": "Actualizează orator"
 }
