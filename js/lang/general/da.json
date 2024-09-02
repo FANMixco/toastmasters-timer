@@ -96,5 +96,6 @@
     "preAgenda": "Dagsorden",
     "confirmEnd": "Er du sikker på, at du vil slette kalenderen? Alle data vil blive slettet. Download om nødvendigt en sikkerhedskopi, før du fortsætter.",
     "addSpeaker": "Tilføj taler",
-    "updateSpeaker": "Opdatering af taler"
+    "updateSpeaker": "Opdatering af taler",
+    "hours-only": "Uden timer"
 }

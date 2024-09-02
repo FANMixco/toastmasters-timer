@@ -96,5 +96,6 @@
     "preAgenda": "Dagordning",
     "confirmEnd": "Är du säker på att du vill ta bort kalendern? All data kommer att raderas. Ladda ner en säkerhetskopia om det behövs innan du fortsätter.",
     "addSpeaker": "Lägg till talare",
-    "updateSpeaker": "Uppdatera talare"
+    "updateSpeaker": "Uppdatera talare",
+    "hours-only": "Utan timmar"
 }

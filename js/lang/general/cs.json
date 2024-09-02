@@ -96,5 +96,6 @@
     "preAgenda": "Denní program",
     "confirmEnd": "Opravdu chcete kalendář smazat? Všechna data budou smazána. Před pokračováním si v případě potřeby stáhněte zálohu.",
     "addSpeaker": "Přidat řečníka",
-    "updateSpeaker": "Aktualizovat řečníka"
+    "updateSpeaker": "Aktualizovat řečníka",
+    "hours-only": "Bez hodin"
 }

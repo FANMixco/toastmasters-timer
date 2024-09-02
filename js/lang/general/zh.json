@@ -96,5 +96,6 @@
     "preAgenda": "议程",
     "confirmEnd": "您确定要删除日历吗？所有数据都将被删除。继续操作之前，请根据需要下载备份。",
     "addSpeaker": "添加演说者",
-    "updateSpeaker": "更新演讲者"
+    "updateSpeaker": "更新演讲者",
+    "hours-only": "无时间限制"
 }

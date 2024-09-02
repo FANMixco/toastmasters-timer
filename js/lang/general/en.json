@@ -96,5 +96,6 @@
     "preAgenda": "Agenda",
     "confirmEnd": "Are you sure you want to delete the calendar? All data will be deleted. Download a backup if needed before continuing.",
     "addSpeaker": "Add Speaker",
-    "updateSpeaker": "Update Speaker"
+    "updateSpeaker": "Update Speaker",
+    "hours-only": "Without hours"
 }

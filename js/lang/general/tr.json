@@ -96,5 +96,6 @@
     "preAgenda": "Gündem",
     "confirmEnd": "Takvimi silmek istediğinizden emin misiniz? Tüm veriler silinecektir. Devam etmeden önce gerekirse bir yedek indirin.",
     "addSpeaker": "Konuşmacı ekle",
-    "updateSpeaker": "Hatip'i Güncelle"
+    "updateSpeaker": "Hatip'i Güncelle",
+    "hours-only": "Saatler olmadan"
 }

@@ -96,5 +96,6 @@
     "preAgenda": "Agenda",
     "confirmEnd": "Weet u zeker dat u de agenda wilt verwijderen? Alle gegevens worden verwijderd. Download indien nodig een back-up voordat u verdergaat.",
     "addSpeaker": "Redenaar toevoegen",
-    "updateSpeaker": "Update redenaar"
+    "updateSpeaker": "Update redenaar",
+    "hours-only": "Zonder uren"
 }

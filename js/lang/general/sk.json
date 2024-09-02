@@ -96,5 +96,6 @@
     "preAgenda": "Agenda",
     "confirmEnd": "Naozaj chcete odstrániť kalendár? Všetky údaje budú vymazané. Pred pokračovaním si v prípade potreby stiahnite zálohu.",
     "addSpeaker": "Pridať rečníka",
-    "updateSpeaker": "Aktualizovať rečníka"
+    "updateSpeaker": "Aktualizovať rečníka",
+    "hours-only": "Bez hodín"
 }

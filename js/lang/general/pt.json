@@ -96,5 +96,6 @@
     "preAgenda": "Agenda",
     "confirmEnd": "Tem certeza de que deseja excluir o calendário? Todos os dados serão excluídos. Baixe um backup, se necessário, antes de continuar.",
     "addSpeaker": "Adicionar palestrante",
-    "updateSpeaker": "Atualizar palestrante"
+    "updateSpeaker": "Atualizar palestrante",
+    "hours-only": "Sem horas"
 }

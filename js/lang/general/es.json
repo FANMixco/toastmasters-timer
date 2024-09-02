@@ -96,5 +96,6 @@
     "preAgenda": "Agenda",
     "confirmEnd": "¿Está seguro de que desea eliminar el calendario? Se eliminarán todos los datos. Descargue una copia de seguridad si es necesario antes de continuar.",
     "addSpeaker": "Añadir orador/a",
-    "updateSpeaker": "Actualizar orador/a"
+    "updateSpeaker": "Actualizar orador/a",
+    "hours-only": "Sin horas"
 }

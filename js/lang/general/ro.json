@@ -96,5 +96,6 @@
     "preAgenda": "Agendă",
     "confirmEnd": "Sigur doriți să ștergeți calendarul? Toate datele vor fi șterse. Descărcați o copie de rezervă dacă este necesar înainte de a continua.",
     "addSpeaker": "Adăugați orator",
-    "updateSpeaker": "Actualizează orator"
+    "updateSpeaker": "Actualizează orator",
+    "hours-only": "Fara ore"
 }

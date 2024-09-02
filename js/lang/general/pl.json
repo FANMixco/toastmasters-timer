@@ -96,5 +96,6 @@
     "preAgenda": "Porządek obrad",
     "confirmEnd": "Czy na pewno chcesz usunąć kalendarz? Wszystkie dane zostaną usunięte. Pobierz kopię zapasową, jeśli jest to konieczne, przed kontynuowaniem.",
     "addSpeaker":"Dodaj mówcę",
-    "updateSpeaker": "Aktualizuj mówcę"
+    "updateSpeaker": "Aktualizuj mówcę",
+    "hours-only": "Brak godzin"
 }

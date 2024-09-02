@@ -96,5 +96,6 @@
     "preAgenda": "Ordine del giorno",
     "confirmEnd": "Vuoi davvero eliminare il calendario? Tutti i dati saranno eliminati. Scarica un backup se necessario prima di continuare.",
     "addSpeaker": "Aggiungi oratore/trice",
-    "updateSpeaker": "Aggiorna oratore/trice"
+    "updateSpeaker": "Aggiorna oratore/trice",
+    "hours-only": "Senza ora"
 }
