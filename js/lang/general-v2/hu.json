@@ -42,7 +42,7 @@
     "noHints": "Ne feledje, hogy a versenyek során nincsenek extra tippek",
     "noSpeakers": "Nincs megjeleníthető beszéd",
     "notSaved": "Kérjük, ellenőrizze az egyéni időpontokat, mert nem Ön mentette el",
-    "opt1": "A nap kérdése (30-as évek)",
+    "opt1": "A nap kérdése (30 másodperc)",
     "opt10": "13-15 perc",
     "opt11": "18-20 perc",
     "opt12": "Egyéni 1",
@@ -97,5 +97,7 @@
     "confirmEnd": "Biztosan törli a naptárt? Minden adat törlődik. A folytatás előtt töltsön le egy biztonsági másolatot, ha szükséges.",
     "addSpeaker": "Szónok hozzáadása",
     "updateSpeaker": "Szónok frissítése",
-    "hours-only": "Órák nélkül"
+    "hours-only": "Órák nélkül",
+    "retainCustom": "Egyéni idők megtartása",
+    "clapTime": "15 másodperc és 1:45 perc között"
 }

@@ -42,7 +42,7 @@
     "noHints": "Kom ihåg att det inte finns några extra tips under tävlingarna",
     "noSpeakers": "Inga tal att visa",
     "notSaved": "Kontrollera dina anpassade tider eftersom du inte sparade dem",
-    "opt1": "Dagens fråga (30-tal)",
+    "opt1": "Dagens fråga (30s)",
     "opt10": "13 till 15 min",
     "opt11": "18 till 20 min",
     "opt12": "Anpassad 1",
@@ -97,5 +97,7 @@
     "confirmEnd": "Är du säker på att du vill ta bort kalendern? All data kommer att raderas. Ladda ner en säkerhetskopia om det behövs innan du fortsätter.",
     "addSpeaker": "Lägg till talare",
     "updateSpeaker": "Uppdatera talare",
-    "hours-only": "Utan timmar"
+    "hours-only": "Utan timmar",
+    "retainCustom": "Behåll anpassade tider",
+    "clapTime": "Mellan 15s och 1:45 min"
 }

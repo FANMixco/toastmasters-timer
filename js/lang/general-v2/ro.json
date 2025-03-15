@@ -97,5 +97,7 @@
     "confirmEnd": "Sigur doriți să ștergeți calendarul? Toate datele vor fi șterse. Descărcați o copie de rezervă dacă este necesar înainte de a continua.",
     "addSpeaker": "Adăugați orator",
     "updateSpeaker": "Actualizează orator",
-    "hours-only": "Fara ore"
+    "hours-only": "Fara ore",
+    "retainCustom": "Păstrați orele personalizate",
+    "clapTime": "Între 15s și 1:45 minute"
 }

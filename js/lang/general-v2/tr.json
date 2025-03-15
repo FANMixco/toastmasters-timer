@@ -42,7 +42,7 @@
     "noHints": "Yarışmalar sırasında ekstra ipucu olmadığını unutmayın",
     "noSpeakers": "Gösterilecek konuşma yok",
     "notSaved": "Lütfen özel zamanlarınızı kontrol edin çünkü onları kaydetmediniz",
-    "opt1": "Günün Sorusu (30'lar)",
+    "opt1": "Günün Sorusu (30s)",
     "opt10": "13 ila 15 dk",
     "opt11": "18 ila 20 dk",
     "opt12": "Özel 1",
@@ -97,5 +97,7 @@
     "confirmEnd": "Takvimi silmek istediğinizden emin misiniz? Tüm veriler silinecektir. Devam etmeden önce gerekirse bir yedek indirin.",
     "addSpeaker": "Konuşmacı ekle",
     "updateSpeaker": "Hatip'i Güncelle",
-    "hours-only": "Saatler olmadan"
+    "hours-only": "Saatler olmadan",
+    "retainCustom": "Özel zamanları koru",
+    "clapTime": "15s ile 1:45 dakika arasında"
 }

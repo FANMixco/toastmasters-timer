@@ -97,5 +97,7 @@
     "confirmEnd": "Czy na pewno chcesz usunąć kalendarz? Wszystkie dane zostaną usunięte. Pobierz kopię zapasową, jeśli jest to konieczne, przed kontynuowaniem.",
     "addSpeaker":"Dodaj mówcę",
     "updateSpeaker": "Aktualizuj mówcę",
-    "hours-only": "Brak godzin"
+    "hours-only": "Brak godzin",
+    "retainCustom": "Zachowaj niestandardowe czasy",
+    "clapTime": "Od 15s do 1:45 min"
 }

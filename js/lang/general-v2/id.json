@@ -97,5 +97,7 @@
     "confirmEnd": "Apakah Anda yakin ingin menghapus kalender? Semua data akan dihapus. Unduh cadangan jika diperlukan sebelum melanjutkan.",
     "addSpeaker": "Tambah pembicara",
     "updateSpeaker": "Pembicara Pembaruan",
-    "hours-only": "Tanpa jam"
+    "hours-only": "Tanpa jam",
+    "retainCustom": "Pertahankan waktu kustom",
+    "clapTime": "Antara 15 detik dan 1:45 menit"
 }

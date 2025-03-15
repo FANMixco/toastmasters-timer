@@ -42,7 +42,7 @@
     "noHints": "Ricorda che non ci sono suggerimenti extra durante i contest",
     "notSaved": "Si prega di controllare i tempi personalizzati perché non li hai salvati",
     "noSpeakers": "Nessun discorso da mostrare",
-    "opt1": "Domanda del giorno (anni '30)",
+    "opt1": "Domanda del giorno (30 s)",
     "opt10": "Da 13 a 15 minuti",
     "opt11": "Da 18 a 20 minuti",
     "opt12": "Personalizza 1",
@@ -97,5 +97,7 @@
     "confirmEnd": "Vuoi davvero eliminare il calendario? Tutti i dati saranno eliminati. Scarica un backup se necessario prima di continuare.",
     "addSpeaker": "Aggiungi oratore/trice",
     "updateSpeaker": "Aggiorna oratore/trice",
-    "hours-only": "Senza ora"
+    "hours-only": "Senza ora",
+    "retainCustom": "Conserva gli orari personalizzati",
+    "clapTime": "Tra 15 s e 1:45 min"
 }
