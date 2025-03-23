@@ -97,7 +97,7 @@
     "confirmEnd": "Etes-vous sûr de vouloir supprimer le calendrier ? Toutes les données seront supprimées. Téléchargez une sauvegarde si nécessaire avant de continuer.",
     "addSpeaker": "Ajouter un/e conférencier/cère",
     "updateSpeaker": "Mettre à jour le/la conférencier/cère",
-    "hours-only": "Aucune heure",
+    "hours-only": "Masquer les heures",
     "retainCustom": "Conserver les heures personnalisées",
     "clapTime": "Entre 15s et 1:45 min",
     "autoClean": "Nettoyage automatique quotidien"

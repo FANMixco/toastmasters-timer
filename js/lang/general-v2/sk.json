@@ -97,7 +97,7 @@
     "confirmEnd": "Naozaj chcete odstrániť kalendár? Všetky údaje budú vymazané. Pred pokračovaním si v prípade potreby stiahnite zálohu.",
     "addSpeaker": "Pridať rečníka",
     "updateSpeaker": "Aktualizovať rečníka",
-    "hours-only": "Bez hodín",
+    "hours-only": "Skryť hodiny",
     "retainCustom": "Zachovať vlastné časy",
     "clapTime": "Od 15s do 1:45 minút",
     "autoClean": "Automatické čistenie každý deň"

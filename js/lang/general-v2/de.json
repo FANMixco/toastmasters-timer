@@ -97,7 +97,7 @@
     "confirmEnd": "Möchten Sie den Kalender wirklich löschen? Alle Daten werden gelöscht. Laden Sie bei Bedarf eine Sicherungskopie herunter, bevor Sie fortfahren.",
     "addSpeaker": "Redner/in hinzufügen",
     "updateSpeaker": "Redner/in aktualisieren",
-    "hours-only": "Ohne Stunden",
+    "hours-only": "Stunden ausblenden",
     "retainCustom": "Benutzerdefinierte Zeiten beibehalten",
     "clapTime": "Zwischen 15 s und 1:45 min",
     "autoClean": "Täglich automatisch reinigen"

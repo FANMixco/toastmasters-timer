@@ -97,7 +97,7 @@
     "confirmEnd": "¿Está seguro de que desea eliminar el calendario? Se eliminarán todos los datos. Descargue una copia de seguridad si es necesario antes de continuar.",
     "addSpeaker": "Añadir orador/a",
     "updateSpeaker": "Actualizar orador/a",
-    "hours-only": "Sin horas",
+    "hours-only": "Ocultar horas",
     "retainCustom": "Conservar tiempos personalizados",
     "clapTime": "Entre 15 s y 1:45 min",
     "autoClean": "Limpieza automática todos los días"

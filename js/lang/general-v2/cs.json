@@ -97,7 +97,7 @@
     "confirmEnd": "Opravdu chcete kalendář smazat? Všechna data budou smazána. Před pokračováním si v případě potřeby stáhněte zálohu.",
     "addSpeaker": "Přidat řečníka",
     "updateSpeaker": "Aktualizovat řečníka",
-    "hours-only": "Bez hodin",
+    "hours-only": "Skrýt hodiny",
     "retainCustom": "Zachovat vlastní časy",
     "clapTime": "Mezi 15 s a 1:45 min.",
     "autoClean": "Automatické čištění každý den"

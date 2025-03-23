@@ -97,7 +97,7 @@
     "confirmEnd": "Takvimi silmek istediğinizden emin misiniz? Tüm veriler silinecektir. Devam etmeden önce gerekirse bir yedek indirin.",
     "addSpeaker": "Konuşmacı ekle",
     "updateSpeaker": "Hatip'i Güncelle",
-    "hours-only": "Saatler olmadan",
+    "hours-only": "Saatleri gizle",
     "retainCustom": "Özel zamanları koru",
     "clapTime": "15s ile 1:45 dakika arasında",
     "autoClean": "Her gün otomatik temizlik"

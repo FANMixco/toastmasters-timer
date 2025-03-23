@@ -97,7 +97,7 @@
     "confirmEnd": "Tem certeza de que deseja excluir o calendário? Todos os dados serão excluídos. Baixe um backup, se necessário, antes de continuar.",
     "addSpeaker": "Adicionar palestrante",
     "updateSpeaker": "Atualizar palestrante",
-    "hours-only": "Sem horas",
+    "hours-only": "Ocultar horas",
     "retainCustom": "Manter tempos personalizados",
     "clapTime": "Entre 15s e 1:45 min",
     "autoClean": "Limpeza automática todos os dias"

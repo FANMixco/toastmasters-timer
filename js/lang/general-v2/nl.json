@@ -97,7 +97,7 @@
     "confirmEnd": "Weet u zeker dat u de agenda wilt verwijderen? Alle gegevens worden verwijderd. Download indien nodig een back-up voordat u verdergaat.",
     "addSpeaker": "Redenaar toevoegen",
     "updateSpeaker": "Update redenaar",
-    "hours-only": "Zonder uren",
+    "hours-only": "Uren verbergen",
     "retainCustom": "Aangepaste tijden behouden",
     "clapTime": "Tussen 15s en 1:45 min.",
     "autoClean": "Elke dag automatisch opschonen"

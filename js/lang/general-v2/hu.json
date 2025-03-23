@@ -97,7 +97,7 @@
     "confirmEnd": "Biztosan törli a naptárt? Minden adat törlődik. A folytatás előtt töltsön le egy biztonsági másolatot, ha szükséges.",
     "addSpeaker": "Szónok hozzáadása",
     "updateSpeaker": "Szónok frissítése",
-    "hours-only": "Órák nélkül",
+    "hours-only": "Órák elrejtése",
     "retainCustom": "Egyéni idők megtartása",
     "clapTime": "15 másodperc és 1:45 perc között",
     "autoClean": "Automatikus tisztítás minden nap"
