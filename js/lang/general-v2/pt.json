@@ -99,5 +99,6 @@
     "updateSpeaker": "Atualizar palestrante",
     "hours-only": "Sem horas",
     "retainCustom": "Manter tempos personalizados",
-    "clapTime": "Entre 15s e 1:45 min"
+    "clapTime": "Entre 15s e 1:45 min",
+    "autoClean": "Limpeza automática todos os dias"
 }

@@ -99,5 +99,6 @@
     "updateSpeaker": "Uppdatera talare",
     "hours-only": "Utan timmar",
     "retainCustom": "Behåll anpassade tider",
-    "clapTime": "Mellan 15s och 1:45 min"
+    "clapTime": "Mellan 15s och 1:45 min",
+    "autoClean": "Autostädning varje dag"
 }

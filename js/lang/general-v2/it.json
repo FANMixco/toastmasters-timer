@@ -99,5 +99,6 @@
     "updateSpeaker": "Aggiorna oratore/trice",
     "hours-only": "Senza ora",
     "retainCustom": "Conserva gli orari personalizzati",
-    "clapTime": "Tra 15 s e 1:45 min"
+    "clapTime": "Tra 15 s e 1:45 min",
+    "autoClean": "Pulizia automatica ogni giorno"
 }

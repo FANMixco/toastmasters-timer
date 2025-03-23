@@ -99,5 +99,6 @@
     "updateSpeaker": "Pembicara Pembaruan",
     "hours-only": "Tanpa jam",
     "retainCustom": "Pertahankan waktu kustom",
-    "clapTime": "Antara 15 detik dan 1:45 menit"
+    "clapTime": "Antara 15 detik dan 1:45 menit",
+    "autoClean": "Pembersihan otomatis setiap hari"
 }

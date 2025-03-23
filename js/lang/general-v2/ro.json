@@ -99,5 +99,6 @@
     "updateSpeaker": "Actualizează orator",
     "hours-only": "Fara ore",
     "retainCustom": "Păstrați orele personalizate",
-    "clapTime": "Între 15s și 1:45 minute"
+    "clapTime": "Între 15s și 1:45 minute",
+    "autoClean": "Curăță automat în fiecare zi"
 }

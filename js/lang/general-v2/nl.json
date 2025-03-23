@@ -99,5 +99,6 @@
     "updateSpeaker": "Update redenaar",
     "hours-only": "Zonder uren",
     "retainCustom": "Aangepaste tijden behouden",
-    "clapTime": "Tussen 15s en 1:45 min."
+    "clapTime": "Tussen 15s en 1:45 min.",
+    "autoClean": "Elke dag automatisch opschonen"
 }

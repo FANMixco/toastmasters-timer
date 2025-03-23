@@ -99,5 +99,6 @@
     "updateSpeaker": "Aktualizuj mówcę",
     "hours-only": "Brak godzin",
     "retainCustom": "Zachowaj niestandardowe czasy",
-    "clapTime": "Od 15s do 1:45 min"
+    "clapTime": "Od 15s do 1:45 min",
+    "autoClean": "Automatyczne czyszczenie każdego dnia"
 }

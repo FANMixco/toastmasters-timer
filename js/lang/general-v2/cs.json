@@ -99,5 +99,6 @@
     "updateSpeaker": "Aktualizovat řečníka",
     "hours-only": "Bez hodin",
     "retainCustom": "Zachovat vlastní časy",
-    "clapTime": "Mezi 15 s a 1:45 min."
+    "clapTime": "Mezi 15 s a 1:45 min.",
+    "autoClean": "Automatické čištění každý den"
 }

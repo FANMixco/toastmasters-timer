@@ -99,5 +99,6 @@
     "updateSpeaker": "Aktualizovať rečníka",
     "hours-only": "Bez hodín",
     "retainCustom": "Zachovať vlastné časy",
-    "clapTime": "Od 15s do 1:45 minút"
+    "clapTime": "Od 15s do 1:45 minút",
+    "autoClean": "Automatické čistenie každý deň"
 }

@@ -99,5 +99,6 @@
     "updateSpeaker": "更新演讲者",
     "hours-only": "无时间限制",
     "retainCustom": "保留自定义时间",
-    "clapTime": "15 秒到 1 分 45 秒之间"
+    "clapTime": "15 秒到 1 分 45 秒之间",
+    "autoClean": "每天自动清洁"
 }

@@ -99,5 +99,6 @@
     "updateSpeaker": "Redner/in aktualisieren",
     "hours-only": "Ohne Stunden",
     "retainCustom": "Benutzerdefinierte Zeiten beibehalten",
-    "clapTime": "Zwischen 15 s und 1:45 min"
+    "clapTime": "Zwischen 15 s und 1:45 min",
+    "autoClean": "Täglich automatisch reinigen"
 }

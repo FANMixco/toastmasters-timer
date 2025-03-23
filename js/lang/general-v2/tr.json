@@ -99,5 +99,6 @@
     "updateSpeaker": "Hatip'i Güncelle",
     "hours-only": "Saatler olmadan",
     "retainCustom": "Özel zamanları koru",
-    "clapTime": "15s ile 1:45 dakika arasında"
+    "clapTime": "15s ile 1:45 dakika arasında",
+    "autoClean": "Her gün otomatik temizlik"
 }

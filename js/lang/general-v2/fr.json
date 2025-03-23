@@ -99,5 +99,6 @@
     "updateSpeaker": "Mettre à jour le/la conférencier/cère",
     "hours-only": "Aucune heure",
     "retainCustom": "Conserver les heures personnalisées",
-    "clapTime": "Entre 15s et 1:45 min"
+    "clapTime": "Entre 15s et 1:45 min",
+    "autoClean": "Nettoyage automatique quotidien"
 }

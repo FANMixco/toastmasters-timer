@@ -99,5 +99,6 @@
     "updateSpeaker": "オラトリオの更新",
     "hours-only": "時間なし",
     "retainCustom": "カスタム時間を保持する",
-    "clapTime": "15秒から1分45秒の間"
+    "clapTime": "15秒から1分45秒の間",
+    "autoClean": "毎日自動クリーニング"
 }

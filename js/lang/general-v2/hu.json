@@ -99,5 +99,6 @@
     "updateSpeaker": "Szónok frissítése",
     "hours-only": "Órák nélkül",
     "retainCustom": "Egyéni idők megtartása",
-    "clapTime": "15 másodperc és 1:45 perc között"
+    "clapTime": "15 másodperc és 1:45 perc között",
+    "autoClean": "Automatikus tisztítás minden nap"
 }

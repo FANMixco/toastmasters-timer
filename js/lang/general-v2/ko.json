@@ -99,5 +99,6 @@
     "updateSpeaker": "오라토너 업데이트",
     "hours-only": "시간없이",
     "retainCustom": "사용자 정의 시간 유지",
-    "clapTime": "15초에서 1:45분 사이"
+    "clapTime": "15초에서 1:45분 사이",
+    "autoClean": "매일 자동 청소"
 }
