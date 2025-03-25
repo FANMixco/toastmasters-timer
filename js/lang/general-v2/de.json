@@ -81,7 +81,7 @@
     "color3": "Rot",
     "extrasTitle": "Extras",
     "ninja-mode": "Ninja-Modus",
-    "color-blind": "Farbenblindheit",
+    "color-blind": "Farbenblindmodus",
     "text-preview": "Text",
     "notifications": "Benachrichtigungen",
     "translators": "Übersetzer",
@@ -100,5 +100,7 @@
     "hours-only": "Stunden ausblenden",
     "retainCustom": "Benutzerdefinierte Zeiten beibehalten",
     "clapTime": "Zwischen 15 s und 1:45 min",
-    "autoClean": "Täglich automatisch reinigen"
+    "autoClean": "Täglich automatisch reinigen",
+    "saveTemplate": "Möchten Sie die aktuell vorgeplante Tagesordnung wirklich als Vorlage speichern?",
+    "overwriteAgenda": "Möchten Sie die aktuell vorgeplante Tagesordnung wirklich überschreiben?"
 }

@@ -81,7 +81,7 @@
     "color3": "红色",
     "extrasTitle": "附加内容",
     "ninja-mode": "忍者模式",
-    "color-blind": "色盲",
+    "color-blind": "色盲模式",
     "text-preview": "文本",
     "notifications": "通知",
     "translators": "翻译人员",
@@ -100,5 +100,7 @@
     "hours-only": "隐藏营业时间",
     "retainCustom": "保留自定义时间",
     "clapTime": "15 秒到 1 分 45 秒之间",
-    "autoClean": "每天自动清洁"
+    "autoClean": "每天自动清洁",
+    "saveTemplate": "您确定要将当前预先计划的议程存储为模板吗？",
+    "overwriteAgenda": "您确定要覆盖当前预先计划的议程吗？"
 }

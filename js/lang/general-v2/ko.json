@@ -81,7 +81,7 @@
     "color3": "빨간색",
     "extrasTitle": "추가",
     "ninja-mode": "닌자 모드",
-    "color-blind": "색맹",
+    "color-blind": "색맹 모드",
     "text-preview": "텍스트",
     "notifications": "알림",
     "translators": "번역가",
@@ -100,5 +100,7 @@
     "hours-only": "시간 숨기기",
     "retainCustom": "사용자 정의 시간 유지",
     "clapTime": "15초에서 1:45분 사이",
-    "autoClean": "매일 자동 청소"
+    "autoClean": "매일 자동 청소",
+    "saveTemplate": "현재 미리 계획된 일정을 템플릿으로 저장하시겠습니까?",
+    "overwriteAgenda": "현재 미리 계획된 일정을 덮어쓰시겠습니까?"
 }

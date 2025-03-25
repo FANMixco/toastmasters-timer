@@ -81,7 +81,7 @@
     "color3": "Kırmızı",
     "extrasTitle": "Ekstralar",
     "ninja-mode": "Ninja modu",
-    "color-blind": "Renk körlüğü",
+    "color-blind": "Renk körü modu",
     "text-preview": "Metin",
     "notifications": "Bildirimler",
     "translators": "Çevirmenler",
@@ -100,5 +100,7 @@
     "hours-only": "Saatleri gizle",
     "retainCustom": "Özel zamanları koru",
     "clapTime": "15s ile 1:45 dakika arasında",
-    "autoClean": "Her gün otomatik temizlik"
+    "autoClean": "Her gün otomatik temizlik",
+    "saveTemplate": "Mevcut önceden planlanmış gündemi şablon olarak saklamak istediğinizden emin misiniz?",
+    "overwriteAgenda": "Mevcut önceden planlanmış gündemin üzerine yazmak istediğinizden emin misiniz?"
 }

@@ -81,7 +81,7 @@
     "color3": "Červená",
     "extrasTitle": "Extras",
     "ninja-mode": "Režim ninja",
-    "color-blind": "Farebná slepota",
+    "color-blind": "Farebne slepý režim",
     "text-preview": "Textu",
     "notifications": "Upozornenia",
     "translators": "Prekladatelia",
@@ -100,5 +100,7 @@
     "hours-only": "Skryť hodiny",
     "retainCustom": "Zachovať vlastné časy",
     "clapTime": "Od 15s do 1:45 minút",
-    "autoClean": "Automatické čistenie každý deň"
+    "autoClean": "Automatické čistenie každý deň",
+    "saveTemplate": "Naozaj chcete uložiť aktuálnu vopred naplánovanú agendu ako šablónu?",
+    "overwriteAgenda": "Naozaj chcete prepísať aktuálnu vopred naplánovanú agendu?"
 }

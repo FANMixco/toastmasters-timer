@@ -81,7 +81,7 @@
     "color3": "Red",
     "extrasTitle": "Extras",
     "ninja-mode": "Ninja mode",
-    "color-blind": "Color blindness",
+    "color-blind": "Color blindness mode",
     "text-preview": "Text",
     "notifications": "Notifications",
     "translators": "Translators",
@@ -100,5 +100,7 @@
     "hours-only": "Hide hours",
     "retainCustom": "Retain custom times",
     "clapTime": "Between 15s and 1:45 min",
-    "autoClean": "Auto clean every day"
+    "autoClean": "Auto clean every day",
+    "saveTemplate": "Are you sure you want to store the current pre-planned agenda as a template?",
+    "overwriteAgenda": "Are you sure you want to overwrite the current pre-planned agenda?"
 }

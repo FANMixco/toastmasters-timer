@@ -81,7 +81,7 @@
     "color3": "Merah",
     "extrasTitle": "Ekstra",
     "mode-ninja": "Mode Ninja",
-    "color-blind": "Buta warna",
+    "color-blind": "Mode buta warna",
     "text-preview": "Teks",
     "notifications": "Pemberitahuan",
     "translators": "Penerjemah",
@@ -100,5 +100,7 @@
     "hours-only": "Sembunyikan jam",
     "retainCustom": "Pertahankan waktu kustom",
     "clapTime": "Antara 15 detik dan 1:45 menit",
-    "autoClean": "Pembersihan otomatis setiap hari"
+    "autoClean": "Pembersihan otomatis setiap hari",
+    "saveTemplate": "Apakah Anda yakin ingin menyimpan agenda yang telah direncanakan sebelumnya sebagai templat?",
+    "overwriteAgenda": "Apakah Anda yakin ingin menimpa agenda yang telah direncanakan sebelumnya?"
 }

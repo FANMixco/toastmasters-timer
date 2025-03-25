@@ -81,7 +81,7 @@
     "color3": "Röd",
     "extrasTitle": "Extras",
     "ninja-mode": "Ninjaläge",
-    "color-blind": "Färgblindhet",
+    "color-blind": "Färgblint läge",
     "text-preview": "Text",
     "notifications": "Meddelanden",
     "translators": "Översättare",
@@ -100,5 +100,7 @@
     "hours-only": "Dölj timmar",
     "retainCustom": "Behåll anpassade tider",
     "clapTime": "Mellan 15s och 1:45 min",
-    "autoClean": "Autostädning varje dag"
+    "autoClean": "Autostädning varje dag",
+    "saveTemplate": "Är du säker på att du vill lagra den aktuella förplanerade agendan som en mall?",
+    "overwriteAgenda": "Är du säker på att du vill skriva över den nuvarande förplanerade agendan?"
 }

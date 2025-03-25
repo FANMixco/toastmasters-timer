@@ -81,7 +81,7 @@
     "color3": "Vermelho",
     "extrasTitle": "Extras",
     "ninja-mode": "Modo ninja",
-    "color-blind": "Daltonismo",
+    "color-blind": "Modo daltônico",
     "text-preview": "Texto",
     "notifications": "Notificações",
     "tradutores": "Tradutores",
@@ -100,5 +100,7 @@
     "hours-only": "Ocultar horas",
     "retainCustom": "Manter tempos personalizados",
     "clapTime": "Entre 15s e 1:45 min",
-    "autoClean": "Limpeza automática todos os dias"
+    "autoClean": "Limpeza automática todos os dias",
+    "saveTemplate": "Tem certeza de que deseja armazenar a agenda pré-planejada atual como um modelo?",
+    "overwriteAgenda": "Tem certeza de que deseja substituir a agenda pré-planejada atual?"
 }
