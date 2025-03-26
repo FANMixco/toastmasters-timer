@@ -102,5 +102,6 @@
     "clapTime": "Între 15s și 1:45 minute",
     "autoClean": "Curăță automat în fiecare zi",
     "saveTemplate": "Sunteți sigur că doriți să stocați agenda curentă preplanificată ca șablon?",
-    "overwriteAgenda": "Sunteți sigur că doriți să suprascrieți agenda curentă preplanificată?"
+    "overwriteAgenda": "Sunteți sigur că doriți să suprascrieți agenda curentă preplanificată?",
+    "saveCompleted": "Șablonul a fost salvat."
 }

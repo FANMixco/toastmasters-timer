@@ -102,5 +102,6 @@
     "clapTime": "Mellem 15 sekunder og 1:45 min",
     "autoClean": "Autorens hver dag",
     "saveTemplate": "Er du sikker på, at du vil gemme den nuværende forudplanlagte dagsorden som en skabelon?",
-    "overwriteAgenda": "Er du sikker på, at du vil overskrive den nuværende forudplanlagte dagsorden?"
+    "overwriteAgenda": "Er du sikker på, at du vil overskrive den nuværende forudplanlagte dagsorden?",
+    "saveCompleted": "Skabelonen blev gemt."
 }

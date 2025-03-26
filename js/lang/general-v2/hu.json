@@ -102,5 +102,6 @@
     "clapTime": "15 másodperc és 1:45 perc között",
     "autoClean": "Automatikus tisztítás minden nap",
     "saveTemplate": "Biztosan sablonként szeretné tárolni az aktuális előre tervezett napirendet?",
-    "overwriteAgenda": "Biztosan felül akarja írni az aktuális előre tervezett napirendet?"
+    "overwriteAgenda": "Biztosan felül akarja írni az aktuális előre tervezett napirendet?",
+    "saveCompleted": "A sablon elmentve."
 }

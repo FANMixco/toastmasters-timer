@@ -102,5 +102,6 @@
     "clapTime": "15 秒到 1 分 45 秒之间",
     "autoClean": "每天自动清洁",
     "saveTemplate": "您确定要将当前预先计划的议程存储为模板吗？",
-    "overwriteAgenda": "您确定要覆盖当前预先计划的议程吗？"
+    "overwriteAgenda": "您确定要覆盖当前预先计划的议程吗？",
+    "saveCompleted": "模板已保存。"
 }

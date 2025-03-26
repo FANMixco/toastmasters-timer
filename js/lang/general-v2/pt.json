@@ -102,5 +102,6 @@
     "clapTime": "Entre 15s e 1:45 min",
     "autoClean": "Limpeza automática todos os dias",
     "saveTemplate": "Tem certeza de que deseja armazenar a agenda pré-planejada atual como um modelo?",
-    "overwriteAgenda": "Tem certeza de que deseja substituir a agenda pré-planejada atual?"
+    "overwriteAgenda": "Tem certeza de que deseja substituir a agenda pré-planejada atual?",
+    "saveCompleted": "O modelo foi salvo."
 }

@@ -101,6 +101,7 @@
     "retainCustom": "Conservar tiempos personalizados",
     "clapTime": "Entre 15 s y 1:45 min",
     "autoClean": "Limpieza automática todos los días",
-    "saveTemplate": "¿Seguro que desea guardar la agenda preplanificada actual como plantilla?",
-    "overwriteAgenda": "¿Seguro que desea sobrescribir la agenda preplanificada actual?"
+    "saveTemplate": "¿Desea guardar la agenda preplanificada actual como plantilla?",
+    "overwriteAgenda": "¿Seguro que desea sobrescribir la agenda preplanificada actual?",
+    "saveCompleted": "La plantilla se guardó."
 }
