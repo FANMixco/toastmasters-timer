@@ -103,5 +103,7 @@
     "autoClean": "Autostädning varje dag",
     "saveTemplate": "Är du säker på att du vill lagra den aktuella förplanerade agendan som en mall?",
     "overwriteAgenda": "Avsluta mötet för att åsidosätta den schemalagda dagordningen.",
-    "saveCompleted": "Mallen sparades."
+    "saveCompleted": "Mallen sparades.",
+    "delTemplate": "Vill du ta bort den aktuella mallen?",
+    "cleanedAgenda": "Mall rensad."
 }

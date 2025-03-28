@@ -103,5 +103,7 @@
     "autoClean": "Her gün otomatik temizlik",
     "saveTemplate": "Mevcut önceden planlanmış gündemi şablon olarak saklamak istediğinizden emin misiniz?",
     "overwriteAgenda": "Planlanan gündemi geçersiz kılmak için toplantıyı sonlandırın.",
-    "saveCompleted": "Şablon kaydedildi."
+    "saveCompleted": "Şablon kaydedildi.",
+    "delTemplate": "Mevcut şablonu silmek istiyor musunuz?",
+    "cleanedAgenda": "Şablon temizlendi."
 }

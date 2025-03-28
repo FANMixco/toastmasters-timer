@@ -103,5 +103,7 @@
     "autoClean": "매일 자동 청소",
     "saveTemplate": "현재 미리 계획된 일정을 템플릿으로 저장하시겠습니까?",
     "overwriteAgenda": "예정된 일정을 무시하려면 회의를 종료하세요.",
-    "saveCompleted": "템플릿이 저장되었습니다."
+    "saveCompleted": "템플릿이 저장되었습니다.",
+    "delTemplate": "현재 템플릿을 삭제하시겠습니까?",
+    "cleanedAgenda": "템플릿이 정리되었습니다."
 }

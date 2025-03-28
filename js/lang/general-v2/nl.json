@@ -103,5 +103,7 @@
     "autoClean": "Elke dag automatisch opschonen",
     "saveTemplate": "Weet u zeker dat u de huidige vooraf geplande agenda als sjabloon wilt opslaan?",
     "overwriteAgenda": "Beëindig de vergadering om de geplande agenda te negeren.",
-    "saveCompleted": "De sjabloon is opgeslagen."
+    "saveCompleted": "De sjabloon is opgeslagen.",
+    "delTemplate": "Wilt u de huidige sjabloon verwijderen?",
+    "cleanedAgenda": "Sjabloon opgeschoond."
 }

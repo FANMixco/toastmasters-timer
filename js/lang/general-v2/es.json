@@ -103,5 +103,7 @@
     "autoClean": "Limpieza automática todos los días",
     "saveTemplate": "¿Desea guardar la agenda preplanificada actual como plantilla?",
     "overwriteAgenda": "Finalice la reunión para sobrescribir la agenda planificada.",
-    "saveCompleted": "La plantilla se guardó."
+    "saveCompleted": "La plantilla se guardó.",
+    "delTemplate": "¿Desea eliminar la plantilla actual?",
+    "cleanedAgenda": "Plantilla limpiada."
 }

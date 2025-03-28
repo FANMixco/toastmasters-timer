@@ -103,5 +103,7 @@
     "autoClean": "Limpeza automática todos os dias",
     "saveTemplate": "Tem certeza de que deseja armazenar a agenda pré-planejada atual como um modelo?",
     "overwriteAgenda": "Encerre a reunião para substituir a pauta agendada.",
-    "saveCompleted": "O modelo foi salvo."
+    "saveCompleted": "O modelo foi salvo.",
+    "delTemplate": "Você quer apagar o modelo atual?",
+    "cleanedAgenda": "Modelo limpo."
 }

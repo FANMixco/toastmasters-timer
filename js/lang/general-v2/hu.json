@@ -103,5 +103,7 @@
     "autoClean": "Automatikus tisztítás minden nap",
     "saveTemplate": "Biztosan sablonként szeretné tárolni az aktuális előre tervezett napirendet?",
     "overwriteAgenda": "Az ütemezett napirend felülbírálásához fejezze be az ülést.",
-    "saveCompleted": "A sablon elmentve."
+    "saveCompleted": "A sablon elmentve.",
+    "delTemplate": "Törölni szeretné az aktuális sablont?",
+    "cleanedAgenda": "Sablon megtisztítva."
 }

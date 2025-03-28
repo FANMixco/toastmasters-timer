@@ -103,5 +103,7 @@
     "autoClean": "Autorens hver dag",
     "saveTemplate": "Er du sikker på, at du vil gemme den nuværende forudplanlagte dagsorden som en skabelon?",
     "overwriteAgenda": "Afslut mødet for at tilsidesætte den planlagte dagsorden.",
-    "saveCompleted": "Skabelonen blev gemt."
+    "saveCompleted": "Skabelonen blev gemt.",
+    "delTemplate": "Vil du slette den nuværende skabelon?",
+    "cleanedAgenda": "Skabelon renset."
 }

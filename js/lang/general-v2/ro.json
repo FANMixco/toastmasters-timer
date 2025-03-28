@@ -103,5 +103,7 @@
     "autoClean": "Curăță automat în fiecare zi",
     "saveTemplate": "Sunteți sigur că doriți să stocați agenda curentă preplanificată ca șablon?",
     "overwriteAgenda": "Încheiați întâlnirea pentru a anula ordinea de zi programată.",
-    "saveCompleted": "Șablonul a fost salvat."
+    "saveCompleted": "Șablonul a fost salvat.",
+    "delTemplate": "Doriți să ștergeți șablonul curent?",
+    "cleanedAgenda": "Șablon curățat."
 }

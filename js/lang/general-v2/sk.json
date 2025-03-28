@@ -103,5 +103,7 @@
     "autoClean": "Automatické čistenie každý deň",
     "saveTemplate": "Naozaj chcete uložiť aktuálnu vopred naplánovanú agendu ako šablónu?",
     "overwriteAgenda": "Ukončite schôdzu, aby ste prepísali naplánovaný program.",
-    "saveCompleted": "Šablóna bola uložená."
+    "saveCompleted": "Šablóna bola uložená.",
+    "delTemplate": "Ali želite izbrisati trenutno predlogo?",
+    "cleanedAgenda": "Predloga očiščena."
 }

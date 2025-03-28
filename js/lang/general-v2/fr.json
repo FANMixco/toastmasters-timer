@@ -103,5 +103,7 @@
     "autoClean": "Nettoyage automatique quotidien",
     "saveTemplate": "Êtes-vous sûr de vouloir enregistrer l'ordre du jour pré-planifié actuel comme modèle ?",
     "overwriteAgenda": "Mettre fin à la réunion en remplaçant l'ordre du jour préétabli.",
-    "saveCompleted": "Le modèle a été enregistré."
+    "saveCompleted": "Le modèle a été enregistré.",
+    "delTemplate": "Voulez-vous supprimer le modèle actuel ?",
+    "cleanedAgenda": "Modèle nettoyé."
 }

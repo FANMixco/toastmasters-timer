@@ -103,5 +103,7 @@
     "autoClean": "Pembersihan otomatis setiap hari",
     "saveTemplate": "Apakah Anda yakin ingin menyimpan agenda yang telah direncanakan sebelumnya sebagai templat?",
     "overwriteAgenda": "Akhiri rapat untuk mengesampingkan agenda yang dijadwalkan.",
-    "saveCompleted": "Templat telah disimpan."
+    "saveCompleted": "Templat telah disimpan.",
+    "delTemplate": "Apakah Anda ingin menghapus templat saat ini?",
+    "cleanedAgenda": "Templat telah dibersihkan."
 }

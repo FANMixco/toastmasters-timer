@@ -103,5 +103,7 @@
     "autoClean": "每天自动清洁",
     "saveTemplate": "您确定要将当前预先计划的议程存储为模板吗？",
     "overwriteAgenda": "结束会议以覆盖预定的议程。",
-    "saveCompleted": "模板已保存。"
+    "saveCompleted": "模板已保存。",
+    "delTemplate": "是否要删除当前模板？",
+    "cleanedAgenda": "模板已清除。"
 }

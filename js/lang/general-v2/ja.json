@@ -103,5 +103,7 @@
     "autoClean": "毎日自動クリーニング",
     "saveTemplate": "現在計画されている予定表をテンプレートとして保存してもよろしいですか?",
     "overwriteAgenda": "会議を終了して、予定されている議題を上書きします。",
-    "saveCompleted": "テンプレートが保存されました。"
+    "saveCompleted": "テンプレートが保存されました。",
+    "delTemplate": "現在のテンプレートを削除しますか?",
+    "cleanedAgenda": "テンプレートがクリーンアップされました。"
 }

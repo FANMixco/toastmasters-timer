@@ -103,5 +103,7 @@
     "autoClean": "Automatyczne czyszczenie każdego dnia",
     "saveTemplate": "Czy na pewno chcesz zapisać bieżący wstępnie zaplanowany plan jako szablon?",
     "overwriteAgenda": "Zakończ spotkanie, aby pominąć zaplanowany porządek obrad.",
-    "saveCompleted": "Szablon został zapisany."
+    "saveCompleted": "Szablon został zapisany.",
+    "delTemplate": "Czy chcesz usunąć bieżący szablon?",
+    "cleanedAgenda": "Szablon wyczyszczony."
 }
