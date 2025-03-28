@@ -102,6 +102,6 @@
     "clapTime": "Mellan 15s och 1:45 min",
     "autoClean": "Autostädning varje dag",
     "saveTemplate": "Är du säker på att du vill lagra den aktuella förplanerade agendan som en mall?",
-    "overwriteAgenda": "Är du säker på att du vill skriva över den nuvarande förplanerade agendan?",
+    "overwriteAgenda": "Avsluta mötet för att åsidosätta den schemalagda dagordningen.",
     "saveCompleted": "Mallen sparades."
 }

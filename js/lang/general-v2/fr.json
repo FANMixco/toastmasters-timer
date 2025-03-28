@@ -102,6 +102,6 @@
     "clapTime": "Entre 15s et 1:45 min",
     "autoClean": "Nettoyage automatique quotidien",
     "saveTemplate": "Êtes-vous sûr de vouloir enregistrer l'ordre du jour pré-planifié actuel comme modèle ?",
-    "overwriteAgenda": "Êtes-vous sûr de vouloir écraser l'ordre du jour pré-planifié actuel ?",
+    "overwriteAgenda": "Mettre fin à la réunion en remplaçant l'ordre du jour préétabli.",
     "saveCompleted": "Le modèle a été enregistré."
 }

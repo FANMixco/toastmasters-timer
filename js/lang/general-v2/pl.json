@@ -102,6 +102,6 @@
     "clapTime": "Od 15s do 1:45 min",
     "autoClean": "Automatyczne czyszczenie każdego dnia",
     "saveTemplate": "Czy na pewno chcesz zapisać bieżący wstępnie zaplanowany plan jako szablon?",
-    "overwriteAgenda": "Czy na pewno chcesz nadpisać bieżący wstępnie zaplanowany plan?",
+    "overwriteAgenda": "Zakończ spotkanie, aby pominąć zaplanowany porządek obrad.",
     "saveCompleted": "Szablon został zapisany."
 }

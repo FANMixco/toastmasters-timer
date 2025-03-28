@@ -102,6 +102,6 @@
     "clapTime": "Entre 15 s y 1:45 min",
     "autoClean": "Limpieza automática todos los días",
     "saveTemplate": "¿Desea guardar la agenda preplanificada actual como plantilla?",
-    "overwriteAgenda": "¿Seguro que desea sobrescribir la agenda preplanificada actual?",
+    "overwriteAgenda": "Finalice la reunión para sobrescribir la agenda planificada.",
     "saveCompleted": "La plantilla se guardó."
 }

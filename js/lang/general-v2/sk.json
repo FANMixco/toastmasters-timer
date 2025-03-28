@@ -102,6 +102,6 @@
     "clapTime": "Od 15s do 1:45 minút",
     "autoClean": "Automatické čistenie každý deň",
     "saveTemplate": "Naozaj chcete uložiť aktuálnu vopred naplánovanú agendu ako šablónu?",
-    "overwriteAgenda": "Naozaj chcete prepísať aktuálnu vopred naplánovanú agendu?",
+    "overwriteAgenda": "Ukončite schôdzu, aby ste prepísali naplánovaný program.",
     "saveCompleted": "Šablóna bola uložená."
 }

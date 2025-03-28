@@ -102,6 +102,6 @@
     "clapTime": "15초에서 1:45분 사이",
     "autoClean": "매일 자동 청소",
     "saveTemplate": "현재 미리 계획된 일정을 템플릿으로 저장하시겠습니까?",
-    "overwriteAgenda": "현재 미리 계획된 일정을 덮어쓰시겠습니까?",
+    "overwriteAgenda": "예정된 일정을 무시하려면 회의를 종료하세요.",
     "saveCompleted": "템플릿이 저장되었습니다."
 }

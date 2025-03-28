@@ -102,6 +102,6 @@
     "clapTime": "Between 15s and 1:45 min",
     "autoClean": "Auto clean every day",
     "saveTemplate": "Do you want to store the current pre-planned agenda as a template?",
-    "overwriteAgenda": "Are you sure you want to overwrite the current pre-planned agenda?",
+    "overwriteAgenda": "End the meeting to overwriting the pre-planned agenda.",
     "saveCompleted": "The template was saved."
 }

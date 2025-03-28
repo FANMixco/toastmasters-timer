@@ -102,6 +102,6 @@
     "clapTime": "Zwischen 15 s und 1:45 min",
     "autoClean": "Täglich automatisch reinigen",
     "saveTemplate": "Möchten Sie die aktuell vorgeplante Tagesordnung wirklich als Vorlage speichern?",
-    "overwriteAgenda": "Möchten Sie die aktuell vorgeplante Tagesordnung wirklich überschreiben?",
+    "overwriteAgenda": "Beenden Sie das Meeting, um die geplante Tagesordnung außer Kraft zu setzen.",
     "saveCompleted": "Die Vorlage wurde gespeichert."
 }

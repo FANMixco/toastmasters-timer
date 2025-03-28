@@ -102,6 +102,6 @@
     "clapTime": "Antara 15 detik dan 1:45 menit",
     "autoClean": "Pembersihan otomatis setiap hari",
     "saveTemplate": "Apakah Anda yakin ingin menyimpan agenda yang telah direncanakan sebelumnya sebagai templat?",
-    "overwriteAgenda": "Apakah Anda yakin ingin menimpa agenda yang telah direncanakan sebelumnya?",
+    "overwriteAgenda": "Akhiri rapat untuk mengesampingkan agenda yang dijadwalkan.",
     "saveCompleted": "Templat telah disimpan."
 }

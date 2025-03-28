@@ -102,6 +102,6 @@
     "clapTime": "Tussen 15s en 1:45 min.",
     "autoClean": "Elke dag automatisch opschonen",
     "saveTemplate": "Weet u zeker dat u de huidige vooraf geplande agenda als sjabloon wilt opslaan?",
-    "overwriteAgenda": "Weet u zeker dat u de huidige vooraf geplande agenda wilt overschrijven?",
+    "overwriteAgenda": "Beëindig de vergadering om de geplande agenda te negeren.",
     "saveCompleted": "De sjabloon is opgeslagen."
 }

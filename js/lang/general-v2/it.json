@@ -102,6 +102,6 @@
     "clapTime": "Tra 15 s e 1:45 min",
     "autoClean": "Pulizia automatica ogni giorno",
     "saveTemplate": "Sei sicuro di voler salvare l'attuale agenda pre-pianificata come modello?",
-    "overwriteAgenda": "Sei sicuro di voler sovrascrivere l'attuale agenda pre-pianificata?",
+    "overwriteAgenda": "Terminare la riunione per ignorare l'ordine del giorno previsto.",
     "saveCompleted": "Il modello è stato salvato."
 }

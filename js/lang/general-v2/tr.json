@@ -102,6 +102,6 @@
     "clapTime": "15s ile 1:45 dakika arasında",
     "autoClean": "Her gün otomatik temizlik",
     "saveTemplate": "Mevcut önceden planlanmış gündemi şablon olarak saklamak istediğinizden emin misiniz?",
-    "overwriteAgenda": "Mevcut önceden planlanmış gündemin üzerine yazmak istediğinizden emin misiniz?",
+    "overwriteAgenda": "Planlanan gündemi geçersiz kılmak için toplantıyı sonlandırın.",
     "saveCompleted": "Şablon kaydedildi."
 }
