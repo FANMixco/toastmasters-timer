@@ -32,7 +32,7 @@
     "feature5": "Minimalny czas",
     "feature6": "Optymalny czas",
     "feature7": "Maksymalny czas",
-    "feature8": "Poniżej/powyżej czasu min/max (zwykle +/- 31 s)",
+    "feature8": "Poniżej/powyżej czasu min/max (zwykle ± 31 s)",
     "fHeader1": "Funkcja",
     "fHeader2": "Opis",
     "help": "pomoc",

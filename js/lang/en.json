@@ -39,7 +39,7 @@
   "feature5": "Minimum time",
   "feature6": "Optimal time",
   "feature7": "Maximum time",
-  "feature8": "Below/over min/max time (+/- 31s commonly)",
+  "feature8": "Below/over min/max time (± 31s commonly)",
   "fHeader1": "Feature",
   "fHeader2": "Description",
   "help": "help",

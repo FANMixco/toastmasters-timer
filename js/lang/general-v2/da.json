@@ -33,7 +33,7 @@
     "feature5": "Minimum tid",
     "feature6": "Optimal tid",
     "feature7": "Maksimal tid",
-    "feature8": "Under/over min/maks. tid (+/- 31s almindeligvis)",
+    "feature8": "Under/over min/maks. tid (± 31s almindeligvis)",
     "fHeader1": "Funktion",
     "fHeader2": "Beskrivelse",
     "help": "hjælp",

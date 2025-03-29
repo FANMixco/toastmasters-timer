@@ -32,7 +32,7 @@
     "feature5": "Timp minim",
     "feature6": "Ora optimă",
     "feature7": "Timp maxim",
-    "feature8": "Sub/peste timp min/max (de obicei +/- 31s)",
+    "feature8": "Sub/peste timp min/max (de obicei ± 31s)",
     "fHeader1": "Caracteristică",
     "fHeader2": "Descriere",
     "help": "Ajutor",

@@ -32,7 +32,7 @@
     "feature5": "Minimální čas",
     "feature6": "Optimální čas",
     "feature7": "Maximální čas",
-    "feature8": "Čas pod/nad min/max (běžně +/- 31 s)",
+    "feature8": "Čas pod/nad min/max (běžně ± 31 s)",
     "fHeader1": "Funkce",
     "fHeader2": "Popis",
     "help": "pomoc",

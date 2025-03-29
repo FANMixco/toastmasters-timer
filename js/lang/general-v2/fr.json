@@ -33,7 +33,7 @@
     "feature5": "Durée minimale",
     "feature6": "Durée optimale",
     "feature7": "Durée maximale",
-    "feature8": "Durée inférieure/supérieure à la durée min/max (+/- 31 s généralement)",
+    "feature8": "Durée inférieure/supérieure à la durée min/max (± 31 s généralement)",
     "fHeader1": "Fonctionnalité",
     "fHeader2": "Description",
     "help": "aide",

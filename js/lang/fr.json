@@ -39,7 +39,7 @@
   "feature5": "Durée minimale",
   "feature6": "Délai optimal",
   "feature7": "Durée maximale",
-  "feature8": "Temps inférieur/supérieur au temps min/max (+/- 31s en général)",
+  "feature8": "Temps inférieur/supérieur au temps min/max (± 31s en général)",
   "fHeader1": "Fonctionnement",
   "fHeader2": "Description",
   "help": "aider",

@@ -32,7 +32,7 @@
     "feature5": "Tempo mínimo",
     "feature6": "Hora ideal",
     "feature7": "Tempo máximo",
-    "feature8": "Abaixo/acima do tempo mínimo/máximo (+/- 31s normalmente)",
+    "feature8": "Abaixo/acima do tempo mínimo/máximo (± 31s normalmente)",
     "fHeader1": "Recurso",
     "fHeader2": "Descrição",
     "help": "ajuda",

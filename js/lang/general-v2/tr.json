@@ -33,7 +33,7 @@
     "feature5": "Minimum süre",
     "feature6": "En uygun zaman",
     "feature7": "Maksimum süre",
-    "feature8": "Min./maks. sürenin altında/üstünde (genelde +/- 31s)",
+    "feature8": "Min./maks. sürenin altında/üstünde (genelde ± 31s)",
     "fHeader1": "Özellik",
     "fHeader2": "Açıklama",
     "help": "yardım",

@@ -33,7 +33,7 @@
     "feature5": "Minimálny čas",
     "feature6": "Optimálny čas",
     "feature7": "Maximálny čas",
-    "feature8": "Čas pod/nad min/max (bežne +/- 31 s)",
+    "feature8": "Čas pod/nad min/max (bežne ± 31 s)",
     "fHeader1": "Funkcia",
     "fHeader2": "Popis",
     "help": "pomoc",
@@ -101,9 +101,9 @@
     "retainCustom": "Zachovať vlastné časy",
     "clapTime": "Od 15s do 1:45 minút",
     "autoClean": "Automatické čistenie každý deň",
-    "saveTemplate": "Naozaj chcete uložiť aktuálnu vopred naplánovanú agendu ako šablónu?",
-    "overwriteAgenda": "Ukončite schôdzu, aby ste prepísali naplánovaný program.",
+    "saveTemplate": "Chcete uložiť aktuálnu vopred naplánovanú agendu ako šablónu?",
+    "overwriteAgenda": "Ukončite schôdzu prepísaním vopred naplánovanej agendy.",
     "saveCompleted": "Šablóna bola uložená.",
-    "delTemplate": "Ali želite izbrisati trenutno predlogo?",
-    "cleanedAgenda": "Predloga očiščena."
+    "delTemplate": "Chcete odstrániť aktuálnu šablónu?",
+    "cleanedAgenda": "Šablóna vyčistená."
 }

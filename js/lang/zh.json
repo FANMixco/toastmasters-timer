@@ -39,7 +39,7 @@
   "feature5": "最短时间",
   "feature6": "最佳时间",
   "feature7": "最长时间",
-  "feature8": "低于或超过最小或最大时间（+/-31s）",
+  "feature8": "低于或超过最小或最大时间（±31s）",
   "fHeader1": "特色",
   "fHeader2": "说明",
   "help": "帮助",

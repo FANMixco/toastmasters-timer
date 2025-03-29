@@ -32,7 +32,7 @@
     "feature5": "Minimális idő",
     "feature6": "Optimális idő",
     "feature7": "Maximális idő",
-    "feature8": "Minimális/maximális idő alatt/több mint (általában +/- 31 mp)",
+    "feature8": "Minimális/maximális idő alatt/több mint (általában ± 31 mp)",
     "fHeader1": "Funkció",
     "fHeader2": "Leírás",
     "help": "Segítség",

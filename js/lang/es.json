@@ -39,7 +39,7 @@
   "feature5": "Tiempo mínimo",
   "feature6": "Tiempo óptimo",
   "feature7": "Tiempo máximo",
-  "feature8": "Por debajo o por encima del tiempo mínimo o máximo (+/- 31s comúnmente)",
+  "feature8": "Por debajo o por encima del tiempo mínimo o máximo (± 31s comúnmente)",
   "fHeader1": "Característica",
   "fHeader2": "Descripción",
   "help": "ayuda",
