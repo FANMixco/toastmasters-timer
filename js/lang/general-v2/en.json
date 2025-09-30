@@ -105,5 +105,8 @@
     "overwriteAgenda": "End the meeting to overwriting the pre-planned agenda.",
     "saveCompleted": "The template was saved.",
     "delTemplate": "Do you want to delete the current template?",
-    "cleanedAgenda": "Template cleaned."
+    "cleanedAgenda": "Template cleaned.",
+    "hPreview": "Preview",
+    "pAgendaPreview": "Pre-planned Agenda",
+    "videos": "Videos"
 }

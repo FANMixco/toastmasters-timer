@@ -105,5 +105,8 @@
     "overwriteAgenda": "会議を終了して、予定されている議題を上書きします。",
     "saveCompleted": "テンプレートが保存されました。",
     "delTemplate": "現在のテンプレートを削除しますか?",
-    "cleanedAgenda": "テンプレートがクリーンアップされました。"
+    "cleanedAgenda": "テンプレートがクリーンアップされました。",
+    "hPreview": "プレビュー",
+    "pAgendaPreview": "事前に計画されたアジェンダ",
+    "videos": "動画"
 }

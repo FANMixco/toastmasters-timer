@@ -105,5 +105,8 @@
     "overwriteAgenda": "Afslut mødet for at tilsidesætte den planlagte dagsorden.",
     "saveCompleted": "Skabelonen blev gemt.",
     "delTemplate": "Vil du slette den nuværende skabelon?",
-    "cleanedAgenda": "Skabelon renset."
+    "cleanedAgenda": "Skabelon renset.",
+    "hPreview": "Forhåndsvisning",
+    "pAgendaPreview": "Forudplanlagt dagsorden",
+    "videos": "Videoer"
 }

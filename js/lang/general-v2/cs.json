@@ -105,5 +105,8 @@
     "overwriteAgenda": "Ukončete schůzku, abyste přepsali naplánovaný program.",
     "saveCompleted": "Šablona byla uložena.",
     "delTemplate": "Chcete smazat aktuální šablonu?",
-    "cleanedAgenda": "Šablona vyčištěna."
+    "cleanedAgenda": "Šablona vyčištěna.",
+    "hPreview": "Náhled",
+    "pAgendaPreview": "Předplánovaný program",
+    "videos": "Videa"
 }

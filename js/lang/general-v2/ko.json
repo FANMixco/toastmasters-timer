@@ -105,5 +105,8 @@
     "overwriteAgenda": "예정된 일정을 무시하려면 회의를 종료하세요.",
     "saveCompleted": "템플릿이 저장되었습니다.",
     "delTemplate": "현재 템플릿을 삭제하시겠습니까?",
-    "cleanedAgenda": "템플릿이 정리되었습니다."
+    "cleanedAgenda": "템플릿이 정리되었습니다.",
+    "hPreview": "미리보기",
+    "pAgendaPreview": "미리 계획된 일정",
+    "videos": "동영상"
 }

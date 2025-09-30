@@ -105,5 +105,8 @@
     "overwriteAgenda": "Akhiri rapat untuk mengesampingkan agenda yang dijadwalkan.",
     "saveCompleted": "Templat telah disimpan.",
     "delTemplate": "Apakah Anda ingin menghapus templat saat ini?",
-    "cleanedAgenda": "Templat telah dibersihkan."
+    "cleanedAgenda": "Templat telah dibersihkan.",
+    "hPreview": "Pratinjau",
+    "pAgendaPreview": "Agenda yang Telah Direncanakan",
+    "videos": "Video"
 }

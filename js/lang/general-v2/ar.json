@@ -105,5 +105,8 @@
     "overwriteAgenda": "إنهاء الاجتماع لتجاوز جدول الأعمال المقرر.",
     "saveCompleted": "تم حفظ القالب.",
     "delTemplate": "هل تريد حذف القالب الحالي؟",
-    "cleanedAgenda": "تم تنظيف القالب."
+    "cleanedAgenda": "تم تنظيف القالب.",
+    "hPreview": "معاينة",
+    "pAgendaPreview": "أجندة مُخطط لها مُسبقًا",
+    "videos": "فيديوهات"
 }

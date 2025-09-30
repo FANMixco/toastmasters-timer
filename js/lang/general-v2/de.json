@@ -105,5 +105,8 @@
     "overwriteAgenda": "Beenden Sie das Meeting, um die geplante Tagesordnung außer Kraft zu setzen.",
     "saveCompleted": "Die Vorlage wurde gespeichert.",
     "delTemplate": "Möchten Sie die aktuelle Vorlage löschen?",
-    "cleanedAgenda": "Vorlage bereinigt."
+    "cleanedAgenda": "Vorlage bereinigt.",
+    "hPreview": "Vorschau",
+    "pAgendaPreview": "Vorgeplante Tagesordnung",
+    "videos": "Videos"
 }

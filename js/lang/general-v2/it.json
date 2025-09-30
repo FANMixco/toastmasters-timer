@@ -105,5 +105,8 @@
     "overwriteAgenda": "Terminare la riunione per ignorare l'ordine del giorno previsto.",
     "saveCompleted": "Il modello è stato salvato.",
     "delTemplate": "Vuoi eliminare il modello corrente?",
-    "cleanedAgenda": "Modello pulito."
+    "cleanedAgenda": "Modello pulito.",
+    "hPreview": "Anteprima",
+    "pAgendaPreview": "Agenda pre-pianificata",
+    "videos": "Video"
 }

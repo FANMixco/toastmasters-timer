@@ -105,5 +105,8 @@
     "overwriteAgenda": "Zakończ spotkanie, aby pominąć zaplanowany porządek obrad.",
     "saveCompleted": "Szablon został zapisany.",
     "delTemplate": "Czy chcesz usunąć bieżący szablon?",
-    "cleanedAgenda": "Szablon wyczyszczony."
+    "cleanedAgenda": "Szablon wyczyszczony.",
+    "hPreview": "Podgląd",
+    "pAgendaPreview": "Wstępnie zaplanowany plan",
+    "videos": "Filmy"
 }

@@ -105,5 +105,8 @@
     "overwriteAgenda": "Az ütemezett napirend felülbírálásához fejezze be az ülést.",
     "saveCompleted": "A sablon elmentve.",
     "delTemplate": "Törölni szeretné az aktuális sablont?",
-    "cleanedAgenda": "Sablon megtisztítva."
+    "cleanedAgenda": "Sablon megtisztítva.",
+    "hPreview": "Előnézet",
+    "pAgendaPreview": "Előre tervezett napirend",
+    "videos": "Videók"
 }

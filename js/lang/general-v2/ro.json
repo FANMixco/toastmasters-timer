@@ -105,5 +105,8 @@
     "overwriteAgenda": "Încheiați întâlnirea pentru a anula ordinea de zi programată.",
     "saveCompleted": "Șablonul a fost salvat.",
     "delTemplate": "Doriți să ștergeți șablonul curent?",
-    "cleanedAgenda": "Șablon curățat."
+    "cleanedAgenda": "Șablon curățat.",
+    "hPreview": "Previzualizare",
+    "pAgendaPreview": "Ordine de zi planificată în prealabil",
+    "videos": "Videoclipuri"
 }

@@ -105,5 +105,8 @@
     "overwriteAgenda": "Mettre fin à la réunion en remplaçant l'ordre du jour préétabli.",
     "saveCompleted": "Le modèle a été enregistré.",
     "delTemplate": "Voulez-vous supprimer le modèle actuel ?",
-    "cleanedAgenda": "Modèle nettoyé."
+    "cleanedAgenda": "Modèle nettoyé.",
+    "hPreview": "Aperçu",
+    "pAgendaPreview": "Agenda pré-planifié",
+    "videos": "Vidéos"
 }

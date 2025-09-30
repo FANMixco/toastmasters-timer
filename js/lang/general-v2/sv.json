@@ -105,5 +105,8 @@
     "overwriteAgenda": "Avsluta mötet för att åsidosätta den schemalagda dagordningen.",
     "saveCompleted": "Mallen sparades.",
     "delTemplate": "Vill du ta bort den aktuella mallen?",
-    "cleanedAgenda": "Mall rensad."
+    "cleanedAgenda": "Mall rensad.",
+    "hPreview": "Predogled",
+    "pAgendaPreview": "Vnaprej načrtovan dnevni red",
+    "videos": "Videoposnetki"
 }

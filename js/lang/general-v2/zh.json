@@ -105,5 +105,8 @@
     "overwriteAgenda": "结束会议以覆盖预定的议程。",
     "saveCompleted": "模板已保存。",
     "delTemplate": "是否要删除当前模板？",
-    "cleanedAgenda": "模板已清除。"
+    "cleanedAgenda": "模板已清除。",
+    "hPreview": "预览",
+    "pAgendaPreview": "预先计划的议程",
+    "videos": "视频"
 }

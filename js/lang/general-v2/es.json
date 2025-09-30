@@ -105,5 +105,8 @@
     "overwriteAgenda": "Finalice la reunión para sobrescribir la agenda planificada.",
     "saveCompleted": "La plantilla se guardó.",
     "delTemplate": "¿Desea eliminar la plantilla actual?",
-    "cleanedAgenda": "Plantilla limpiada."
+    "cleanedAgenda": "Plantilla limpiada.",
+    "hPreview": "Vista previa",
+    "pAgendaPreview": "Agenda preplanificada",
+    "videos": "Videos"
 }
