@@ -602,12 +602,18 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <script src="js/timer.min.js"></script>
     <script src="js/lib/extras.min.js"></script>
 
-    <script type="module">
+    <!--script type="module">
         //PWA
         import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
         if ("serviceWorker" in navigator) {
             const el = document.createElement('pwa-update');
             document.body.appendChild(el);
+        }
+    </script-->
+
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('pwabuilder-sw.js')
         }
     </script>
 
