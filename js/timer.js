@@ -1,6 +1,59 @@
-//Controls
+/**
+ * Toastmasters Timer - 会议演讲计时器
+ * 
+ * 功能说明：
+ * - 支持多种演讲类型的计时（破冰演讲、常规演讲、评估等）
+ * - 颜色提示：绿色(最小时间)→黄色(合格时间)→红色(最大时间)
+ * - 声音提示、振动反馈
+ * - 深色模式、色盲模式
+ * - PDF导出、图片导出
+ * - 会议议程管理
+ * 
+ * @author Supernova IC
+ * @version 1.0
+ */
+
+// ============================================
+// 工具函数
+// ============================================
+
+/**
+ * 防抖函数 - 用于优化频繁触发的事件
+ * @param {Function} func - 要执行的函数
+ * @param {number} wait - 等待时间(毫秒)
+ * @returns {Function} 防抖后的函数
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+/**
+ * 应用缩放变换
+ * @param {HTMLElement} element - 要缩放的元素
+ * @param {number} scaleVal - 缩放比例
+ * @param {number} height - 容器高度
+ */
+function applyScale(element, scaleVal, height) {
+    requestAnimationFrame(() => {
+        element.style.transform = `scale(${scaleVal})`;
+        element.style.height = `${height}px`;
+    });
+}
+
+// ============================================
+// DOM元素引用
+// ============================================
+
+// Controls
 const displayOutput = document.querySelector('.display-remain-time'),
-    externalLinks = document.getElementsByClassName('externalLinks'),
     btnPause = document.getElementById('pause'),
     btnRestart = document.getElementById('btnRestart'),
     btnStop = document.getElementById('btnStop'),
@@ -18,7 +71,6 @@ const displayOutput = document.querySelector('.display-remain-time'),
     btnYesChallenge = document.getElementById('btnYesChallenge'),
     btnYesConfirm = document.getElementById('btnYesConfirm'),
     btnYesChanges = document.getElementById('btnYesChanges'),
-    btnSponsor2Us = document.getElementById('btnSponsor2Us'),
     btnSave = document.getElementById('btnSave'),
     btnSaveClap = document.getElementById('btnSaveClap'),
     btnAbout = document.getElementById('btnAbout'),
@@ -61,24 +113,41 @@ const displayOutput = document.querySelector('.display-remain-time'),
     length = Math.PI * 2 * 100,
     fastTransition = 0.2;
 
+// ============================================
+// 颜色配置
+// ============================================
+
+/** 默认背景颜色 - 正常模式 */
 const defGreenBgn = "#60ad5e",
     defYellowBgn = "#ffeb3b",
-    defRedBgn = "#e53935",
-    defGreenCBBgn = "#2196f3",
+    defRedBgn = "#e53935";
+
+/** 默认背景颜色 - 色盲模式 (蓝色替代绿色) */
+const defGreenCBBgn = "#2196f3",
     defYellowCBBgn = "#ffeb3b",
     defRedCBBgn = "#ad1457";
 
+/** 当前使用的背景颜色 */
 let greenBgnCss = defGreenBgn,
     yellowBgnCss = defYellowBgn,
     redBgnCss = defRedBgn;
 
-// Detects if device is in standalone mode
+/**
+ * 检测是否为PWA独立模式
+ * @returns {boolean}
+ */
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+// ============================================
+// 全局状态变量
+// ============================================
 
 let titleMeeting = document.getElementById('titleMeeting');
 
+/** 外部容器（用于响应式调整） */
 let externalContainer = null;
 
+/** 时间相关变量 */
 let clappingTime = 30,
     wholeTime = 30,
     selected = -1,
@@ -92,6 +161,7 @@ let clappingTime = 30,
     timeLeft = 0,
     totalCount = 0;
 
+/** 功能开关状态 */
 let isPaused = false,
     isStarted = false,
     isStopped = true,
@@ -108,48 +178,60 @@ let isPaused = false,
     isFirstTime = false,
     isColorBlindnessEnabled = false;
 
+/** 配置变量 */
 let dateFormat = "DD/MM/YYYY",
     latestDB = "1.0",
     currentDB = "1.0",
     lastColor = "white";
 
+/** 使用MM/DD/YYYY日期格式的国家列表 */
 let countries = ["US", "FM", "MH", "PH"];
 
+/**
+ * Toastmasters 演讲时间配置数组
+ * 每个子数组包含：[绿牌时间(秒), 黄牌时间(秒), 红牌时间(秒)]
+ * 
+ * 时间规则说明：
+ * - 绿牌：剩余 X 分钟时显示（已用时间 = 总时间 - X分钟）
+ * - 黄牌：剩余 Y 分钟时显示（已用时间 = 总时间 - Y分钟）
+ * - 红牌：时间到（已用时间 = 总时间）
+ * - 超时30秒：振铃提醒（clappingTime = 30秒）
+ */
 let times = [
-    //QA (30s)
     [10, 20, 30],
-    //Ice-breaker
-    [240, 300, 360],
-    //1-9 (5 to 7)
+    [180, 240, 300],
     [300, 360, 420],
-    //1m
-    [30, 45, 60],
-    //Evaluator intro
-    [60, 75, 90],
-    //Evaluator
-    [120, 150, 180],
-    //General Evaluator
-    [300, 330, 360],
-    //TT
     [60, 90, 120],
-    //10 (8 to 10)
-    [480, 540, 600],
-    //12m
+    [60, 75, 90],
+    [120, 150, 180],
+    [300, 360, 420],
+    [60, 90, 120],
+    [120, 180, 240],
     [600, 660, 720],
-    //15m
     [780, 840, 900],
-    //20m
     [1080, 1170, 1200]
 ];
 
+/** 计时器间隔定时器 */
 let intervalTimer;
 
+/** 演讲记录结果数组 */
 var results = [];
 
+/** 浏览器检测结果 */
 var browserResult = new UAParser().getResult();
+
+// ============================================
+// 进度条配置
+// ============================================
 
 progressBar.style.strokeDasharray = length;
 
+/**
+ * 更新进度条显示
+ * @param {number} value - 当前值
+ * @param {number} timePercent - 总时间百分比
+ */
 function update(value, timePercent) {
     let offset = -length - length * value / (timePercent);
     if (value >= 0) {
@@ -158,33 +240,42 @@ function update(value, timePercent) {
     }
 }
 
-update(wholeTime, wholeTime); //refreshes progress bar
+// 初始化进度条和时间显示
+update(wholeTime, wholeTime);
 displayTimeLeft(wholeTime);
 
+// 检查并设置比赛模式
 checkMode();
 
+/**
+ * 设置日期格式（根据国家自动选择）
+ */
 function setDateFormat() {
     if (countries.includes(navigator.language.split('-')[1]))
         dateFormat = "MM/DD/YYYY";
 }
 
-function disableLinks(isLinkDisabled) {
-    Array.from(externalLinks).forEach((entry) => {
-        if (isLinkDisabled)
-            entry.setAttribute("disabled", "disabled");
-        else
-            entry.removeAttribute("disabled");
-    });
-}
-
+/**
+ * 将秒数转换为时间戳格式 HH:mm:ss
+ * @param {number} seconds - 秒数
+ * @returns {string} 格式化的时间字符串
+ */
 function getTimeStamp(seconds) {
     return moment.utc(seconds * 1000).format('HH:mm:ss');
 }
 
+/**
+ * 获取当前剩余时间显示
+ * @returns {string} 剩余时间字符串
+ */
 function getTime() {
     return remainTime.innerHTML;
 }
 
+/**
+ * 检查并应用比赛模式UI
+ * 比赛模式隐藏时间显示，模拟真实比赛场景
+ */
 function checkMode() {
     if (isContestMode) {
         document.getElementById('remainTime').classList.remove('showTime');
@@ -199,6 +290,10 @@ function checkMode() {
     }
 }
 
+/**
+ * 改变总时间
+ * @param {number} seconds - 要增加/减少的秒数
+ */
 function changeWholeTime(seconds) {
     if (wholeTime + seconds > 0) {
         wholeTime += seconds;
@@ -206,8 +301,12 @@ function changeWholeTime(seconds) {
     }
 }
 
+// 设置初始值
 setInitialValues();
 
+/**
+ * 设置时间初始值
+ */
 function setInitialValues() {
     maximum = 30;
     wholeTime = 30;
@@ -247,7 +346,6 @@ function resetState() {
     btnInvert.disabled = false;
     btnRestart.disabled = false;
     cmbSpeechType.disabled = false;
-    disableLinks(false);
     isStopped = true;
     isPaused = false;
     imgRestart.src = "img/icons-svg/restart.svg";
@@ -257,24 +355,48 @@ function resetState() {
     browserChangeTitle('');
 }
 
-function timer(seconds) { //counts time, takes seconds
+/**
+ * 核心计时器函数
+ * 使用 Date.now() 进行时间校准，确保计时精度
+ * @param {number} seconds - 要计时的总秒数
+ */
+function timer(seconds) {
     let remainTime = Date.now() + seconds * 1000;
     displayTimeLeft(seconds);
 
+    if (intervalTimer) {
+        clearInterval(intervalTimer);
+    }
+
+    green = 0;
+    yellow = 0;
+    red = 0;
+
     intervalTimer = setInterval(() => {
-        timeLeft = Math.round((remainTime - Date.now()) / 1000);
+        let now = Date.now();
+        let timeLeftMs = remainTime - now;
+        
+        timeLeft = Math.ceil(timeLeftMs / 1000);
+        
         let counter = maximum - timeLeft;
+        
         if (counter >= minimum && counter < average) {
-            green++;
-            execAction(greenBgnCss, "green", 'min');
+            if (green === 0) {
+                green++;
+                execAction(greenBgnCss, "green", 'min');
+            }
         } else if (counter >= average && counter < maximum) {
-            yellow++;
-            document.body.style.background = yellowBgnCss;
-            execAction(yellowBgnCss, "yellow", 'opt');
+            if (yellow === 0) {
+                yellow++;
+                document.body.style.background = yellowBgnCss;
+                execAction(yellowBgnCss, "yellow", 'opt');
+            }
         } else if (counter >= maximum) {
-            red++;
-            execAction(redBgnCss, "red", 'max');
-            document.body.style.background = redBgnCss;
+            if (red === 0) {
+                red++;
+                execAction(redBgnCss, "red", 'max');
+                document.body.style.background = redBgnCss;
+            }
         }
         if (counter >= maximum + clappingTime) {
             if (!clappingStarted)
@@ -283,9 +405,15 @@ function timer(seconds) { //counts time, takes seconds
         }
         totalCount++;
         displayTimeLeft(timeLeft);
-    }, 1000);
+    }, 100);
 }
 
+/**
+ * 执行颜色变化时的动作（声音、振动、图标变化等）
+ * @param {string} bgn - 背景颜色
+ * @param {string} color - 颜色名称
+ * @param {string} icon - 图标类型
+ */
 function execAction(bgn, color, icon) {
     document.body.style.background = bgn;
     startBeep();
@@ -294,15 +422,24 @@ function execAction(bgn, color, icon) {
     lastColor = color;
     browserChangeFavIcon(icon);
 }
+
+/**
+ * 使用防抖优化的窗口大小变化事件
+ */
 if (os !== "Android" || navigator.userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)) {
-    window.onresize = () => {
+    window.onresize = debounce(() => {
         resizeScreen();
-    };
+    }, 150);
 }
 
+/**
+ * 响应式屏幕调整
+ * 根据不同屏幕尺寸调整UI缩放比例
+ */
 function resizeScreen() {
     const isPhabletPort = window.innerHeight > window.innerWidth * 1.9 && window.innerHeight > 900;
     let scaleVal = window.innerHeight / 600;
+    
     if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 2.333) {
         scaleVal = window.innerWidth / 400;
         if (externalContainer === null) {
@@ -317,34 +454,35 @@ function resizeScreen() {
         externalContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
                 sContainer.style.height = `${cHeight}px`;
-            }, 100);
-        }, 100);
+            });
+        });
     } else if (isPhabletPort) {
         scaleVal = window.innerWidth / 325;
         const sContainer = document.getElementById('superContainer');
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             sContainer.style.height = `${window.innerHeight}px`;
             sContainer.style.transformOrigin = "50% 0% 0px";
             sContainer.style.transform = `scale(${scaleVal})`;
-        }, 100);
+        });
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             const tmpDiv = document.getElementById('divSpeaker');
             if (tmpDiv.getBoundingClientRect().width > window.outerWidth) {
-                sContainer.style.transform = `scale(${scaleVal - (scaleVal - tmpDiv.getBoundingClientRect().width / window.outerWidth)})`;
+                let adjustedScale = scaleVal - (scaleVal - tmpDiv.getBoundingClientRect().width / window.outerWidth);
+                sContainer.style.transform = `scale(${adjustedScale})`;
             }
 
             document.getElementById('innerPlayContainer').style.setProperty('top', '27%', 'important');
             document.querySelector('#playControl').style.top = '-30px';
-        }, 100);
+        });
     } else if (window.innerHeight < 514) {
         if (externalContainer === null) {
             let bodyTmp = document.body;
@@ -358,33 +496,38 @@ function resizeScreen() {
         externalContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 let cHeight = (1 + scaleVal) * window.innerHeight;
                 if (cHeight < 514)
                     cHeight = 514;
                 sContainer.style.height = `${cHeight}px`;
-            }, 100);
-        }, 100);
+            });
+        });
     } else {
         let sContainer = document.getElementById('superContainer');
         sContainer.style.height = `${window.innerHeight}px`;
         sContainer.style.transformOrigin = "50% 0% 0px";
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             sContainer.style.transform = `scale(${scaleVal})`;
-        }, 100);
+        });
 
-        setTimeout(() => {
-            if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
-                sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
-        }, 100);
+        requestAnimationFrame(() => {
+            if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth) {
+                let adjustedScale = scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth);
+                sContainer.style.transform = `scale(${adjustedScale})`;
+            }
+        });
     }
 }
 
+/**
+ * 调整下拉菜单大小
+ */
 function resizeSelect() {
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         try {
             document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
             document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
@@ -404,9 +547,12 @@ function resizeSelect() {
                 mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
             }
         } catch (e) { }
-    }, 50);
+    });
 }
 
+/**
+ * 暂停/开始计时器
+ */
 function pauseTimer() {
     if (minimum === 0 && maximum === 0 && average === 0 || selected === -1) {
         if (isCustom)
@@ -426,7 +572,6 @@ function pauseTimer() {
 
     if (!isStarted || timeLeft === undefined) {
         activateWakeLock();
-        disableLinks(true);
         timer(wholeTime);
         isStarted = true;
         btnPause.disabled = true;
@@ -437,7 +582,6 @@ function pauseTimer() {
         }, 500);
     } else if (isPaused) {
         activateWakeLock();
-        disableLinks(true);
         btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
@@ -448,7 +592,6 @@ function pauseTimer() {
         isPaused = isPaused ? false : true;
     } else {
         deactivateWakeLock();
-        disableLinks(false);
         btnPause.classList.remove('pause');
         btnPause.classList.add('play');
         clearInterval(intervalTimer);
@@ -467,18 +610,16 @@ function pauseTimer() {
         if (isNinjaMode) {
             fade.to(document.getElementById('controls'), fastTransition, 0.5);
             fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
-            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0);
         }
-        else {
-            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
-        }
-        document.getElementById('bmc-wbtn').style.pointerEvents = 'none';
     } else {
         imgRestart.src = "img/icons-svg/restart.svg";
         unfadeElements();
     }
 }
 
+/**
+ * 恢复元素显示（取消淡入效果）
+ */
 function unfadeElements() {
     fade.to(document.getElementById('divSpeechType'), fastTransition, 1.5);
     fade.to(document.getElementById('divSpeaker'), fastTransition, 1.5);
@@ -486,22 +627,46 @@ function unfadeElements() {
     fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
     fade.to(document.getElementById('controls'), fastTransition, 1.5);
     fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
-    fade.to(document.getElementById('bmc-wbtn'), fastTransition, 1.5);
-    document.getElementById('bmc-wbtn').style.pointerEvents = '';
 }
 
-function displayTimeLeft(timeLeft) { //displays time on the input
-    let fixedTime = maximum - timeLeft;
-    let hours = Math.floor(fixedTime / 3600);
-    let minutes = Math.floor(fixedTime / 60);
-    let seconds = fixedTime % 60;
-    let displayString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+/**
+ * 显示剩余时间
+ * @param {number} timeLeft - 剩余秒数（负数表示超时）
+ */
+function displayTimeLeft(timeLeft) {
+    let displayTime;
+    let isOverTime = timeLeft < 0;
+    
+    if (isOverTime) {
+        displayTime = -timeLeft;
+    } else {
+        displayTime = timeLeft;
+    }
+    
+    let hours = Math.floor(displayTime / 3600);
+    let minutes = Math.floor((displayTime % 3600) / 60);
+    let seconds = displayTime % 60;
+    
+    let timeString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+    let displayString;
+    if (isOverTime) {
+        displayString = `+${timeString}`;
+    } else {
+        displayString = timeString;
+    }
+    
     displayOutput.textContent = displayString;
     if (!isContestMode && isStarted)
         browserChangeTitle(displayString);
     update(timeLeft, wholeTime);
 }
 
+/**
+ * 设置下拉菜单选中值
+ * @param {string} idVal - 选项ID
+ * @param {string} idContainer - 容器ID
+ */
 function setDropDownValue(idVal, idContainer) {
     try {
         document.getElementById(idVal).dataset.selected = "true";
@@ -509,6 +674,9 @@ function setDropDownValue(idVal, idContainer) {
     } catch (e) { }
 }
 
+/**
+ * 验证并设置正确的时间间隔
+ */
 function validateProperIntervals() {
     if (isCustom) {
         minimum = getMinCustom();
@@ -520,12 +688,18 @@ function validateProperIntervals() {
         wholeTime = maximum;
 }
 
+/**
+ * 设置基础时间间隔（从预设时间数组获取）
+ */
 function setBasicIntervals() {
     minimum = times[selected][0];
     average = times[selected][1];
     maximum = times[selected][2];
 }
 
+/**
+ * 演讲类型选择变化事件处理
+ */
 function changeEventHandler() {
     let wasCustom = selected === 99;
 
@@ -567,10 +741,10 @@ function changeEventHandler() {
         }
 
         if (deviceDetector.device === 'phone') {
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 let bCustomTimes = document.getElementById('bodyCustomTimes');
                 bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
-            }, 100);
+            });
         }
 
         hasCustomChange = false;
@@ -579,11 +753,17 @@ function changeEventHandler() {
     }
 }
 
+/**
+ * 播放提示音
+ */
 function startBeep() {
     if (isBeepEnabled && (green === 1 || yellow === 1 || red === 1))
         browserStartBeep();
 }
 
+/**
+ * 显示文字提示（当文字预览模式开启时）
+ */
 function startAlert() {
     if (isTextPreviewMode && (green === 1 || yellow === 1 || red === 1)) {
         switch (lastColor) {
@@ -599,6 +779,9 @@ function startAlert() {
     }
 }
 
+/**
+ * 触发振动反馈
+ */
 function startVibrate() {
     if (isVibrateEnabled && (green === 1 || yellow === 1 || red === 1))
         browserStartVibrate();
@@ -1012,10 +1195,6 @@ btnYesChanges.addEventListener('click', () => {
     dialogChanges.close();
 });
 
-btnSponsor2Us.addEventListener('click', () => {
-    window.open("https://github.com/sponsors/FANMixco");
-});
-
 btnShare.addEventListener('click', async () => {
     const hNone = 'style="display: none!important;"';
     const tmpTable = '<style>table, th, td { border: 1px solid black; border-collapse: collapse; }</style>' + document.getElementById('tblResults').outerHTML.replace(/id="thDel"/g, `id="thDel" ${hNone}`).replace(/class="tdDel/g, `${hNone} class="tdDel`).replace(/filter: invert\(100%\);/g, '').replace(/filter:invert\(100%\);/g, '');
@@ -1319,14 +1498,6 @@ setTimeout(() => {
 
         aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
 
-        let spanFiveStars = document.createElement("span");
-        spanFiveStars.id = 'spanFiveStars';
-        spanFiveStars.className = 'btnRight';
-
-        divTitleInnerContainerAD.appendChild(spanFiveStars);
-
-        document.getElementById('spanFiveStars').appendChild(document.getElementById('btnSponsor2Us'));
-
         document.getElementById('btnCloseMobileAbout').addEventListener('click', () => {
             dialogAbout.close();
         });
@@ -1494,6 +1665,12 @@ document.addEventListener("keydown", (zEvent) => {
 document.addEventListener("keydown", (zEvent) => {
     if (zEvent.ctrlKey && (zEvent.key === "r" || zEvent.key === "R")) {
         btnRestart.click();
+    }
+});
+
+document.addEventListener("keydown", (zEvent) => {
+    if (zEvent.ctrlKey && (zEvent.key === "m" || zEvent.key === "M")) {
+        btnTimeTable.click();
     }
 });
 

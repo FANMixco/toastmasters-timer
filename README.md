@@ -1,82 +1,544 @@
-# Toastmasters Timer
+# Toastmasters 计时器 - 会议演讲计时工具
 
-[![image](https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif)](https://buymeacoffee.com/fanmixco)
+**Toastmasters 计时器** 是一款专为 Toastmasters 会议设计的免费开源计时工具，简单、快速、准确。
 
-The best [Toastmasters Timer][3] for your meetings, it's simple, fast, and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Łódź, Poland.
+---
 
-Feel free to level up your meetings using it anywhere at any time in all your meetings!
+## 主要功能
 
-Do you need some extra ideas on how to use it with [Prezi Video][4]? Check my [YouTube Channel Series][5] and empower your meetings to a New Level ⏫! 
+### 演讲类型与时间配置（符合 Toastmasters 官方规则）
 
-**This edition is based on the feedback provided by multiple contributors from all over the world for one year (Jan 2018 to Jan 2019).**
+| 演讲类型 | 总时长 | 绿牌（剩余） | 黄牌（剩余） | 红牌（时间到） | 超时提醒 |
+|---------|--------|-------------|-------------|---------------|---------|
+| 破冰演讲 | 5分钟 | 2分钟 | 1分钟 | 0分钟 | +30秒 |
+| 备稿演讲 | 7分钟 | 2分钟 | 1分钟 | 0分钟 | +30秒 |
+| 功能报告 | 2分钟 | 1分钟 | 30秒 | 0分钟 | +30秒 |
+| 评估员开场 | 1.5分钟 | 30秒 | 15秒 | 0分钟 | +30秒 |
+| 备稿点评 | 3分钟 | 1分钟 | 30秒 | 0分钟 | +30秒 |
+| 总点评 | 7分钟 | 2分钟 | 1分钟 | 0分钟 | +30秒 |
+| 即兴演讲 | 2分钟 | 1分钟 | 30秒 | 0分钟 | +30秒 |
+| TTE环节 | 4分钟 | 2分钟 | 1分钟 | 0分钟 | +30秒 |
 
-![toastmasters](https://i.sstatic.net/TFTH7.jpg)
+### 特色功能
+- **颜色提示**：🟢 绿色（剩余时间）→ 🟡 黄色（剩余时间）→ 🔴 红色（时间到）
+- **声音提示**：达到关键时间点时播放提示音（桌面端）
+- **振动反馈**：达到关键时间点时振动（移动设备）
+- **超时提醒**：超过最大时间30秒时播放振铃声
+- **深色模式**：支持深色/浅色主题切换
+- **冠军模式**：隐藏时间显示，模拟比赛场景
+- **会议记录**：自动记录所有演讲时间，支持PDF导出和分享
 
-This App provides you with different options, for example:
-- Question of the Day (30s).
-- 4 to 6 min (Ice-Breaker).
-- 5 to 7 min (Common).
-- 1 minute.
-- 1 to 1:30 min (Evaluator's introduction).
-- 2 to 3 min (Evaluation).
-- 5 to 6 min (General evaluation).
-- 1 to 2 min (Table topics).
-- 8 to 10 min.
-- 10 to 12 min.
-- 13 to 15 min.
-- 18 to 20 min.
-- Custom, create your own speech up to 100 hours.
+---
 
-All speeches are recorded for sharing with your members or guests.
+## 快捷键
 
-**Special features:**
-- **Vibrating** when a specific segment has been reached (*ONLY available in iOS, Android-based devices, or Windows Tablets*).
-- **Beeping** when a specific segment has been reached (*Desktop ONLY*).
-- **Clapping** when the maximum time has been exceeded (*Desktop ONLY*).
+| 快捷键 | 功能 |
+|--------|------|
+| **Ctrl + P** | 开始 / 暂停计时器 |
+| **Ctrl + S** | 停止并保存演讲记录 |
+| **Ctrl + R** | 重新开始计时 |
+| **Ctrl + M** | 打开会议记录 |
 
-**Color coding:**
-- **Light Green** for speeches that didn't reach the minimum time (-30s), but still qualified in a contest (*ONLY available in reports preview and exports to PDF*).
-- **Green**: The minimum time was reached.
-- **Yellow**: The optimal time was reached.
-- **Red**: The maximum time was reached.
-- **Black** for speeches that exceed the maximum time (+30s or predefined) and are disqualified in a Toastmasters contest (*ONLY available in reports preview*).
+---
 
-**Extra options:**
-- Export the agenda to PDF.
-- Dark Mode.
-- Easter Eggs.
+## 界面说明
 
-**Do you want to see it your own language?** Why don't you join to our **[Community][6]**?
+### 主界面按钮
+- 🏆 **冠军模式**：隐藏时间显示，模拟正式比赛场景
+- 📋 **会议记录**：查看和管理已保存的演讲记录
+- 🌗 **深色模式**：切换深色/浅色主题
+- 🔊 **提示音**：开启/关闭声音提示
+- 📳 **振动**：开启/关闭振动反馈
+- 👏 **超时提醒**：设置超时提醒时间
+- ℹ️ **关于**：查看应用信息、快捷键和帮助
 
-This project is fully **open-source** and can be reused, modified, or improved freely without any constrain. Feel free to hack it and share your new ideas!
+### 控制按钮
+- ▶️ **开始/暂停**：开始或暂停计时
+- ⏹️ **停止**：停止计时并保存记录
+- 🔄 **重新开始**：重置计时器
 
-### App previews
+---
 
-![preview](https://i.sstatic.net/1PRPL.gif)
+## 使用指南
 
-Furthermore, you can download the compiled versions in the official stores:
+### 1. 开始演讲计时
+1. 在 **"演讲类型"** 下拉菜单中选择合适的演讲类型
+2. （可选）在 **"演讲者"** 输入框中输入演讲者姓名
+3. 点击 **▶️ 开始** 按钮或按 **Ctrl + P** 开始计时
 
-|Play Store|Galaxy Store|Microsoft Store|Amazon Appstore|Huawei AppGallery|
-|:------------:|:------------:|:------------:|:------------:|:------------:|
-|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/google_play_micro.png)](https://play.google.com/store/apps/details?id=tk.supernova.tmtimer.tk.supernova.tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/galaxy_micro.png)](https://galaxy.store/tmtimer)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/microsoft_micro.png)](https://bit.ly/36Ug2EC)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/amazon_micro.png)](https://amzn.to/3eSF23h)|[![Toastmasters Timer](https://raw.githubusercontent.com/FANMixco/federiconavarrete/master/img/stores_badges/huawei_micro.png)](https://bit.ly/3rqoC7w)|### iOS
+### 2. 计时过程中
+- **时间显示**：显示已用时间（格式：HH:MM:SS）
+- **进度环**：直观显示进度
+- **颜色变化**：
+  - 🟢 **绿色**：已用时间达到绿牌时间点（剩余X分钟）
+  - 🟡 **黄色**：已用时间达到黄牌时间点（剩余Y分钟）
+  - 🔴 **红色**：已用时间达到总时长（时间到）
+  - 🔔 **超时提醒**：超过总时长30秒时，播放振铃声
 
-### iOS/iPadOS
+### 3. 结束计时
+1. 点击 **⏹️ 停止** 按钮或按 **Ctrl + S**
+2. 演讲记录会自动保存到会议记录中
 
-You can follow these steps:
+### 4. 查看会议记录
+1. 点击 **📋 会议记录** 按钮或按 **Ctrl + M**
+2. 可以查看所有已保存的演讲记录
+3. 支持：
+   - ✅ **多选删除**：选择多个记录进行删除
+   - 📧 **邮件分享**：通过邮件发送记录
+   - 📤 **导出PDF**：导出为PDF文件
+   - 🔗 **Web分享**：使用Web Share API分享
 
-![iOSInstall](https://i.sstatic.net/Gn4ut.gif)
+### 5. 自定义时间
+1. 在 **"演讲类型"** 下拉菜单中选择 **"自定义"**
+2. 设置：
+   - **绿牌时间**：显示绿色背景的时间点
+   - **黄牌时间**：显示黄色背景的时间点
+   - **红牌时间**：显示红色背景的时间点（总时长）
+3. 点击 **"保存"** 按钮
 
-  [1]: https://federiconavarrete.com
-  [2]: https://www.facebook.com/TheLeaderShipToastmasters
-  [3]: https://tmtimer.federiconavarrete.com
-  [4]: https://prezi.com/video
-  [5]: https://bit.ly/3bf877f
-  [6]: https://poeditor.com/join/project/hJX2GTJNPv
-  
+### 6. 其他功能
+- **深色模式**：点击 🌗 按钮切换深色/浅色主题
+- **冠军模式**：点击 🏆 按钮隐藏时间显示，模拟比赛场景
+- **提示音**：点击 🔊 按钮开启/关闭声音提示
+- **振动**：点击 📳 按钮开启/关闭振动反馈
 
-### Follow me on:
+---
 
-|  LinkedIn  |YouTube|Amazon|Goodreads|Instagram|Cyber Prophets|Sharing Your Stories|
-|:----------|:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
-|[![LinkedIn](https://i.sstatic.net/idQWu.png)](https://www.linkedin.com/in/federiconavarrete/)|[![YouTube](https://i.sstatic.net/CFPMR.png)](https://youtube.com/@FedericoNavarrete)|[![Amazon](https://i.sstatic.net/NFOeE.png)](https://www.amazon.com/Federico-Navarrete/e/B08NJTXQRV)|[![Goodreads](https://i.sstatic.net/oBk0g.jpg)](https://www.goodreads.com/author/show/21125413.Federico_Navarrete)|[![Instagram](https://i.sstatic.net/PIfqY.png)](https://www.instagram.com/federico_the_consultant)|[![RedCircle Podcast](https://i.sstatic.net/4XICF.png)](https://redcircle.com/shows/cyber-prophets)|[![RedCircle Podcast](https://i.sstatic.net/4XICF.png)](https://redcircle.com/shows/sharing-your-stories)|
+## 时间规则说明（Toastmasters 官方标准）
 
+### 颜色含义
+- **🟢 绿色**：剩余 X 分钟时显示（演讲者还有足够时间）
+- **🟡 黄色**：剩余 Y 分钟时显示（演讲者需要开始收尾）
+- **🔴 红色**：时间到，演讲应该结束
+
+### 示例：5分钟破冰演讲
+```
+总时长：5分钟 (300秒)
+
+绿牌时间点：3分钟 (180秒) → 剩余 2 分钟
+黄牌时间点：4分钟 (240秒) → 剩余 1 分钟
+红牌时间点：5分钟 (300秒) → 时间到
+超时提醒：5分30秒 (330秒)
+```
+
+### 示例：2分钟即兴演讲
+```
+总时长：2分钟 (120秒)
+
+绿牌时间点：1分钟 (60秒) → 剩余 1 分钟
+黄牌时间点：1分30秒 (90秒) → 剩余 30 秒
+红牌时间点：2分钟 (120秒) → 时间到
+超时提醒：2分30秒 (150秒)
+```
+
+---
+
+## 测试用例
+
+### 1. 基本功能测试
+
+#### TC-001: 页面加载
+- **目标**：验证页面能正常加载
+- **前置条件**：无
+- **步骤**：
+  1. 打开浏览器访问应用地址
+  2. 等待页面加载
+- **预期结果**：
+  - 加载动画消失，主界面显示
+  - 无JavaScript错误
+  - 所有按钮和下拉菜单可见
+
+#### TC-002: 选择演讲类型
+- **目标**：验证演讲类型下拉菜单功能
+- **前置条件**：页面已加载
+- **步骤**：
+  1. 点击"演讲类型"下拉菜单
+  2. 选择"破冰演讲（5分钟）"
+- **预期结果**：
+  - 下拉菜单展开，显示所有演讲类型
+  - 选择后，时间显示更新为 00:05:00
+  - 下拉菜单关闭
+
+#### TC-003: 开始/暂停计时
+- **目标**：验证开始和暂停功能
+- **前置条件**：已选择演讲类型
+- **步骤**：
+  1. 点击 ▶️ 开始按钮（或按 Ctrl+P）
+  2. 等待3秒
+  3. 点击 ⏸️ 暂停按钮（或按 Ctrl+P）
+- **预期结果**：
+  - 点击开始后，时间开始递增
+  - 进度环开始转动
+  - 点击暂停后，时间停止递增
+  - 进度环停止转动
+
+#### TC-004: 停止并保存
+- **目标**：验证停止和保存功能
+- **前置条件**：计时器正在运行
+- **步骤**：
+  1. 点击 ▶️ 开始按钮
+  2. 等待5秒
+  3. 点击 ⏹️ 停止按钮（或按 Ctrl+S）
+- **预期结果**：
+  - 时间停止递增
+  - 计时器重置为初始状态
+  - 演讲记录被保存
+
+#### TC-005: 重新开始
+- **目标**：验证重新开始功能
+- **前置条件**：计时器已运行过并停止
+- **步骤**：
+  1. 点击 ▶️ 开始按钮
+  2. 等待3秒
+  3. 点击 🔄 重新开始按钮（或按 Ctrl+R）
+- **预期结果**：
+  - 计时器重置为初始状态
+  - 时间显示恢复为演讲类型的总时长
+  - 进度环重置
+
+---
+
+### 2. 时间变化测试
+
+#### TC-010: 绿牌时间点测试（破冰演讲）
+- **目标**：验证绿牌时间点触发
+- **前置条件**：选择"破冰演讲（5分钟）"
+- **步骤**：
+  1. 点击 ▶️ 开始按钮
+  2. 等待3分钟（或手动快速测试）
+  3. 观察背景颜色变化
+- **预期结果**：
+  - 当已用时间达到3分钟（180秒）时
+  - 背景变为绿色
+  - 提示音播放（如果已开启）
+  - 振动（如果已开启且设备支持）
+
+#### TC-011: 黄牌时间点测试（破冰演讲）
+- **目标**：验证黄牌时间点触发
+- **前置条件**：计时器运行中，已过绿牌时间
+- **步骤**：
+  1. 继续等待到4分钟
+  2. 观察背景颜色变化
+- **预期结果**：
+  - 当已用时间达到4分钟（240秒）时
+  - 背景变为黄色
+  - 提示音播放（如果已开启）
+  - 振动（如果已开启且设备支持）
+
+#### TC-012: 红牌时间点测试（破冰演讲）
+- **目标**：验证红牌时间点触发
+- **前置条件**：计时器运行中，已过黄牌时间
+- **步骤**：
+  1. 继续等待到5分钟
+  2. 观察背景颜色变化
+- **预期结果**：
+  - 当已用时间达到5分钟（300秒）时
+  - 背景变为红色
+  - 提示音播放（如果已开启）
+  - 振动（如果已开启且设备支持）
+
+#### TC-013: 超时提醒测试
+- **目标**：验证超时提醒功能
+- **前置条件**：计时器运行中，已过红牌时间
+- **步骤**：
+  1. 继续等待到5分30秒
+  2. 观察是否有超时提醒
+- **预期结果**：
+  - 当已用时间达到5分30秒（330秒）时
+  - 播放振铃声
+  - （如果已开启超时提醒）
+
+#### TC-014: 短时间演讲测试（1分钟）
+- **目标**：验证短时间演讲的时间点
+- **前置条件**：选择"1分钟"
+- **步骤**：
+  1. 点击 ▶️ 开始按钮
+  2. 等待1分钟
+  3. 观察颜色变化
+- **预期结果**：
+  - 绿牌时间点：30秒（已用30秒，剩余30秒）
+  - 黄牌时间点：45秒（已用45秒，剩余15秒）
+  - 红牌时间点：60秒（时间到）
+
+---
+
+### 3. 功能特性测试
+
+#### TC-020: 深色模式切换
+- **目标**：验证深色模式功能
+- **前置条件**：页面已加载
+- **步骤**：
+  1. 点击 🌗 深色模式按钮
+  2. 观察界面变化
+  3. 再次点击 🌗 按钮
+- **预期结果**：
+  - 第一次点击后，界面变为深色主题
+  - 背景变为深色
+  - 文字颜色变为浅色
+  - 第二次点击后，界面恢复为浅色主题
+
+#### TC-021: 冠军模式测试
+- **目标**：验证冠军模式功能
+- **前置条件**：页面已加载
+- **步骤**：
+  1. 点击 🏆 冠军模式按钮
+  2. 选择演讲类型并开始计时
+  3. 观察时间显示
+- **预期结果**：
+  - 时间显示隐藏
+  - 只能通过颜色变化判断进度
+  - 模拟正式比赛场景
+
+#### TC-022: 提示音开关
+- **目标**：验证提示音开关功能
+- **前置条件**：页面已加载
+- **步骤**：
+  1. 点击 🔊 提示音按钮
+  2. 观察按钮图标变化
+  3. 再次点击 🔊 按钮
+- **预期结果**：
+  - 第一次点击后，图标变为 🔊（开启）或 🔇（关闭）
+  - 状态切换
+  - 提示音状态随开关变化
+
+#### TC-023: 振动开关
+- **目标**：验证振动开关功能
+- **前置条件**：页面已加载（在支持振动的设备上）
+- **步骤**：
+  1. 点击 📳 振动按钮
+  2. 观察按钮图标变化
+  3. 再次点击 📳 按钮
+- **预期结果**：
+  - 图标在 📳（开启）和 📵（关闭）之间切换
+  - 振动状态随开关变化
+
+#### TC-024: 超时提醒时间设置
+- **目标**：验证超时提醒设置功能
+- **前置条件**：页面已加载
+- **步骤**：
+  1. 点击 👏 超时提醒按钮
+  2. 在弹出的对话框中设置时间
+  3. 点击保存
+- **预期结果**：
+  - 对话框显示
+  - 可以选择分钟和秒数
+  - 保存后设置生效
+
+---
+
+### 4. 会议记录测试
+
+#### TC-030: 查看会议记录
+- **目标**：验证会议记录查看功能
+- **前置条件**：已有保存的演讲记录
+- **步骤**：
+  1. 点击 📋 会议记录按钮（或按 Ctrl+M）
+  2. 观察对话框内容
+- **预期结果**：
+  - 对话框显示
+  - 表格显示所有已保存的记录
+  - 每列显示：演讲者、演讲类型、时间
+
+#### TC-031: 删除单条记录
+- **目标**：验证删除功能
+- **前置条件**：会议记录对话框已打开，有至少1条记录
+- **步骤**：
+  1. 勾选一条记录的复选框
+  2. 点击 🗑️ 删除按钮
+  3. 在确认对话框中点击"确认"
+- **预期结果**：
+  - 确认对话框显示
+  - 点击确认后，该记录被删除
+  - 表格中不再显示该记录
+
+#### TC-032: 多选删除
+- **目标**：验证多选删除功能
+- **前置条件**：会议记录对话框已打开，有多条记录
+- **步骤**：
+  1. 点击 ☑️ 多选按钮
+  2. 勾选多条记录
+  3. 点击 🗑️ 删除按钮
+  4. 在确认对话框中点击"确认"
+- **预期结果**：
+  - 多选模式开启
+  - 可以勾选多条记录
+  - 点击删除后，所有勾选的记录被删除
+
+#### TC-033: 导出PDF
+- **目标**：验证PDF导出功能
+- **前置条件**：会议记录对话框已打开，有至少1条记录
+- **步骤**：
+  1. 点击 📥 导出按钮
+  2. 观察浏览器行为
+- **预期结果**：
+  - PDF文件下载或保存对话框显示
+  - PDF包含所有会议记录
+
+---
+
+### 5. 快捷键测试
+
+#### TC-040: Ctrl + P 开始/暂停
+- **目标**：验证 Ctrl + P 快捷键
+- **前置条件**：已选择演讲类型
+- **步骤**：
+  1. 按 Ctrl + P
+  2. 观察计时器状态
+  3. 再次按 Ctrl + P
+- **预期结果**：
+  - 第一次按键后，计时器开始
+  - 第二次按键后，计时器暂停
+
+#### TC-041: Ctrl + S 停止保存
+- **目标**：验证 Ctrl + S 快捷键
+- **前置条件**：计时器正在运行
+- **步骤**：
+  1. 按 Ctrl + S
+  2. 观察计时器状态
+- **预期结果**：
+  - 计时器停止
+  - 演讲记录被保存
+
+#### TC-042: Ctrl + R 重新开始
+- **目标**：验证 Ctrl + R 快捷键
+- **前置条件**：计时器已运行
+- **步骤**：
+  1. 按 Ctrl + R
+  2. 观察计时器状态
+- **预期结果**：
+  - 计时器重置为初始状态
+
+#### TC-043: Ctrl + M 打开会议记录
+- **目标**：验证 Ctrl + M 快捷键
+- **前置条件**：页面已加载
+- **步骤**：
+  1. 按 Ctrl + M
+  2. 观察界面变化
+- **预期结果**：
+  - 会议记录对话框显示
+
+---
+
+### 6. 响应式测试
+
+#### TC-050: 窗口大小调整
+- **目标**：验证响应式布局
+- **前置条件**：页面已加载在桌面浏览器
+- **步骤**：
+  1. 调整浏览器窗口宽度为 375px（手机竖屏）
+  2. 观察界面布局
+  3. 调整窗口宽度为 667px（手机横屏）
+  4. 观察界面布局
+- **预期结果**：
+  - 所有元素正确显示
+  - 布局自动调整以适应屏幕大小
+  - 没有元素溢出或重叠
+
+#### TC-051: 触摸设备测试
+- **目标**：验证触摸设备支持
+- **前置条件**：在触摸设备或浏览器开发者工具的触摸模拟模式
+- **步骤**：
+  1. 点击演讲类型下拉菜单
+  2. 点击开始按钮
+  3. 点击停止按钮
+- **预期结果**：
+  - 所有交互正常工作
+  - 下拉菜单正常展开
+  - 按钮点击有响应
+
+---
+
+## 技术说明
+
+### 项目结构
+```
+toastmasters-timer/
+├── index.html              # 主页面
+├── css/
+│   ├── timer.css           # 主样式表
+│   ├── timer.min.css       # 压缩版样式表
+│   ├── material.indigo-pink.min.css  # Material Design样式
+│   └── ...
+├── js/
+│   ├── timer.js            # 主计时器逻辑（开发用）
+│   ├── timer.min.js        # 压缩版计时器逻辑
+│   ├── lang/
+│   │   ├── zh.json         # 中文语言文件
+│   │   ├── en.json         # 英文语言文件
+│   │   └── ...
+│   ├── lib/                 # 第三方库
+│   ├── db/                  # 数据库操作
+│   └── ...
+├── img/                     # 图片和图标资源
+└── manifest.json           # PWA配置文件
+```
+
+### 核心技术
+- **HTML5**：页面结构
+- **CSS3**：样式和响应式布局
+- **JavaScript ES6+**：核心逻辑
+- **Material Design Lite (MDL)**：UI组件库
+- **IndexedDB**：本地数据存储
+- **LocalStorage**：用户偏好设置存储
+- **Web Audio API**：声音提示
+- **Vibration API**：振动反馈
+- **Wake Lock API**：防止设备休眠
+- **jsPDF**：PDF导出
+- **Web Share API**：分享功能
+- **PWA (Progressive Web App)**：可安装到主屏幕
+
+---
+
+## 开发和修改记录
+
+### 最近修改（2026-04-29）
+1. **时间配置更新**：根据Toastmasters官方规则重新配置所有演讲类型的时间点
+2. **移除外部链接**：移除了所有不必要的外部链接、广告和收费相关内容
+3. **优化页脚**：简化页脚显示，添加快捷键提示
+4. **添加快捷键**：新增 Ctrl + M 快捷键打开会议记录
+5. **改进计时精度**：
+   - 将 `setInterval` 从 1000ms 改为 100ms
+   - 使用 `Math.ceil` 替代 `Math.round`，确保时间显示更准确
+   - 添加负数时间保护
+6. **修复JavaScript错误**：移除了对已删除元素的引用
+
+### 演讲类型时间配置详情
+| 演讲类型 | 绿牌时间 | 黄牌时间 | 红牌时间 | 超时提醒 |
+|---------|---------|---------|---------|---------|
+| 今日问题（30秒） | 10秒 | 20秒 | 30秒 | +30秒 |
+| 破冰演讲（5分钟） | 3分钟 | 4分钟 | 5分钟 | +30秒 |
+| 备稿演讲（7分钟） | 5分钟 | 6分钟 | 7分钟 | +30秒 |
+| 功能报告（2分钟） | 1分钟 | 1分30秒 | 2分钟 | +30秒 |
+| 评估员开场（1-1.5分钟） | 1分钟 | 1分15秒 | 1分30秒 | +30秒 |
+| 备稿点评（3分钟） | 2分钟 | 2分30秒 | 3分钟 | +30秒 |
+| 总点评（7分钟） | 5分钟 | 6分钟 | 7分钟 | +30秒 |
+| 即兴演讲（2分钟） | 1分钟 | 1分30秒 | 2分钟 | +30秒 |
+| TTE环节（4分钟） | 2分钟 | 3分钟 | 4分钟 | +30秒 |
+| 10-12分钟 | 10分钟 | 11分钟 | 12分钟 | +30秒 |
+| 13-15分钟 | 13分钟 | 14分钟 | 15分钟 | +30秒 |
+| 18-20分钟 | 18分钟 | 19分钟 | 20分钟 | +30秒 |
+| 自定义 | 用户设置 | 用户设置 | 用户设置 | +30秒 |
+
+---
+
+## 许可证
+
+本项目是完全开源的，可以自由使用、修改和分发，没有任何限制。
+
+---
+
+## 本地运行
+
+```bash
+# 使用Python启动本地服务器
+python -m http.server 8080
+
+# 然后在浏览器中访问
+# http://localhost:8080/index.html
+```
+
+或者使用任何其他HTTP服务器。
+
+---
+
+**注意**：本版本已移除所有外部链接、广告和收费相关内容，是一个完全免费的开源工具。

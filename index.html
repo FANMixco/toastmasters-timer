@@ -71,8 +71,6 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <link href="img/icons/ios/ios-launchimage-750-1334.png" sizes="750x1334" rel="apple-touch-startup-image" />
     <link href="img/icons/ios/ios-launchimage-640-1136.png" sizes="640x1136" rel="apple-touch-startup-image" />
 
-    <meta name="monetag" content="1f0303dfbd4fffb72d612f2737610c5c">
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tmtimer.federiconavarrete.com">
@@ -117,22 +115,22 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
             </ul>
         </div>
         <div id="options">
-            <button aria-label='champion mode' id="btnChampion" class="btnAction"><img class="iconSVG-MD" id="imgTrophy"
+            <button aria-label='冠军模式' title='冠军模式：隐藏时间显示，模拟比赛场景' id="btnChampion" class="btnAction"><img class="iconSVG-MD" id="imgTrophy"
                     src="img/icons-svg/trophy.svg" height="48.93" width="48.93" alt="champion" /></button>
-            <button aria-label='agenda' id="btnTimetable" class="btnAction"><img class="iconSVG-MD"
+            <button aria-label='会议记录' title='查看和管理会议记录（Ctrl+M）' id="btnTimetable" class="btnAction"><img class="iconSVG-MD"
                     src="img/icons-svg/timetable.svg" height="48.93" width="48.93" alt="timetable" /></button>
-            <button aria-label='invert colors' id="btnInvert" class="btnAction"><img class="iconSVG-MD"
+            <button aria-label='深色模式' title='切换深色/浅色模式' id="btnInvert" class="btnAction"><img class="iconSVG-MD"
                     src="img/icons-svg/yin-yang.svg" height="48.93" width="48.93" alt="invert" /></button>
-            <button aria-label='enable or disable beeping' id="btnBeep" class="btnAction"><img class="iconSVG-MD"
+            <button aria-label='提示音' title='开启/关闭提示音' id="btnBeep" class="btnAction"><img class="iconSVG-MD"
                     id="imgBeep" src="img/icons-svg/volume-off.svg" height="48.93" width="48.93"
                     alt="volume" /></button>
-            <button aria-label='enable or disable vibration' id="btnVibrate" class="btnAction"><img class="iconSVG-MD"
+            <button aria-label='振动反馈' title='开启/关闭振动反馈' id="btnVibrate" class="btnAction"><img class="iconSVG-MD"
                     id="imgVibrate" src="img/icons-svg/vibrate-off.svg" height="48.93" width="48.93"
                     alt="vibrate" /></button>
-            <button aria-label='enable or disable clapping' id="btnClap" class="btnAction"><img class="iconSVG"
+            <button aria-label='超时提醒' title='设置超时提醒时间' id="btnClap" class="btnAction"><img class="iconSVG"
                     id="imgClap" src="img/icons-svg/clapping-off.svg" height="41.94" width="41.94"
                     alt="clapping" /></button>
-            <button aria-label='about us' id="btnAbout" class="btnAction"><img class="iconSVG-MD"
+            <button aria-label='关于' title='关于应用、快捷键和帮助' id="btnAbout" class="btnAction"><img class="iconSVG-MD"
                     src="img/icons-svg/information-variant.svg" height="48.93" width="48.93" alt="info" /></button>
         </div>
         <div id="divSpeaker" class="mdl-textfield mdl-js-textfield">
@@ -158,15 +156,15 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     <div id="remainTime" class="display-remain-time">00:00:00</div>
                     <div class="row">
                         <div class="column">
-                            <button aria-label='reset' class="btnAction" id="btnRestart"><img
+                            <button aria-label='重新开始' title='重新开始（Ctrl+R）' class="btnAction" id="btnRestart"><img
                                     src="img/icons-svg/restart.svg" alt="restart" id="imgRestart" height="32"
                                     width="32" /></button>
                         </div>
                         <div class="column">
-                            <button aria-label='play or pause' class="play" id="pause"></button>
+                            <button aria-label='开始或暂停' title='开始/暂停（Ctrl+P）' class="play" id="pause"></button>
                         </div>
                         <div class="column">
-                            <button aria-label='stop and save' class="btnAction" id="btnStop"><img
+                            <button aria-label='停止并保存' title='停止并保存（Ctrl+S）' class="btnAction" id="btnStop"><img
                                     src="img/icons-svg/stop.svg" alt="stop" id="imgStop" height="32"
                                     width="32" /></button>
                         </div>
@@ -252,34 +250,7 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                     <div id="bodyAbout" class="mdl-dialog__content">
                         <p data-tag="about1"></p>
                         <p><img loading="lazy" src="img/favicon.png" alt="logo" class='favIcon noInvert'></p>
-                        <p><span data-tag="about2"></span>&nbsp;<a
-                                href="mailto:fanmixco@gmail.com?Subject=TMTimer%20PWA&body=%0A%0AFeel%20free%20to%20buy%20me%20a%20coffee%20to%20support%20the%20project:%20https://www.buymeacoffee.com/fanmixco%0A%0D%0A%0DIf%20you%20want%20to%20support%20the%20translations,%20feel%20free%20to%20provide%20your%20improvements%20to:%20https://poeditor.com/join/project/hJX2GTJNPv%0A%0D%0A%0DYou%20can%20also%20support%20my%20work%20by%20getting%20a%20copy%20of%20my%20books%20that%20is%20helping%20amazing%20people%20like%20YOU%20discover%20that%20El%20Salvador%20is%20incredible:%20https://a.co/d/57MY2eB"
-                                target="_blank">Federico Navarrete</a></p>
-                        <p><span data-tag="about5"></span>
-                            <a rel="noreferrer" href="https://a.co/d/96TRQvH" target="_blank">Timeless Stories of El
-                                Salvador</a>
-                        </p>
-                        <p><span data-tag="about4"></span>
-                            <a rel="noreferrer" href="https://supernovaic.com" target="_blank">Supernova IC</a>
-                        </p>
-                        <p><a rel="noreferrer" href="https://supernovaic.com" target="_blank"><img
-                                    src="img/supernova.png" alt="Supernova IC logo" class='superNova noInvert'
-                                    loading="lazy"></a></p>
                         <p data-tag="about3" id="about3"></p>
-                        <p>
-                            <a href="https://bit.ly/3bcm6uL" rel="noreferrer" target="_blank" class="storeLinks">
-                                <img loading="lazy" src="img/playStore.png" class="storeIcon noInvert"
-                                    alt="play store" />
-                            </a>
-                            <a href="https://bit.ly/3exIjFw" rel="noreferrer" target="_blank" class="storeLinks">
-                                <img loading="lazy" src="img/microsoft.png" class="storeIcon noInvert"
-                                    alt="microsoft store" />
-                            </a>
-                            <a href="https://amzn.to/2LV5fOW" rel="noreferrer" target="_blank" class="storeLinks">
-                                <img loading="lazy" src="img/amazon.png" class="storeIcon noInvert"
-                                    alt="amazon app store" />
-                            </a>
-                        </p>
                     </div>
                 </div>
 
@@ -288,22 +259,13 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
                         <p data-tag="specialThanks"></p>
                         <ul class="mdl-list">
                             <li class="mdl-list__item"><b>Čeština</b>: Edgar Regalado</li>
-                            <li class="mdl-list__item"><b>Deutsch</b>:&nbsp;<a
-                                    href="https://www.linkedin.com/in/k-wojdalska" target="_blank">Kasia Wojdalska</a>
-                            </li>
-                            <li class="mdl-list__item"><b>Italiano</b>:&nbsp;<a
-                                    href="https://www.researchgate.net/profile/Luisa-Castellanos-4"
-                                    target="_blank">Luisa Castellanos</a></li>
-                            <li class="mdl-list__item"><b>Nederlands</b>:&nbsp;<a href="mailto:vistausss@outlook.com"
-                                    target="_blank">Heimen Stoffels</a></li>
-                            <li class="mdl-list__item"><b>Polski</b>:&nbsp;<a
-                                    href="https://www.linkedin.com/in/radoslaw-dabrowski-dtm-2a59085"
-                                    target="_blank">Radosław Dąbrowski</a></li>
-                            <li class="mdl-list__item"><b>Ру́сский</b>:&nbsp;<a href="mailto:andreitimofeev1@gmail.com"
-                                    target="_blank">Andrei Timofeev</a></li>
+                            <li class="mdl-list__item"><b>Deutsch</b>: Kasia Wojdalska</li>
+                            <li class="mdl-list__item"><b>Italiano</b>: Luisa Castellanos</li>
+                            <li class="mdl-list__item"><b>Nederlands</b>: Heimen Stoffels</li>
+                            <li class="mdl-list__item"><b>Polski</b>: Radosław Dąbrowski</li>
+                            <li class="mdl-list__item"><b>Русский</b>: Andrei Timofeev</li>
+                            <li class="mdl-list__item"><b>中文</b>: 社区贡献</li>
                         </ul>
-                        <a href="https://poeditor.com/join/project/hJX2GTJNPv" rel='noreferrer' class="externalLinks"
-                            target="_blank" data-tag="bringIn"></a>
                     </div>
                 </div>
 
@@ -383,8 +345,6 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         </main>
         <div id="divCloseAbout" class="mdl-dialog__actions">
             <button class="mdl-button close" data-tag="close"></button>
-            <button id="btnSponsor2Us" type="button" class="mdl-button mdl-button--primary"
-                data-tag="sponsorUs"></button>
         </div>
     </dialog>
     <dialog class="mdl-dialog" id="changesDialog">
@@ -573,15 +533,13 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
         <button aria-label='close' class="mdl-snackbar__action" tabindex="-1" type="button"></button>
     </div>
     <footer id="footerApp">
-        <span data-tag="copyright1"></span><a rel='noreferrer' class="externalLinks" target="_blank"
-            href="https://federiconavarrete.com">Federico Navarrete</a><span data-tag="copyright2"></span><a
-            rel='noreferrer' class="externalLinks" target="_blank" href="https://bit.ly/3uK4lKI">The Leader Ship
-            Toastmasters</a><span id='spanCopyright3' data-tag="copyright3"></span>. <a rel='noreferrer'
-            class="externalLinks" href="https://github.com/sponsors/FANMixco" target="_blank"><span id='sponsorUs'
-                data-tag="sponsorUs"></span></a>.
+        <div style="font-size: 12px; opacity: 0.7;">
+            Toastmasters 计时器 | 免费开源工具
+        </div>
+        <div id="shortcutHint" style="font-size: 12px; margin-top: 5px; opacity: 0.7;">
+            快捷键：<strong>Ctrl+P</strong> 开始/暂停 | <strong>Ctrl+S</strong> 停止保存 | <strong>Ctrl+R</strong> 重新开始 | <strong>Ctrl+M</strong> 会议记录
+        </div>
     </footer>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XCS79V4BL"></script>
 
     <!--Browser ONLY actions-->
     <script src="browserSpecific/js/dialog-polyfill.min.js"></script>
@@ -599,46 +557,14 @@ https://goo.gl/forms/JArck4uzbGGmTuG72
     <script src="js/db/dbHandler.min.js"></script>
     <script src="js/functions/genericActions.min.js"></script>
     <script src="js/lib/ua-parser.min.js"></script>
-    <script src="js/timer.min.js"></script>
+    <script src="js/timer.js"></script>
     <script src="js/lib/extras.min.js"></script>
-
-    <!--script type="module">
-        //PWA
-        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-        if ("serviceWorker" in navigator) {
-            const el = document.createElement('pwa-update');
-            document.body.appendChild(el);
-        }
-    </script-->
 
     <script>
         if (typeof navigator.serviceWorker !== 'undefined') {
             navigator.serviceWorker.register('pwabuilder-sw.js')
         }
     </script>
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org/",
-            "@type": "WebSite",
-            "name": "Toastmasters Timer",
-            "url": "https://tmtimer.federiconavarrete.com",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "{search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
-
-    <script src="ads.js" data-cfasync="false"></script>
-    <script src="js/lib/loadAds.min.js"></script>
-
-    <!--script src="js/lib/buyMeACoffee.min.js"></script-->
-    <script src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-name="BMC-Widget" data-cfasync="false"
-        data-id="fanmixco" data-description="Support me on Buy me a coffee!"
-        data-message="Empower me to improve this incredible app! Buy me a coffee!" data-color="#5F7FFF"
-        data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 
 </html>
