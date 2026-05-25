@@ -84,5 +84,8 @@
   "options": "Opciones",
   "rWarning": "Para cambiar de idioma es necesario recargar la aplicación. ¿Quieres continuar?",
   "buyMeACoffee": "¡Apóyame en Cómpreme un café!",
-  "buyMeACoffeeMsg": "Empoderame a mejorar esta increíble aplicación! ¡Cómprame un café!"
+  "buyMeACoffeeMsg": "Empoderame a mejorar esta increíble aplicación! ¡Cómprame un café!",
+  "easterEggMsg1": "Encontraste un espejo oculto.",
+  "easterEggMsg2": "¿Tienes curiosidad por cruzarlo?",
+  "easterEggMsg3": "Entra en el espejo 🪞"
 }

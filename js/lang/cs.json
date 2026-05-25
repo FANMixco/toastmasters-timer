@@ -84,5 +84,8 @@
   "options": "Možnosti",
   "rWarning": "Změna jazyka vyžaduje opětovné načtení aplikace. Chcete pokračovat?",
   "buyMeACoffee": "Podpořte mě na Kupte mi kávu!",
-  "buyMeACoffeeMsg": "Zmocněte mě k vylepšení této neuvěřitelné aplikace! Kup mi kávu!"
+  "buyMeACoffeeMsg": "Zmocněte mě k vylepšení této neuvěřitelné aplikace! Kup mi kávu!",
+  "easterEggMsg1": "Našli jste skryté zrcadlo.",
+  "easterEggMsg2": "Jste dostatečně zvědaví, abyste ho překročili?",
+  "easterEggMsg3": "Vstupte do zrcadla 🪞"
 }

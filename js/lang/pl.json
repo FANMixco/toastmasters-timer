@@ -84,5 +84,8 @@
   "options": "Opcje",
   "rWarning": "Zmiana języka wymaga ponownego załadowania aplikacji. Czy chcesz kontynuować?",
   "buyMeACoffee": "Wesprzyj mnie na Kup mi kawę!",
-  "buyMeACoffeeMsg": "Daj mi możliwość ulepszenia tej niesamowitej aplikacji! Kup mi kawę!"
+  "buyMeACoffeeMsg": "Daj mi możliwość ulepszenia tej niesamowitej aplikacji! Kup mi kawę!",
+  "easterEggMsg1": "Znalazłeś ukryte lustro.",
+  "easterEggMsg2": "Jesteś wystarczająco ciekawy, aby je przekroczyć?",
+  "easterEggMsg3": "Wejdź do lustra 🪞"
 }

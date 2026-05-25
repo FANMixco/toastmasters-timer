@@ -84,5 +84,8 @@
   "options": "选项",
   "rWarning": "更改语言需要重新加载应用程序。您要继续吗？",
   "buyMeACoffee": "支持我给我买杯咖啡！",
-  "buyMeACoffeeMsg": "使我能够改进这个令人难以置信的应用程序！ 给我买杯咖啡！"
+  "buyMeACoffeeMsg": "使我能够改进这个令人难以置信的应用程序！ 给我买杯咖啡！",
+  "easterEggMsg1": "你发现了一面隐藏的镜子。",
+  "easterEggMsg2": "好奇到想穿过它吗？",
+  "easterEggMsg3": "进入镜子🪞"
 }

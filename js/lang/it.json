@@ -84,5 +84,8 @@
   "options": "Opzioni",
   "rWarning": "La modifica della lingua richiede il ricaricamento dell'app. Vuoi procedere?",
   "buyMeACoffee": "Supportami su Comprami un caffè!",
-  "buyMeACoffeeMsg": "Consentimi di migliorare questa incredibile app! Offrimi un caffè!"
+  "buyMeACoffeeMsg": "Consentimi di migliorare questa incredibile app! Offrimi un caffè!",
+  "easterEggMsg1": "Hai trovato uno specchio nascosto.",
+  "easterEggMsg2": "Sei abbastanza curioso da attraversarlo?",
+  "easterEggMsg3": "Entra nello specchio 🪞"
 }

@@ -4,7 +4,7 @@
   "about2": "Pour toute question, vous pouvez contacter le développeur principal :",
   "about3": "&copy; Tous droits réservés Supernova IC, 2013 — {0}.",
   "about4": "Si vous êtes intéressé par d'autres projets innovants et uniques, consultez notre site web :",
-  "about5": "Vous pouvez également acheter un livre et soutenir ce projet qui aide les gens à découvrir que le Salvador est incroyable 🏄‍♂️ :",  
+  "about5": "Vous pouvez également acheter un livre et soutenir ce projet qui aide les gens à découvrir que le Salvador est incroyable 🏄‍♂️ :",
   "bringIn": "Apportez-le dans votre langue !",
   "cancel": "Non",
   "cancelBtn": "Annulation",
@@ -84,5 +84,8 @@
   "options": "Options",
   "rWarning": "Changer de langue nécessite de recharger l'application. Voulez-vous continuer ?",
   "buyMeACoffee": "Soutenez-moi pour Achetez-moi un café !",
-  "buyMeACoffeeMsg": "Donnez-moi les moyens d'améliorer cette incroyable application ! Achetez-moi un café !"
+  "buyMeACoffeeMsg": "Donnez-moi les moyens d'améliorer cette incroyable application ! Achetez-moi un café !",
+  "easterEggMsg1": "Vous avez trouvé un miroir caché.",
+  "easterEggMsg2": "Assez curieux pour le traverser ?",
+  "easterEggMsg3": "Entrez dans le miroir 🪞"
 }

@@ -34,6 +34,7 @@ const displayOutput = document.querySelector('.display-remain-time'),
     dialogConfirm = document.getElementById('confirmDialog'),
     dialogChanges = document.getElementById('changesDialog'),
     dialogCustomTimes = document.getElementById('customTimes'),
+    dialogEasterEgg = document.getElementById('easterEggDialog'),
     dialogAbout = document.getElementById('aboutDialog'),
     dialogClapping = document.getElementById('clappingDialog'),
     txtSpeaker = document.getElementById('txtSpeaker'),
@@ -741,6 +742,7 @@ function setClappingImg() {
 }
 
 function invertColors() {
+    let memoryGameIframe = document.getElementById('memoryGameIframe');
     let currentInv = "";
     if (selectedColor === 1) {
         currentInv = invert100;
@@ -749,6 +751,8 @@ function invertColors() {
         setInvFilter(dialogConfirm, invert100);
         setInvFilter(dialogChanges, invert100);
         setInvFilter(dialogCustomTimes, invert100);
+        setInvFilter(memoryGameIframe, invert100);
+        setInvFilter(dialogEasterEgg, invert100);
         setInvFilter(dialogClapping, invert100);
         setInvFilter(customMin, invert100);
         setInvFilter(customAvg, invert100);
@@ -770,6 +774,8 @@ function invertColors() {
         setInvFilter(dialogConfirm, invert0);
         setInvFilter(dialogChanges, invert0);
         setInvFilter(dialogCustomTimes, invert0);
+        setInvFilter(memoryGameIframe, invert0);
+        setInvFilter(dialogEasterEgg, invert0);
         setInvFilter(dialogClapping, invert0);
         setInvFilter(customMin, invert0);
         setInvFilter(customAvg, invert0);
@@ -878,6 +884,10 @@ btnStop.addEventListener('click', () => {
     storeTime(true);
 });
 
+document.getElementById('easterEggLink').addEventListener('click', () => {
+    dialogEasterEgg.showModal();
+});
+
 btnChampion.addEventListener('click', (event) => {
     if (event.detail === 3) {
         isNinjaMode = !isNinjaMode;
@@ -960,6 +970,10 @@ if (!dialogClapping.showModal) {
 
 if (!dialogCustomTimes.showModal) {
     dialogPolyfill.registerDialog(dialogCustomTimes);
+}
+
+if (!dialogEasterEgg.showModal) {
+    dialogPolyfill.registerDialog(dialogEasterEgg);
 }
 
 if (!dialogWelcome.showModal) {
@@ -1095,6 +1109,10 @@ dialogTimeTable.querySelector('.close').addEventListener('click', () => {
     dialogTimeTable.close();
 });
 
+dialogEasterEgg.querySelector('.close').addEventListener('click', () => {
+    dialogEasterEgg.close();
+});
+
 dialogCustomTimes.querySelector('.close').addEventListener('click', closeCustomDialog);
 
 dialogConfirm.querySelector('.close').addEventListener('click', () => {
@@ -1178,7 +1196,7 @@ setTimeout(() => {
 
     let bodyHelp = document.getElementById('bodyHelp');
 
-    if (deviceDetector.device == 'phone') {
+    if (deviceDetector.device == 'phone' || deviceDetector.device == 'mobile') {
         //Timetable Dialog
         let timeTableTmp = document.getElementById('timeTable');
         let divTitleContainerTmp = document.createElement("div");
@@ -1319,6 +1337,48 @@ setTimeout(() => {
 
         aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
 
+        //Easter Egg
+        let aboutDialogEE = document.getElementById('easterEggDialog');
+        let divTitleContainerEE = document.createElement("div");
+        divTitleContainerEE.className = "titleContainer";
+
+        let divTitleInnerContainerEE = document.createElement("div");
+        divTitleInnerContainerEE.className = "titleInnerContainer";
+
+        let spanCloseMobileEE = document.createElement("span");
+        spanCloseMobileEE.className = "closeMobile";
+        spanCloseMobileEE.id = 'btnCloseMobileEasterEgg';
+
+        let spanCloseIconEE = document.createElement("img");
+        spanCloseIconEE.className = "btnCloseMobile";
+        spanCloseIconEE.src = "img/icons-svg/close.svg";
+        spanCloseIconEE.alt = "close";
+
+        let spanTitleEE = document.createElement("span");
+        spanTitleEE.id = 'spanTitleEasterEgg';
+
+        let easterEggTitleEE = document.createElement("h4");
+        easterEggTitleEE.innerHTML = '&nbsp;';
+        easterEggTitleEE.id = 'easterEggTitle';
+        easterEggTitleEE.style.margin = '0';
+        easterEggTitleEE.style.marginTop = '16px';
+        easterEggTitleEE.style.fontWeight = 1000;
+        easterEggTitleEE.style.fontSize = '1.25em';
+        easterEggTitleEE.style.display = 'inline';
+
+        spanCloseMobileEE.appendChild(spanCloseIconEE);
+        spanTitleEE.appendChild(easterEggTitleEE);
+
+        divTitleInnerContainerEE.appendChild(spanCloseMobileEE);
+        divTitleInnerContainerEE.appendChild(spanTitleEE);
+
+        divTitleContainerEE.appendChild(divTitleInnerContainerEE);
+
+        aboutDialogEE.insertBefore(divTitleContainerEE, aboutDialogEE.firstChild);
+
+        document.getElementById('footerEasterEgg').style.display = 'none';
+        document.getElementById('btnCloseIframe').style.display = 'none';
+
         let spanFiveStars = document.createElement("span");
         spanFiveStars.id = 'spanFiveStars';
         spanFiveStars.className = 'btnRight';
@@ -1331,13 +1391,17 @@ setTimeout(() => {
             dialogAbout.close();
         });
 
+        document.getElementById('btnCloseMobileEasterEgg').addEventListener('click', () => {
+            dialogEasterEgg.close();
+        });
+
         document.getElementById('divCloseAbout').style.display = 'none';
 
-        bodyAbout.style.height = `${document.body.offsetHeight * 0.79}px`;
+        bodyAbout.style.height = `${getBodyHeight() * 0.79}px`;
 
-        bodyTranslators.style.height = `${document.body.offsetHeight * 0.79}px`;
+        bodyTranslators.style.height = `${getBodyHeight() * 0.79}px`;
 
-        bodyHelp.style.height = `${document.body.offsetHeight * 0.79}px`;
+        bodyHelp.style.height = `${getBodyHeight() * 0.79}px`;
     }
     else {
         let bodyApp = document.body;
@@ -1365,6 +1429,14 @@ setTimeout(() => {
         }, 1000);
         exit++;
     } while (lngObject === undefined && exit < 5);
+
+    function getBodyHeight() {
+        return Math.max(
+        document.body.scrollHeight,    document.documentElement.scrollHeight,
+        document.body.offsetHeight,    document.documentElement.offsetHeight,
+        document.body.clientHeight,    document.documentElement.clientHeight
+        );
+    }
 }, 100);
 
 checkMode();

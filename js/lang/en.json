@@ -84,5 +84,8 @@
   "options": "Options",
   "rWarning": "Changing languages requires to reload the app. Do you want to proceed?",
   "buyMeACoffee": "Support me on Buy me a coffee!",
-  "buyMeACoffeeMsg": "Empower me to improve this incredible app! Buy me a coffee!"
+  "buyMeACoffeeMsg": "Empower me to improve this incredible app! Buy me a coffee!",
+  "easterEggMsg1": "You found a hidden mirror.",
+  "easterEggMsg2": "Curious enough to cross it?",
+  "easterEggMsg3": "Enter the mirror 🪞"
 }

@@ -84,5 +84,8 @@
   "options": "Optionen",
   "rWarning": "Zum Ändern der Sprachen muss die App neu geladen werden. Möchten Sie fortfahren?",
   "buyMeACoffee": "Unterstütze mich bei Kauf mir einen Kaffee!",
-  "buyMeACoffeeMsg": "Ermächtige mich, diese unglaubliche App zu verbessern! Kauf mir einen Kaffee!"
+  "buyMeACoffeeMsg": "Ermächtige mich, diese unglaubliche App zu verbessern! Kauf mir einen Kaffee!",
+  "easterEggMsg1": "Du hast einen versteckten Spiegel gefunden.",
+  "easterEggMsg2": "Neugierig genug, ihn zu durchschreiten?",
+  "easterEggMsg3": "Betritt den Spiegel 🪞"
 }
