@@ -108,5 +108,8 @@
     "cleanedAgenda": "Skabelon renset.",
     "hPreview": "Forhåndsvisning",
     "pAgendaPreview": "Forudplanlagt dagsorden",
-    "videos": "Videoer"
+    "videos": "Videoer",
+    "easterEggMsg1": "Du fandt et skjult spejl.",
+    "easterEggMsg2": "Er du nysgerrig nok til at gå igennem det?",
+    "easterEggMsg3": "Gå ind i spejlet 🪞"
 }

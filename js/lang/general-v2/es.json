@@ -108,5 +108,8 @@
     "cleanedAgenda": "Plantilla limpiada.",
     "hPreview": "Vista previa",
     "pAgendaPreview": "Agenda preplanificada",
-    "videos": "Videos"
+    "videos": "Videos",
+    "easterEggMsg1": "Encontraste un espejo oculto.",
+    "easterEggMsg2": "¿Tienes suficiente curiosidad para cruzarlo?",
+    "easterEggMsg3": "Entra en el espejo 🪞"
 }

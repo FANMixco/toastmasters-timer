@@ -108,5 +108,8 @@
     "cleanedAgenda": "Modèle nettoyé.",
     "hPreview": "Aperçu",
     "pAgendaPreview": "Agenda pré-planifié",
-    "videos": "Vidéos"
+    "videos": "Vidéos",
+    "easterEggMsg1": "Vous avez trouvé un miroir caché.",
+    "easterEggMsg2": "Assez curieux pour le traverser ?",
+    "easterEggMsg3": "Entrez dans le miroir 🪞"
 }

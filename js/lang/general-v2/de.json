@@ -108,5 +108,8 @@
     "cleanedAgenda": "Vorlage bereinigt.",
     "hPreview": "Vorschau",
     "pAgendaPreview": "Vorgeplante Tagesordnung",
-    "videos": "Videos"
+    "videos": "Videos",
+    "easterEggMsg1": "Du hast einen versteckten Spiegel gefunden.",
+    "easterEggMsg2": "Bist du neugierig genug, ihn zu durchqueren?",
+    "easterEggMsg3": "Betritt den Spiegel 🪞"
 }

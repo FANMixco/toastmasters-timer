@@ -108,5 +108,8 @@
     "cleanedAgenda": "テンプレートがクリーンアップされました。",
     "hPreview": "プレビュー",
     "pAgendaPreview": "事前に計画されたアジェンダ",
-    "videos": "動画"
+    "videos": "動画",
+    "easterEggMsg1": "隠された鏡を見つけました。",
+    "easterEggMsg2": "それをくぐるほど好奇心がありますか？",
+    "easterEggMsg3": "鏡の中へ入る 🪞"
 }

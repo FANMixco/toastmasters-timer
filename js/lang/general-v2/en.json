@@ -108,5 +108,8 @@
     "cleanedAgenda": "Template cleaned.",
     "hPreview": "Preview",
     "pAgendaPreview": "Pre-planned Agenda",
-    "videos": "Videos"
+    "videos": "Videos",
+    "easterEggMsg1": "You found a hidden mirror.",
+    "easterEggMsg2": "Curious enough to cross it?",
+    "easterEggMsg3": "Enter the mirror 🪞"
 }
