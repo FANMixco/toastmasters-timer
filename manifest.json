@@ -14,7 +14,7 @@
   "start_url": "https://tmtimer.federiconavarrete.com/",
   "short_name": "TM Timer",
   "theme_color": "#ffffff",
-  "description": "It's a simple PWA empowering Toastmasters all over the world, helping them to have effective and productive Timer for their meetings. It was developed with JavaScript by Federico Navarrete from The Leader Ship Toastmasters in Łódź, Poland.",
+  "description": "The best Toastmasters timer for club meetings. Simple, fast, and accurate timing for speeches and table topics. Developed for Toastmasters worldwide.",
   "orientation": "any",
   "background_color": "#ffffff",
   "developer": {
