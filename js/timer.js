@@ -1397,11 +1397,11 @@ setTimeout(() => {
 
         document.getElementById('divCloseAbout').style.display = 'none';
 
-        bodyAbout.style.height = `${getBodyHeight() * 0.79}px`;
+        bodyAbout.style.height = `${getBodyHeight() * 0.7}px`;
 
-        bodyTranslators.style.height = `${getBodyHeight() * 0.79}px`;
+        bodyTranslators.style.height = `${getBodyHeight() * 0.7}px`;
 
-        bodyHelp.style.height = `${getBodyHeight() * 0.79}px`;
+        bodyHelp.style.height = `${getBodyHeight() * 0.7}px`;
     }
     else {
         let bodyApp = document.body;
