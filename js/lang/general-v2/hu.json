@@ -111,5 +111,15 @@
     "videos": "Videók",
     "easterEggMsg1": "Találtál egy rejtett tükröt.",
     "easterEggMsg2": "Elég kíváncsi vagy, hogy átlépj rajta?",
-    "easterEggMsg3": "Lépj be a tükörbe 🪞"
+    "easterEggMsg3": "Lépj be a tükörbe 🪞",
+    "eWarning": "⚠ Villogó vizuális effekteket tartalmaz. Kellemetlenséget okozhat fényérzékeny vagy fotoszenzitív epilepsziában érintett felhasználóknak.",
+    "ninjaExp": "Lejátszás közben elrejti a legtöbb vezérlőt. Premium felhasználóknak bővített.",
+    "overTimeTitle": "Időtúllépési funkciók",
+    "overTimeColor": "Időtúllépési szín",
+    "overTimeAheadMsg": "Színt jelenít meg {0}-cel a maximális idő elérése előtt",
+    "overTimeAhead": "Időtúllépés előrejelzése",
+    "overTimeAhead1": "0 másodperc",
+    "overTimeAhead2": "5 másodperc",
+    "overTimeAhead3": "10 másodperc",
+    "overTimeAhead4": "15 másodperc"
 }

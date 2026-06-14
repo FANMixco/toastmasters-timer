@@ -111,5 +111,15 @@
     "videos": "Video",
     "easterEggMsg1": "Hai trovato uno specchio nascosto.",
     "easterEggMsg2": "Sei abbastanza curioso da attraversarlo?",
-    "easterEggMsg3": "Entra nello specchio 🪞"
+    "easterEggMsg3": "Entra nello specchio 🪞",
+    "eWarning": "⚠ Contiene effetti visivi lampeggianti. Può causare disagio agli utenti con fotosensibilità o epilessia fotosensibile.",
+    "ninjaExp": "Nasconde la maggior parte dei controlli durante l’esecuzione. Esteso per gli utenti Premium.",
+    "overTimeTitle": "Funzioni di tempo superato",
+    "overTimeColor": "Colore del tempo superato",
+    "overTimeAheadMsg": "Mostra il colore {0} prima del raggiungimento del tempo massimo",
+    "overTimeAhead": "Avviso anticipato di tempo superato",
+    "overTimeAhead1": "0 secondi",
+    "overTimeAhead2": "5 secondi",
+    "overTimeAhead3": "10 secondi",
+    "overTimeAhead4": "15 secondi"
 }

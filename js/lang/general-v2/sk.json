@@ -111,5 +111,15 @@
     "videos": "Videá",
     "easterEggMsg1": "Našli ste skryté zrkadlo.",
     "easterEggMsg2": "Ste dosť zvedaví, aby ste ním prešli?",
-    "easterEggMsg3": "Vstúpte do zrkadla 🪞"
+    "easterEggMsg3": "Vstúpte do zrkadla 🪞",
+    "eWarning": "⚠ Obsahuje blikajúce vizuálne efekty. Môže spôsobiť nepohodlie používateľom s fotosenzitivitou alebo fotosenzitívnou epilepsiou.",
+    "ninjaExp": "Počas prehrávania skryje väčšinu ovládacích prvkov. Rozšírené pre používateľov Premium.",
+    "overTimeTitle": "Funkcie prekročenia času",
+    "overTimeColor": "Farba prekročenia času",
+    "overTimeAheadMsg": "Zobrazí farbu {0} pred dosiahnutím maximálneho času",
+    "overTimeAhead": "Predstih prekročenia času",
+    "overTimeAhead1": "0 sekúnd",
+    "overTimeAhead2": "5 sekúnd",
+    "overTimeAhead3": "10 sekúnd",
+    "overTimeAhead4": "15 sekúnd"
 }

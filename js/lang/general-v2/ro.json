@@ -111,5 +111,15 @@
     "videos": "Videoclipuri",
     "easterEggMsg1": "Ai găsit o oglindă ascunsă.",
     "easterEggMsg2": "Ești suficient de curios să treci prin ea?",
-    "easterEggMsg3": "Intră în oglindă 🪞"
+    "easterEggMsg3": "Intră în oglindă 🪞",
+    "eWarning": "⚠ Conține efecte vizuale intermitente. Poate provoca disconfort utilizatorilor cu fotosensibilitate sau epilepsie fotosensibilă.",
+    "ninjaExp": "Ascunde majoritatea comenzilor în timpul rulării. Extins pentru utilizatorii Premium.",
+    "overTimeTitle": "Funcții pentru depășirea timpului",
+    "overTimeColor": "Culoare pentru depășirea timpului",
+    "overTimeAheadMsg": "Afișează culoarea cu {0} înainte de atingerea timpului maxim",
+    "overTimeAhead": "Avertizare înainte de depășirea timpului",
+    "overTimeAhead1": "0 secunde",
+    "overTimeAhead2": "5 secunde",
+    "overTimeAhead3": "10 secunde",
+    "overTimeAhead4": "15 secunde"
 }

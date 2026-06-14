@@ -111,5 +111,15 @@
     "videos": "Videos",
     "easterEggMsg1": "You found a hidden mirror.",
     "easterEggMsg2": "Curious enough to cross it?",
-    "easterEggMsg3": "Enter the mirror 🪞"
+    "easterEggMsg3": "Enter the mirror 🪞",
+    "ninjaExp": "Hides most controls while playing. Expanded for Premium users.",
+    "overTimeTitle": "Over time features",
+    "overTimeColor": "Over time color",
+    "overTimeAheadMsg": "Displays color {0} before the maximum time is reached",
+    "overTimeAhead": "Over time ahead",
+    "eWarning": "⚠ Contains flashing visual effects. May cause discomfort for users with photosensitivity or photosensitive epilepsy.",
+    "overTimeAhead1": "0 seconds",
+    "overTimeAhead2": "5 seconds",
+    "overTimeAhead3": "10 seconds",
+    "overTimeAhead4": "15 seconds"
 }

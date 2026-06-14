@@ -111,5 +111,15 @@
     "videos": "Video's",
     "easterEggMsg1": "Je hebt een verborgen spiegel gevonden.",
     "easterEggMsg2": "Nieuwsgierig genoeg om erdoorheen te stappen?",
-    "easterEggMsg3": "Stap de spiegel in 🪞"
+    "easterEggMsg3": "Stap de spiegel in 🪞",
+    "eWarning": "⚠ Bevat knipperende visuele effecten. Kan ongemak veroorzaken bij gebruikers met lichtgevoeligheid of lichtgevoelige epilepsie.",
+    "ninjaExp": "Verbergt de meeste bedieningselementen tijdens het afspelen. Uitgebreid voor Premium-gebruikers.",
+    "overTimeTitle": "Functies voor tijdsoverschrijding",
+    "overTimeColor": "Kleur bij tijdsoverschrijding",
+    "overTimeAheadMsg": "Toont kleur {0} voordat de maximumtijd wordt bereikt",
+    "overTimeAhead": "Tijdsoverschrijding vooraf",
+    "overTimeAhead1": "0 seconden",
+    "overTimeAhead2": "5 seconden",
+    "overTimeAhead3": "10 seconden",
+    "overTimeAhead4": "15 seconden"
 }

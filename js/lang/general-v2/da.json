@@ -111,5 +111,15 @@
     "videos": "Videoer",
     "easterEggMsg1": "Du fandt et skjult spejl.",
     "easterEggMsg2": "Er du nysgerrig nok til at gå igennem det?",
-    "easterEggMsg3": "Gå ind i spejlet 🪞"
+    "easterEggMsg3": "Gå ind i spejlet 🪞",
+    "eWarning": "⚠ Indeholder blinkende visuelle effekter. Kan give ubehag for brugere med lysfølsomhed eller lysfølsom epilepsi.",
+    "ninjaExp": "Skjuler de fleste kontroller under afspilning. Udvidet for Premium-brugere.",
+    "overTimeTitle": "Overtidsfunktioner",
+    "overTimeColor": "Overtidsfarve",
+    "overTimeAheadMsg": "Viser farve {0} før maksimumtiden nås",
+    "overTimeAhead": "Overtid på forhånd",
+    "overTimeAhead1": "0 sekunder",
+    "overTimeAhead2": "5 sekunder",
+    "overTimeAhead3": "10 sekunder",
+    "overTimeAhead4": "15 sekunder"
 }

@@ -111,5 +111,15 @@
     "videos": "Videoposnetki",
     "easterEggMsg1": "Du hittade en dold spegel.",
     "easterEggMsg2": "Är du nyfiken nog att gå igenom den?",
-    "easterEggMsg3": "Gå in i spegeln 🪞"
+    "easterEggMsg3": "Gå in i spegeln 🪞",
+    "eWarning": "⚠ Innehåller blinkande visuella effekter. Kan orsaka obehag för användare med ljuskänslighet eller ljuskänslig epilepsi.",
+    "ninjaExp": "Döljer de flesta kontroller medan den körs. Utökad för Premium-användare.",
+    "overTimeTitle": "Funktioner för övertid",
+    "overTimeColor": "Övertidsfärg",
+    "overTimeAheadMsg": "Visar färg {0} innan maxtiden nås",
+    "overTimeAhead": "Övertid i förväg",
+    "overTimeAhead1": "0 sekunder",
+    "overTimeAhead2": "5 sekunder",
+    "overTimeAhead3": "10 sekunder",
+    "overTimeAhead4": "15 sekunder"
 }

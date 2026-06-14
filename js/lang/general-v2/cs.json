@@ -111,5 +111,15 @@
     "videos": "Videa",
     "easterEggMsg1": "Našli jste skryté zrcadlo.",
     "easterEggMsg2": "Jste dost zvědaví, abyste jím prošli?",
-    "easterEggMsg3": "Vstupte do zrcadla 🪞"
+    "easterEggMsg3": "Vstupte do zrcadla 🪞",
+    "eWarning": "⚠ Obsahuje blikající vizuální efekty. Může způsobit nepohodlí uživatelům s fotosenzitivitou nebo fotosenzitivní epilepsií.",
+    "ninjaExp": "Během přehrávání skryje většinu ovládacích prvků. Rozšířeno pro uživatele Premium.",
+    "overTimeTitle": "Funkce překročení času",
+    "overTimeColor": "Barva překročení času",
+    "overTimeAheadMsg": "Zobrazí barvu {0} před dosažením maximálního času",
+    "overTimeAhead": "Předstih překročení času",
+    "overTimeAhead1": "0 sekund",
+    "overTimeAhead2": "5 sekund",
+    "overTimeAhead3": "10 sekund",
+    "overTimeAhead4": "15 sekund"
 }

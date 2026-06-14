@@ -111,5 +111,15 @@
     "videos": "视频",
     "easterEggMsg1": "你发现了一面隐藏的镜子。",
     "easterEggMsg2": "好奇到想穿过它吗？",
-    "easterEggMsg3": "进入镜子 🪞"
+    "easterEggMsg3": "进入镜子 🪞",
+    "eWarning": "⚠ 包含闪烁视觉效果。可能会让光敏感或光敏性癫痫用户感到不适。",
+    "ninjaExp": "运行时隐藏大多数控件。为 Premium 用户扩展。",
+    "overTimeTitle": "超时功能",
+    "overTimeColor": "超时颜色",
+    "overTimeAheadMsg": "在达到最大时间前 {0} 显示颜色",
+    "overTimeAhead": "提前超时提示",
+    "overTimeAhead1": "0 秒",
+    "overTimeAhead2": "5 秒",
+    "overTimeAhead3": "10 秒",
+    "overTimeAhead4": "15 秒"
 }

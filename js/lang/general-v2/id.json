@@ -111,5 +111,15 @@
     "videos": "Video",
     "easterEggMsg1": "Kamu menemukan cermin tersembunyi.",
     "easterEggMsg2": "Cukup penasaran untuk melewatinya?",
-    "easterEggMsg3": "Masuki cermin 🪞"
+    "easterEggMsg3": "Masuki cermin 🪞",
+    "eWarning": "⚠ Berisi efek visual berkedip. Dapat menyebabkan ketidaknyamanan bagi pengguna dengan fotosensitivitas atau epilepsi fotosensitif.",
+    "ninjaExp": "Menyembunyikan sebagian besar kontrol saat berjalan. Diperluas untuk pengguna Premium.",
+    "overTimeTitle": "Fitur waktu berlebih",
+    "overTimeColor": "Warna waktu berlebih",
+    "overTimeAheadMsg": "Menampilkan warna {0} sebelum waktu maksimum tercapai",
+    "overTimeAhead": "Peringatan waktu berlebih",
+    "overTimeAhead1": "0 detik",
+    "overTimeAhead2": "5 detik",
+    "overTimeAhead3": "10 detik",
+    "overTimeAhead4": "15 detik"
 }

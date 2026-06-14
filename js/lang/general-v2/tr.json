@@ -111,5 +111,15 @@
     "videos": "Videolar",
     "easterEggMsg1": "Gizli bir ayna buldun.",
     "easterEggMsg2": "İçinden geçecek kadar meraklı mısın?",
-    "easterEggMsg3": "Aynaya gir 🪞"
+    "easterEggMsg3": "Aynaya gir 🪞",
+    "eWarning": "⚠ Yanıp sönen görsel efektler içerir. Işığa duyarlılığı veya fotosensitif epilepsisi olan kullanıcılarda rahatsızlığa neden olabilir.",
+    "ninjaExp": "Çalışırken çoğu denetimi gizler. Premium kullanıcılar için genişletilmiştir.",
+    "overTimeTitle": "Süre aşımı özellikleri",
+    "overTimeColor": "Süre aşımı rengi",
+    "overTimeAheadMsg": "Maksimum süreye ulaşmadan {0} önce rengi gösterir",
+    "overTimeAhead": "Süre aşımı önceden",
+    "overTimeAhead1": "0 saniye",
+    "overTimeAhead2": "5 saniye",
+    "overTimeAhead3": "10 saniye",
+    "overTimeAhead4": "15 saniye"
 }

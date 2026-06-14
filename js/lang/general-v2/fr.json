@@ -111,5 +111,15 @@
     "videos": "Vidéos",
     "easterEggMsg1": "Vous avez trouvé un miroir caché.",
     "easterEggMsg2": "Assez curieux pour le traverser ?",
-    "easterEggMsg3": "Entrez dans le miroir 🪞"
+    "easterEggMsg3": "Entrez dans le miroir 🪞",
+    "eWarning": "⚠ Contient des effets visuels clignotants. Peut provoquer une gêne chez les utilisateurs photosensibles ou atteints d’épilepsie photosensible.",
+    "ninjaExp": "Masque la plupart des contrôles pendant l’exécution. Étendu pour les utilisateurs Premium.",
+    "overTimeTitle": "Fonctions de dépassement du temps",
+    "overTimeColor": "Couleur de dépassement du temps",
+    "overTimeAheadMsg": "Affiche la couleur {0} avant que le temps maximum soit atteint",
+    "overTimeAhead": "Dépassement du temps anticipé",
+    "overTimeAhead1": "0 secondes",
+    "overTimeAhead2": "5 secondes",
+    "overTimeAhead3": "10 secondes",
+    "overTimeAhead4": "15 secondes"
 }

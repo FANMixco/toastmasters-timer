@@ -111,5 +111,15 @@
     "videos": "동영상",
     "easterEggMsg1": "숨겨진 거울을 발견했습니다.",
     "easterEggMsg2": "그 안으로 들어갈 만큼 호기심이 있나요?",
-    "easterEggMsg3": "거울 속으로 들어가기 🪞"
+    "easterEggMsg3": "거울 속으로 들어가기 🪞",
+    "eWarning": "⚠ 깜박이는 시각 효과가 포함되어 있습니다. 광과민성 또는 광과민성 뇌전증이 있는 사용자에게 불편을 줄 수 있습니다.",
+    "ninjaExp": "실행 중 대부분의 컨트롤을 숨깁니다. Premium 사용자를 위해 확장되었습니다.",
+    "overTimeTitle": "초과 시간 기능",
+    "overTimeColor": "초과 시간 색상",
+    "overTimeAheadMsg": "최대 시간에 도달하기 {0} 전에 색상을 표시합니다",
+    "overTimeAhead": "초과 시간 사전 표시",
+    "overTimeAhead1": "0초",
+    "overTimeAhead2": "5초",
+    "overTimeAhead3": "10초",
+    "overTimeAhead4": "15초"
 }

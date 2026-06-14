@@ -111,5 +111,15 @@
     "videos": "Videos",
     "easterEggMsg1": "Encontraste un espejo oculto.",
     "easterEggMsg2": "¿Tienes suficiente curiosidad para cruzarlo?",
-    "easterEggMsg3": "Entra en el espejo 🪞"
+    "easterEggMsg3": "Entra en el espejo 🪞",
+    "eWarning": "⚠ Contiene efectos visuales parpadeantes. Puede causar molestias a usuarios con fotosensibilidad o epilepsia fotosensible.",
+    "ninjaExp": "Oculta la mayoría de los controles durante la reproducción. Ampliado para usuarios Premium.",
+    "overTimeTitle": "Funciones de tiempo excedido",
+    "overTimeColor": "Color de tiempo excedido",
+    "overTimeAheadMsg": "Muestra el color {0} antes de alcanzar el tiempo máximo",
+    "overTimeAhead": "Aviso previo de tiempo excedido",
+    "overTimeAhead1": "0 segundos",
+    "overTimeAhead2": "5 segundos",
+    "overTimeAhead3": "10 segundos",
+    "overTimeAhead4": "15 segundos"
 }

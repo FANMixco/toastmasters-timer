@@ -111,5 +111,15 @@
     "videos": "Filmy",
     "easterEggMsg1": "Znalazłeś ukryte lustro.",
     "easterEggMsg2": "Masz dość ciekawości, by przez nie przejść?",
-    "easterEggMsg3": "Wejdź do lustra 🪞"
+    "easterEggMsg3": "Wejdź do lustra 🪞",
+    "eWarning": "⚠ Zawiera migające efekty wizualne. Może powodować dyskomfort u użytkowników z nadwrażliwością na światło lub padaczką fotogenną.",
+    "ninjaExp": "Ukrywa większość elementów sterowania podczas działania. Rozszerzone dla użytkowników Premium.",
+    "overTimeTitle": "Funkcje przekroczenia czasu",
+    "overTimeColor": "Kolor przekroczenia czasu",
+    "overTimeAheadMsg": "Wyświetla kolor {0} przed osiągnięciem maksymalnego czasu",
+    "overTimeAhead": "Wyprzedzenie przekroczenia czasu",
+    "overTimeAhead1": "0 sekund",
+    "overTimeAhead2": "5 sekund",
+    "overTimeAhead3": "10 sekund",
+    "overTimeAhead4": "15 sekund"
 }

@@ -111,5 +111,15 @@
     "videos": "動画",
     "easterEggMsg1": "隠された鏡を見つけました。",
     "easterEggMsg2": "それをくぐるほど好奇心がありますか？",
-    "easterEggMsg3": "鏡の中へ入る 🪞"
+    "easterEggMsg3": "鏡の中へ入る 🪞",
+    "eWarning": "⚠ 点滅する視覚効果が含まれます。光過敏症または光過敏性てんかんのあるユーザーに不快感を与える可能性があります。",
+    "ninjaExp": "実行中はほとんどの操作ボタンを非表示にします。Premiumユーザー向けに拡張されています。",
+    "overTimeTitle": "時間超過機能",
+    "overTimeColor": "時間超過の色",
+    "overTimeAheadMsg": "最大時間に達する{0}前に色を表示します",
+    "overTimeAhead": "時間超過の事前表示",
+    "overTimeAhead1": "0秒",
+    "overTimeAhead2": "5秒",
+    "overTimeAhead3": "10秒",
+    "overTimeAhead4": "15秒"
 }
