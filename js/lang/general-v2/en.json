@@ -118,6 +118,7 @@
     "overTimeAheadMsg": "Displays color {0} before the maximum time is reached",
     "overTimeAhead": "Over time ahead",
     "eWarning": "⚠ Contains flashing visual effects. May cause discomfort for users with photosensitivity or photosensitive epilepsy.",
+    "flashing": "Flashing mode",
     "overTimeAhead1": "0 seconds",
     "overTimeAhead2": "5 seconds",
     "overTimeAhead3": "10 seconds",
