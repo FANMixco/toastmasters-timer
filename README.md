@@ -1,6 +1,13 @@
 # Toastmasters Timer
 
-[![image](https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif)](https://buymeacoffee.com/fanmixco)
+<p align="center">
+  <a href="https://buymeacoffee.com/fanmixco">
+    <img src="https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif" alt="Buy Me a Coffee" height="65">
+  </a>
+  <a href="https://github.com/sponsors/FANMixco">
+    <img src="https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/88396224b2df8f77969e03746fa964225aa9bc9d/github-sponsors-button-cropped.svg" alt="GitHub Sponsors" height="65">
+  </a>
+</p>
 
 The best [Toastmasters Timer][3] for your meetings, it's simple, fast, and accurate. It was developed by [Federico Navarrete][1] of **[The Leader Ship Toastmasters][2]** in Łódź, Poland.
 
