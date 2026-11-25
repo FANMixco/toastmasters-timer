@@ -3,12 +3,23 @@ window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndex
 
 function dbConn() {
     //Request db creation if it doesn't exist
-    let request = window.indexedDB.open("tmTimerDB", 1);
-    request.onerror = function(evt) {
-        console.log("Database error code: " + evt.target.errorCode);
+    let request;
+    try {
+        // Use the existing version so this origin can also open the Android preview's database.
+        request = window.indexedDB.open('tmTimerDB');
+    } catch (error) {
+        console.error('Could not open timer storage:', error);
+        return;
+    }
+    request.onerror = function() {
+        console.error('Could not open timer storage:', request.error);
     };
     request.onsuccess = function() {
         db = request.result;
+        db.onversionchange = function() {
+            db.close();
+            db = undefined;
+        };
         //Clear all data from the previous meeting
         if (isNewMeeting())
             clearTimetable();

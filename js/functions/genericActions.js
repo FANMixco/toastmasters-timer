@@ -19,16 +19,24 @@ function getSeconds(hms) {
     return (+a[0]) * 3600 + (+a[1]) * 60 + (+a[2]);
 }
 
-function showSnackbar(msg, tout = 1500) {
-    var data = {
-        message: msg,
-        timeout: tout
-    };
-    snackbarMsg.MaterialSnackbar.showSnackbar(data);
+const timerStatus = document.getElementById('snackbarMsg');
+const statusQueue = [];
+let statusTimeout;
+
+function showSnackbar(message, timeout = 1500) {
+    statusQueue.push({ message, timeout: timeout || 2750 });
+    if (statusTimeout === undefined) showNextStatus();
 }
 
-function refreshControls() {
-    setTimeout(function() {
-        componentHandler.upgradeAllRegistered();
-    }, 10);
+function showNextStatus() {
+    const next = statusQueue.shift();
+    if (!next) {
+        statusTimeout = undefined;
+        timerStatus.classList.remove('is-visible');
+        timerStatus.textContent = '';
+        return;
+    }
+    timerStatus.textContent = next.message;
+    timerStatus.classList.add('is-visible');
+    statusTimeout = setTimeout(showNextStatus, next.timeout);
 }
