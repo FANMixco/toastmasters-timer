@@ -27,7 +27,7 @@ if (!dialogSetTime.showModal) {
 }
 
 btnSetTime.addEventListener('click', function() {
-    document.getElementById(`${chosenInputText}`).parentElement.MaterialTextfield.change(`${txtH.value}:${txtM.value}:${txtS.value}`);
+    document.getElementById(chosenInputText).value = `${txtH.value}:${txtM.value}:${txtS.value}`;
     hasCustomChange = true;
     dialogSetTime.close();
 });

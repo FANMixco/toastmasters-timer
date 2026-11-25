@@ -9,21 +9,29 @@ function setDbConf() {
 }
 
 function getSelectedIDs() {
-    let ids = [];
-    Array.from(document.getElementsByClassName("chkChoose")).forEach(function(element) {
-        if (element.matches('.is-checked'))
-            ids.push(parseInt(element.querySelectorAll('input')[0].id.replace("chk", "")));
+    return Array.from(speakers.querySelectorAll('.result-checkbox:checked'), checkbox => Number(checkbox.value));
+}
+
+function setResultChecks(checked) {
+    speakers.querySelectorAll('.result-checkbox').forEach(checkbox => {
+        checkbox.checked = checked;
     });
-    return ids;
 }
 
 function countTimetable() {
+    if (!db) {
+        showSnackbar('Results storage is unavailable.', 4000);
+        return;
+    }
     let transaction = db.transaction(["timeTable"], "readonly").objectStore("timeTable").count();
     transaction.onsuccess = function() {
         if (transaction.result > 0) {
             imgMultiple.src = "img/icons-svg/checkbox-outline.svg";
+            multipleEnabled = false;
+            tickAll.checked = true;
             hideCheckBoxes();
             printTable();
+            titleMeeting.textContent = lngObject.meetingAt + ' ' + moment().format(dateFormat);
             dialogTimeTable.showModal();
         } else
             showSnackbar(lngObject.noSpeakers);
@@ -32,21 +40,20 @@ function countTimetable() {
 
 function hideCheckBoxes() {
     Array.from(document.getElementsByClassName("tdDel")).forEach(function(element) {
-        element.style.display = 'none';
+        element.hidden = true;
     });
     document.getElementById('thDel').classList.add('hiddenObject');
 }
 
 function showCheckBoxes() {
     Array.from(document.getElementsByClassName("tdDel")).forEach(function(element) {
-        element.style.display = 'block';
+        element.hidden = false;
     });
     document.getElementById('thDel').classList.remove('hiddenObject');
 }
 
 function printTable() {
-    let speakersBody = document.getElementById('speakers');
-    speakersBody.innerHTML = '';
+    speakers.replaceChildren();
     results = [];
 
     let transaction = db.transaction(["timeTable"], "readwrite").objectStore("timeTable").openCursor();
@@ -98,21 +105,29 @@ function printTable() {
                 disqualified: cursor.value.disqualified
             });
 
-            speakersBody.innerHTML += `<tr id="tr${cursor.value.id}" style="background:${tempColor};color:${defaultColor}"><td class="tdDel mdl-data-table__cell--non-numeric hiddenObject"><label class="chkOpt chkChoose mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chk${cursor.value.id}"><input type="checkbox" id="chk${cursor.value.id}" class="mdl-checkbox__input" checked="checked" /></label></td><td class="mdl-data-table__cell--non-numeric">${cursor.value.member}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.role}</td><td class="mdl-data-table__cell--non-numeric">${cursor.value.time}</td></tr>`;
+            const result = cursor.value;
+            const row = speakers.insertRow();
+            row.id = 'tr' + result.id;
+            row.style.background = tempColor;
+            row.style.color = defaultColor;
+            const selectCell = row.insertCell();
+            selectCell.className = 'tdDel ui-data-table__cell--non-numeric';
+            selectCell.hidden = !multipleEnabled;
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'ui-checkbox result-checkbox';
+            checkbox.value = result.id;
+            checkbox.checked = tickAll.checked;
+            checkbox.setAttribute('aria-label', result.member || lngObject.pMember);
+            selectCell.append(checkbox);
+            for (const text of [result.member, result.role, result.time]) {
+                const cell = row.insertCell();
+                cell.className = 'ui-data-table__cell--non-numeric';
+                cell.textContent = text;
+            }
             cursor.continue();
-        } else {
-            refreshControls();
-            addCheckTaps();
         }
     };
-}
-
-function addCheckTaps() {
-    Array.from(document.querySelectorAll('[id^=chk]')).forEach(function(element) {
-        element.addEventListener('change', function() {
-            document.getElementById('lblTickAll').MaterialCheckbox.uncheck();
-        });
-    });
 }
 
 function deleteTimetable() {
@@ -122,18 +137,16 @@ function deleteTimetable() {
 function deleteByIDs() {
     let ids = getSelectedIDs();
     let transaction = db.transaction(["timeTable"], "readwrite");
-    for (i = 0; i < ids.length; i++) {
-        transaction.objectStore("timeTable").delete(ids[i]);
-        document.getElementById(`tr${ids[i]}`).style.display = 'none';
+    for (const id of ids) {
+        transaction.objectStore("timeTable").delete(id);
+        document.getElementById('tr' + id).remove();
     }
-    refreshControls();
     let objectStoreRequest = transaction.objectStore("timeTable").count();
     objectStoreRequest.onsuccess = function() {
         if (objectStoreRequest.result === 0) {
             showSnackbar(lngObject.noSpeakers);
             dialogTimeTable.close();
-        } else
-            addCheckTaps();
+        }
         saveData();
     };
     dialogConfirm.close();

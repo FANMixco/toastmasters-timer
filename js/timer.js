@@ -45,17 +45,13 @@ const displayOutput = document.querySelector('.display-remain-time'),
     clapM = document.getElementById('clapM'),
     clapS = document.getElementById('clapS'),
     cmbSpeechType = document.getElementById('cmbSpeechType'),
+    btnEditCustom = document.getElementById('btnEditCustom'),
     remainTime = document.getElementById('remainTime'),
-    divSpeaker = document.getElementById('divSpeaker'),
-    snackbarMsg = document.getElementById('snackbarMsg'),
     tickAll = document.getElementById('tickAll'),
     progressBar = document.querySelector('.e-c-progress'),
     indicator = document.getElementById('e-indicator'),
     pointer = document.getElementById('e-pointer'),
     speakers = document.getElementById('speakers'),
-    customMin = document.getElementById('customMin'),
-    customAvg = document.getElementById('customAvg'),
-    customMax = document.getElementById('customMax'),
     ddLang = document.getElementById('ddLang'),
     invert100 = "invert(100%)",
     invert0 = "invert(0%)",
@@ -76,9 +72,7 @@ let greenBgnCss = defGreenBgn,
 // Detects if device is in standalone mode
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-let titleMeeting = document.getElementById('titleMeeting');
-
-let externalContainer = null;
+const titleMeeting = document.getElementById('titleMeeting');
 
 let clappingTime = 30,
     wholeTime = 30,
@@ -90,8 +84,7 @@ let clappingTime = 30,
     green = 0,
     yellow = 0,
     red = 0,
-    timeLeft = 0,
-    totalCount = 0;
+    timeLeft = 0;
 
 let isPaused = false,
     isStarted = false,
@@ -106,7 +99,6 @@ let isPaused = false,
     multipleEnabled = false,
     isNinjaMode = false,
     isTextPreviewMode = false,
-    isFirstTime = false,
     isColorBlindnessEnabled = false;
 
 let dateFormat = "DD/MM/YYYY",
@@ -144,6 +136,7 @@ let times = [
 ];
 
 let intervalTimer;
+let playEnableTimeout;
 
 var results = [];
 
@@ -235,6 +228,7 @@ function resetState() {
     btnPause.classList.remove('pause');
     btnPause.classList.add('play');
     clearInterval(intervalTimer);
+    clearTimeout(playEnableTimeout);
     wholeTime = -1;
     displayTimeLeft(wholeTime);
     wholeTime = 0;
@@ -243,11 +237,13 @@ function resetState() {
     document.body.style.background = lastColor;
     clappingStarted = false;
     setInitialValues();
-    txtSpeaker.value = "";
-    divSpeaker.className = 'mdl-textfield mdl-js-textfield';
+    txtSpeaker.value = '';
     btnInvert.disabled = false;
-    btnRestart.disabled = false;
+    btnPause.disabled = false;
+    btnRestart.disabled = true;
+    btnStop.disabled = true;
     cmbSpeechType.disabled = false;
+    btnEditCustom.disabled = false;
     disableLinks(false);
     isStopped = true;
     isPaused = false;
@@ -260,6 +256,7 @@ function resetState() {
 
 function timer(seconds) { //counts time, takes seconds
     let remainTime = Date.now() + seconds * 1000;
+    timeLeft = seconds;
     displayTimeLeft(seconds);
 
     intervalTimer = setInterval(() => {
@@ -282,7 +279,6 @@ function timer(seconds) { //counts time, takes seconds
                 startClapping();
             clappingStarted = true;
         }
-        totalCount++;
         displayTimeLeft(timeLeft);
     }, 1000);
 }
@@ -295,119 +291,6 @@ function execAction(bgn, color, icon) {
     lastColor = color;
     browserChangeFavIcon(icon);
 }
-if (os !== "Android" || navigator.userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)) {
-    window.onresize = () => {
-        resizeScreen();
-    };
-}
-
-function resizeScreen() {
-    const isPhabletPort = window.innerHeight > window.innerWidth * 1.9 && window.innerHeight > 900;
-    let scaleVal = window.innerHeight / 600;
-    if (window.innerWidth < 400 && window.innerHeight >= window.innerWidth * 2.333) {
-        scaleVal = window.innerWidth / 400;
-        if (externalContainer === null) {
-            let bodyTmp = document.body;
-            let divTmp = document.createElement("div");
-            divTmp.id = 'externalContainer';
-            bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
-        }
-        externalContainer = document.getElementById('externalContainer');
-        let sContainer = document.getElementById('superContainer');
-        externalContainer.append(sContainer);
-        externalContainer.style.height = `${window.innerHeight}px`;
-        sContainer.style.transformOrigin = "50% 0% 0px";
-
-        setTimeout(() => {
-            sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(() => {
-                let cHeight = (1 + scaleVal) * window.innerHeight;
-                if (cHeight < 514)
-                    cHeight = 514;
-                sContainer.style.height = `${cHeight}px`;
-            }, 100);
-        }, 100);
-    } else if (isPhabletPort) {
-        scaleVal = window.innerWidth / 325;
-        const sContainer = document.getElementById('superContainer');
-
-        setTimeout(() => {
-            sContainer.style.height = `${window.innerHeight}px`;
-            sContainer.style.transformOrigin = "50% 0% 0px";
-            sContainer.style.transform = `scale(${scaleVal})`;
-        }, 100);
-
-        setTimeout(() => {
-            const tmpDiv = document.getElementById('divSpeaker');
-            if (tmpDiv.getBoundingClientRect().width > window.outerWidth) {
-                sContainer.style.transform = `scale(${scaleVal - (scaleVal - tmpDiv.getBoundingClientRect().width / window.outerWidth)})`;
-            }
-
-            document.getElementById('innerPlayContainer').style.setProperty('top', '27%', 'important');
-            document.querySelector('#playControl').style.top = '-30px';
-        }, 100);
-    } else if (window.innerHeight < 514) {
-        if (externalContainer === null) {
-            let bodyTmp = document.body;
-            let divTmp = document.createElement("div");
-            divTmp.id = 'externalContainer';
-            bodyTmp.insertBefore(divTmp, bodyTmp.firstChild);
-        }
-        externalContainer = document.getElementById('externalContainer');
-        let sContainer = document.getElementById('superContainer');
-        externalContainer.append(sContainer);
-        externalContainer.style.height = `${window.innerHeight}px`;
-        sContainer.style.transformOrigin = "50% 0% 0px";
-
-        setTimeout(() => {
-            sContainer.style.transform = `scale(${scaleVal})`;
-            setTimeout(() => {
-                let cHeight = (1 + scaleVal) * window.innerHeight;
-                if (cHeight < 514)
-                    cHeight = 514;
-                sContainer.style.height = `${cHeight}px`;
-            }, 100);
-        }, 100);
-    } else {
-        let sContainer = document.getElementById('superContainer');
-        sContainer.style.height = `${window.innerHeight}px`;
-        sContainer.style.transformOrigin = "50% 0% 0px";
-
-        setTimeout(() => {
-            sContainer.style.transform = `scale(${scaleVal})`;
-        }, 100);
-
-        setTimeout(() => {
-            if (cmbSpeechType.getBoundingClientRect().width > window.outerWidth)
-                sContainer.style.transform = `scale(${scaleVal - (scaleVal - cmbSpeechType.getBoundingClientRect().width / window.outerWidth)})`;
-        }, 100);
-    }
-}
-
-function resizeSelect() {
-    setTimeout(() => {
-        try {
-            document.getElementsByClassName('mdl-menu__outline')[0].style.width = '300px';
-            document.getElementsByClassName('mdl-menu__container')[0].style.width = '300px';
-            document.getElementsByClassName('mdl-menu__outline')[0].style.height = '310px';
-            document.getElementsByClassName('mdl-menu__container')[0].style.height = '310px';
-            let mdlMenu = document.getElementsByClassName('mdl-menu')[0];
-            let res = mdlMenu.style.clip.split(", ");
-            if (res.length > 1) {
-                res[1] = res[1].replace("px", "");
-                res[2] = res[2].replace("px", "");
-
-                let multiplier = 1;
-
-                if (browserResult.browser.name === 'Edge' && parseFloat(browserResult.browser.version) < 19)
-                    multiplier = 2;
-
-                mdlMenu.style.clip = `${res[0]}, ${300 * multiplier}px, ${300 * multiplier}px, ${res[3]}`;
-            }
-        } catch (e) { }
-    }, 50);
-}
-
 function pauseTimer() {
     if (minimum === 0 && maximum === 0 && average === 0 || selected === -1) {
         if (isCustom)
@@ -424,6 +307,8 @@ function pauseTimer() {
 
     btnInvert.disabled = true;
     cmbSpeechType.disabled = true;
+    btnEditCustom.disabled = true;
+    btnStop.disabled = false;
 
     if (!isStarted || timeLeft === undefined) {
         activateWakeLock();
@@ -433,7 +318,7 @@ function pauseTimer() {
         btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
-        setTimeout(() => {
+        playEnableTimeout = setTimeout(() => {
             btnPause.disabled = false;
         }, 500);
     } else if (isPaused) {
@@ -442,7 +327,7 @@ function pauseTimer() {
         btnPause.disabled = true;
         btnPause.classList.remove('play');
         btnPause.classList.add('pause');
-        setTimeout(() => {
+        playEnableTimeout = setTimeout(() => {
             btnPause.disabled = false;
         }, 500);
         timer(timeLeft);
@@ -457,9 +342,8 @@ function pauseTimer() {
     }
 
     btnRestart.disabled = !isPaused;
-
-    if (btnRestart.disabled) {
-        imgRestart.src = "img/icons-svg/restart-off.svg";
+    if (!isPaused) {
+        const sponsor = document.getElementById('bmc-wbtn');
         fade.to(document.getElementById('divSpeechType'), fastTransition, 0.1);
         fade.to(document.getElementById('divSpeaker'), fastTransition, 0.1);
         fade.to(document.getElementById('options'), fastTransition, 0.1);
@@ -468,14 +352,13 @@ function pauseTimer() {
         if (isNinjaMode) {
             fade.to(document.getElementById('controls'), fastTransition, 0.5);
             fade.to(document.getElementsByClassName('circle')[0], fastTransition, 0);
-            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0);
+            if (sponsor) fade.to(sponsor, fastTransition, 0);
         }
         else {
-            fade.to(document.getElementById('bmc-wbtn'), fastTransition, 0.1);
+            if (sponsor) fade.to(sponsor, fastTransition, 0.1);
         }
-        document.getElementById('bmc-wbtn').style.pointerEvents = 'none';
+        if (sponsor) sponsor.style.pointerEvents = 'none';
     } else {
-        imgRestart.src = "img/icons-svg/restart.svg";
         unfadeElements();
     }
 }
@@ -487,27 +370,23 @@ function unfadeElements() {
     fade.to(document.getElementsByTagName('footer')[0], fastTransition, 1.5);
     fade.to(document.getElementById('controls'), fastTransition, 1.5);
     fade.to(document.getElementsByClassName('circle')[0], fastTransition, 1.5);
-    fade.to(document.getElementById('bmc-wbtn'), fastTransition, 1.5);
-    document.getElementById('bmc-wbtn').style.pointerEvents = '';
+    const sponsor = document.getElementById('bmc-wbtn');
+    if (sponsor) {
+        fade.to(sponsor, fastTransition, 1.5);
+        sponsor.style.pointerEvents = '';
+    }
 }
 
 function displayTimeLeft(timeLeft) { //displays time on the input
     let fixedTime = maximum - timeLeft;
     let hours = Math.floor(fixedTime / 3600);
-    let minutes = Math.floor(fixedTime / 60);
+    let minutes = Math.floor(fixedTime / 60) % 60;
     let seconds = fixedTime % 60;
     let displayString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     displayOutput.textContent = displayString;
     if (!isContestMode && isStarted)
         browserChangeTitle(displayString);
     update(timeLeft, wholeTime);
-}
-
-function setDropDownValue(idVal, idContainer) {
-    try {
-        document.getElementById(idVal).dataset.selected = "true";
-        getmdlSelect.init(idContainer);
-    } catch (e) { }
 }
 
 function validateProperIntervals() {
@@ -527,57 +406,27 @@ function setBasicIntervals() {
     maximum = times[selected][2];
 }
 
+function openCustomDialog() {
+    hasCustomChange = false;
+    dialogCustomTimes.showModal();
+}
+
 function changeEventHandler() {
-    let wasCustom = selected === 99;
-
-    selected = parseInt(hiddenSpeechType.value);
-
-    if (selected !== 99) {
-        setBasicIntervals();
-        wholeTime = maximum;
-        setLocalStorage("wholeTime", maximum);
-        updateDisplay();
-        isCustom = false;
-    } else {
-        if (!wasCustom) {
-            minimum = 0;
-            maximum = 0;
-            average = 0;
-
-            txtCustom.parentElement.MaterialTextfield.change(lngObject.opt12);
-        } else if (wasCustom && !isFirstTime) {
-            setCustomText();
-
-            let hours = Math.floor(minimum / 3600);
-            let minutes = Math.floor(minimum / 60);
-            let seconds = minimum % 60;
-
-            txtMin.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
-
-            hours = Math.floor(average / 3600);
-            minutes = Math.floor(average / 60);
-            seconds = average % 60;
-
-            txtAvg.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
-
-            hours = Math.floor(maximum / 3600);
-            minutes = Math.floor(maximum / 60);
-            seconds = maximum % 60;
-
-            txtMax.parentElement.MaterialTextfield.change(getDisplayString(hours, minutes, seconds));
-        }
-
-        if (deviceDetector.device === 'phone') {
-            setTimeout(() => {
-                let bCustomTimes = document.getElementById('bodyCustomTimes');
-                bCustomTimes.style.height = `${bCustomTimes.clientHeight * 100 / window.innerHeight}%`;
-            }, 100);
-        }
-
-        hasCustomChange = false;
-        isCustom = true;
-        dialogCustomTimes.showModal();
+    selected = Number(cmbSpeechType.value);
+    isCustom = selected === 99;
+    btnEditCustom.hidden = !isCustom;
+    if (isCustom) {
+        minimum = 0;
+        average = 0;
+        maximum = 0;
+        txtCustom.value = cmbSpeechType.selectedOptions[0].textContent;
+        openCustomDialog();
+        return;
     }
+    setBasicIntervals();
+    wholeTime = maximum;
+    setLocalStorage("wholeTime", maximum);
+    updateDisplay();
 }
 
 function startBeep() {
@@ -744,6 +593,7 @@ function setClappingImg() {
 function invertColors() {
     let memoryGameIframe = document.getElementById('memoryGameIframe');
     let currentInv = "";
+    document.documentElement.classList.toggle("dark-timer", selectedColor === 1);
     if (selectedColor === 1) {
         currentInv = invert100;
         setInvFilter(dialogTimeTable, invert100);
@@ -754,9 +604,6 @@ function invertColors() {
         setInvFilter(memoryGameIframe, invert100);
         setInvFilter(dialogEasterEgg, invert100);
         setInvFilter(dialogClapping, invert100);
-        setInvFilter(customMin, invert100);
-        setInvFilter(customAvg, invert100);
-        setInvFilter(customMax, invert100);
         setInvFilter(speakers, invert100);
         setInvFilter(dialogAbout, invert100);
         setInvFilter(document.body, invert100);
@@ -777,9 +624,6 @@ function invertColors() {
         setInvFilter(memoryGameIframe, invert0);
         setInvFilter(dialogEasterEgg, invert0);
         setInvFilter(dialogClapping, invert0);
-        setInvFilter(customMin, invert0);
-        setInvFilter(customAvg, invert0);
-        setInvFilter(customMax, invert0);
         setInvFilter(speakers, invert0);
         setInvFilter(dialogAbout, invert0);
         setInvFilter(document.body, invert0);
@@ -799,33 +643,31 @@ function invertColors() {
 }
 
 function storeTime(isTimeStored) {
-    if ((minimum === 0 && maximum === 0 && average === 0) || (totalCount === 0)) return;
-    deactivateWakeLock();
-    stopClapping();
+    if (!isStarted) return;
 
-    if (isTimeStored) {
-        let counter = maximum - timeLeft;
-        let titleSpeechType = cmbSpeechType.value;
-        if (selected === 99)
-            titleSpeechType = txtCustom.value;
-        addNewTime(txtSpeaker.value, titleSpeechType, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, counter > maximum + clappingTime || counter < minimum - clappingTime);
+    try {
+        deactivateWakeLock();
+        stopClapping();
+
+        const counter = maximum - timeLeft;
+        if (isTimeStored && counter > 0) {
+            const titleSpeechType = isCustom ? txtCustom.value : cmbSpeechType.selectedOptions[0].textContent;
+            const disqualified = counter > maximum + clappingTime || counter < minimum - clappingTime;
+            addNewTime(txtSpeaker.value, titleSpeechType, getTimeStamp(minimum), getTimeStamp(average), getTimeStamp(maximum), getTimeStamp(counter), lastColor, disqualified);
+        }
+    } catch (error) {
+        console.error('Could not save timer result:', error);
+        showSnackbar('Could not save the time.', 4000);
+    } finally {
+        green = 0;
+        yellow = 0;
+        red = 0;
+        basicReset();
+        maximum = isCustom ? getMaxCustom() : times[selected][2];
+        wholeTime = maximum;
+        browserChangeTitle('');
+        unfadeElements();
     }
-
-    //Perform the reset before selecting the maximum
-    green = 0;
-    yellow = 0;
-    red = 0;
-    totalCount = 0;
-    basicReset();
-
-    if (!isCustom)
-        maximum = times[selected][2];
-    else
-        maximum = getMaxCustom();
-
-    wholeTime = maximum;
-    browserChangeTitle('');
-    unfadeElements();
 }
 
 function getMinCustom() {
@@ -870,6 +712,8 @@ function saveChanges() {
         dialogCustomTimes.close();
     }
 }
+
+btnEditCustom.addEventListener('click', openCustomDialog);
 
 btnPause.addEventListener('click', (event) => {
     if (event.detail === 1)
@@ -933,11 +777,9 @@ btnBeep.addEventListener('click', (event) => {
 
 btnClap.addEventListener('click', (event) => {
     if (event.detail === 3) {
+        clapM.value = Math.floor(clappingTime / 60);
+        clapS.value = clappingTime % 60;
         dialogClapping.showModal();
-        if (clappingTime === 30) {
-            setDropDownValue("clapM0", "#divClapM");
-            setDropDownValue("clapS30", "#divClapS");
-        }
     } else {
         isClappingEnabled = !isClappingEnabled;
         setClappingImg();
@@ -948,9 +790,11 @@ btnClap.addEventListener('click', (event) => {
 btnSave.addEventListener('click', saveChanges);
 
 btnSaveClap.addEventListener('click', () => {
-    clappingTime = getSeconds(`00:${clapM.value}:${clapS.value}`);
+    clappingTime = Number(clapM.value) * 60 + Number(clapS.value);
     dialogClapping.close();
 });
+
+dialogClapping.querySelector('.close').addEventListener('click', () => dialogClapping.close());
 
 if (!dialogTimeTable.showModal) {
     dialogPolyfill.registerDialog(dialogTimeTable);
@@ -1066,11 +910,6 @@ btnEmail.addEventListener('click', () => { });
 
 btnAbout.addEventListener('click', () => {
     dialogAbout.showModal();
-    if (deviceDetector.device === 'phone') {
-        setTimeout(() => {
-            dialogAbout.style.height = `${dialogAbout.innerHeight * 100 / window.outerHeight}%`;
-        }, 100);
-    }
 });
 
 txtMin.addEventListener('click', () => {
@@ -1088,12 +927,8 @@ txtAvg.addEventListener('click', () => {
 btnDownload.addEventListener('click', browserExport);
 
 btnMultiple.addEventListener('click', () => {
-    Array.from(document.getElementsByClassName("mdl-js-checkbox")).forEach((element) => {
-        let _this = element;
-        setTimeout(() => {
-            _this.MaterialCheckbox.check();
-        }, 10);
-    });
+    tickAll.checked = true;
+    setResultChecks(true);
     if (!multipleEnabled) {
         imgMultiple.src = "img/icons-svg/checkbox-blank-outline.svg";
         showCheckBoxes();
@@ -1102,7 +937,6 @@ btnMultiple.addEventListener('click', () => {
         hideCheckBoxes();
     }
     multipleEnabled = !multipleEnabled;
-    refreshControls();
 });
 
 dialogTimeTable.querySelector('.close').addEventListener('click', () => {
@@ -1140,17 +974,6 @@ txtCustom.addEventListener("keyup", (e) => {
         hideKeyboard(txtCustom);
 });
 
-if (os === "Android") {
-    txtSpeaker.addEventListener("onfocus", () => {
-        let y = document.getElementById("playControl").getBoundingClientRect().y;
-        document.body.marginTop = `-${y}px`;
-    });
-
-    txtSpeaker.addEventListener("onblur", () => {
-        document.body.marginTop = '0px';
-    });
-}
-
 txtSpeaker.addEventListener("keyup", (e) => {
     if (e.key === 'Enter')
         hideKeyboard(txtSpeaker);
@@ -1159,8 +982,6 @@ txtSpeaker.addEventListener("keyup", (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     cmbSpeechType.onchange = changeEventHandler;
 }, false);
-
-cmbSpeechType.addEventListener('click', resizeSelect);
 
 maximum = 0;
 wholeTime = 0;
@@ -1189,269 +1010,57 @@ initializeDB(currentDB, latestDB);
 lastColor = bgColors[selectedColor];
 invertColors();
 
-setTimeout(() => {
-    let bodyAbout = document.getElementById('bodyAbout');
-
-    let bodyTranslators = document.getElementById('bodyTranslators');
-
-    let bodyHelp = document.getElementById('bodyHelp');
-
-    if (deviceDetector.device == 'phone' || deviceDetector.device == 'mobile') {
-        //Timetable Dialog
-        let timeTableTmp = document.getElementById('timeTable');
-        let divTitleContainerTmp = document.createElement("div");
-        divTitleContainerTmp.className = "titleContainer";
-
-        let divTitleInnerContainer = document.createElement("div");
-        divTitleInnerContainer.className = "titleInnerContainer";
-
-        let spanCloseMobile = document.createElement("span");
-        spanCloseMobile.className = "closeMobile";
-        spanCloseMobile.id = 'btnCloseMobileSpan';
-
-        let spanCloseIcon = document.createElement("img");
-        spanCloseIcon.className = "btnCloseMobile";
-        spanCloseIcon.src = "img/icons-svg/close.svg";
-        spanCloseIcon.alt = "close";
-
-        let spanTitle = document.createElement("span");
-        spanTitle.id = 'spanTitle';
-
-        spanCloseMobile.appendChild(spanCloseIcon);
-
-        divTitleInnerContainer.appendChild(spanCloseMobile);
-        divTitleInnerContainer.appendChild(spanTitle);
-
-        divTitleContainerTmp.appendChild(divTitleInnerContainer);
-
-        timeTableTmp.insertBefore(divTitleContainerTmp, timeTableTmp.firstChild);
-
-        titleMeeting = document.getElementById('titleMeeting');
-        titleMeeting.classList.remove('mdl-dialog__title');
-        titleMeeting.style.margin = '0';
-        titleMeeting.style.marginTop = '16px';
-        titleMeeting.style.fontWeight = 1000;
-        titleMeeting.style.fontSize = '1.25em';
-        titleMeeting.style.display = 'inline';
-
-        document.getElementById('spanTitle').append(titleMeeting);
-
-        document.getElementById('btnCloseMeeting').style.display = 'none';
-
-        document.getElementById('btnCloseMobileSpan').addEventListener('click', () => {
-            dialogTimeTable.close();
-        });
-
-        //Custom Dialog
-        let customTimesTmp = document.getElementById('customTimes');
-        let divTitleContainerCT = document.createElement("div");
-        divTitleContainerCT.className = "titleContainer";
-
-        let divTitleInnerContainerCT = document.createElement("div");
-        divTitleInnerContainerCT.className = "titleInnerContainer";
-
-        let spanCloseMobileCT = document.createElement("span");
-        spanCloseMobileCT.className = "closeMobile";
-        spanCloseMobileCT.id = 'btnCloseMobileCustom';
-
-        let spanCloseIconCT = document.createElement("img");
-        spanCloseIconCT.className = "btnCloseMobile";
-        spanCloseIconCT.src = "img/icons-svg/close.svg";
-        spanCloseIconCT.alt = "close";
-
-        let spanTitleCT = document.createElement("span");
-        spanTitleCT.id = 'spanTitleCustom';
-
-        let customTitleCT = document.createElement("h4");
-        customTitleCT.innerHTML = '&nbsp;';
-        customTitleCT.id = 'customTitle';
-
-        let spanSaveCT = document.createElement("span");
-        spanSaveCT.id = 'spanSave';
-        spanSaveCT.className = 'btnRight';
-
-        spanCloseMobileCT.appendChild(spanCloseIconCT);
-        spanTitleCT.appendChild(customTitleCT);
-
-        divTitleInnerContainerCT.appendChild(spanCloseMobileCT);
-        divTitleInnerContainerCT.appendChild(spanTitleCT);
-        divTitleInnerContainerCT.appendChild(spanSaveCT);
-
-        divTitleContainerCT.appendChild(divTitleInnerContainerCT);
-
-        customTimesTmp.insertBefore(divTitleContainerCT, customTimesTmp.firstChild);
-
-        let customTitleTmp = document.getElementById('customTitle');
-        customTitleTmp.classList.remove('mdl-dialog__title');
-        customTitleTmp.style.margin = '0';
-        customTitleTmp.style.marginTop = '16px';
-        customTitleTmp.style.fontWeight = 1000;
-        customTitleTmp.style.fontSize = '1.25em';
-        customTitleTmp.style.display = 'inline';
-
-        document.getElementById('btnCloseMobileCustom').addEventListener('click', () => {
+document.querySelectorAll('.dialog-close-icon').forEach(button => {
+    const dialog = button.closest('dialog');
+    const close = dialog.querySelector('button.close');
+    button.setAttribute('aria-labelledby', close.id);
+    button.addEventListener('click', () => close.click());
+    if (dialog === dialogCustomTimes) {
+        dialog.addEventListener('cancel', event => {
+            event.preventDefault();
             closeCustomDialog();
         });
-
-        document.getElementById('spanSave').appendChild(document.getElementById('btnSave'));
-
-        document.getElementById('footerCustom').style.display = 'none';
-        document.getElementById('btnCloseCustom').style.display = 'none';
-
-        //About
-        let aboutDialogAD = document.getElementById('aboutDialog');
-        let divTitleContainerAD = document.createElement("div");
-        divTitleContainerAD.className = "titleContainer";
-
-        let divTitleInnerContainerAD = document.createElement("div");
-        divTitleInnerContainerAD.className = "titleInnerContainer";
-
-        let spanCloseMobileAD = document.createElement("span");
-        spanCloseMobileAD.className = "closeMobile";
-        spanCloseMobileAD.id = 'btnCloseMobileAbout';
-
-        let spanCloseIconAD = document.createElement("img");
-        spanCloseIconAD.className = "btnCloseMobile";
-        spanCloseIconAD.src = "img/icons-svg/close.svg";
-        spanCloseIconAD.alt = "close";
-
-        let spanTitleAD = document.createElement("span");
-        spanTitleAD.id = 'spanTitleAbout';
-
-        let aboutTitleAD = document.createElement("h4");
-        aboutTitleAD.innerHTML = '&nbsp;';
-        aboutTitleAD.id = 'aboutTitle';
-        aboutTitleAD.style.margin = '0';
-        aboutTitleAD.style.marginTop = '16px';
-        aboutTitleAD.style.fontWeight = 1000;
-        aboutTitleAD.style.fontSize = '1.25em';
-        aboutTitleAD.style.display = 'inline';
-
-        spanCloseMobileAD.appendChild(spanCloseIconAD);
-        spanTitleAD.appendChild(aboutTitleAD);
-
-        divTitleInnerContainerAD.appendChild(spanCloseMobileAD);
-        divTitleInnerContainerAD.appendChild(spanTitleAD);
-
-        divTitleContainerAD.appendChild(divTitleInnerContainerAD);
-
-        aboutDialogAD.insertBefore(divTitleContainerAD, aboutDialogAD.firstChild);
-
-        //Easter Egg
-        let aboutDialogEE = document.getElementById('easterEggDialog');
-        let divTitleContainerEE = document.createElement("div");
-        divTitleContainerEE.className = "titleContainer";
-
-        let divTitleInnerContainerEE = document.createElement("div");
-        divTitleInnerContainerEE.className = "titleInnerContainer";
-
-        let spanCloseMobileEE = document.createElement("span");
-        spanCloseMobileEE.className = "closeMobile";
-        spanCloseMobileEE.id = 'btnCloseMobileEasterEgg';
-
-        let spanCloseIconEE = document.createElement("img");
-        spanCloseIconEE.className = "btnCloseMobile";
-        spanCloseIconEE.src = "img/icons-svg/close.svg";
-        spanCloseIconEE.alt = "close";
-
-        let spanTitleEE = document.createElement("span");
-        spanTitleEE.id = 'spanTitleEasterEgg';
-
-        let easterEggTitleEE = document.createElement("h4");
-        easterEggTitleEE.innerHTML = '&nbsp;';
-        easterEggTitleEE.id = 'easterEggTitle';
-        easterEggTitleEE.style.margin = '0';
-        easterEggTitleEE.style.marginTop = '16px';
-        easterEggTitleEE.style.fontWeight = 1000;
-        easterEggTitleEE.style.fontSize = '1.25em';
-        easterEggTitleEE.style.display = 'inline';
-
-        spanCloseMobileEE.appendChild(spanCloseIconEE);
-        spanTitleEE.appendChild(easterEggTitleEE);
-
-        divTitleInnerContainerEE.appendChild(spanCloseMobileEE);
-        divTitleInnerContainerEE.appendChild(spanTitleEE);
-
-        divTitleContainerEE.appendChild(divTitleInnerContainerEE);
-
-        aboutDialogEE.insertBefore(divTitleContainerEE, aboutDialogEE.firstChild);
-
-        document.getElementById('footerEasterEgg').style.display = 'none';
-        document.getElementById('btnCloseIframe').style.display = 'none';
-
-        let spanFiveStars = document.createElement("span");
-        spanFiveStars.id = 'spanFiveStars';
-        spanFiveStars.className = 'btnRight';
-
-        divTitleInnerContainerAD.appendChild(spanFiveStars);
-
-        document.getElementById('spanFiveStars').appendChild(document.getElementById('btnSponsor2Us'));
-
-        document.getElementById('btnCloseMobileAbout').addEventListener('click', () => {
-            dialogAbout.close();
-        });
-
-        document.getElementById('btnCloseMobileEasterEgg').addEventListener('click', () => {
-            dialogEasterEgg.close();
-        });
-
-        document.getElementById('divCloseAbout').style.display = 'none';
-
-        bodyAbout.style.height = `${getBodyHeight() * 0.7}px`;
-
-        bodyTranslators.style.height = `${getBodyHeight() * 0.7}px`;
-
-        bodyHelp.style.height = `${getBodyHeight() * 0.7}px`;
     }
-    else {
-        let bodyApp = document.body;
-        if (typeof HTMLDialogElement !== 'function') {
-            bodyAbout.style.height = `${bodyApp.offsetHeight * 0.8}px`;
+});
 
-            bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.8}px`;
+const aboutTabs = Array.from(dialogAbout.querySelectorAll('[role="tab"]'));
 
-            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.8}px`;
+function activateAboutTab(index) {
+    aboutTabs.forEach((tab, tabIndex) => {
+        const active = tabIndex === index;
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+    });
+    aboutTabs[index].focus();
+}
+
+aboutTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateAboutTab(index));
+    tab.addEventListener('keydown', event => {
+        const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+        let next;
+        if (step) {
+            const direction = getComputedStyle(tab).direction === 'rtl' ? -1 : 1;
+            next = (index + step * direction + aboutTabs.length) % aboutTabs.length;
+        } else if (event.key === 'Home') {
+            next = 0;
+        } else if (event.key === 'End') {
+            next = aboutTabs.length - 1;
         } else {
-            bodyAbout.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-
-            bodyTranslators.style.height = `${bodyApp.offsetHeight * 0.4}px`;
-
-            bodyHelp.style.height = `${bodyApp.offsetHeight * 0.4}px`;
+            return;
         }
-    }
-
-    let exit = 0;
-    do {
-        setTimeout(() => {
-            try {
-                titleMeeting.innerHTML = `${lngObject.meetingAt} ${moment().format(dateFormat)}`;
-            } catch (e) { }
-        }, 1000);
-        exit++;
-    } while (lngObject === undefined && exit < 5);
-
-    function getBodyHeight() {
-        return Math.max(
-        document.body.scrollHeight,    document.documentElement.scrollHeight,
-        document.body.offsetHeight,    document.documentElement.offsetHeight,
-        document.body.clientHeight,    document.documentElement.clientHeight
-        );
-    }
-}, 100);
+        event.preventDefault();
+        activateAboutTab(next);
+    });
+});
 
 checkMode();
 
-tickAll.addEventListener('change', () => {
-    Array.from(document.querySelectorAll(".mdl-js-checkbox:not(#lblTickAll)")).forEach((element) => {
-        let _this = element;
-        setTimeout(() => {
-            if (lblTickAll.matches('.is-checked'))
-                _this.MaterialCheckbox.check();
-            else
-                _this.MaterialCheckbox.uncheck();
-        }, 10);
-    });
-    refreshControls();
+tickAll.addEventListener('change', () => setResultChecks(tickAll.checked));
+
+speakers.addEventListener('change', event => {
+    if (event.target.matches('.result-checkbox')) tickAll.checked = !speakers.querySelector('.result-checkbox:not(:checked)');
 });
 
 (() => {
@@ -1460,64 +1069,6 @@ tickAll.addEventListener('change', () => {
     if (os === "iOS") {
         btnVibrate.style.display = "none";
     }
-
-    isFirstTime = true;
-
-    if (deviceDetector.device === 'desktop') {
-        try {
-            let isFirefox = navigator.userAgent.indexOf("Firefox") != -1 ? true : false;
-
-            // Safari 3.0+ "[object HTMLElementConstructor]" 
-            let isSafari = /constructor/i.test(window.HTMLElement) || ((p) => p.toString() === "[object SafariRemoteNotification]")(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-
-            if (isFirefox || isSafari) {
-                dialogTimeTable.classList.add('centeredDialog');
-                dialogAbout.classList.add('centeredDialog');
-            }
-        }
-        catch { }
-        dialogTimeTable.classList.add('fullscreen-dialog-tablet');
-        dialogAbout.classList.add('fullscreen-dialog-desktop');
-        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-    } else if (deviceDetector.device === 'tablet') {
-        dialogTimeTable.classList.add('centeredDialog-tablet');
-        dialogTimeTable.classList.add('fullscreen-dialog-tablet');
-        dialogAbout.classList.add('centeredDialog');
-        dialogAbout.classList.add('fullscreen-dialog-tablet');
-        document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.53}px`;
-    } else {
-        dialogCustomTimes.classList.add('customBodyMobile');
-        if (window.innerHeight < 514 && window.innerWidth > window.innerHeight)
-            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.60}px`;
-        else
-            document.getElementById('divSpeakers').style.height = `${document.body.clientHeight * 0.75}px`;
-
-        dialogTimeTable.classList.add('fullscreen-dialog');
-        dialogCustomTimes.classList.add('fullscreen-dialog');
-        dialogAbout.classList.add('fullscreen-dialog');
-    }
-
-    if (typeof HTMLDialogElement !== 'function') {
-        dialogWelcome.classList.remove('centeredDialog');
-        dialogWelcome.classList.add('centeredDialogNoSupport');
-        dialogSetTime.classList.remove('centeredDialog');
-        dialogSetTime.classList.add('centeredDialogNoSupport');
-        dialogTimeTable.classList.remove('centeredDialog');
-        dialogTimeTable.classList.add('centeredDialogNoSupport');
-        dialogAbout.classList.remove('centeredDialog');
-        dialogAbout.classList.add('centeredDialogNoSupport');
-        dialogAbout.classList.add('fullscreen-dialog');
-    }
-
-    window.addEventListener("focus", () => {
-        try {
-            let menuOutline = document.querySelector('.mdl-menu__outline');
-            if (menuOutline) {
-                if (menuOutline.style.zIndex !== "-1")
-                    resizeSelect();
-            }
-        } catch (e) { }
-    });
 
     if (browserResult.browser.name === '2345Explorer' || browserResult.browser.name === 'IE' || browserResult.browser.name === 'IEMobile')
         alert('Unsupported Browser. Please download a modern browser like Chrome or Firefox');
@@ -1545,12 +1096,6 @@ function hideKeyboard(element) {
     }, 100);
 }
 
-window.addEventListener('orientationchange', doOnOrientationChange);
-
-function doOnOrientationChange() {
-    location.reload();
-}
-
 document.addEventListener("keydown", (zEvent) => {
     if (zEvent.ctrlKey && (zEvent.key === "p" || zEvent.key === "P")) {
         pauseTimer();
@@ -1571,7 +1116,7 @@ document.addEventListener("keydown", (zEvent) => {
 
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loading-container').style.display = "none";
-    document.getElementById('superContainer').style.display = "block";
+    document.getElementById('superContainer').style.removeProperty('display');
 
     if (isFirstRun) {
         if ((deviceDetector.device === 'phone' && isTouchDevice()) || deviceDetector.device !== 'phone') {
@@ -1591,15 +1136,8 @@ window.addEventListener('DOMContentLoaded', () => {
            (navigator.msMaxTouchPoints > 0));
     }
 
-    if (window.innerHeight > window.innerWidth * 2 && window.matchMedia("(orientation: portrait)").matches) {
-        document.querySelector('#innerPlayContainer').classList.add("longPhonePortrait");
-    }
-
-    document.body.style.maxHeight = `${window.innerHeight}px`;
-
     ddLang.value = getLocalStorageValue('currentLang');
 
-    resizeScreen();
 });
 
 ddLang.onchange = (event) => {
